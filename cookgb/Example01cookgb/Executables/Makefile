@@ -5,10 +5,11 @@
 CODE_HOME = ../../../../..
 
 # What libraries does this executable depend on
-INCLUDED_AND_LINKED_LIBS = Example01cookgb
+INCLUDED_AND_LINKED_LIBS = Example01cookgb \
+	StringParsing MyContainers ErrorHandling LowLevelUtils
 
 # What .cpp files containing a main function should be compiled (remove .cpp)
-EXECUTABLES = MyFirstExec
+EXECUTABLES = MyFirstExec MyExecWithInput
 
 ##############################################################################
 # Nothing below here needs to be changed

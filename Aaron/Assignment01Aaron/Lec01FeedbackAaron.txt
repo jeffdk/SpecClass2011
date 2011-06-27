@@ -1,0 +1,5 @@
+Hello,
+
+I am a complete Linux novice, and its been five years since I wrote any code, so I'm going to find a lot of the technical jargon challenging. I especially liked that both Jeff and Curran briefly explained what the linux commands meant much of the time, and I hope that continues. I think time management will be an issue, I would really prefer that the lectures begin and end on time, though I know this is hard.
+
+-Aaron

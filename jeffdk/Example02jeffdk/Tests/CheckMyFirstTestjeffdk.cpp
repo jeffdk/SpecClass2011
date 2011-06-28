@@ -3,15 +3,18 @@
  
 #include "MyVector.hpp"
 #include "MyFirstTestjeffdk.hpp"
- 
+#include "OptionParser.hpp"
+#include "ReadFileIntoString.hpp"
+
 int main(int /*argc*/, char** /*argv*/) {
  
   //Try out the new sumVectors function                                         
  
-  //First, create a couple of vectors, then add them together                   
+  //First, read in some vectors from the file Vectors.input                     
  
-  const MyVector<double> A(MV::fill, 3.,4.,5.);
-  const MyVector<double> B(MV::fill, 6.,7.,8.);
+  OptionParser p(ReadFileIntoString("Vectors.input"));
+  MyVector<double> A = p.Get<MyVector<double> >("FirstVectorToAdd");
+  MyVector<double> B = p.Get<MyVector<double> >("SecondVectorToAdd");
  
   //Next, make a vector to store the result                                     
  

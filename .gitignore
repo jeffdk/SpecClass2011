@@ -1,0 +1,23 @@
+# Build products
+*.o
+*.a
+Dependencies/
+
+# Test products
+Save/
+
+# TeX products
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+
+# Temporary editor files
+*~
+*.swp
+\#*\#
+.\#*
+.DS_Store
+

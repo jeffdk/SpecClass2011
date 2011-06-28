@@ -1,0 +1,5 @@
+During the first lecture, I learned that the structure of the code was more flexible than I had originally though, with respect to creating new directories for input files and executables.  This was particularly helpful for organizing the current project on which I am working.
+
+The lecture format was good, and I just want to emphasize how helpful it was to have a dedicated feed for the speaker's screen.  Here at WFU, we almost exclusively watched the screen view, and very rarely watched the classroom feeds.
+
+On that note, while the audio was fine for the two presenters, we found it difficult to hear some of the questions being asked, and we had to piece together keywords, along with the answers, to figure out what was going on.

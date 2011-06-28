@@ -1,2 +1,2 @@
 #!/bin/bash
-./CheckMyFirstTestGeoffrey &> CheckMyFirstTestGeoffrey.log
+./CheckMyFirstTestGeoffrey &> Test.log

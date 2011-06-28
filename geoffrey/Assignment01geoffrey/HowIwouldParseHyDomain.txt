@@ -1,0 +1,17 @@
+To parse HyDomain.input, I would use OptionParsers with SplitParentheses and 
+RemoveOverAllParenthesesIfPresent. 
+
+OptionParsers would read in 
+
+  SubdomainStructure = ...
+
+  BaseName = ...
+
+  x-Axis = ...
+  y-Axis = ...
+  z-Axis = ...
+
+SplitParentheses would split up PerimBlocks and its arguments.
+
+RemoveOverAllParentheseIfPresent would remove the parentheses from 
+the values read in for the axes.

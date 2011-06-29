@@ -8,6 +8,6 @@
 # Then run ./CheckMyFirstTestGeoffrey to add them up.
 #
 
-FirstVectorToAdd = 1.1,2.2,3.3,4.4;
-SecondVectorToAdd = -1.1,-2.2,-3.3,-4.4;
+FirstVectorToAdd = 1.1,2.2,3.3,4.4,5.5;
+SecondVectorToAdd = -1.1,-2.2,-3.3,-4.4,-5.5;
 Divisor = 2;

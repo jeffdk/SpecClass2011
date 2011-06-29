@@ -9,7 +9,7 @@ CODE_HOME = ../../../..
 SUBDIRECTORIES = Executables Tests
 
 # What .cpp files should be compiled (replace .cpp with .o)
-OBJECT_FILES_INTO_LIB = MyFirstLibMaxim.o Oh Crap
+OBJECT_FILES_INTO_LIB = MyFirstLibMaxim.o
 
 ##############################################################################
 # Nothing below here needs to be changed

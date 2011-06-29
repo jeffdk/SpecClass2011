@@ -1,0 +1,11 @@
+# Vectors.input
+# Enter vectors you would like to add.
+#
+# EXAMPLE:
+#   FirstVectorToAdd = double, double, ...;
+#   SecondVectorToAdd = double, double, ...;
+#
+# Then run ./TestSumVectorsCurran to add them up.
+ 
+FirstVectorToAdd  = 1.1, 2.2, 3.3;
+SecondVectorToAdd = 4.4, 5.5, 6.6;

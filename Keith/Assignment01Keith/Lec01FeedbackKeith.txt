@@ -1,0 +1,44 @@
+
+
+1) Git Vs. Svn: I liked the svn/git comparison stuff and the figures
+were great.  However, I think the target audience for the first
+lecture is probably beginning developers who may not have a grasp on
+the importance of version control at all, let alone on the subtleties
+of svn vs. git.  I think I would omit that svn/git comparison, as cool
+as it was, and instead just have a couple slides on why we use version
+control, and the problems it solves.  Then I would emphasize the two
+rules common to both svn and git: don't commit source that doesn't
+compile, and don't overwrite files in the repository and then commit
+them.
+
+The svn/git comparison is quite important, but I think I would leave
+it for a future lecture, after beginners have had a chance to play
+around with the two and get a feel for version control in general.  
+
+1b) In keeping with that last comment, I think I would have given
+explicit instructions in Assignment01 on how to add, commit and push
+one's personal directory.
+
+2) Doxygen: For the doxygen slides it would be nice to have a sample
+of doxygen output right on the slide and then describe how it
+corresponds to the C++ class.  I would also mention that doxygen works
+even without any doxygen comments, but that including doxygen comments
+is pretty much manditory.
+
+3) Assignment01: It wouldn't have occurred to me to start beginning
+developers off in the SpEC context, and I think it's a really great
+idea.  I especially like the idea of having people's homework
+directory be a subdir of SpEC so they can immediately link against all
+its libraries.
+
+3b) I think I would have had a slide or two in the lecture on make and
+Makefiles, covering why we use make, and the problems it solves.  I
+would also mention why the subdir Makefiles in SpEC look so weird
+compared to the samples you will find in an intro to programming book,
+or on the web.  There's certainly no time for a complete description,
+but I would include just enough that people won't be baffled by the
+syntax when they compare it to common sample Makefiles.
+
+3c) Btw, do we have a mechanism for telling you guys that we've
+"turned-in" our assignment?  (I.e. that we've done our final commit.)
+

@@ -1,0 +1,7 @@
+I though the first lecture was very good.  I already knew most of the stuff
+about how to check out and compile the code, but I had never heard of
+git before.  I'm not sure I understood everything on the first go, but doing 
+the assignment certainly helped solidify it all.  I would say that the format 
+is good, but it was hard to see the remote desktop at times.  I don't know how 
+this could be improved.  I think as long as we have all the examples on the 
+wiki, this should be fine.

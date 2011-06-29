@@ -8,4 +8,3 @@
  * @return     the capped quantity
  */
 double ImposeCap(double x, double max);
-

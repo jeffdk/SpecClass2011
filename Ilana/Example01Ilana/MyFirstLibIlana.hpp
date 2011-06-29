@@ -3,9 +3,8 @@
  * is less than the maximum value, returns that quantity; otherwise, returns
  * its maximum allowed value.
  *
- * @param x    the quantity to impose a cap on
- * @param max  the largest value that may be returned
- * @return     the capped quantity
+ * @param x     the quantity to impose a cap on
+ * @param max   the largest value that may be returned
+ * @return      the capped quantity
  */
-double ImposeCap(double x, double max);
-
+double ImposeCap(const double x, const double max);

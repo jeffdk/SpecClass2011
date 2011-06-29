@@ -14,7 +14,8 @@ MultAddExecIlana.o:  MultAddExecIlana.cpp \
  /lustre/scratch/imacdona/SpEC/Utils/ErrorHandling/MyAbort.hpp \
  /lustre/scratch/imacdona/SpEC/Utils/MyContainers/MyMap.hpp \
  /lustre/scratch/imacdona/SpEC/Utils/LowLevelUtils/NonCopyable.hpp \
- /lustre/scratch/imacdona/SpEC/Utils/StringParsing/ReadFileIntoString.hpp
+ /lustre/scratch/imacdona/SpEC/Utils/StringParsing/ReadFileIntoString.hpp \
+ /lustre/scratch/imacdona/SpEC/StudentProjects/SpecClass2011/Ilana/Assignment01Ilana/Assignment01Ilana.hpp
 MultAddExecIlana.cpp :
  /lustre/scratch/imacdona/SpEC/Utils/StringParsing/OptionParser.hpp :
  /lustre/scratch/imacdona/SpEC/Utils/LowLevelUtils/FancyTypeName.hpp :
@@ -32,3 +33,4 @@ MultAddExecIlana.cpp :
  /lustre/scratch/imacdona/SpEC/Utils/MyContainers/MyMap.hpp :
  /lustre/scratch/imacdona/SpEC/Utils/LowLevelUtils/NonCopyable.hpp :
  /lustre/scratch/imacdona/SpEC/Utils/StringParsing/ReadFileIntoString.hpp :
+ /lustre/scratch/imacdona/SpEC/StudentProjects/SpecClass2011/Ilana/Assignment01Ilana/Assignment01Ilana.hpp :

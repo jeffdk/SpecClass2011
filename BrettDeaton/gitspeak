@@ -8,4 +8,16 @@ git diff
 git diff --cached
 
 // add to the index of things that are going to get pushed to the repo
-git 
+git add --all
+git add <somedirname>
+
+// commit my changes (this is only to my local repo, not the remote)
+git commit
+
+// push my local changes to the remote repo
+git push
+
+// pull any changes from the remote repo to my local copy, this has to be done
+//   before a push or I'll get an error message (if someone else has changed the
+//   remote repo since my last pull.)
+git pull

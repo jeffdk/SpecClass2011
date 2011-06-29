@@ -7,5 +7,5 @@
  * @param max  the largest value that may be returned
  * @return     the capped quantity
  */
-double ImposeCap(const double x, const double max);
+double ImposeCap(double x, double max);
 

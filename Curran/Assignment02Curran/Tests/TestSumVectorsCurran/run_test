@@ -1,0 +1,2 @@
+#!/bin/bash
+./TestSumVectorsCurran 2>&1 > Test.log

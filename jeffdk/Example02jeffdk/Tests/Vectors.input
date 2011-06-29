@@ -1,0 +1,13 @@
+# Vectors.input                                                                 
+# Enter vectors you would like to add.                                          
+#                                                                               
+# EXAMPLE:                                                                      
+#   FirstVectorToAdd = double, double, double;                                  
+#   SecondVectorToAdd = double, double, double;                                 
+#                                                                               
+# Then run ./CheckMyFirstTestGeoffrey to add them up.                           
+#                                                                               
+ 
+FirstVectorToAdd = 1.1,2.2,3.3;
+SecondVectorToAdd = -1.1,-2.2,-3.3;
+

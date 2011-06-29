@@ -1,0 +1,9 @@
+3. Give us some feedback
+
+Describing the details of SSH keys was probably not necessary for current grad students.  Giving an overview of the Wiki, Doxygen, and Trac would have been more useful, but we ran out of time.
+
+Things that are not SpEC-specific (VCSs, etc.) should be accompanied by a small number of recommended references, while more lecture time should be spent on SpEC-specific matters.  For Lecture 01, both Subversion and Git have free books available online (books are generally preferable to online tutorials, as they are more comprehensive and better edited):
+ * http://svnbook.red-bean.com/
+ * http://progit.org/book/
+
+Desktop sharing seemed to work well.

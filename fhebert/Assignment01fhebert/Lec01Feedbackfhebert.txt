@@ -1,0 +1,6 @@
+
+francois hebert, jun 2011
+
+feedback on spec class lecture 1
+
+i thought the intro was too dragged out, but once we got going it was better. i'd appreciate a little more 'why' in addition to the 'how' while working though the commands and code examples, though :)

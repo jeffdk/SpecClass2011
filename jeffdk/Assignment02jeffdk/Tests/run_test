@@ -1,0 +1,2 @@
+#!/bin/bash
+./CheckAssignment02jeffdk &> Test.log

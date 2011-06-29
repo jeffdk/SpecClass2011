@@ -17,14 +17,15 @@ int main(int /*argc*/, char** /*argv*/) {
   OptionParser p(ReadFileIntoString("Vectors.input"));
   MyVector<double> A = p.Get<MyVector<double> >("FirstVectorToAdd");
   MyVector<double> B = p.Get<MyVector<double> >("SecondVectorToAdd");
-  
+  double divisor     = p.Get<double>("Divisor");
+
   //Next, make a vector to store the result                                     
  
   MyVector<double> result(MV::Size(A.Size()),0.);
  
   //Add the vectors together                                                    
  
-  result = sumVectorsThenDivide(A,B,2.0);
+  result = sumVectorsThenDivide(A,B,divisor);
   //result = A;           //This line is a forced break of the test
   //Print out the results                                                       
  
@@ -38,12 +39,12 @@ int main(int /*argc*/, char** /*argv*/) {
     resultMagnitudeSq += result[i]*result[i];
   }
 
-  //A REQUIRE is needed to actually break the test with no files_to_compare
-  //REQUIRE(resultMagnitudeSq == 0.0, "Sum of vector and its negative nonzero.");
-  //UtilsForTesting u;
+  //A REQUIRE could be used too, instead of UtilsForTesting
+  //REQUIRE(resultMagnitudeSq == 0.0,"Sum of vector and its negative nonzero.");
+  UtilsForTesting u;
   IS_ZERO(resultMagnitudeSq,"Sum of vector and its negative nonzero.");
-  std::cout << "Past IS_ZERO \n";
+
   //Return success                                                              
-  return EXIT_SUCCESS;;
+  return u.NumberOfTestsFailed();
 }
  

@@ -1,3 +1,6 @@
+/// \file
+/// Parse file "MultiplyAdd.input" to return result of A*B+C.
+
 #include <iostream>
 #include <cstdlib>
 

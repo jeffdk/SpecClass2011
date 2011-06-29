@@ -1,0 +1,11 @@
+// examine what's ready to get checked in or pushed or whatever
+git status
+
+// diff my working copy with what's in my index (things about to be pushed to the repo)
+git diff
+
+// diff my index with what's in the repo
+git diff --cached
+
+// add to the index of things that are going to get pushed to the repo
+git 

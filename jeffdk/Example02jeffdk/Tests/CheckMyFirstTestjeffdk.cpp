@@ -25,9 +25,9 @@ int main(int /*argc*/, char** /*argv*/) {
   //Add the vectors together                                                    
  
   result = sumVectors(A,B);
-  //result = A;           //This line is a forced break of the test
-  //Print out the results                                                       
- 
+  //result = A;            //Uncomment this line for a forced break of the test
+
+  //Print out the results 
   std::cout << "Vector A = " << A << std::endl;
   std::cout << "Vector B = " << B << std::endl;
   std::cout << "Sum      = " << result << std::endl;
@@ -38,12 +38,16 @@ int main(int /*argc*/, char** /*argv*/) {
     resultMagnitudeSq += result[i]*result[i];
   }
 
-  //A REQUIRE is needed to actually break the test with no files_to_compare
-  //REQUIRE(resultMagnitudeSq == 0.0, "Sum of vector and its negative nonzero.");
-  //UtilsForTesting u;
+  //Could use a require, but for tests lest use UtilsForTesting
+  //REQUIRE(resultMagnitudeSq == 0.0,"Sum of vector and its negative nonzero.");
+  UtilsForTesting u;
   IS_ZERO(resultMagnitudeSq,"Sum of vector and its negative nonzero.");
-  std::cout << "Past IS_ZERO \n";
-  //Return success                                                              
-  return EXIT_SUCCESS;;
+
+  //Return the number of tests from UtilsForTesting that have failed
+  // Note: This works because it is common practice for a program
+  //       that has completed succesfully (run without error) to return 0
+  //       to indicate it's success.  Any non-zero value denotes that
+  //       the program has encountered an error.  
+  return u.NumberOfTestsFailed();
 }
  

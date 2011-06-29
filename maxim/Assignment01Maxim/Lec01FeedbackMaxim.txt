@@ -1,0 +1,2 @@
+All the material in the first Lecture was relavtively easy to follow once you set up everything on your machine.
+However, I would like to see more step-by-step submission instructions using git. 

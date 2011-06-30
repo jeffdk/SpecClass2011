@@ -1,2 +1,2 @@
 #!/bin/bash
-./TestSumVectorsCurran 2>&1 > Test.log
+./TestSumVectorsCurran > Test.log 2>&1

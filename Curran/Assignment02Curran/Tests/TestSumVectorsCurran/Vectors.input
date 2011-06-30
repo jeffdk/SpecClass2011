@@ -1,11 +1,18 @@
 # Vectors.input
-# Enter vectors you would like to add.
+# Defines vectors to be added by ./TestSumVectorsCurran.
 #
-# EXAMPLE:
-#   FirstVectorToAdd = double, double, ...;
-#   SecondVectorToAdd = double, double, ...;
+# OPTIONS:
+#   FirstVectorToAdd  = double, double, ...;  # First addend
+#   SecondVectorToAdd = double, double, ...;  # Second addend
+#   Divisor           = double;               # Divisor (!=0)
 #
-# Then run ./TestSumVectorsCurran to add them up.
+# For the test to pass, these two vectors should be minus one another.
  
-FirstVectorToAdd  = 1.1, 2.2, 3.3;
-SecondVectorToAdd = 4.4, 5.5, 6.6;
+FirstVectorToAdd  =  3.1,  4.1,  5.9;
+SecondVectorToAdd = -3.1, -4.1, -5.9;
+Divisor           = 2.6;
+
+# Any of the following changes will cause the test to fail:
+#SecondVectorToAdd = -3.0, -4.1, -5.9;
+#Divisor           = 0.0;
+

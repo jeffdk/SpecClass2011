@@ -1,0 +1,13 @@
+6.28.11
+I'm really pleased with the assignment. So many floating ideas coalesced for me: Makefile structure,
+    how libraries are built and organized within SpEC, and the connection between input files and
+    executables. I also like the way we're doing all of this within git, so that everyone can get
+    comfortable interacting with a version control system.
+One thing that contributed to prolonged confusion early on was the name MyFirstLibBrett.hpp. I had
+    trouble differentiating between that file and the library Example01Brett. I may be mistaken, but
+    I think it would be clearer in that example to call it something like MyFirstFunctionBrett.hpp
+    or MyFirstClassBrett.hpp, if it were a class structure. In fact, the naming used was not a bad
+    thing at all because it forced me to think carefully about the differnce between a library and
+    it's members.
+I'm looking forward to the rest of the class. Seriously, thanks for all the time everyone is putting
+    into this. It will pay off...when I become a coding machine.

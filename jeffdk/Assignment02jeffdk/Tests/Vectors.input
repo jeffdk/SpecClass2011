@@ -1,0 +1,14 @@
+# Vectors.input                                                                 
+# Enter vectors you would like to add. 
+#  as well as the double you'd like to divide the sum by
+# EXAMPLE:                                                                      
+#   FirstVectorToAdd = double, double, double;                                  
+#   SecondVectorToAdd = double, double, double;                                 
+#   Divisor = double;
+#                        
+# Then run ./CheckAssignment02jeffdk to add them up and divide
+#                   
+ 
+FirstVectorToAdd = 1.1,2.2,3.3;
+SecondVectorToAdd = -1.1,-2.2,-3.3;
+Divisor = 1.0 ;

@@ -1,0 +1,13 @@
+# Vectors.input
+# Specific values chosen to test function SumVectors
+#
+# EXAMPLE:
+#   FirstVectorToAdd = double, double, double;
+#   SecondVectorToAdd = double, double, double;
+#   Divisor = double;
+#
+# Run ./TestSumVectors_danh to perform (A+B)/D.
+
+FirstVectorToAdd = 1.1, 2.2, 3.3;
+SecondVectorToAdd = -1.1, -2.2, -3.3;
+Divisor = 1.0;

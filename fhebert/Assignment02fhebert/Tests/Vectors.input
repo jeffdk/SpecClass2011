@@ -1,0 +1,13 @@
+# Vectors.input                                                                 
+# Enter vectors you would like to add.                                          
+#                                                                               
+# EXAMPLE:                                                                      
+#   FirstVectorToAdd = double, double, double;                                  
+#   SecondVectorToAdd = double, double, double;                                 
+#                                                                               
+# Then run ./TestAssignment02geoffrey to add them up.                           
+#                                                                               
+ 
+ FirstVectorToAdd  = 1, 2, 4.3;                                                 
+ SecondVectorToAdd = -1,-2,-4.3;
+ DoubleToDivideBy  = 1.234;

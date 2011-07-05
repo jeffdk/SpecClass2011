@@ -1,7 +1,11 @@
-#include <iostream>
 #include <cstdlib>
+#include <iostream>
  
 #include "MyFirstLibCurran.hpp"
+
+/** \file
+ * Prints "Hello world!", then caps a value at a certain threshold.
+ */
  
 int main(int /*argc*/, char** /*argv*/) {
     std::cout << "Hello world!" << std::endl;

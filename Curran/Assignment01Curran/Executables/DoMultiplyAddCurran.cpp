@@ -1,9 +1,10 @@
-#include <iostream>
 #include <cstdlib>
+#include <string>
+#include <iostream>
  
-#include "OptionParser.hpp"
-#include "ReadFileIntoString.hpp"
 #include "MultiplyAddCurran.hpp"
+#include "ReadFileIntoString.hpp"
+#include "OptionParser.hpp"
 
 /** \file
  * Performs a multiply-add operation on values read from an input file.

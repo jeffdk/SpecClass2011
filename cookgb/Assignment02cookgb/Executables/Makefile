@@ -5,11 +5,10 @@
 CODE_HOME = ../../../../..
 
 # What libraries does this executable depend on
-INCLUDED_AND_LINKED_LIBS = Assignment02cookgb \
-	StringParsing MyContainers ErrorHandling LowLevelUtils
+INCLUDED_AND_LINKED_LIBS = 
 
 # What .cpp files containing a main function should be compiled (remove .cpp)
-EXECUTABLES = TestAssignment02cookgb
+EXECUTABLES = 
 
 ##############################################################################
 # Nothing below here needs to be changed

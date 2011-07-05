@@ -1,0 +1,4 @@
+#!/bin/bash
+./TestAssignment02Aaron &> Test.log
+
+

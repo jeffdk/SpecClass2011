@@ -7,6 +7,13 @@ CODE_HOME = ../../../../..
 # What subdirectories should also be compiled (one for each test)
 SUBDIRECTORIES =
 
+# What libraries does this executable depend on                                 
+INCLUDED_AND_LINKED_LIBS = Assignment02cookgb StringParsing MyContainers \
+ErrorHandling LowLevelUtils
+
+# What .cpp files containing a main function should be compiled (remove .cpp)   
+EXECUTABLES = TestAssignment02cookgb
+
 ##############################################################################
 # Nothing below here needs to be changed
 ##############################################################################

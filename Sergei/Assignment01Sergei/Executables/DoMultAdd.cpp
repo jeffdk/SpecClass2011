@@ -10,9 +10,9 @@ int main(int /*argc*/, char** /*argv*/) {
   // Read in the input values using the OptionParser
   std::string opts = ReadFileIntoString("MultiplyAdd.input");
   OptionParser parser(opts);
-  double A = parser.Get<double>("A");
-  double B = parser.Get<double>("B");
-  double C = parser.Get<double>("C");
+  const double A = parser.Get<double>("A");
+  const double B = parser.Get<double>("B");
+  const double C = parser.Get<double>("C");
   
   // Perform A*B+C
   double result = MultiplyAdd(A,B,C);

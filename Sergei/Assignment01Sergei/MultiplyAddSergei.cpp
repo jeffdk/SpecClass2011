@@ -1,4 +1,4 @@
 #include "MultiplyAddSergei.hpp"
-double MultiplyAdd(double& A, double& B, double& C){
+double MultiplyAdd(const double& A, const double& B, const double& C){
   return A*B+C;
 }

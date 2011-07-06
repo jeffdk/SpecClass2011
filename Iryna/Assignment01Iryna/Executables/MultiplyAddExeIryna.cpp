@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 
+#include "MyVector.hpp"
 #include "OptionParser.hpp"
 #include "ReadFileIntoString.hpp"
 #include "libAssignment01Iryna.hpp"

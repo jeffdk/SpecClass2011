@@ -1,15 +1,18 @@
 #/// \dir
-#/// Contains a minimal set of files for adding a new executable to SpEC
+#/// Contains a minimal set of files for adding new tests to SpEC
 
 # Where is SPEC_HOME relative to this directory
 CODE_HOME = ../../../../..
 
-# What libraries does this executable depend on
-INCLUDED_AND_LINKED_LIBS = Example01jeffdk \
-	StringParsing MyContainers ErrorHandling LowLevelUtils	
+# What subdirectories should also be compiled
+SUBDIRECTORIES = 
+
+# What subdirectories should also be compiled (one for each test)
+INCLUDED_AND_LINKED_LIBS = Assignment02Iryna StringParsing MyContainers \
+ErrorHandling LowLevelUtils
 
 # What .cpp files containing a main function should be compiled (remove .cpp)
-EXECUTABLES = MyFirstExec MyExecWithInput
+EXECUTABLES = TestAssignment02Iryna
 
 ##############################################################################
 # Nothing below here needs to be changed

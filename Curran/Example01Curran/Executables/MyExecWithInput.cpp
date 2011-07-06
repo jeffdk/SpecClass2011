@@ -1,9 +1,15 @@
-#include <iostream>
 #include <cstdlib>
+#include <string>
+#include <iostream>
  
-#include "OptionParser.hpp"
-#include "ReadFileIntoString.hpp"
 #include "MyFirstLibCurran.hpp"
+#include "ReadFileIntoString.hpp"
+#include "OptionParser.hpp"
+
+/** \file
+ * Caps a value at a certain threshold, where both the threshold and the
+ * original value are provided in the input file "ImposeCap.input".
+ */
  
 int main(int /*argc*/, char** /*argv*/) {
     std::cout << "Hello world!" << std::endl;

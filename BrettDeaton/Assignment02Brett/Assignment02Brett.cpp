@@ -2,7 +2,8 @@
 #include "Assignment02Brett.hpp"
  
 MyVector<double> sumVectors(const MyVector<double>& A,
-                            const MyVector<double>& B) {
+                            const MyVector<double>& B,
+			    const double& norm) {
  
   //Make a new MyVector<double> of the same size as the addends                 
   //Fill each element with zero.                                                
@@ -15,7 +16,7 @@ MyVector<double> sumVectors(const MyVector<double>& A,
   //the ith component of the vector.                                            
  
   for(int i=0; i<vectorSize; ++i) {
-    sum[i] = A[i] + B[i];
+    sum[i] = (A[i] + B[i]) / norm;
   }
  
   //Return the result                                                           

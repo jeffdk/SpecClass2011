@@ -7,9 +7,11 @@
 ///
 /// @param A     first vector added
 /// @param B     second vector added
+/// @param norm  normalization factor for the vector sum
 /// @return      the vectors' sum
 ///                                                                             
 //////////////////////////////////////////////////////////////////////////      
  
 MyVector<double> sumVectors(const MyVector<double>& A,
-                            const MyVector<double>& B);
+                            const MyVector<double>& B,
+			    const double& norm);

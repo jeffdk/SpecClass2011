@@ -6,7 +6,7 @@
 CODE_HOME = ../../../..
 
 # What subdirectories should also be compiled
-SUBDIRECTORIES = Executables Tests
+SUBDIRECTORIES = Tests
 
 # What .cpp files should be compiled (replace .cpp with .o)
 OBJECT_FILES_INTO_LIB = Assignment02Brett.o

@@ -1,0 +1,3 @@
+#!/bin/bash
+./TestAssignment02_REQUIRE_Maxim &> Test.log
+./TestAssignment02UtilsForTestingMaxim &>> Test.log

@@ -8,7 +8,7 @@ CODE_HOME = ../../../../..
 INCLUDED_AND_LINKED_LIBS = DataMesh MyContainers ErrorHandling
 
 # What .cpp files containing a main function should be compiled (remove .cpp)
-EXECUTABLES = mesh
+EXECUTABLES = mesh MyClass1 MyClass2 MyMeshExec
 
 ##############################################################################
 # Nothing below here needs to be changed

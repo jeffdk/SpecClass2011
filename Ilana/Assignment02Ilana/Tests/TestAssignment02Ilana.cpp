@@ -22,7 +22,7 @@ int main(int /*argc*/, char** /*argv*/) {
   OptionParser p(ReadFileIntoString("Vectors.input"));
   const MyVector<double> A = p.Get<MyVector<double> >("FirstVectorToAdd");
   const MyVector<double> B = p.Get<MyVector<double> >("SecondVectorToAdd");
-  double C = parser.Get<double>("Divisor");
+  double C = p.Get<double>("Divisor");
  
   //Next, make a vector to store the result                                     
  
@@ -54,7 +54,7 @@ int main(int /*argc*/, char** /*argv*/) {
   for(int i=0;i<result.Size();++i) {
     resultMagnitudeSq += result[i]*result[i];
   }
-  UtilsForTesting u;
+ 
   IS_ZERO(resultMagnitudeSq,"Sum of vector and its negative nonzero.");
  
   //Return success                                                              

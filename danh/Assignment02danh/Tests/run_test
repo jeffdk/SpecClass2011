@@ -1,0 +1,2 @@
+#!/bin/bash
+./TestSumVectors_danh &> Test.log

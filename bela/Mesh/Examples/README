@@ -1,0 +1,4 @@
+compile these with
+
+g++ ThreeTinies.cpp 
+g++ OneTiny.cpp 

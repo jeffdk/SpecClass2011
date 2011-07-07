@@ -1,0 +1,67 @@
+#!/bin/bash
+#
+# Jeff
+
+
+
+listOfDirs=`ls -d -1 */Assignment01*`
+homeDir=`/bin/pwd`
+usernameList=""
+
+for i in $listOfDirs
+do
+    cd $homeDir  #necessary because path to i is relative!
+    cd $i
+    usernameList="${usernameList}${i#/}"
+    echo
+    echo
+    echo "*********************************************************************"
+    echo "*===================================================================*"
+    echo "IN DIRECTORY: $i"
+    echo "'''''''''''''''''''''''''''''''''''''''''''''''''''''''"
+    echo "running: make -s allclean"
+    make -s allclean 2>&1
+    echo "Listing _ hpp _ files..."
+    ls *.hpp 2>&1
+    echo "-------------------------------------------------------"
+
+    echo "Listing _ cpp _ files..."
+    ls *.cpp 2>&1
+    echo "Making libraries: make -s"
+    make -s 2>&1
+    echo "-------------------------------------------------------"
+    echo "---Moving to Executables directory---"
+    #echo
+    if (! (cd Executables) )
+    then
+	echo "NOTE: No Executables directory! Moving to the next check"
+	#continue in bash for loops does not drop out of loop
+    else
+	cd Executables
+	echo "Listing _cpp_ files..."
+	ls *.cpp
+	execList=`ls *.cpp`
+
+	echo "compiling execs: make -s all"
+	make -s all 2>&1
+	echo "RETURN VALUE OF MAKE: $?"
+	for j in $execList
+	do
+	    splitted=${j%.cpp}
+#	    echo $splitted
+	    
+	    workingDir=`/bin/pwd`
+	    echo "Running exec $splitted in directory $workingDir" 
+	    ${workingDir}/${splitted} 2>&1
+	done
+    fi
+    echo "Done with $i!!"
+    echo "*===================================================================*"
+    echo "*********************************************************************"
+    
+done
+
+
+echo "Done!!!  List of usernames with a subdir 'Assignment01BLAH' "
+
+echo "$usernameList"

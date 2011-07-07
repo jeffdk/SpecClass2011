@@ -12,7 +12,17 @@ for i in $listOfDirs
 do
     cd $homeDir  #necessary because path to i is relative!
     cd $i
-    usernameList="${usernameList}${i#/}"
+
+    ## This part gets the foo of an expression "foo/bar"
+    # IFS is the 'internal field separator'
+    IFStemp=$IFS
+    IFS=/
+    for username in $i 
+    do
+	break
+    done
+    IFS=$IFStemp
+    usernameList=`echo -e "${usernameList}\n${username}"`
     echo
     echo
     echo "*********************************************************************"

@@ -5,10 +5,11 @@
 CODE_HOME = ../../../../..
 
 # What libraries does this executable depend on
-INCLUDED_AND_LINKED_LIBS = StringParsing MyContainers ErrorHandling LowLevelUtils Assignment01Bohn
+INCLUDED_AND_LINKED_LIBS = Example01jeffdk \
+	StringParsing MyContainers ErrorHandling LowLevelUtils	
 
 # What .cpp files containing a main function should be compiled (remove .cpp)
-EXECUTABLES = Assignment01Exec
+EXECUTABLES = MyFirstExec MyExecWithInput
 
 ##############################################################################
 # Nothing below here needs to be changed

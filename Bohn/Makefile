@@ -1,15 +1,8 @@
 #/// \dir
-#/// Contains a minimal set of files for adding a new subdirectory to SpEC,
-#/// including executables and tests.
+#/// Template for a user's personal directory for the 2011 SpEC Class.
 
 # Where is SPEC_HOME relative to this directory
-CODE_HOME = ../../../..
-
-# What subdirectories should also be compiled
-SUBDIRECTORIES = Executables Tests
-
-# What .cpp files should be compiled (replace .cpp with .o)
-OBJECT_FILES_INTO_LIB = Assignment01Bohn.o
+CODE_HOME = ../../..
 
 ##############################################################################
 # Nothing below here needs to be changed

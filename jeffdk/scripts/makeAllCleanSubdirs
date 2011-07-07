@@ -1,0 +1,20 @@
+#!/bin/bash
+#
+# Jeff
+
+
+
+listOfDirs=`ls -d -1 */Assignment01*`
+homeDir=`/bin/pwd`
+usernameList=""
+
+for i in $listOfDirs
+do
+    cd $homeDir  #necessary because path to i is relative!
+    cd $i
+    pwd
+    make -s allclean
+done
+
+
+echo "Done!!!  List of usernames with a subdir 'Assignment01BLAH' "

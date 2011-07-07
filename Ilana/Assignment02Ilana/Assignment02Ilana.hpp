@@ -12,4 +12,4 @@
 //////////////////////////////////////////////////////////////////////////      
  
 MyVector<double> sumVectors(const MyVector<double>& A,
-                            const MyVector<double>& B);
+                            const MyVector<double>& B, const double C);

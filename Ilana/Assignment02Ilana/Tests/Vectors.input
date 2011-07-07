@@ -10,4 +10,4 @@
  
 FirstVectorToAdd = 1.1,2.2,3.3;                                                 
 SecondVectorToAdd = -1.1,-2.2,3.3;
-Divisor = 7.2;
+Divisor = 0.1;

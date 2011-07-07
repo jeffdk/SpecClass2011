@@ -32,7 +32,7 @@ int main(int /*argc*/, char** /*argv*/) {
   REQUIRE(A.Size() == B.Size(), "Error: vectors not the same size.\n");
 
   //Test that C is not equal to zero
-  REQUIRE(C !=0.0, "Error: don't divide by zero!");
+  REQUIRE(C!=0.0, "Error: don't divide by zero!");
 
   //Add the vectors together                                                    
  

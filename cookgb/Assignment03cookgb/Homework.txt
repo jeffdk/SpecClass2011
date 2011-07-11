@@ -1,0 +1,20 @@
+MyClass2-
+
+-> a2 = a1; // fails
+a2 is declaired as const, so its value cannot be changed after it is created.
+
+-> b3 = 5; // fails
+the private member variable of MyClass2B is const, so it cannot be changed after the class is created
+
+-> b3 = b2; // fails
+the private member variable of MyClass2B is const, so it cannot be changed after the class is created
+
+-> c3 = 5; // fails
+because the constructor is declared as explicit, an implicit cast will not be allowed even thought the integer(as only argument) constructor is present.
+
+
+MyMeshExec:
+The 10x10 Mesh is "2D" and has 100 points in it.
+The offest of index (3,4) is 3 + 10*4 = 43.
+The index of the first point in the array is (0,0).
+

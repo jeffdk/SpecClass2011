@@ -5,10 +5,11 @@
 CODE_HOME = ../../../../..
 
 # What libraries does this executable depend on
-INCLUDED_AND_LINKED_LIBS =
+INCLUDED_AND_LINKED_LIBS = DataMesh MyContainers ErrorHandling LowLevelUtils
 
 # What .cpp files containing a main function should be compiled (remove .cpp)
-EXECUTABLES = MyClass1 MyClass2
+EXECUTABLES = MyClass1 MyClass2 MyMeshExec HomeworkMesh MyDM_Exec \
+              HomeworkDataMesh
 
 ##############################################################################
 # Nothing below here needs to be changed

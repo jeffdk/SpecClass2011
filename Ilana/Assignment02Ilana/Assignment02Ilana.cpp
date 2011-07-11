@@ -1,9 +1,11 @@
 #include "MyVector.hpp"
 #include "Assignment02Ilana.hpp"
+#include "Require.hpp"
  
 MyVector<double> sumVectors(const MyVector<double>& A,
-                            const MyVector<double>& B,
-			    const double& C) {
+                            const MyVector<double>& B, const double C) {
+
+  REQUIRE(A.Size() == B.Size(), "Error: Vectors are not the same size!");
  
   //Make a new MyVector<double> of the same size as the addends                 
   //Fill each element with zero.                                                

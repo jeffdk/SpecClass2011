@@ -1,0 +1,3 @@
+#!/bin/bash
+./TestAssignment02hohejd8 &> Test.log
+

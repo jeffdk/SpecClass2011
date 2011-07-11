@@ -4,6 +4,9 @@
 # Where is SPEC_HOME relative to this dir
 CODE_HOME = ../../..
 
+SUBDIRECTORIES = TemplateSubdir Example01Brett Assignment01Brett \
+	Assignment02Brett
+
 ##############################################################################
 # Nothing below here needs to be changed
 ##############################################################################

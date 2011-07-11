@@ -11,14 +11,14 @@ class MyClass1 {
 };
  
 int main(int /*argc*/, char** /*argv*/) {
-    // const MyClass1 mine1; // fails to compile
+    //const MyClass1 mine1; // fails to compile
     const MyClass1 mine1a=2;
     const MyClass1 mine1b(2);
     MyClass1 mine1c(2);
-    // int q1=mine1a.cc;// fails to compile
+    //int q1=mine1a.cc;// fails to compile
     int q2=mine1a.getvalue(); // ok
     int q3=mine1b.getvalue(); // ok
-    // int q4=mine1a.getvalue_nonconst(); // fails to compile
+    //int q4=mine1a.getvalue_nonconst(); // fails to compile
     int q5=mine1c.getvalue_nonconst(); // ok
    
     std::cout << "cc for 'const MyClass1 mine1a=2'  : " << q2 << std::endl;

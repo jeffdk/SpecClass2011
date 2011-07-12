@@ -1,0 +1,18 @@
+1) Uncommenting line 33: Error occurs because I am trying to change an instance
+   of the class that I declared as const.
+
+2) Uncommenting line 38: The data member of the class has been declared as
+   as constant. Here the code tries to change this const value and gives an
+   error.
+
+3) Uncommenting line 39: As above, I'm trying to change the value of the data 
+   member of this class, resulting in an error since it has been declared
+   constant.
+
+4) Uncommenting line 41: Here I'm trying to set c1, which is of the MyClass2C
+   type, equal to an int which has the wrong type; normally this works, since
+   the constructor can take an int, but here with the "explicit" in the
+   constructor definition it throws an error.
+
+5) Uncommenting line 45: As in error 3, I'm trying to change the value of a
+   data member in c3 which is declared constant.

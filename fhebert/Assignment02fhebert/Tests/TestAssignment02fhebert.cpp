@@ -19,7 +19,7 @@
 // change this flag to switch between available tests
 #define USE_REQUIRE 0
 
-// this flag if you want to check that vectors sum to zero
+// this flag to check that vectors sum to zero
 #define CHECK_ZERO_SUM 1
 
 

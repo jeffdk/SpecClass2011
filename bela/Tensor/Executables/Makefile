@@ -8,7 +8,16 @@ CODE_HOME = ../../../../..
 INCLUDED_AND_LINKED_LIBS = Tensor DataMesh MyContainers LowLevelUtils ErrorHandling
 
 # What .cpp files containing a main function should be compiled (remove .cpp)
-EXECUTABLES = TestTensorStructure TensorDouble TensorDataMesh
+EXECUTABLES = \
+	MyTDM_Exec2 \
+	MyTDM_Exec \
+	MyTensorExec \
+	MyTensorStructureExec \
+	MyTTDM_Exec2 \
+	MyTTDM_Exec \
+	TensorDataMesh \
+	TensorDouble \
+	TestTensorStructure
 
 ##############################################################################
 # Nothing below here needs to be changed

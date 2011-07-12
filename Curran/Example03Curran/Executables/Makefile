@@ -9,7 +9,7 @@ INCLUDED_AND_LINKED_LIBS = Tensor DataMesh MyContainers ErrorHandling \
                            LowLevelUtils
 
 # What .cpp files containing a main function should be compiled (remove .cpp)
-EXECUTABLES = HomeworkMesh HomeworkDataMesh
+EXECUTABLES = MyClass1 MyClass2 MyMeshExec MyDM_Exec MyTensorStructureExec
 
 ##############################################################################
 # Nothing below here needs to be changed

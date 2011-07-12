@@ -1,0 +1,11 @@
+For the homework questions about classes:
+
+l.31 The compiler won't let me change the value of a2 because it is declared as a const instance of the MyClass2A class.
+
+l.36 The compiler won't let me change the value of b3 because the private variable cc inside MyClass2B is a const.
+
+l.37 Same as above; MyClass2B::cc is a const member and cannot be changed after initialization.
+
+l.39 Since the constructor for MyClass2C is explicit, it cannot be instantiated by an implicit conversion from type int to type MyClass2C.
+
+l.43 The compiler won't let me change the value of c3 because operator= is not defined for this class, and because MyClass2C is explicit, an implicit conversion is not allowed.

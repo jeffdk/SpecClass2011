@@ -5,10 +5,10 @@
 CODE_HOME = ../../../../..
 
 # What libraries does this executable depend on
-INCLUDED_AND_LINKED_LIBS = DataMesh MyContainers ErrorHandling
+INCLUDED_AND_LINKED_LIBS = DataMesh MyContainers ErrorHandling LowLevelUtils
 
 # What .cpp files containing a main function should be compiled (remove .cpp)
-EXECUTABLES = MyMeshExecIlana
+EXECUTABLES = MyMeshExecIlana MyDM_ExecIlana
 
 ##############################################################################
 # Nothing below here needs to be changed

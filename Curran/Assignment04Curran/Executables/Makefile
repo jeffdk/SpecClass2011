@@ -8,7 +8,7 @@ CODE_HOME = ../../../../..
 INCLUDED_AND_LINKED_LIBS = Assignment04Curran
 
 # What .cpp files containing a main function should be compiled (remove .cpp)
-EXECUTABLES = Buggy
+EXECUTABLES = Buggy UseMemoryLeaker
 
 ##############################################################################
 # Nothing below here needs to be changed

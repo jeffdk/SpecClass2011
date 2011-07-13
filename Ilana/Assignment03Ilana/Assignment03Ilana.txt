@@ -1,0 +1,29 @@
+Fails for MyClass1Ilana.cpp and MyClass2Ilana.cpp
+
+MyClass1Ilana.cpp
+
+// const MyClass1 mine1; // fails to compile
+This fails to compile because no value is specified when mine1 is created.
+
+// int q1=mine1a.cc;// fails to compile
+This fails to compile because cc is private.
+
+// int q4=mine1a.getvalue_nonconst(); // fails to compile
+This fails to compile because mine1a is constant and getvalue_nonconst() returns a non-constant value.
+
+MyClass2Ilana.cpp
+
+// a2 = a1; // fails
+This fails to compile because a2 and a1 are both declared constant.
+
+// b3 = 5; // fails
+This fails to compile because in MyClass2B, cc is a constant and so can't be changed later. Also because 2 isn't equal to 5, I think.
+
+// b3 = b2; // fails
+This fails because b3 has already been declared as a constant and so can't be declared again as a pointer to a different value.
+
+// const MyClass2C c1=2; // fails
+This fails because MyClass2C makes c1 explicit, which means that you can't assign an integer value to it.
+
+ // c3 = 5; // fails
+This fails because although c3 isn't declared as constant when created, MyClass3C still returns a constant value.

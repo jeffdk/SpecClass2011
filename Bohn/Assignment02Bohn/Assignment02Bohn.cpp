@@ -24,19 +24,18 @@ MyVector<double> SumVectors(const MyVector<double>& A,
 }
 
 MyVector<double> DivideVectors(const MyVector<double>& numerator,
-								const MyVector<double>& denominator) {
+								const double& denominator) {
 	//Make a new MyVector<double> of the same size as the divisors
 	//Fill each element with zero
 
 	const int vectorSize = numerator.Size();
 
 	// Division for vectors which aren't the same size shouldn't take place
-	REQUIRE(vectorSize == denominator.Size(), "Error: vectors not the same size.\n");
 	MyVector<double> quotient(MV::Size(vectorSize), 0.);
 
 	//Divide the vectors component-by-component
 	for (int i=0; i < vectorSize; ++i) {
-		quotient[i] = numerator[i] / denominator[i];
+		quotient[i] = numerator[i] / denominator;
 	}
 
 	return quotient;

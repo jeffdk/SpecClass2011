@@ -1,5 +1,6 @@
 #include "DataMesh.hpp"
 #include "Tensor.hpp"
+#include "Ran2Class.hpp"
 #include <cstdlib>
 
 #include "InverseTensorIryna.hpp"
@@ -11,12 +12,14 @@ int main(void){
   Tensor<DataMesh> t(s,m);
   Tensor<DataMesh> t_inv(s,m);
 
-  std::cout<<t.Dim();
+  srand(time(NULL));
+  double k = rand()%100;
+  std::cout<<k;
   // Assign random values to tensor
   for(int i=0; i<t.Dim(); i++){
     for(int j=0; j<t.Dim(); j++){
        srand(time(NULL));
-       t(j,k)[i] = rand()%100;
+       t(j,k)[i] = (rand()%100)/100.0;
     }
   }
    

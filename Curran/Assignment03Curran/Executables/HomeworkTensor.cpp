@@ -5,6 +5,9 @@
 #include "MatrixUtils3x3Curran.hpp"
 #include "DataMesh.hpp"
 #include "Tensor.hpp"
+#include "ComputeInverse.hpp"
+#include "ComputeDeterminant.hpp"
+#include "Require.hpp"
 
 bool AreEqualAbsRel(const double a, const double b,
                     const double atol, const double rtol) {
@@ -43,24 +46,33 @@ int main(int /*argc*/, char** /*argv*/) {
     mat(2,2) = 2.0;
 
     Tensor<DataMesh> inv = Inverse3x3Sym(mat);
-    Tensor<DataMesh> orig2 = Inverse3x3Sym(inv);
+    Tensor<DataMesh> invinv = Inverse3x3Sym(inv);
     Tensor<DataMesh> prod = Multiply3x3Sym(mat, inv);
 
     // Print out matrices for inspection by eye
     std::cout << mat << std::endl;
-    std::cout << orig2 << std::endl;
+    std::cout << invinv << std::endl;
     std::cout << inv << std::endl;
     std::cout << prod << std::endl;
 
     // Compare mat with inv(inv(mat))
-    const bool success = AreEqualAbsRel3x3Sym(mat, orig2, 1.0e-12, 1.0e-12);
-    std::cout << (success ? "Success" : "Failure") << std::endl;
+    std::cout << "Testing mat == inv(inv(mat))" << std::endl;
+    REQUIRE(AreEqualAbsRel3x3Sym(mat, invinv, 1.0e-12, 1.0e-12),
+            "mat != inv(inv(mat))");
+
+    // Compare with SpEC
+    DataMesh det(mesh);
+    ComputeDeterminant(mat, det);
+    Tensor<DataMesh> inv_spec(dim, "aa", mesh);
+    ComputeInverse(mat, det, inv_spec);
+    std::cout << "Testing inv == inv_spec)" << std::endl;
+    REQUIRE(AreEqualAbsRel3x3Sym(inv, inv_spec, 1.0e-12, 1.0e-12),
+            "inv != inv_spec");
     }
 
     { // Random tensor on 10x10 mesh
     const IPoint extents(MV::fill, 10, 10);
     const Mesh mesh(extents);
-    const int dim = 3;
     Tensor<DataMesh> mat(dim, "aa", mesh);
     Random3x3Sym(12345, mat);
 
@@ -68,14 +80,23 @@ int main(int /*argc*/, char** /*argv*/) {
     Tensor<DataMesh> invinv = Inverse3x3Sym(inv);
 
     // Compare mat with inv(inv(mat))
-    const bool success = AreEqualAbsRel3x3Sym(mat, invinv, 1.0e-12, 1.0e-12);
-    std::cout << (success ? "Success" : "Failure") << std::endl;
+    std::cout << "Testing mat == inv(inv(mat))" << std::endl;
+    REQUIRE(AreEqualAbsRel3x3Sym(mat, invinv, 1.0e-12, 1.0e-12),
+            "mat != inv(inv(mat))");
+
+    // Compare with SpEC
+    DataMesh det(mesh);
+    ComputeDeterminant(mat, det);
+    Tensor<DataMesh> inv_spec(dim, "aa", mesh);
+    ComputeInverse(mat, det, inv_spec);
+    std::cout << "Testing inv == inv_spec)" << std::endl;
+    REQUIRE(AreEqualAbsRel3x3Sym(inv, inv_spec, 1.0e-12, 1.0e-12),
+            "inv != inv_spec");
     }
 
     { // Random tensor on 3x3x3 mesh
     const IPoint extents(MV::fill, 3, 3, 3);
     const Mesh mesh(extents);
-    const int dim = 3;
     Tensor<DataMesh> mat(dim, "aa", mesh);
     Random3x3Sym(67890, mat);
 
@@ -83,8 +104,18 @@ int main(int /*argc*/, char** /*argv*/) {
     Tensor<DataMesh> invinv = Inverse3x3Sym(inv);
 
     // Compare mat with inv(inv(mat))
-    const bool success = AreEqualAbsRel3x3Sym(mat, invinv, 1.0e-12, 1.0e-12);
-    std::cout << (success ? "Success" : "Failure") << std::endl;
+    std::cout << "Testing mat == inv(inv(mat))" << std::endl;
+    REQUIRE(AreEqualAbsRel3x3Sym(mat, invinv, 1.0e-12, 1.0e-12),
+            "mat != inv(inv(mat))");
+
+    // Compare with SpEC
+    DataMesh det(mesh);
+    ComputeDeterminant(mat, det);
+    Tensor<DataMesh> inv_spec(dim, "aa", mesh);
+    ComputeInverse(mat, det, inv_spec);
+    std::cout << "Testing inv == inv_spec)" << std::endl;
+    REQUIRE(AreEqualAbsRel3x3Sym(inv, inv_spec, 1.0e-12, 1.0e-12),
+            "inv != inv_spec");
     }
 
     return EXIT_SUCCESS;

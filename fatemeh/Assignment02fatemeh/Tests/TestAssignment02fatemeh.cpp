@@ -27,7 +27,7 @@ int main(int /*argc*/, char** /*argv*/){
   UtilsForTesting w;
   IS_ZERO(resultMagnitudeSq,"Sum of vector and its negative nonzero.");
   //*** check if the double is zero.
-  IS_ZERO(C,"The constant double is nonzero.");
+  IS_TRUE(C!=0.0,"The constant double is zero.");
   return u.NumberOfTestsFailed();
   return w.NumberOfTestsFailed();
   //return EXIT_SUCCESS;

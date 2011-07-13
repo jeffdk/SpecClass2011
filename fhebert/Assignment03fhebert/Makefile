@@ -6,10 +6,13 @@
 CODE_HOME = ../../../..
 
 # What subdirectories should also be compiled
-SUBDIRECTORIES = Executables Tests
+SUBDIRECTORIES = Executables
 
 # What .cpp files should be compiled (replace .cpp with .o)
-OBJECT_FILES_INTO_LIB = MatrixUtils3x3Curran.o NR3RanCurran.o
+OBJECT_FILES_INTO_LIB = InvertTensorfhebert.o
+
+#EXECUTABLES = MyMeshExecfhebert MyDMfhebert MyTDMfhebert
+INCLUDED_AND_LINKED_LIBS = Tensor DataMesh MyContainers ErrorHandling LowLevelUtils
 
 ##############################################################################
 # Nothing below here needs to be changed

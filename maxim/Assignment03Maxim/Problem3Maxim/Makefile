@@ -1,15 +1,14 @@
 #/// \dir
-#/// Contains a minimal set of files for adding a new subdirectory to SpEC,
-#/// including executables and tests.
+#/// Contains a minimal set of files for adding a new executable to SpEC
 
 # Where is SPEC_HOME relative to this directory
-CODE_HOME = ../../../..
+CODE_HOME = ../../../../..
 
-# What subdirectories should also be compiled
-SUBDIRECTORIES = Executables Tests
+# What libraries does this executable depend on
+INCLUDED_AND_LINKED_LIBS = DataMesh MyContainers ErrorHandling LowLevelUtils
 
-# What .cpp files should be compiled (replace .cpp with .o)
-OBJECT_FILES_INTO_LIB = MatrixUtils3x3Curran.o NR3RanCurran.o
+# What .cpp files containing a main function should be compiled (remove .cpp)
+EXECUTABLES = MyDM_ExecMaxim MyDM_Exec
 
 ##############################################################################
 # Nothing below here needs to be changed

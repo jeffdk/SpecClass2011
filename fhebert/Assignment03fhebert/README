@@ -1,0 +1,26 @@
+
+
+francois hebert
+spec class 2011
+
+assignment 3
+
+
+
+prob 1:
+see comments in files MyClass1.cpp & MyClass2.cpp
+
+prob 2:
+see comments in MyMesh.cpp
+running this will output the desired quantities
+
+prob 3:
+see MyDataMesh.cpp
+works fine, but i've set it not to output.. because it gets messy
+to check, uncomment marked line in code
+
+prob 4:
+see MyTDM.cpp
+
+
+"make all" builds all these executables

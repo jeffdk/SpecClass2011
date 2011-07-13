@@ -1,0 +1,46 @@
+
+MyClass1:
+
+1) 
+const MyClass1 mine1; // fails to compile 
+
+The compiler tells me that it cannot create mine1 in this way because I did not
+provide a default constructor that matches this signature.
+
+2)
+ int q1=mine1a.cc;// fails to compile
+
+The compiler doesn't let me access mine1a.cc because that variable is private member of MyClass1 and thus I should not have direct access to it.
+
+3) 
+int q4=mine1a.getvalue_nonconst(); // fails to compile
+
+Here the compiler notices that I declared mine1a as a const and thus I should not be able to access the member variables using getvalue_nonconst which is not declared const.
+
+
+MyClass2:
+
+
+ a2 = a1; // fails to compile
+
+Here the compiler tells me that a2 was declared as a const and thus I cannot modify it by making it equal to a1.
+
+
+  b3 = 5; // fails
+
+Here, the compiler tells me that the member variable cc is constant so I cannot use the default assignment operator to change its value.
+
+
+  b3 = b2; // fails
+
+Same as above.
+
+const MyClass2C c1=2; // fails
+
+The compiler says that I cannot implicitly cast an integer (2) into a c1 object because I have declared the constructor to be explicit.
+
+
+
+ c3 = 5; // fails
+
+The compiler tells me that it does not know how to perform the assignment operation because again I cannot implicitly convert an integer to a MyClass2C object

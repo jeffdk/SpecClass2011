@@ -1,0 +1,12 @@
+ 1) The header file lacks include guards.
+ 2) The header file includes "MyVector.hpp" when a forward declaration would suffice.
+ 3) The variable "Pi" is declared as an int instead of a double.
+ 4) The scope of the loop iterator "i" is too large; it should be declared by the "for" loop.  The declaration outside the loop does not give it an initial value.
+ 5) The variable "r" outside the loop is declared without an initial value.
+ 6) The variable "r" is shadowed inside the loop.
+ 7) The variable "r" inside the loop could be made "const".
+ 8) The coefficient (4/3) performs integer division and will evaluate to 1.
+ 9) The "for" loop lacks braces, but indentation indicates it contains two statements.  The net effect is that "result" will be incremented by a random number (which depends on the uninitialized value of the now-unshadowed variable "r").
+10) The name "result" isn't very descriptive (though assuming you know what function you're in, its meaning should be clear).  A better name might be "accumulated_volume".
+11) There are no Doxygen comments in the header file.
+12) There are no comments in the implementation (yes, it's pretty self-explanatory, but the student still managed to mess it up).

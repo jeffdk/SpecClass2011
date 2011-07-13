@@ -1,3 +1,6 @@
+#ifndef ASSIGNMENT03CURRAN_MATRIXUTILS3X3CURRAN_HPP_
+#define ASSIGNMENT03CURRAN_MATRIXUTILS3X3CURRAN_HPP_
+
 #include "DataMesh.hpp"
 #include "Tensor.hpp"
 
@@ -29,5 +32,15 @@ Tensor<DataMesh> Inverse3x3Sym(const Tensor<DataMesh>& mat);
 Tensor<DataMesh> Multiply3x3Sym(const Tensor<DataMesh>& a,
                                 const Tensor<DataMesh>& b);
 
+/**
+ * Fills a 3x3 symmetric tensor with random numbers in each component at each
+ * mesh point.
+ *
+ * @param   mat The 3x3 symmetric tensor to fill with random data
+ */
+void Random3x3Sym(int seed, Tensor<DataMesh>& mat);
+
 }
+
+#endif /* ASSIGNMENT03CURRAN_MATRIXUTILS3X3CURRAN_HPP_ */
 

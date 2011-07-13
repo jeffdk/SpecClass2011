@@ -1,5 +1,6 @@
 #include "MatrixUtils3x3Curran.hpp"
 
+#include "NR3RanCurran.hpp"
 #include "Mesh.hpp"
 #include "Require.hpp"
 
@@ -73,6 +74,18 @@ Tensor<DataMesh> Multiply3x3Sym(const Tensor<DataMesh>& a,
     }
 
     return prod;
+}
+
+void Random3x3Sym(const int seed, Tensor<DataMesh>& mat) {
+    const int dim = 3;
+    NR3Ranq2 rng(seed);
+    for (int i = 0; i < dim; ++i) {
+        for (int j = 0; j < dim; ++j) {
+            for (int idx = 0; idx < mat(i,j).Size(); ++idx) {
+                mat(i,j)[idx] = rng.NextDouble();
+            }
+        }
+    }
 }
 
 }

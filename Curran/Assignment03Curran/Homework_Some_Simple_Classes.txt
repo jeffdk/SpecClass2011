@@ -1,0 +1,102 @@
+MyClass1:14
+===========
+Compiler Error
+--------------
+MyClass1.cpp: In function ‘int main(int, char**)’:
+MyClass1.cpp:14:21: error: no matching function for call to ‘MyClass1::MyClass1()’
+MyClass1.cpp:6:5: note: candidates are: MyClass1::MyClass1(int)
+MyClass1.cpp:4:16: note:                 MyClass1::MyClass1(const MyClass1&)
+
+Explanation
+-----------
+The class "MyClass1" has no zero-argument constructor, and class instances cannot be declared without initializing them.  Therefore, one must declare an instance of MyClass1 using either its integer constructor or its (default) copy constructor.  This line does neither.
+
+MyClass1:18
+===========
+Compiler Error
+--------------
+MyClass1.cpp: In function ‘int main(int, char**)’:
+MyClass1.cpp:10:15: error: ‘const int MyClass1::cc’ is private
+MyClass1.cpp:18:19: error: within this context
+MyClass1.cpp:18:9: warning: unused variable ‘q1’
+
+Explanation
+-----------
+This line tries to access a private member variable of an instance of MyClass1, but the "private" keyword means that this cannot be done (except by code within MyClass1 itself).
+
+MyClass1:21
+===========
+Compiler Error
+--------------
+MyClass1.cpp: In function ‘int main(int, char**)’:
+MyClass1.cpp:21:37: error: passing ‘const MyClass1’ as ‘this’ argument of ‘int MyClass1::getvalue_nonconst()’ discards qualifiers
+MyClass1.cpp:21:9: warning: unused variable ‘q4’
+
+Explanation
+-----------
+The instance mine1a is declared as const, which means that only const methods may be called on it.  However, the method getvalue_nonconst() is not declared const and therefore cannot be invoked on const instances.  In principle, its lack of constness implies that it may change the state of the object, which, if allowed, would cause a const object to behave non-constantly.
+
+MyClass2:31
+===========
+Compiler Error
+--------------
+MyClass2.cpp: In function ‘int main(int, char**)’:
+MyClass2.cpp:31:10: error: passing ‘const MyClass2A’ as ‘this’ argument of ‘MyClass2A& MyClass2A::operator=(const MyClass2A&)’ discards qualifiers
+
+Explanation
+-----------
+This line tries to assign a new value to a const object (a2).  But this violates the meaning of const (and syntactically, the assignment operator is not a const method), so it is not allowed.
+
+
+MyClass2:36
+===========
+Compiler Error
+--------------
+MyClass2.cpp: In member function ‘MyClass2B& MyClass2B::operator=(const MyClass2B&)’:
+MyClass2.cpp:10:17: error: non-static const member ‘const int MyClass2B::cc’, can't use default assignment operator
+MyClass2.cpp: In function ‘int main(int, char**)’:
+MyClass2.cpp:36:10: note: synthesized method ‘MyClass2B& MyClass2B::operator=(const MyClass2B&)’ first required here 
+
+Explanation
+-----------
+This line tries to assign a new value (a temporary MyClass2B constructed implicitly from an int) to object b3, but b3's member variable (cc) is declared const.  The default assignment operator attempts to copy the values of all member variables, but copying a new value into a const variable is not allowed, hence the error.  The default assignment operator is never generated if it is not used, which is why this error is not issued otherwise.
+
+
+MyClass2:37
+===========
+Compiler Error
+--------------
+MyClass2.cpp: In member function ‘MyClass2B& MyClass2B::operator=(const MyClass2B&)’:
+MyClass2.cpp:10:17: error: non-static const member ‘const int MyClass2B::cc’, can't use default assignment operator
+MyClass2.cpp: In function ‘int main(int, char**)’:
+MyClass2.cpp:37:10: note: synthesized method ‘MyClass2B& MyClass2B::operator=(const MyClass2B&)’ first required here 
+
+Explanation
+-----------
+This line tries to assign a new value to object b3, but b3's member variable (cc) is declared const.  The default assignment operator attempts to copy the values of all member variables, but copying a new value into a const variable is not allowed, hence the error.  The default assignment operator is never generated if it is not used, which is why this error is not issued otherwise.  This error is the same as the previous one, but no temporary object is being implicitly created.
+
+MyClass2:39
+===========
+Compiler Error
+--------------
+MyClass2.cpp: In function ‘int main(int, char**)’:
+MyClass2.cpp:39:24: error: conversion from ‘int’ to non-scalar type ‘const MyClass2C’ requested
+MyClass2.cpp:40:21: error: redeclaration of ‘const MyClass2C c1’
+MyClass2.cpp:39:21: error: ‘const MyClass2C c1’ previously declared here
+
+Explanation
+-----------
+The first error is the one we are interested in (the rest referrs to the fact that, which this line uncommented, we are declaring two different objects named c1).  Since MyClass2C's constructor is declared explicit, the compiler will not automatically generate temporary objects out of ints when an object of type MyClass2C is required.  Assignment-in-declaration invokes the object's copy constructor, which requires a MyClass2C in the RHS.
+
+MyClass2:43
+===========
+Compiler Error
+--------------
+MyClass2.cpp: In function ‘int main(int, char**)’:
+MyClass2.cpp:43:10: error: no match for ‘operator=’ in ‘c3 = 5’
+MyClass2.cpp:18:17: note: candidate is: MyClass2C& MyClass2C::operator=(const MyClass2C&)
+
+Explanation
+-----------
+Again, the explicit integer constructor prevents the compiler from generating temporary MyClass2Cs when they are needed.  For standard assignment, the compiler looks for a matching assignment operator.  The only one it finds is the default, which takes a MyClass2C on the RHS, not an int.
+

@@ -35,9 +35,12 @@ int main(int /*argc*/, char** /*argv*/) {
   result = sumVectorsDivided(A, B, d);
   //bug
   //result = A;
-
+  double resultMagnitudeSq = 0.0;
+  for(int i=0;i<result.Size();++i) {
+    resultMagnitudeSq += result[i]*result[i];
+  }
   //Test that the result magnitude is zero  
-  IS_ZERO(result, "The result magnitude is not zero\n"); 
+  IS_ZERO(resultMagnitudeSq, "The result magnitude is not zero\n"); 
 
   //Print out the results                                                       
  

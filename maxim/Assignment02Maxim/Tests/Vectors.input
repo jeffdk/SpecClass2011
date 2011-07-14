@@ -8,6 +8,6 @@
 # Then run ./TestAssignment02geoffrey to add them up.                           
 #                                                                               
  
-FirstVectorToAdd = 1.1,2.2,3.3;                                                 
-SecondVectorToAdd = -1.1,-2.2,-3.3;
-Divider = 5;
+FirstVectorToAdd = 1.1,2.3,3.3;                                                 
+SecondVectorToAdd = -1.1,-2.3,-3.3;
+Divider = 2;

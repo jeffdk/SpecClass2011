@@ -1,0 +1,11 @@
+1) there are no comments in the code
+2) Pi is declared as an int
+3) result is declared before it is needed (but this goes away if the next two are fixed)
+4) integer i is unnecessarily declared outside of the for loop
+5) double r is unnecessarily declared outside of the for loop
+6) double r is shadowed inside the for loop
+7) r should be declared as const inside the loop
+8) the for loop only include the declaration and initialization of double r.
+   it needs to include the summing of the result
+9) the factor (4/3) is performed as integer division
+10) the multiplication by (4.0/3.0)*Pi only needs to be performed once

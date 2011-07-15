@@ -4,10 +4,10 @@
 # EXAMPLE:                                                                      
 #   FirstVectorToAdd = double, double, double;                                  
 #   SecondVectorToAdd = double, double, double;                                 
-#   DenominatorOfQuotient = double, double, double;                             
+#   DenominatorOfQuotient = double;                             
 # Then run ./TestAssignment02Bohn to add them up.                           
 #                                                                               
  
 FirstVectorToAdd = 1.1,3.3;                                                 
 SecondVectorToAdd = -1.1,-3.3;
-DenominatorOfQuotient = 7.7,3.1415;
+DenominatorOfQuotient = 0.1;

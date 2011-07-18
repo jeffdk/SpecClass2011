@@ -1,6 +1,10 @@
 #ifndef Subdomain_hpp
 #define Subdomain_hpp
 
+#include "TopologyMesh_Iryna.hpp"
+#include "CoordMapCache_Iryna.hpp"
+#include <string>
+
 class Subdomain : public TopologyMesh {
 public:	
   Subdomain(const TopologyMesh & rTopMesh, 

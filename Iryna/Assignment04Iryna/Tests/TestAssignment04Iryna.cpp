@@ -10,24 +10,8 @@
 
 int main(int /*argc*/, char** /*argv*/) {
 
- /* // First, create a couple of vectors, then add them together                   
-
-  OptionParser p(ReadFileIntoString("Vectors.input"));
-  MyVector<double> Radii = p.Get<MyVector<double> >("RadiiToUse"); 
-
-  // Check that Radii doesn't hold a negative value
-  const int vectorSize = Radii.Size();
-  int num_negatives = 0; 
-  for(int i = 0, i < vectorSize, i++){
-    if(Radii[i] < 0.0){
-      num_negatives++;
-    }
-  }
-  UtilsForTesting u;
-  IS_TRUE(num_negatives = 0.0, "ERROR: Radius can't be a negative value"); */
-
  // First, make a vector of Radii to test
- const MyVector<double> Radii(MV::fill, 1.1);
+ const MyVector<double> Radii(MV::fill, 1.1, 2.2, 3.3);
 
  // Next, make a vector to store the result                                     
 
@@ -36,8 +20,7 @@ int main(int /*argc*/, char** /*argv*/) {
   // Find the volumes using the radii                                                    
 
   TotalVolume = TotalVolumeOfSpheresFromRadii(Radii);
-  const double expectedTotalVolume =  5.575279762570688;//200.71007145254467; 
-  const double tolerance = 1.0E-6;
+  const double expectedTotalVolume =  200.71007145254467; 
 
   UtilsForTesting u;
   IS_TRUE(TotalVolume == expectedTotalVolume, "ERROR: The \

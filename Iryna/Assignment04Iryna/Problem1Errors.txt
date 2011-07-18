@@ -11,3 +11,5 @@ Compiler warnings:
 
 Other mistakes: 
   * we can initialize int i inside the for loop
+  * change 4/3 to 4.0/3.0 to keep correct value
+  * variable 'result' could be more clearly named -> 'totalVolume'

@@ -24,4 +24,4 @@ MyVector<double> SumVectors(const MyVector<double>& A,
 /// @param denominator   the denominator of the quotient
 /// @return              the vectors' quotient
 MyVector<double> DivideVectors(const MyVector<double>& numerator,
-                               const MyVector<double>& denominator);
+                               const double& denominator);

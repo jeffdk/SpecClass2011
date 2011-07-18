@@ -1,0 +1,3 @@
+#!/bin/bash
+./TestVolumeCurran > Test.log 2>&1
+

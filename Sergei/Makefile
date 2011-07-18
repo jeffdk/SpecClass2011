@@ -1,14 +1,8 @@
 #/// \dir
-#/// Contains a minimal set of files for adding a new executable to SpEC
+#/// Template for a user's personal directory for the 2011 SpEC Class.
 
 # Where is SPEC_HOME relative to this directory
-CODE_HOME = ../../../../..
-
-# What libraries does this executable depend on
-INCLUDED_AND_LINKED_LIBS =
-
-# What .cpp files containing a main function should be compiled (remove .cpp)
-EXECUTABLES =
+CODE_HOME = ../../..
 
 ##############################################################################
 # Nothing below here needs to be changed

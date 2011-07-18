@@ -1,0 +1,18 @@
+#/// \dir
+#/// Contains executables for Assignment 04
+
+# Where is SPEC_HOME relative to this directory
+CODE_HOME = ../../../../..
+
+# What libraries does this executable depend on
+INCLUDED_AND_LINKED_LIBS = Assignment04wthrowe
+
+# What .cpp files containing a main function should be compiled (remove .cpp)
+EXECUTABLES = Buggy UseMemoryLeaker
+
+##############################################################################
+# Nothing below here needs to be changed
+##############################################################################
+include $(CODE_HOME)/MakefileRules/this_machine.def
+include $(CODE_HOME)/MakefileRules/Rules
+

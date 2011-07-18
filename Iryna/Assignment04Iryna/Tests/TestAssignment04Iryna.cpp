@@ -10,7 +10,7 @@
 
 int main(int /*argc*/, char** /*argv*/) {
 
-  // First, create a couple of vectors, then add them together                   
+ /* // First, create a couple of vectors, then add them together                   
 
   OptionParser p(ReadFileIntoString("Vectors.input"));
   MyVector<double> Radii = p.Get<MyVector<double> >("RadiiToUse"); 
@@ -24,21 +24,29 @@ int main(int /*argc*/, char** /*argv*/) {
     }
   }
   UtilsForTesting u;
-  IS_TRUE(num_negatives = 0.0, "ERROR: Radius can't be a negative value"); 
+  IS_TRUE(num_negatives = 0.0, "ERROR: Radius can't be a negative value"); */
 
- 
+ // First, make a vector of Radii to test
+ const MyVector<double> Radii(MV::fill, 1.1);
+
  // Next, make a vector to store the result                                     
 
-  MyVector<double> TotalVolumes(MV::Size(Radii.Size()),0.);
+  double TotalVolume = 0;
 
   // Find the volumes using the radii                                                    
 
-  TotalVolumes = TotalVolumeOfSpheresFromRadii(Radii);
+  TotalVolume = TotalVolumeOfSpheresFromRadii(Radii);
+  const double expectedTotalVolume =  5.575279762570688;//200.71007145254467; 
+  const double tolerance = 1.0E-6;
+
+  UtilsForTesting u;
+  IS_TRUE(TotalVolume == expectedTotalVolume, "ERROR: The \
+	calculated total volume does not match the expected"); 
 
   // Print out the results                                                       
 
   std::cout << "Radii = " << Radii << std::endl;
-  std::cout << "Volumes = " << TotalVolumes << std::endl;
+  std::cout << "Total Volume = " << TotalVolume << std::endl;
 
  
   //Return success                                                              

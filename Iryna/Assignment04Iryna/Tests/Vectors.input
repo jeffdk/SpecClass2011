@@ -1,0 +1,10 @@
+# Vectors.input
+#
+# Enter the radii you would like to use to get the sum of the volumes of the 
+# corresponding spheres.  
+#
+# Then run ./TestAssignment04Iryna to add them up. 
+#
+
+RadiiToUse = 1.1, 2.2, 3.3;
+

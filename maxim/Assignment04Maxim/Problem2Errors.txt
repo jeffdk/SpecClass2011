@@ -1,0 +1,8 @@
+In statement if(n=0) return 1; n gets assigned zero.
+To avoid situations like that at compile time the prammeter n can be declared as const (along with a) like so
+unsigned int RaiseToPower(const unsigned int a, const unsigned int n)
+
+or/and
+
+with the boolean expression in if reversed like so 
+if(0 == n) return 1;

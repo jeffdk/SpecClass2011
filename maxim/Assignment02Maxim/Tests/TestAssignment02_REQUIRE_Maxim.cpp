@@ -31,15 +31,20 @@ int main(int /*argc*/, char** /*argv*/) {
   REQUIRE(A.Size() == B.Size(), "Error: vectors not the same size.\n");
   
   double d = p.Get<double>("Divider");
-  REQUIRE(d != 0, "Error: divider is zero")
+  REQUIRE(d != 0, "Error: divider is zero");
 
   //Add the vectors together                                                    
   result = sumVectorsDivided(A,B,d);
   //bug
   //result = A; 
+  double resultMagnitudeSq = 0.0;
+  for(int i=0;i<result.Size();++i) {
+    resultMagnitudeSq += result[i]*result[i];
+  }
+  //Test that the result magnitude is zero  
+  REQUIRE(resultMagnitudeSq == 0, "The result magnitude is not zero\n");
 
-  //Print out the results                                                       
- 
+  //Print out the results                                                        
   cout << "Vector A = " << A << endl;
   cout << "Vector B = " << B << endl;
   cout << "Sum divided by " << d << " = " << result << endl;

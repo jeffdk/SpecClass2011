@@ -1,0 +1,2 @@
+#!/bin/sh
+./TestVolume > Test.log 2>&1

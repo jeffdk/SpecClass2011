@@ -1,0 +1,25 @@
+francois hebert
+hw 4
+
+
+problem 1:
+errors in Problem1Errors.txt
+fixed function is in MyVolumne_fhebert.xxx
+automated test in Tests/ checks both given and fixed functions
+
+
+problem 2:
+errors in Problem2Errors.txt
+fixed function is in MyRaiseToPower_fhebert.xxx
+(changed file so compiler catches bug.. then commented buggy line
+ so that building library is quiet. see comments in source file)
+
+
+problem 3:
+fixed two lines in the header and one line in the source file
+see comments in files
+
+
+problem 4:
+added a few includes and class declarations to Subdomain_fhebert.hpp
+see comments in file

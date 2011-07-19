@@ -28,22 +28,26 @@ int main(int /*argc*/, char** /*argv*/) {
   //Test that the vectors are the same size                                    
   REQUIRE(A.Size() == B.Size(), "Error: vectors not the same size.\n");
   
-  double d = p.Get<double>("Divider"); 
+  double d = p.Get<double>("Divider");
+  UtilsForTesting u;
+  IS_TRUE(d != 0,"The divider is zero.\n"); 
   //Add the vectors together                                                    
-  result = sumVectorsDivided(A,B, d);
+  result = sumVectorsDivided(A, B, d);
   //bug
-  //result = A; 
+  //result = A;
+  double resultMagnitudeSq = 0.0;
+  for(int i=0;i<result.Size();++i) {
+    resultMagnitudeSq += result[i]*result[i];
+  }
+  //Test that the result magnitude is zero  
+  IS_ZERO(resultMagnitudeSq, "The result magnitude is not zero\n"); 
 
   //Print out the results                                                       
  
   cout << "Vector A = " << A << endl;
   cout << "Vector B = " << B << endl;
   cout << "Sum divided by " << d << "  = " << result << endl;
- 
-  //Test that the result magnitude is zero                                      
-  UtilsForTesting u;
-  IS_ZERO(!d,"The divider is zero.\n");
-
+                                      
   //Return success                                                              
   return u.NumberOfTestsFailed();
 }

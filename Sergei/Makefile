@@ -1,11 +1,8 @@
 #/// \dir
-#/// Contains a minimal set of files for adding new tests to SpEC
+#/// Template for a user's personal directory for the 2011 SpEC Class.
 
 # Where is SPEC_HOME relative to this directory
-CODE_HOME = ../../../../..
-
-# What subdirectories should also be compiled (one for each test)
-SUBDIRECTORIES =
+CODE_HOME = ../../..
 
 ##############################################################################
 # Nothing below here needs to be changed

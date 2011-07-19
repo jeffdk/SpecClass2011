@@ -42,5 +42,5 @@ void Random3x3Sym(int seed, Tensor<DataMesh>& mat);
 
 }
 
-#endif /* ASSIGNMENT03CURRAN_MATRIXUTILS3X3CURRAN_HPP_ */
+#endif // ASSIGNMENT03CURRAN_MATRIXUTILS3X3CURRAN_HPP_
 

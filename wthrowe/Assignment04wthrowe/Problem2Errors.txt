@@ -1,0 +1,3 @@
+n=0 is an assignment, rather than a comparison (which would be n==0).  n=0 is
+false as a truth value, and once n is set to zero it is not greater than 1, so
+the function always falls through to "return a".

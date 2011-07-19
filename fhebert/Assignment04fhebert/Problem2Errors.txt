@@ -1,0 +1,9 @@
+francois hebert
+hw 4 prob 2
+
+the first if statement:
+>> if(n=0)
+is not checking for n equal to zero (==), it's ASSIGNING (=) n to 0.
+
+this bug would be detected at compile time rather than at run time simply
+by declaring the argument n as const.

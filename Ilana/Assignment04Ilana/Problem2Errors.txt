@@ -1,0 +1,6 @@
+Problems with RaiseToPower_Ilana
+
+The first problem is that the if statement should read if(n==0).  The next 
+problem is that the program doesn't return the correct value.  It returns
+2^3=2. If n were declared a const, then when it says n=0, you'd get an error
+because n shouldn't be modified.

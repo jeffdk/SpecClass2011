@@ -1,0 +1,11 @@
+Volume_Maxim.hpp
+- No include guards
+- Class MyVector can be declared rather that included
+
+Volume_Maxim.cpp
+- Wrong type for the constant Pi. Declared as int, should be double.
+- Variable int i can be declared as a local for loop variable
+- Variable r is overshadowed in the forloop. Once again should be declared as a local loop variable
+- The {} should used since the body of the loop consists of two statements
+- The factor (4/3) will be cast the the type of its first operand, which is int yelding an incorrect value 1. Should be 4.0/3.0 or 4.0/3 or 4./3
+- The code is not commented

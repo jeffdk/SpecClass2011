@@ -1,15 +1,15 @@
 #/// \dir
-#/// Contains a minimal set of files for adding a new subdirectory to SpEC,
-#/// including executables and tests.
+#/// Test for TotalVolumeOfSpheresFromRadii
 
 # Where is SPEC_HOME relative to this directory
-CODE_HOME = ../../../..
+CODE_HOME = ../../../../../..
 
-# What subdirectories should also be compiled
-SUBDIRECTORIES = Executables Tests
+# What libraries does this executable depend on
+INCLUDED_AND_LINKED_LIBS = Assignment04wthrowe ErrorHandling MyContainers \
+  LowLevelUtils
 
-# What .cpp files should be compiled (replace .cpp with .o)
-OBJECT_FILES_INTO_LIB = Assignment03Ilana.o
+# What .cpp files containing a main function should be compiled (remove .cpp)
+EXECUTABLES = TestVolume
 
 ##############################################################################
 # Nothing below here needs to be changed

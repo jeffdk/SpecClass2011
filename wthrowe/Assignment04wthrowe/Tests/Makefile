@@ -1,15 +1,11 @@
 #/// \dir
-#/// Contains a minimal set of files for adding a new subdirectory to SpEC,
-#/// including executables and tests.
+#/// Contains tests for Assignment 04
 
 # Where is SPEC_HOME relative to this directory
-CODE_HOME = ../../../..
+CODE_HOME = ../../../../..
 
-# What subdirectories should also be compiled
-SUBDIRECTORIES = Executables Tests
-
-# What .cpp files should be compiled (replace .cpp with .o)
-OBJECT_FILES_INTO_LIB = Assignment03Ilana.o
+# What subdirectories should also be compiled (one for each test)
+SUBDIRECTORIES = TestVolume
 
 ##############################################################################
 # Nothing below here needs to be changed

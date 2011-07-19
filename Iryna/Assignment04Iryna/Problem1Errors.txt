@@ -1,0 +1,15 @@
+When compiling library for the first time: 
+
+Compiler warnings:
+  * conversion to 'int' alters 'double' constant value
+	- the function declares "Pi" as an int, when it is in fact a double
+  * declaration of 'r' shadows a previous local
+  * unused variable 'r' 
+  * 'r' is used uninitialized in this function 
+	- 'r' is unnecessary in the code (see correction)
+  
+
+Other mistakes: 
+  * we can initialize int i inside the for loop
+  * change 4/3 to 4.0/3.0 to keep correct value
+  * variable 'result' could be more clearly named -> 'totalVolume'

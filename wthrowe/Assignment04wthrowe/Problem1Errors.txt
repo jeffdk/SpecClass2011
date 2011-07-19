@@ -1,0 +1,14 @@
+Correctness Errors:
+Pi is not an integer.
+This is not Python.  for loops only act on the following statement, regardless
+  of indentation.
+4/3 == 1
+
+Standards Violations:
+Extra declaration of r.  (Compuounded the problems from the omitted braces
+  above)
+Scope of i is larger than necessary.
+r can be declared const.
+Unneccesary inclusion of MyVector.hpp in the header.
+Missing include guards in the header.
+Pi should not be written out explicitly.

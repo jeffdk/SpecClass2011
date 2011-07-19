@@ -1,0 +1,26 @@
+Problems with Volume_Ilana
+
+The function does not return the correct value because:
+
+- Pi is a double, not an int, so even if it has decimal places, only the 3 
+will be registered.
+
+- There should be brackets around the two lines following the for loop.
+
+- 3 and 4 are considered integers.  They should be written 3.0 and 4.0.
+
+Stylistic errors:
+
+- Better to use built-in constants instead of typing them out because you 
+could make typographic errors.  Therefore, I'm using M_PI.
+
+- MyVector.hpp should be included in .cpp file and not .hpp file.
+
+- He didn't put any comments in the .hpp file.
+
+- Variables can be declared and initialized at the same time, such as i and r.
+
+- r can be declared const
+
+- r can be declared only within the for loop so as not to waste memory for 
+the entire duration of the function.

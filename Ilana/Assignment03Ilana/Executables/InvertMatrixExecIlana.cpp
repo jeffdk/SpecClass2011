@@ -17,7 +17,7 @@ int main(void) {
   Tensor<DataMesh> inverse = ComputeInverse(t);
   Tensor<DataMesh> check = ComputerInverse(inverse);
 
-  CheckInverse(inverse,check);
+  CheckInverse(t,check);
 
   return EXIT_SUCCESS;
 }

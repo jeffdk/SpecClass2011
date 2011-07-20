@@ -1,0 +1,13 @@
+Problem 1: Errors with original version of TotalVolumeOfSpheresFromRadii
+  Brett Deaton
+  7.19.11
+
+L3	3.14* is not an int
+L5	needless declaration of i outside of for loop scope; wastes memory
+*L6	dangerously uninitialized double r
+*L7-9	should be bracketed {...}
+*L8	newly defined r is ambiguous to the humans, but g++ knows it dies outside the loop
+L9	casting of 4/3 may result in an int?
+
+The overall effect of the starred errors is that result is calculated with an uninitialized r, on my
+    compiler that means it's 0.

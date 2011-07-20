@@ -24,23 +24,24 @@ int main(int argc, char** argv) {
 
     const std::string helptxt =
 "OneDFormat.input:                                                       \n"
-"Example input file for Lecture 5                                        \n"
+"Input file for Assignment 5, Problem 2.                                 \n"
 "Format   = string;               # Which 1-D output format              \n"
-"Filename = string;               # Filename                             \n"
+"Basename = string;               # Filename (without extension)         \n"
 "Times    = double, double, ...;  # Which times to output                \n";
  
     const std::string options = ReadFileIntoString("OneDFormat.input");
     OptionParser parser(options, helptxt);
     const std::string format   = parser.Get<std::string>("Format");
-    const std::string filename = parser.Get<std::string>("Filename");
+    const std::string basename = parser.Get<std::string>("Basename");
     MyVector<double> times     = parser.Get<MyVector<double> >("Times");
  
-    OneDimDataWriter* pWriter = OneDimDataWriter::Create(format, filename);
+    OneDimDataWriter* pWriter = OneDimDataWriter::Create(format, basename);
     for(int i = 0; i < times.Size(); ++i) {
         ComputeProfileAndOutput(times[i], pWriter);
     }
     delete pWriter;
 
+    MpiFinalize();
     return EXIT_SUCCESS;
 }
 

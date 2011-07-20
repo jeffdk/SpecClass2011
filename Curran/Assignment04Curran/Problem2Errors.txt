@@ -1,0 +1,10 @@
+Checking for equality requires the "==" operator; the "=" operator performs assignment.  In this code, "n" is set to zero, then "a" is returned unmodified.
+
+This bug could be caught at compile time by declaring "n" to be const in the cpp file.  The compiler will issue an error like:
+RaiseToPower_Curran.cpp: In function ‘unsigned int RaiseToPower(unsigned int, unsigned int)’:
+RaiseToPower_Curran.cpp:4:8: error: assignment of read-only parameter ‘n’
+
+Fortunately, modern compilers issue a warning for this mistake:
+RaiseToPower_Curran.cpp: In function ‘unsigned int RaiseToPower(unsigned int, unsigned int)’:
+RaiseToPower_Curran.cpp:4:9: warning: suggest parentheses around assignment used as truth value
+

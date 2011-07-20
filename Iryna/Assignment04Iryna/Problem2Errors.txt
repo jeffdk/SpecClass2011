@@ -1,0 +1,4 @@
+Compiler Warnings: 
+
+* suggest parentheses around assignment used as truth value
+	- we need a '==' operator in the first if statement.

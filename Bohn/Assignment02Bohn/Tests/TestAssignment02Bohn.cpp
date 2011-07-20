@@ -13,11 +13,10 @@ int main(int /*arg*/, char** /*argv*/) {
 	OptionParser p(ReadFileIntoString("Vectors.input"));
 	const MyVector<double> A = p.Get<MyVector<double> >("FirstVectorToAdd");
 	const MyVector<double> B = p.Get<MyVector<double> >("SecondVectorToAdd");
-	const MyVector<double> C = p.Get<MyVector<double> >("DenominatorOfQuotient");
+	const double C = p.Get<double>("DenominatorOfQuotient");
 
 	//These two take care of all of the equalities
 	REQUIRE(A.Size() == B.Size(), "Error: vectors A and B not the same size.\n");
-	REQUIRE(A.Size() == C.Size(), "Error: vectors A and C not the same size.\n");
 	const MyVector<double> sum = SumVectors(A, B);
 
 	// Should write a function to calculate magnitude, although I'm sure
@@ -28,8 +27,11 @@ int main(int /*arg*/, char** /*argv*/) {
 
 	//Use one of these.  If the inputs to SumVectors are from numerical
 	//calculations, consider using resultMagnitudeSq < tol for some small tol
-	REQUIRE(resultMagnitudeSq == 0, "Error: vectors don't sum to zero.\n");
+  //REQUIRE(resultMagnitudeSq == 0, "Error: vectors don't sum to zero.\n");
 	//IS_ZERO(resultMagnitudeSq ,"Sum of vector and its negative nonzero...bug?")
+
+  //REQUIRE(C != 0, "Denominator cannot be zero.\n");
+  IS_TRUE(C != 0, "Denominator cannot be zero.\n");
 
 	const MyVector<double> quotient = DivideVectors(sum, C);
 
@@ -42,10 +44,11 @@ int main(int /*arg*/, char** /*argv*/) {
 
 	REQUIRE(resultMagnitudeSq == 0, "Error: vectors' quotient should be zero");
 
+
 	std::cout << "Vector A = " << A << std::endl;
 	std::cout << "Vector B = " << B << std::endl;
 	std::cout << "Sum      = " << sum << std::endl;
-	std::cout << "Vector C = " << C << std::endl;
+	std::cout << "C = " << C << std::endl;
 	std::cout << "Quotient = " << quotient << std::endl;
 
 	return UtilsForTesting::NumberOfTestsFailed();

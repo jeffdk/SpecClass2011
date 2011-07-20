@@ -1,0 +1,35 @@
+francois hebert
+hw 4 prob 1
+
+
+well, where to begin?
+
+errors:
+
+line  3   : Pi is a double, not an int!
+
+lines 7+  : the for loop lacks {}'s around its body!! only line 8 is actually
+            going to be looped over. thus in line 9, r is the r declared outside
+            of the for loop, which is uninitialized, giving undefined behavior!
+            this bug could be prevented by only declaring r inside the loop!
+
+line  9   : (4/3) is integer division and has value 1, not 1.333
+
+
+
+not necessarily wrong, but in poor form:
+
+line  5   : we could declare i in the for loop parens. this would clean up
+            the code, and reduce i's scope, catching potential errors
+
+lines 6/8 : the two declarations of r are redundant. either keep it within
+            the loop, declaring it at each step so as to reduce its lifetime
+            and catching bugs such as discussed above (preferred),
+            or declare it outside only (possibly reducing runtime overhead?)
+
+line  9   : r^3 is more elegantly obtained from pow(r,3) than r*r*r
+
+also, the inclusion of MyVector.hpp in the the header file is not necessary,
+as we're not defining anything. we could use a class definition of MyVector,
+and place the #include"MyVector.hpp" in the .cpp file instead.
+

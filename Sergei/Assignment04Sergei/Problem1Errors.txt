@@ -1,0 +1,19 @@
+There were several problems with the code:
+
+1) Pi was declared a int - it is not! Need to change it to const double
+
+2) r was declared twice, declare it only once
+
+3) In result += (4/3)*Pi*r*r*r, 4/3 is an integer division which will 
+always result in a value of 0. Change it to 4./3
+
+4) In the for loop,
+for(i=0;i<radii.Size();++i),
+
+it should be i++ not ++i to get the correct counting
+
+5) For better readability, int i should be declared as part of the for loop:
+
+for(int i=0;i<radii.Size();i++)
+
+so we know it serves simply as a counter

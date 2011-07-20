@@ -1,0 +1,12 @@
+(1) : Most efficient
+(2) :
+(3) : Least efficient
+
+Using method (1), we initialize our variable at the time of declaration, which is always ideal.  DataMesh's copy constructor is called with the result of the RHS.
+
+In method (2), DetF is initialized to all zeros, then reassigned to the result of the RHS using DataMesh's assignment operator.  During the initialization to zero, memory is written to needlessly.
+
+In method (3), DataMesh's copy constructor is called to initialize DetF with the value of A(0,0).  Then it is set to the result of the RHS using DataMesh's assignment operator.  During the initialization, all elements of A(0,0) are read and all elements of DetF are written to needlessly.
+
+Note that a fourth option is to construct DetF with a Mesh that is NOT a DataMesh.  This would have an efficiency between (1) and (2).  Logically, it does no additional work over (1), as it merely allocates unitialized memory when constructed, requiring no additional memory accesses.  However, by doing construction and assignment in a single step as in (1), it is possible that additional optimizations can be taken advantage of.
+

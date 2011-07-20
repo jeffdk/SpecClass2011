@@ -1,0 +1,10 @@
+The bug comes from the following line:
+if(n=0) return 1;
+
+The operation in the paranthesis is not actually a truth comparison as
+was logically intended but rather an assignment operator. To fix this error,
+use if(n==0) instead. In order to catch the error at compile time,
+change the signature of the function to
+unsigned int RaiseToPower(unsigned int a,  const unsigned int n) 
+Now this will not compile with the error, because one cannot assign to
+a const.

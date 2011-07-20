@@ -5,10 +5,10 @@
 CODE_HOME = ../../../../..
 
 # What libraries does this executable depend on
-INCLUDED_AND_LINKED_LIBS = Assignment04Ilana
+INCLUDED_AND_LINKED_LIBS = Assignment04Sergei 
 
 # What .cpp files containing a main function should be compiled (remove .cpp)
-EXECUTABLES = Buggy UseMemoryLeaker
+EXECUTABLES = BuggySergei UseMemoryLeakerSergei
 
 ##############################################################################
 # Nothing below here needs to be changed

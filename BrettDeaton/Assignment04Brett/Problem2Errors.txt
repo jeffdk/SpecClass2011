@@ -1,0 +1,4 @@
+Problem 2: Errors with original version of RaiseToPower
+  Brett Deaton
+  7.19.11
+

@@ -1,0 +1,5 @@
+1- Pi should be a double.
+2- i should be define inside for loop.
+3- "double r;" shadows the definition of r inside of the for loop.
+4- the calculation of result should be in {}
+5- 4/3 should be defined as double 4.0/3.0

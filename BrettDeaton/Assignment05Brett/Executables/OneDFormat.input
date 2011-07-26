@@ -1,0 +1,6 @@
+# Input for Problem2Exec
+# Brett Deaton
+# 7.25.11
+Format = reduceddatbrett(MinAngle=0.01;);
+Basename = problem3;
+Times = 2.0;

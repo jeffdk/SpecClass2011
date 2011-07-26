@@ -1,0 +1,3 @@
+RaiseToPower function call itselt inside its definition!
+At the end of definition, the function returns a instead of a^n.
+I think RaiseToPower(a,n-1) in L5 should be replaced by pow(a,n-1), and for pow the first argument needs to be double.

@@ -4,11 +4,12 @@
 # Where is SPEC_HOME relative to this directory
 CODE_HOME = ../../../../..
 
-# What libraries does this executable depend on
-INCLUDED_AND_LINKED_LIBS = Assignment04Brett
+# What libraries does this executable depend on                                 
+INCLUDED_AND_LINKED_LIBS = Assignment04Bohn StringParsing MyContainers \
+ErrorHandling LowLevelUtils
 
-# What .cpp files containing a main function should be compiled (remove .cpp)
-EXECUTABLES = Buggy UseMemoryLeaker
+# What .cpp files containing a main function should be compiled (remove .cpp)   
+EXECUTABLES = TestVolumeBohn
 
 ##############################################################################
 # Nothing below here needs to be changed

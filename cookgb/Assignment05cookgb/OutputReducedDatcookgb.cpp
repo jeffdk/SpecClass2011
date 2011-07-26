@@ -29,7 +29,7 @@ namespace OneDimDataWriters {
       mBaseName(BaseName), mCount(0)
     {
       OptionParser p(opts, Help());
-      mCosMinAngle = cos(p.Get<double>("MinAngle"));
+      mCosMinAngle = cos(p.Get<double>("MinAngle")*(3.14159265/180.));
     };
     void TruncateFile() const {};
   private:
@@ -46,8 +46,8 @@ namespace OneDimDataWriters {
 						const MyVector<double>& x,
 						const MyVector<double>& y) const
   {
-    std::ostringstream NewFile(mBaseName+".");
-    NewFile << mCount++;  // put count as filename suffix
+    std::ostringstream NewFile;
+    NewFile << mBaseName << "." << mCount++;  // put count as filename suffix
     std::ofstream out(NewFile.str().c_str());
     out << DoubleToString(x[0], 16) << "  " 
 	<< DoubleToString(y[0], 16) << "\n";
@@ -59,7 +59,7 @@ namespace OneDimDataWriters {
       for(int i=1; i<x.Size()-1; ++i) {
 	const double dx2 = x[i+1] - x[i];
 	const double dy2 = y[i+1] - y[i];
-	const double dotprod = dx1*dx2 + dy1*dy2;
+	const double dotprod = fabs(dx1*dx2 + dy1*dy2);
 	const double magnitude = sqrt((dx1*dx1+dy1*dy1)*(dx2*dx2+dy2*dy2));
 	const double costheta = dotprod/magnitude;
 	if(costheta <= mCosMinAngle) {
@@ -76,7 +76,6 @@ namespace OneDimDataWriters {
       }
     }
     out << DoubleToString(x[x.Size()-1], 16) << "  " 
-	<< DoubleToString(y[x.Size()-1], 16) << "\n";
+	<< DoubleToString(y[x.Size()-1], 16) << "\n\n";
   }
-  //================================================================
 }

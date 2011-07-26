@@ -41,7 +41,6 @@ int main(int argc, char** argv) {
     }
     delete pWriter;
 
-
     MpiFinalize();
     return EXIT_SUCCESS;
 }

@@ -1,11 +1,15 @@
 #/// \dir
-#/// Template for a user's personal directory for the 2011 SpEC Class.
+#/// Contains a minimal set of files for adding a new subdirectory to SpEC,
+#/// including executables and tests.
 
 # Where is SPEC_HOME relative to this directory
-CODE_HOME = ../../..
+CODE_HOME = ../../../..
 
-SUBDIRECTORIES = Assignment01danh Assignment02danh Assignment03danh \
-                 Assignment04danh Assignment05danh
+# What subdirectories should also be compiled
+SUBDIRECTORIES = Executables Tests
+
+# What .cpp files should be compiled (replace .cpp with .o)
+OBJECT_FILES_INTO_LIB =
 
 ##############################################################################
 # Nothing below here needs to be changed

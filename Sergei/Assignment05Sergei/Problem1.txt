@@ -1,0 +1,12 @@
+The different methods of initialize DetF are ranked from the fewest number
+of memory accesses to the most by:
+
+1)
+3)
+2)
+
+This is because 1) employs the copy constructor which automatically allocates
+the memory for the new DataMesh object and then initializes all the member
+variables to the values on the right hand side of the = operator.
+
+3) is more efficient than 2) because 2) not only allocates memory for a new object like 3) but it also goes through element by element and initializes it to 0 first and only then computes the determinant. Meanwhile 3) simply allocates the memory and then uses the assignment operator to initialize DetF.

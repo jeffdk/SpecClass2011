@@ -38,11 +38,14 @@ namespace OneDimDataWriters {
     };
   private:
     const string mFileName;
+    const double mMinAngle;
     mutable CachedOfStream mOut;
  
     void AppendToFileImpl(const double time,
-			  const MyVector<double>&,
+			  const MyVector<double>& x,
 			  const MyVector<double>& y) const;
+    double ComputeAngleFromHorizon(const double xi, const double xii,
+				   const double yi, const double yii) const;
   };
 
 }

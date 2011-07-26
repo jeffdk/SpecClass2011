@@ -1,6 +1,6 @@
 # Input for Problem2Exec
 # Brett Deaton
 # 7.25.11
-Format = grace(Legennd=Yes;);
-Basename = problem2;
-Times = 0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0;
+Format = reduceddatbrett(MinAngle=0.01;);
+Basename = problem3;
+Times = 2.0;

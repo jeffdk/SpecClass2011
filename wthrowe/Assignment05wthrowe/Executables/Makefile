@@ -1,15 +1,15 @@
 #/// \dir
-#/// Contains a minimal set of files for adding a new subdirectory to SpEC,
-#/// including executables and tests.
+#/// Contains executables for Assignment 05
 
 # Where is SPEC_HOME relative to this directory
-CODE_HOME = ../../../..
+CODE_HOME = ../../../../..
 
-# What subdirectories should also be compiled
-SUBDIRECTORIES = Executables Tests
+# What libraries does this executable depend on
+INCLUDED_AND_LINKED_LIBS = Assignment05wthrowe StringParsing IO MiscUtils \
+  ErrorHandling MyContainers MpiWrappers LowLevelUtils
 
-# What .cpp files should be compiled (replace .cpp with .o)
-OBJECT_FILES_INTO_LIB = OutputReducedDat_Bohn.o
+# What .cpp files containing a main function should be compiled (remove .cpp)
+EXECUTABLES = Problem2Exec
 
 ##############################################################################
 # Nothing below here needs to be changed

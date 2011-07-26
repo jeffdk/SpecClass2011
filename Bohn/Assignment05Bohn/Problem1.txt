@@ -1,3 +1,5 @@
+From slowest to fastest:
+
 (2) : This method is the slowest.  At the time the memory is allocated, the
       DataMesh has all values initialized to 0.0.  Immediately after, the memory
       is accessed again to replace the memory with the correct values.

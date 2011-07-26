@@ -1,0 +1,7 @@
+The bug is that
+
+if(n=0)
+
+is using an assignment operator instead of the logic operator.  It should be
+
+if(n==0)

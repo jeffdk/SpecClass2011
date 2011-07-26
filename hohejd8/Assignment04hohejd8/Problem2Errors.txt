@@ -1,0 +1,1 @@
+The value of 'unsigned int n' gets reassigned in RaiseToPower_NAME.cpp by the line 'if(n=0)'.  To catch this problem at compile time, we could declare 'n' to be a 'const unsigned int'.  We can also declare 'unsigned int a' in this way, to catch the error at compile time.

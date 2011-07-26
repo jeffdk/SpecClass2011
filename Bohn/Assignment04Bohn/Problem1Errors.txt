@@ -1,0 +1,10 @@
+1.No if guards for the hpp file
+2.MyVector doesn't need to be included.  See my hpp for correct implementation
+3.Pi should be a const double
+4.A bit nitpicky, but int i and double r don't need to be in scope for the 
+  entire file.  This can be avoided with curly braces
+5.r is declared twice. The first declaration is completely unused, since
+  it is shadowed by the double r in the for loop.
+6.int i and r should probably be initialized
+7.(4/3) is an integer division, and would probably return 1, which is then 
+  converted to a double for the multiplication of doubles

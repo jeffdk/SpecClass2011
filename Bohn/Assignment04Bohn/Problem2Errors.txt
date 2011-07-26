@@ -1,0 +1,8 @@
+"if (n = 0)" doesn't have the desired effect.  n == 0 is what we want.
+
+  What happens in this code is n = 0 assigns n to zero, which causes the
+  if to fail.  Then the code fails n > 1, since it's 0.  The code then falls
+  through to the last return, return 2 in this case. 
+
+By making n a const, this code will cause a compile error, if trying to assign
+to n

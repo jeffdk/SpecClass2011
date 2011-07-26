@@ -9,7 +9,7 @@ CODE_HOME = ../../../..
 SUBDIRECTORIES = Executables Tests
 
 # What .cpp files should be compiled (replace .cpp with .o)
-OBJECT_FILES_INTO_LIB = Volume_Curran.o RaiseToPower_Curran.o Subdomain_Curran.o
+OBJECT_FILES_INTO_LIB = OutputReducedDatBrett.o
 
 ##############################################################################
 # Nothing below here needs to be changed

@@ -16,8 +16,9 @@ II) in .hpp file:
 *) include guards are missing
 
 *) #include MyVector not needed in header since it only appears as a
-reference.  Will lead to unnecessary recompilation if MyVector
-changes, but its interface does not.
+reference.  Will force unnecessary recompilation of any source that
+includes this Volume_NAME.hpp file anytime MyVector changes (but its
+interface does not).
 
 *) If this was production SpEC code there should be some doxygen comments.
 
@@ -39,12 +40,16 @@ III) in .cpp file.
 
 *) definition of r in for loop shadows definition outside for loop.
 
+*) code should be rewritten so that r can be const (particularly since
+ it refers to a component of a const MyVector).
+
 *) in fact variable r probably isn't needed at all, or at least it
- could be made a reference to radii[i] inside the for loop.
+ could have been made a const reference to radii[i] inside the for
+ loop.
 
 *) It would appear that the line 
    result += (4/3)*Pi*r*r*r;
- was intended to be placed inside the body of the for loop, however
- due to a lack of braces, it's outside.
+ was intended to be placed inside the body of the for loop.  It's
+ outside.
 
 

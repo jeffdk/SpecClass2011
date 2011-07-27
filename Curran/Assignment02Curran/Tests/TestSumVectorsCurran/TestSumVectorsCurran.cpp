@@ -2,11 +2,11 @@
 #include <string>
 #include <iostream>
  
-#include "SumVectorsCurran.hpp"
-#include "MyVector.hpp"
-#include "ReadFileIntoString.hpp"
-#include "OptionParser.hpp"
-#include "UtilsForTesting.hpp"
+#include "StudentProjects/SpecClass2011/Curran/Assignment02Curran/SumVectorsCurran.hpp"
+#include "Utils/MyContainers/MyVector.hpp"
+#include "Utils/StringParsing/ReadFileIntoString.hpp"
+#include "Utils/StringParsing/OptionParser.hpp"
+#include "Utils/ErrorHandling/UtilsForTesting.hpp"
 
 /** \file
  * Tests the SumVectors and SumVectorsAndDivide functions using an input file.

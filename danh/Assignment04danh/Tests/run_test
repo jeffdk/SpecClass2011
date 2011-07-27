@@ -1,0 +1,2 @@
+#!/bin/bash
+./TestTotalVolumeOfSpheresFromRadii > Output.log 2>&1

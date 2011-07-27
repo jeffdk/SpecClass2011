@@ -35,7 +35,7 @@ Tensor<DataMesh> findInverse(const Tensor<DataMesh>& T){
   inverse(1,2) = -(T(0,0)*T(2,1)-T(0,1)*T(2,0))/det;
   inverse(2,2) = (T(0,0)*T(1,1)-T(0,1)*T(1,0))/det;
  
-  return T;
+  return inverse;
 }
 
 

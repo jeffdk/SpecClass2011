@@ -1,7 +1,7 @@
 #include "SumVectorsCurran.hpp"
 
-#include "MyVector.hpp"
-#include "Require.hpp"
+#include "Utils/MyContainers/MyVector.hpp"
+#include "Utils/ErrorHandling/Require.hpp"
  
 MyVector<double> SumVectors(const MyVector<double>& v1,
                             const MyVector<double>& v2) {

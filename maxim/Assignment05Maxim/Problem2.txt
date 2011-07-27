@@ -1,0 +1,60 @@
+Format=bla; # no such command
+
+OUTPUT:
+MPI starting on 1 processors at Mon Jul 25 15:49:58 2011
+Processor Names = maxim-VirtualBox
+[0] ##########################   ERROR   ###########################
+Factory<16OneDimDataWriter>
+ClassID 'bla' not found. Known ClassIDs:
+dat      dump     grace    oned     pmetric  ygraph   
+################################################################
+END OF OUTPUT
+
+
+Format=help; # outputs all commands with their descriptions
+
+OUTPUT:
+MPI starting on 1 processors at Mon Jul 25 16:05:44 2011
+Processor Names = maxim-VirtualBox
+[0] ##########################   ERROR   ###########################
+Factory<16OneDimDataWriter>
+Known ClassIDs & Documentation:
+--------------------------------
+dat
+dat
+Output for xmgrace, suitable for a y-t plot.  Each spatial point   
+y_i will produce one curve on the y-t plot.  Use                   
+  xmgrace -nxy filename                                            
+to display.                                                        
+x-values x_i and 'description' ignored.                            
+-- NO OPTIONS --                                                  
+
+etc . . .
+END OF OUTPUT
+
+# The Legend option was not used due to the typo. Gives the help on command
+Format=grace(Legennd=Yes); # include the typo in "Legennd"
+
+OUTPUT:
+MPI starting on 1 processors at Mon Jul 25 16:11:58 2011
+Processor Names = maxim-VirtualBox
+[0] 
+======== OptionParser: UNUSED OPTIONS ========================================
+======= These options were not used:
+[0] === Legennd
+[0] === Given Options:
+Legennd = Yes
+==== Help: ===================================================================
+grace
+Output for xmgrace, so that each timestep will produce one curve on
+the plot.  The command                                             
+   xmgrace filename                                                
+will cause xmgrace to display all time-steps simultanously.        
+If the output-file did NOT exist initially, then a legend will be  
+created with the time of each timestep.                            
+OPTIONS                                                            
+  Legend=yes/no;   # Output legend information (default yes)
+END OF OUTPUT
+
+
+Most of the output strings come from member function Help()

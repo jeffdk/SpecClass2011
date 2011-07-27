@@ -1,0 +1,10 @@
+In Volume_NAME.hpp:
+  -There are no comments about the function and usage of this routine.
+
+In Volume_NAME.cpp:
+  -Again, no comments about the routine, the variables, or anything else.
+  -The variable 'const int Pi' should be a 'const double Pi'.
+  -The variables 'result' and 'i' are declared early; they should be declared closer to their actual use in the program.
+  -The variable 'r' is mirrored, and is largely unnecessary, as it is just a copy of the value already contained in 'radii[i]'.
+  -The for-loop is only executed on the line 'double r = radii[i]', and does not include the useful 'result +=' statement.
+  -The fraction '(4/3)' when used as a double should be written '(4.0/3.0)'.

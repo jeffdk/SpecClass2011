@@ -1,0 +1,3 @@
+By choosing a cutoff angle of just 0.5 degrees, the total number of output points was reduced from 2049 to just 77.
+
+This method does not sound robust to me.  One could imagine that a plot could change very slowly, such that \alpha is very nearly zero, but over long distances it can make quite a difference.  A suggestion for changing this algorithm is to check the i-th component against the last printed component, not just the i-1 component.

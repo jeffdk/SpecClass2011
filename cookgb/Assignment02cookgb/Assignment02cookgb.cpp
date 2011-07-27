@@ -1,6 +1,5 @@
-#include "Require.hpp"
-#include "MyVector.hpp"
-#include "MyVector.hpp"
+#include "Utils/ErrorHandling/Require.hpp"
+#include "Utils/MyContainers/MyVector.hpp"
 #include "Assignment02cookgb.hpp"
  
 MyVector<double> sumVectors(const MyVector<double>& A,

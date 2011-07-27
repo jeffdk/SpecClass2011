@@ -1,0 +1,6 @@
+# OneDFormat.input:
+# Input file for Assignment 5, Problem 2.
+Format   = reduced(MinAngle=0.01);             # Which 1-D output format
+Basename = test_file_output;       # Filename (without extension)
+Times    = 1.5;			# Which times to output
+

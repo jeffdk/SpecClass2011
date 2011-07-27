@@ -1,6 +1,17 @@
 #ifndef Subdomain_hpp
 #define Subdomain_hpp
+
+#include "CoordMapCache.hpp"
+#include "TopologyMesh.hpp"
  
+// The code actually compiles w/o these declarations, presumably because they are
+//   snuck in via CoordMaoCache.hpp & TopologyMesh.hpp's include statements or
+//   declarations. But only a fool assumes that includes and declarations not
+//   explicitly in his code will always be there in a pinch.
+template <typename> class MyVector;
+class CoordMap;
+class DataMesh;
+
 class Subdomain : public TopologyMesh {
 public:
   Subdomain(const TopologyMesh & rTopMesh, 

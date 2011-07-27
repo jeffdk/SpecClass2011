@@ -2,11 +2,11 @@
 #include <cmath>
 #include <string>
 
-#include "MyVector.hpp"
-#include "ReadFileIntoString.hpp"
-#include "OptionParser.hpp"
-#include "BasicMpi.hpp"
-#include "OneDimDataWriter.hpp"
+#include "Utils/MyContainers/MyVector.hpp"
+#include "Utils/StringParsing/ReadFileIntoString.hpp"
+#include "Utils/StringParsing/OptionParser.hpp"
+#include "Utils/ErrorHandling/BasicMpi.hpp"
+#include "Utils/IO/OneDimDataWriter.hpp"
 
 void ComputeProfileAndOutput(const double t, 
                              const OneDimDataWriter* writer) {

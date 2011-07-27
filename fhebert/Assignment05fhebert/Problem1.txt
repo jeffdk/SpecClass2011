@@ -1,0 +1,48 @@
+francois hebert
+hw 5 - prob 1
+
+
+The three statements in order of decreasing efficiency are:
+(1), (2), (3).
+
+this is because:
+
+(1) here the RHS is evaluated first--each element of F is a DataMesh,
+    so the RHS is itself a DataMesh. then DetF is constructed and
+    initialized by the DataMesh copy-constructor.
+
+
+(seems to me like there's an error here.. don't we want F(0,0)
+ where the A(0,0) appears? A hasn't been defined anywhere)
+
+
+(2) here we start by using the copy-constructor with F(0,0) to set
+    up DetF. since a second argument is provided, the constructor
+    initializes each entry of DetF to this double. in our case, where
+    the value is 0, the constructor uses a call to "memset" for
+    this task.
+
+    then in the next step we must evaluate the same RHS as above, only
+    now to assign this value to DetF the code must first check for
+    compatible dimensions, etc. this additional checking and the 
+    subsequent copying operation will take time.
+
+    this method is slower than (1) by the time it takes to set each
+    element to 0 using memset + the time to check compatibility of
+    the DataMeshes
+    (copying is done via memcpy in both cases and should be comparable)
+
+
+(3) this is as in (2), except that now no second argument is provided,
+    so the constructor defaults to copying the values of F into DetF.
+    this is done with a call to "memcpy", which should be pretty efficient.
+    
+    however, whereas in (2) we only needed to write memory, here we must
+    also read it in order to copy it. so this method will result in a
+    slower initialization.
+
+
+Note: if in (2) a double other than 0 were provided as default, then 
+    the code runs a for loop over all elements of DetF rather than
+    calling "memset". i imagine this will be substantially slower,
+    resulting in an order: (1) (3) (2)

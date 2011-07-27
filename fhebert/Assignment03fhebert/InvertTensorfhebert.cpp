@@ -53,17 +53,21 @@ Tensor<DataMesh> InvTensor( const Tensor<DataMesh> & Tin )
   // then calculate new values (using mathworld.wolfram.com here)
   for (int i=0; i<len; ++i)
   {
+    // for a symmetric tensor, only need these:
     Tout(0,0) = (Tin(1,1)*Tin(2,2) - Tin(2,1)*Tin(1,2)) / det();
-    Tout(1,0) = (Tin(1,2)*Tin(2,0) - Tin(2,2)*Tin(1,0)) / det();
-    Tout(2,0) = (Tin(1,0)*Tin(2,1) - Tin(2,0)*Tin(1,1)) / det();
-     
     Tout(0,1) = (Tin(0,2)*Tin(2,1) - Tin(2,2)*Tin(0,1)) / det();
-    Tout(1,1) = (Tin(0,0)*Tin(2,2) - Tin(2,0)*Tin(0,2)) / det();
-    Tout(2,1) = (Tin(0,1)*Tin(2,0) - Tin(2,1)*Tin(0,0)) / det();
-
     Tout(0,2) = (Tin(0,1)*Tin(1,2) - Tin(1,1)*Tin(0,2)) / det();
+    Tout(1,1) = (Tin(0,0)*Tin(2,2) - Tin(2,0)*Tin(0,2)) / det();
     Tout(1,2) = (Tin(0,2)*Tin(1,0) - Tin(1,2)*Tin(0,0)) / det();
     Tout(2,2) = (Tin(0,0)*Tin(1,1) - Tin(1,0)*Tin(0,1)) / det();
+
+    // if not symmetric, also need:
+    if (Tin.Structure() != TensorStructure(Tin.Dim(), "11"))
+    {
+      Tout(1,0) = (Tin(1,2)*Tin(2,0) - Tin(2,2)*Tin(1,0)) / det();
+      Tout(2,0) = (Tin(1,0)*Tin(2,1) - Tin(2,0)*Tin(1,1)) / det();
+      Tout(2,1) = (Tin(0,1)*Tin(2,0) - Tin(2,1)*Tin(0,0)) / det();
+    }
   }
 
   return Tout;

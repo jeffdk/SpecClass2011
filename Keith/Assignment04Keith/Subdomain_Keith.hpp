@@ -4,6 +4,7 @@
 // The goal here is to minimize dependencies in order to minimize
 // recompiling time.  
 
+// Includes:
 // inheritance requires explicit inclusion.
 #include "TopologyMesh_Fake.hpp"
 
@@ -15,6 +16,7 @@
 // no compiling time cost to including their headers.
 #include<string>
 
+// Forward declarations:
 // these are already in other headers, but I feel they should be here
 // as well for clarity.  Plus it doesn't cost anything, and C++ allows
 // multiple declarations of a class.

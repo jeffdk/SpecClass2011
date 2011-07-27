@@ -1,0 +1,8 @@
+At time 0, using MinAngle=0.002 only 369 points were output, omitting
+1680.
+
+This algorithm has trouble with curves with very slowly varying
+direction, because it will not notice large changes in direction
+constructed from many small changes.  It would be better to check that
+the lines between (last, last+1) and (last, i+1) were close in angle,
+where last is the index of the last output point.

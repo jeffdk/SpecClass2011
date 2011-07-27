@@ -1,0 +1,9 @@
+When MinAngle = 0.0, there are 2043 points at t=1.0.
+When MinAngle = 0.4, there are 231 points at t=1.0.
+
+This method is not completely robust.  It can fail if the spacing
+between points is large compared to the scale of the graph.  In this
+case, even if the angle is small, a perceptible change in the plot
+will occur.  A robust algorithm would need to know the extents of the
+plot and consider fractional changes compared to the total extents.
+

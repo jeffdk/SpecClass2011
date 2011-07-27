@@ -1,0 +1,16 @@
+Problem 2
+
+I.   Format = bla
+	Factory does not recognize bla as a type of OneDimDataWriter, so it give me an error
+	message with a list of recognized options. I think these come from the registry,
+	RegisteredClassIDs(), which uses the strings returned by the respective member functions
+	ClassID().
+
+II.  Format = help;
+	The help tag forces the Registry to give me a list of possible OneDimDataWriters, and
+	it also appears to call the member Help() functions.
+
+III. Format = grace(Legennd=Yes;)
+	OptionParser prints a list of unused options, from member TerminateIfThereAreUnusedOptions().
+	It also calls the Help() member of the OneDimDataWriter being used.
+

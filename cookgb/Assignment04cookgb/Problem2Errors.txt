@@ -1,0 +1,3 @@
+The first comparison with n is actually an assignment. "if(n=0)" should be "if(n==0)".
+
+Even better would be to have the "non-variable" part of this comparison first so that an accicental assignment would cause a compiler error.

@@ -4,7 +4,8 @@
 # Where is SPEC_HOME relative to this directory
 CODE_HOME = ../../..
 
-SUBDIRECTORIES = Assignment01danh Assignment02danh
+SUBDIRECTORIES = Assignment01danh Assignment02danh Assignment03danh \
+                 Assignment04danh Assignment05danh
 
 ##############################################################################
 # Nothing below here needs to be changed

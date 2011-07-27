@@ -1,0 +1,11 @@
+I am assuming A(0,0) is a typo for F(0,0).
+
+Fewest: (1) DataMesh DetF = ...;
+
+Second: (2) DataMesh DetF(F(0,0), 0.0); DetF = ...;
+This assigns to every point in DetF twice: it first initializes them all to
+0.0 and then sets them to the desired value.
+
+Most:   (3) DataMesh DetF(F(0,0)); DetF = ...;
+As in (2), this assigns to every point twice.  However, the initialization
+values must additionally be read from F(0,0).

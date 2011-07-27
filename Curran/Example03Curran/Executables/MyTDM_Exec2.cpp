@@ -1,9 +1,9 @@
 #include <cstdlib>
 #include <iostream>
 
-#include "DataMesh.hpp"
-#include "Tensor.hpp"
-     
+#include "Utils/DataMesh/DataMesh.hpp"
+#include "Utils/Tensor/Tensor.hpp"
+
 int main(int /*argc*/, char** /*argv*/) {
     const Mesh m(IPoint(MV::fill, 2, 2));
     Tensor<DataMesh> t(3, "aa", m, 1.0); // Last argument is initial value of

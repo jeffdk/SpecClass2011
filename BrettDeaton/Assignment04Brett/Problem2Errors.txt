@@ -1,4 +1,23 @@
 Problem 2: Errors with original version of RaiseToPower
   Brett Deaton
-  7.19.11
+  7.25.11
 
+Line 4 of RaiseToPower_Brett.cpp evaluates an expression which assigns
+the value of zero to n. Here's how the computer sees it happen:
+
+if(n=0) return 1;
+
+1) evaluate n=0
+      n=0 assigns the value 0 to variable n, and returns false because the
+      value of n is 0 (false).
+2) evaluate if(~)
+      ~ is false since n is not nonzero, so the then statement at line 4 is
+      not evaluated.
+3) evaluate n>1
+      This time false because the logical statement is false, so the then
+      statement at line 5 is not evaluated.
+4) return a
+      The only thing left to do is line 6.
+
+Of course the bug is fixed by changing line 4 to:
+if(n==0) return 1;

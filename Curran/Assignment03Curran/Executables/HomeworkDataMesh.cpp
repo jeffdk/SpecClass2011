@@ -1,7 +1,7 @@
 #include <cstdlib>
 #include <iostream>
 
-#include "DataMesh.hpp"
+#include "Utils/DataMesh/DataMesh.hpp"
  
 int main(int /*argc*/, char** /*argv*/) {
     // Create the DataMesh

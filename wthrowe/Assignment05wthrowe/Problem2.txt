@@ -1,0 +1,15 @@
+Format=bla;
+It doesn't know how to output as bla, so it complains and lists the known
+formats.  These are taken from the ClassID() methods of the various
+OneDimDataWriters.
+
+Format=help;
+Prints out lots of documentation, describing the meanings of all the possible
+values.  The output appears to be ClassID()+"\n"+Help() from each of the
+OneDimDataWriters;
+
+Format=grace(Legennd=Yes);
+It complains that the Legennd option was not used (meaning providing it was
+probably a misspelling or other mistake), and then displays documentation for
+the grace OneDimDataWriter.  This documentation is
+OneDimDataWriters::OutputGrace::Help() .

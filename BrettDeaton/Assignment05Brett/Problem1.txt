@@ -1,0 +1,8 @@
+Problem 1
+1, 2, and 3 are already in the order of # of memory allocations.
+
+(1) Best 
+
+(2) An unneccessary initialization of DetF to 0.
+
+(3) An unneccessary initialization of DetF to the values in Datamesh F(0,0).

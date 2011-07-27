@@ -1,0 +1,50 @@
+francois hebert
+hw 5 - prob 3
+
+
+i found that naively scanning the list of data using the given algorith 
+results in flawed output due to the asymmetry in the scanning process:
+one always checks the effects of one's actions on "future" points, but
+not on "past" points. 
+
+in particular, i noticed that the wings of my gaussian were getting cut off
+on one side only, because as the algorithm advanced it wasn't checking to 
+see that removing a point wouldn't create a sharp angle somewhere behind it.
+
+i fixed this using the "anchorAngle" variable, and checking that the newly
+obtained segment would not create a sharp angle against previously-checked
+segments. this is still asymmetric but maintains sufficient smoothness for 
+visual satisfaction :)
+
+ideally one might write a code that scans forwards and then backwards, and
+removes only points deemed "excessive" by both scans. or some other more
+fancy method. in any case, not something i have time for in the context 
+of this class :)
+
+
+number of points in my output:
+- no reduction in data: 2049
+- 5 mrad angle-reduction: 383
+=> 1666 points cut out by this process.
+
+so the number of points is drastically reduced, and as far as i can tell, 
+my plots are indistinguishable.
+
+
+
+
+in addition to the issue mentioned above, i can think of two potential
+problems:
+
+- it becomes easier to see a kink in a long line than a short one. perhaps
+  the algorithm should decrease the MinAngle as the proportional length of
+  the segment within the figure increases.
+
+- there are potential problems if one wishes to be robust to taking logarithms
+  of the data within a plotting program: a straight line in a linlin graph 
+  becomes a curve in a loglin graph. thus, data points which were useless in 
+  one case become crucial in another.
+
+  ideally, one would run the data-reduction on the same type of data as one
+  intends to be plotting.
+

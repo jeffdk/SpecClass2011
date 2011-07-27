@@ -1,7 +1,7 @@
 #include <cstdlib>
 #include <iostream>
 
-#include "DataMesh.hpp"
+#include "Utils/DataMesh/DataMesh.hpp"
  
 int main(int /*argc*/, char** /*argv*/) {
     const IPoint extents(MV::Size(2), 2);

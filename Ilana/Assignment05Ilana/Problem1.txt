@@ -1,0 +1,10 @@
+Order of alternatives allocations of DetF with increasing number of memory-accesses:
+
+(1) This has the least number of memory accesses because the values are created, declared and initialized
+ all in one step.
+
+(3) This has the second least number of memory accesses because it creates and declares the variable in one
+ step and then initializes it in the second.
+
+(2) This has the most memory accesses because it creates, declares and initializes with zeros the variable
+ in the first step and then initializes it again the second step.

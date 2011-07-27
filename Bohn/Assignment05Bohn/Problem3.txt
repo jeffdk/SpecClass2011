@@ -1,0 +1,29 @@
+I couldn't distinguish the plots.  I've saved these as MinAngle*.rdatBohn.  
+
+MinAngle    Points Removed
+    0             0
+   0.01         1473
+   0.1          1601
+    1           1905
+
+This method isn't so great.  If we have each angle differ by the minimum
+  angle, then we will get a curving plot in the full version, but a straight
+  line in the shortened version.  If write time isn't an issue, which it really
+  shouldn't be, we can go over all of the points, as illustrated below.
+
+X = removed
+A = accepted
+
+123456789
+AXAXXXXXA
+
+here is what should happen
+- we should check angle 12 versus 23, then remove 2
+- check 23 angle 34, find 3 passes
+- check 34 angle 45, find 4 fails
+- check 35 angle 56 AND check 45 angle 56, find 5 fails
+- check 36 angle 67, check 46 angle 67, AND check 56 and 67.  etc.
+
+You must check all points since the last accepted points, in order to have the
+  most robust system.  If any of these fail, we need to accept the point.
+  I've left a comment in the code where this should happen

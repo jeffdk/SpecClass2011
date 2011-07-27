@@ -1,6 +1,6 @@
-#include "DataMesh.hpp"
-#include "Tensor.hpp"
-#include "Require.hpp"
+#include "Utils/DataMesh/DataMesh.hpp"
+#include "Utils/Tensor/Tensor.hpp"
+#include "Utils/ErrorHandling/Require.hpp"
 #include <cstdlib>
 
 // Define to create a symmetric tensor

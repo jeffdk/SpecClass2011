@@ -1,8 +1,8 @@
 #include <cstdlib>
 #include <iostream>
 
-#include "TensorStructure.hpp"
-#include "Tensor.hpp"
+#include "Utils/Tensor/TensorStructure.hpp"
+#include "Utils/Tensor/Tensor.hpp"
      
 int main(int /*argc*/, char** /*argv*/) {
     TensorStructure s(3,"aa"); // we create the TensorStructure first

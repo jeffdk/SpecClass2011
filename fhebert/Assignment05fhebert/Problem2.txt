@@ -1,0 +1,35 @@
+francois hebert
+hw 5 - prob 2
+
+
+i.
+Format = bla;
+
+get an error:
+[0] ##########################   ERROR   ###########################
+Factory<16OneDimDataWriter>
+ClassID 'bla' not found. Known ClassIDs:
+dat      dump     grace    oned     pmetric  ygraph   
+################################################################
+
+this error comes from the Factory class after it looked for and was
+unable to find a derived OneDimDataWriter class that registered as "bla"
+
+
+
+ii.
+Format = help;
+
+for each OneDimDataWriter that is registered with the Factory,
+prints its ClassID and the corresponding documentation.
+the documentation string comes from calling the Help() function
+that each derived OneDimDataWriter implements.
+
+
+
+iii.
+Format = grace(Legennd=Yes);
+
+prints two messages:
+a message from the OptionParser notifying of an unused options (Legennd)
+and the Help() string from the specific derived class, here OutputGrace

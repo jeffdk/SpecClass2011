@@ -1,11 +1,15 @@
 #/// \dir
-#/// Contains a minimal set of files for adding new tests to SpEC
+#/// Contains a minimal set of files for adding a new subdirectory to SpEC,
+#/// including executables and tests.
 
 # Where is SPEC_HOME relative to this directory
-CODE_HOME = ../../../../..
+CODE_HOME = ../../../..
 
-# What subdirectories should also be compiled (one for each test)
-SUBDIRECTORIES =
+# What subdirectories should also be compiled
+SUBDIRECTORIES = Executables Tests
+
+# What .cpp files should be compiled (replace .cpp with .o)
+OBJECT_FILES_INTO_LIB = ComputeProfileAndOutput.o OutputReducedDatMaxim.o
 
 ##############################################################################
 # Nothing below here needs to be changed

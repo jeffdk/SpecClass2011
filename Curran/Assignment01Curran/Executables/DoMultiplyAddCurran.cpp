@@ -2,9 +2,9 @@
 #include <string>
 #include <iostream>
  
-#include "MultiplyAddCurran.hpp"
-#include "ReadFileIntoString.hpp"
-#include "OptionParser.hpp"
+#include "StudentProjects/SpecClass2011/Curran/Assignment01Curran/MultiplyAddCurran.hpp"
+#include "Utils/StringParsing/ReadFileIntoString.hpp"
+#include "Utils/StringParsing/OptionParser.hpp"
 
 /** \file
  * Performs a multiply-add operation on values read from an input file.

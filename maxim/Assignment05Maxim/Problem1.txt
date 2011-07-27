@@ -1,0 +1,11 @@
+  // (1) fewest memory accesses
+  const DataMesh DetF = F(0,0)*F(1,1)-F(0,1)*F(1,0);
+ 
+  // (3) second fewest
+  DataMesh DetF(F(0,0) ); 
+  DetF = F(0,0)*F(1,1)-F(0,1)*F(1,0);
+
+  // (2) most
+  DataMesh DetF(F(0,0), 0.0);
+  DetF = F(0,0)*F(1,1)-F(0,1)*F(1,0);
+ 

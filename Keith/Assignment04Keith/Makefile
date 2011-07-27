@@ -9,7 +9,7 @@ CODE_HOME = ../../../..
 SUBDIRECTORIES = Executables Tests
 
 # What .cpp files should be compiled (replace .cpp with .o)
-OBJECT_FILES_INTO_LIB = Volume_Keith.o RaiseToPower_Keith.o
+OBJECT_FILES_INTO_LIB = Volume_Keith.o RaiseToPower_Keith.o Subdomain_Keith.o
 
 ##############################################################################
 # Nothing below here needs to be changed

@@ -1,0 +1,7 @@
+1. Pi was declared as an int instead of a double
+2. result was declared too early
+3. int i was declared in the global scope instead of the local scope of the for loop
+4. double r was declared twice (only inside the loop was necessary)
+5. double r did not need to be declared at all (radii[i] could be used instead)
+6. braces were missing around the for loop
+7. MyVector is included instead of being declared in the .hpp file

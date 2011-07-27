@@ -1,7 +1,7 @@
 #include <cstdlib>
 #include <iostream>
 
-#include "TensorStructure.hpp"
+#include "Utils/Tensor/TensorStructure.hpp"
      
 int main(int /*argc*/, char** /*argv*/) {
     // the integer sets the dimension (range of indices = 0..dim-1)

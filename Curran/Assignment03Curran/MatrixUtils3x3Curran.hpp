@@ -1,8 +1,8 @@
 #ifndef ASSIGNMENT03CURRAN_MATRIXUTILS3X3CURRAN_HPP_
 #define ASSIGNMENT03CURRAN_MATRIXUTILS3X3CURRAN_HPP_
 
-#include "DataMesh.hpp"
-#include "Tensor.hpp"
+#include "Utils/DataMesh/DataMesh.hpp"
+#include "Utils/Tensor/Tensor.hpp"
 
 namespace Assignment03Curran {
 

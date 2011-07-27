@@ -1,0 +1,14 @@
+I. Format = bla:  This is not a known ClassID.  Any time you would like to know
+  the full list of class IDs, you can insert garbage and obtain the list.
+
+II. Format = help:  This option will list all of the different ClassIDs along
+  with any help strings associated with them.
+
+III. Format = grace(Legennd=Yes): The option parser correctly finds grace; 
+  however, it cannot find the option Legennd.  This will also reproduce the
+  help text, which should in theory tell you the options that should be provided
+
+I was expecting the output string to be taken from the ClassID, but for some
+reason it's not.  The output comes from something called mFileName, in the
+case of the grace output for example.  Here it's just BaseName + ".grace".  I
+was expecting BaseName + "." + ClassID().  It seems redundant otherwise.

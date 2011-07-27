@@ -1,0 +1,3 @@
+#!/bin/bash
+
+./TestVolume_Keith &> Test.log

@@ -2,9 +2,9 @@
 #include <string>
 #include <iostream>
  
-#include "MyFirstLibCurran.hpp"
-#include "ReadFileIntoString.hpp"
-#include "OptionParser.hpp"
+#include "StudentProjects/SpecClass2011/Curran/Example01Curran/MyFirstLibCurran.hpp"
+#include "Utils/StringParsing/ReadFileIntoString.hpp"
+#include "Utils/StringParsing/OptionParser.hpp"
 
 /** \file
  * Caps a value at a certain threshold, where both the threshold and the

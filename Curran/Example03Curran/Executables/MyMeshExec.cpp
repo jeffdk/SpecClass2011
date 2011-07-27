@@ -1,7 +1,7 @@
 #include <cstdlib>
 #include <iostream>
 
-#include "Mesh.hpp"
+#include "Utils/DataMesh/Mesh.hpp"
  
 int main(int /*argc*/, char** /*argv*/) {
     const IPoint extents(MV::fill, 10, 10, 10);

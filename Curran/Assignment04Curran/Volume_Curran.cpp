@@ -1,6 +1,6 @@
 #include "Volume_Curran.hpp"
 
-#include "MyVector.hpp"
+#include "Utils/MyContainers/MyVector.hpp"
 
 double TotalVolumeOfSpheresFromRadii(const MyVector<double>& radii) {
     const double pi = 3.1415926535897932; // C99 removed M_PI from math.h

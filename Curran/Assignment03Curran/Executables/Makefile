@@ -5,8 +5,9 @@
 CODE_HOME = ../../../../..
 
 # What libraries does this executable depend on
-INCLUDED_AND_LINKED_LIBS = Assignment03Curran Tensor DataMesh MyContainers \
-                           Math ErrorHandling LowLevelUtils
+INCLUDED_AND_LINKED_LIBS = Assignment03Curran Math MiscUtils StringParsing \
+			   Tensor DataMesh MyContainers ErrorHandling \
+			   LowLevelUtils
 
 # What .cpp files containing a main function should be compiled (remove .cpp)
 EXECUTABLES = HomeworkMesh HomeworkDataMesh HomeworkTensor

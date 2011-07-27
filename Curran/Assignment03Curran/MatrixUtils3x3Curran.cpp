@@ -1,8 +1,8 @@
 #include "MatrixUtils3x3Curran.hpp"
 
 #include "NR3RanCurran.hpp"
-#include "Mesh.hpp"
-#include "Require.hpp"
+#include "Utils/DataMesh/Mesh.hpp"
+#include "Utils/ErrorHandling/Require.hpp"
 
 namespace Assignment03Curran {
 

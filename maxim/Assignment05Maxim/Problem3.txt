@@ -1,0 +1,3 @@
+1298 points were omitted for angle=0.01
+
+This method is not robust because we analyze the curvature locally. If the angle between two adjacent points satisfies the condition alpha < MinAngle over a sufficiently long part of the curve that could lead to significant diversion from the original behavior. To improve the method one needs to look at the global behavior of curvature as well.

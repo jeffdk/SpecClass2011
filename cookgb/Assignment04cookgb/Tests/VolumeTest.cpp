@@ -1,9 +1,9 @@
 #include <iostream>
 #include <cstdlib>
 
-#include "Volume_cookgb.hpp"
-#include "MyVector.hpp"
-#include "UtilsForTesting.hpp"
+#include "../Volume_cookgb.hpp"
+#include "Utils/MyContainers/MyVector.hpp"
+#include "Utils/ErrorHandling/UtilsForTesting.hpp"
 
 int main(int /*argc*/, char** /*argv*/) {
 

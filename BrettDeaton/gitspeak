@@ -21,3 +21,7 @@ git push
 //   before a push or I'll get an error message (if someone else has changed the
 //   remote repo since my last pull.)
 git pull
+
+// Other useful commands you'll remember in time
+git ls-files --deleted
+git rm

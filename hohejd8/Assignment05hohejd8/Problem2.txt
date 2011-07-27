@@ -1,0 +1,8 @@
+Format=bla;
+  -The ClassID 'bla' was not found, and a list of known ClassIDs is given.
+
+Format=help;
+  -The 'help' option shows all data output options (dat, dump, grace, etc.) and the style of output they give.
+
+Format=grace(Legennd=Yes);
+  -This will give the output format for xmgrace, and the 'Legennd' option tells it to include legend information

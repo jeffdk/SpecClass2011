@@ -1,7 +1,7 @@
 #include <cstdlib>
 #include <iostream>
  
-#include "MyFirstLibCurran.hpp"
+#include "StudentProjects/SpecClass2011/Curran/Example01Curran/MyFirstLibCurran.hpp"
 
 /** \file
  * Prints "Hello world!", then caps a value at a certain threshold.

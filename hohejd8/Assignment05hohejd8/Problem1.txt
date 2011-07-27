@@ -1,0 +1,5 @@
+In increasing order of memory accesses, the alternatives are (1), (3), and (2).
+
+(3) calls a copy constructor on A(0,0), which requires a call to check the extents and size to allocate memory for DetF, and it requries another call to check the size in order to initialize the size counter.
+
+(2) does the same as (3), but also runs through the DataMesh, initializing all the values to 0.0 .

@@ -1,0 +1,60 @@
+
+I) in general:
+
+*) no commenting of code.  Although it's pretty simple so much
+ commenting would be extraneous, however see doxygen complaint below.
+
+*) The name of the function doesn't seem to distinguish between
+ computing the sum of volumes of spheres of unrelated radii, and the
+ case which is much more common in SpEC where the radii indicate the
+ boundaries of a set of nested spherical shells.  My initial
+ impression was the later, but maybe I've been SpEC too long.  I'm
+ sticking with the former for this assignment.
+
+*) If this was production SpEC code the function should probably be
+ declared in some Namespace other than Global.
+
+II) in .hpp file:
+
+*) include guards are missing
+
+*) #include MyVector not needed in header since it only appears as a
+reference.  Will force unnecessary recompilation of any source that
+includes this Volume_NAME.hpp file anytime MyVector changes (but its
+interface does not).
+
+*) If this was production SpEC code there should be some doxygen comments.
+
+III) in .cpp file.
+
+*) No error checking (ASSERT/REQUIRE) of the MyVector argument.
+ Should check that radii has non-zero Size, and that its entries are
+ non-negative.  Actually now that I think about it, a requirement that 
+ it has non-zero Size is probably extraneous, since it will just return
+ zero volume, which is correct.
+
+*) Pi is declared int, not double.
+
+*) variable names could be more descriptive.  In particular r could be
+ radius.
+
+*) variables r and i are uninitialized in their declarations.
+
+*) I prefer to put declaration of loop index variables in loop
+ arguments.  I.e. it could have been for(int i=0; ...
+
+*) definition of r in for loop shadows definition outside for loop.
+
+*) code should be rewritten so that r can be const (particularly since
+ it refers to a component of a const MyVector).
+
+*) in fact variable r probably isn't needed at all, or at least it
+ could have been made a const reference to radii[i] inside the for
+ loop.
+
+*) It would appear that the line 
+   result += (4/3)*Pi*r*r*r;
+ was intended to be placed inside the body of the for loop.  It's
+ outside.
+
+*) (4/3) is integer division, and will result in the value of 1

@@ -9,4 +9,4 @@ template <typename> class MyVector;
 /// components the MyVector argument.
 double TotalVolumeOfSpheresFromRadii(const MyVector<double>& radii);
 
-#endif
+#endif  // Volume_Keith_hpp

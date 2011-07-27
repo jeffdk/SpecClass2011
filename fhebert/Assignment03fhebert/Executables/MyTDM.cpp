@@ -16,51 +16,67 @@
 
 int main(void)
 {  
-  // points and dimensions of the underlying mesh
-  // change this for part(c) of the hw assignment
-  const int points = 5;
-  const int spatialdims = 3;
-
-  // don't change this lightly!
-  // InvTensor() currently needs this = 3.
-  const int tensordims = 3;
-
-  // the mesh:
-  const IPoint ip(MV::Size(spatialdims), points);
-  const Mesh m(ip);
-
-  Tensor<DataMesh> t(tensordims, "ab", m, 0.0);
+  // a couple of underlying meshes
+  const Mesh meshA(IPoint(MV::Size(2), 10));
+  const Mesh meshB(IPoint(MV::Size(3), 3));
+  
+  // show that code works for both symm/asymm tensors
+  const TensorStructure tsSymmRank2Dim3(3, "11");
+  const TensorStructure tsAsymmRank2Dim3(3, "12");
+  
+  Tensor<DataMesh> tSymm(tsSymmRank2Dim3, meshA, 0.0);
+  Tensor<DataMesh> tAsymm(tsAsymmRank2Dim3, meshB, 0.0);
 
   // set each datamesh entry to a random number
   // use a reproducible seed for debugging
   srand(0);
-  int meshpoints = pow(points,spatialdims);
-  for (int i=0; i<tensordims; ++i)
-    for (int j=0; j<tensordims; ++j)
-      for (int k=0; k<meshpoints; ++k)
+  for (int i=0; i<tSymm.Dim(); ++i)
+    for (int j=0; j<tSymm.Dim(); ++j)
+      for (int k=0; k<tSymm(0,0).Size(); ++k)
       {
-        t(i,j)[k] = double(rand())/RAND_MAX;
+        tSymm(i,j)[k] = double(rand())/RAND_MAX;
       }
- 
+
+  for (int i=0; i<tAsymm.Dim(); ++i)
+    for (int j=0; j<tAsymm.Dim(); ++j)
+      for (int k=0; k<tAsymm(0,0).Size(); ++k)
+      {
+        tAsymm(i,j)[k] = double(rand())/RAND_MAX;
+      }
+
   // now invert twice
-  Tensor<DataMesh> invinv = InvTensor(InvTensor(t));
+  const Tensor<DataMesh> invinvSymm = InvTensor(InvTensor(tSymm));
+  const Tensor<DataMesh> invinvAsymm = InvTensor(InvTensor(tAsymm));
 
   // printing out TDMs is messy and not very illuminating, so
   // as an error indicator, i find the maximum difference b/w
   // this and the original tensor:
-  double err, maxerr = 0;
-  for (int i=0; i<tensordims; ++i)
-    for (int j=0; j<tensordims; ++j)
-      for (int k=0; k<spatialdims*points; ++k)
+  double err = 0;
+  double maxerrSymm = 0;
+  for (int i=0; i<tSymm.Dim(); ++i)
+    for (int j=0; j<tSymm.Dim(); ++j)
+      for (int k=0; k<tSymm(0,0).Size(); ++k)
       {
-        err = t(i,j)[k] - invinv(i,j)[k];
-        if (maxerr < fabs(err))
-          maxerr = fabs(err);
+        err = tSymm(i,j)[k] - invinvSymm(i,j)[k];
+        if (maxerrSymm < fabs(err))
+          maxerrSymm = fabs(err);
+      }
+
+  err = 0;
+  double maxerrAsymm = 0;
+  for (int i=0; i<tAsymm.Dim(); ++i)
+    for (int j=0; j<tAsymm.Dim(); ++j)
+      for (int k=0; k<tAsymm(0,0).Size(); ++k)
+      {
+        err = tAsymm(i,j)[k] - invinvAsymm(i,j)[k];
+        if (maxerrAsymm < fabs(err))
+          maxerrAsymm = fabs(err);
       }
 
   // running this on several meshes and seeds, i found errors typically
   // of O(e-15) and up to O(e-13), which is close to roundoff thresholds
-  std::cout << "maximum difference between T and inv(inv(T)) is: " << maxerr << "\n";
+  std::cout << "maximum difference between Tsymm and inv(inv(Tsymm)) is: " << maxerrSymm << "\n";
+  std::cout << "maximum difference between Tasymm and inv(inv(Tasymm)) is: " << maxerrAsymm << "\n";
 
   return EXIT_SUCCESS;
 }

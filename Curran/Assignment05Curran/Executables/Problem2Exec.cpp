@@ -1,13 +1,14 @@
-#include "Utils/IO/OneDimDataWriter.hpp"
-#include "Utils/StringParsing/ReadFileIntoString.hpp"
-#include "Utils/StringParsing/OptionParser.hpp"
-#include "Utils/MyContainers/MyVector.hpp"
-#include "Utils/ErrorHandling/BasicMpi.hpp"
-
 #include <cstdlib>
 #include <cmath>
+#include <string>
 
-void ComputeProfileAndOutput(const double t,
+#include "Utils/MyContainers/MyVector.hpp"
+#include "Utils/StringParsing/ReadFileIntoString.hpp"
+#include "Utils/StringParsing/OptionParser.hpp"
+#include "Utils/ErrorHandling/BasicMpi.hpp"
+#include "Utils/IO/OneDimDataWriter.hpp"
+
+void ComputeProfileAndOutput(const double t, 
                              const OneDimDataWriter* writer) {
     const int N = 1024;
     MyVector<double> x(MV::Size(2*N+1)), y(MV::Size(2*N+1));
@@ -20,7 +21,6 @@ void ComputeProfileAndOutput(const double t,
 
 int main(int argc, char** argv) {
     MpiInit(&argc, &argv);
-
 
     const std::string helptxt =
 "OneDFormat.input:                                                       \n"
@@ -44,3 +44,4 @@ int main(int argc, char** argv) {
     MpiFinalize();
     return EXIT_SUCCESS;
 }
+

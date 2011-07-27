@@ -2,8 +2,10 @@ class MemoryLeaker {
 public:
   MemoryLeaker(const int n) 
     : pLeaky(new double[n]) {}
-  ~MemoryLeaker() {delete pLeaky;}
+  // ~MemoryLeaker() {delete pLeaky;}
+  ~MemoryLeaker() {delete[] pLeaky;}
   void Reset(const int n) {
+    delete[] pLeaky;
     pLeaky = new double[n];
   }
 private:

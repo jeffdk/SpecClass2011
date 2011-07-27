@@ -11,6 +11,9 @@ I) in general:
  impression was the later, but maybe I've been SpEC too long.  I'm
  sticking with the former for this assignment.
 
+*) If this was production SpEC code the function should probably be
+ declared in some Namespace other than Global.
+
 II) in .hpp file:
 
 *) include guards are missing

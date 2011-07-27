@@ -1,0 +1,13 @@
+
+I) Bug:
+
+*) in first if statement, n is assigned, not tested.
+
+II) Fix:
+
+*) arguments to RaiseToPower should be declared const.  In this
+ recursive algorithm arguments don't need to be altered.  Declaring
+ arguments const generates a compiler error when assignment is
+ attempted.
+
+

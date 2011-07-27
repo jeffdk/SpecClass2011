@@ -1,9 +1,9 @@
 
-#include "OneDimDataWriter.hpp"
-#include "StringUtils.hpp"
-#include "OptionParser.hpp"
-#include "ConvertNumberToString.hpp"
-#include "CachedOfStream.hpp"
+#include "Utils/IO/CachedOfStream.hpp"
+#include "Utils/IO/OneDimDataWriter.hpp"
+#include "Utils/LowLevelUtils/ConvertNumberToString.hpp"
+#include "Utils/StringParsing/StringUtils.hpp"
+#include "Utils/StringParsing/OptionParser.hpp"
 
 #include <fstream>
 #include <cmath>

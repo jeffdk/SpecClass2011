@@ -1,8 +1,8 @@
 
 I) in general:
 
-*) no commenting of code.  Although it's pretty simple, so most
- comments would be extraneous, however see doxygen complaint below.
+*) no commenting of code.  Although it's pretty simple so much
+ commenting would be extraneous, however see doxygen complaint below.
 
 *) The name of the function doesn't seem to distinguish between
  computing the sum of volumes of spheres of unrelated radii, and the
@@ -25,8 +25,10 @@ interface does not).
 III) in .cpp file.
 
 *) No error checking (ASSERT/REQUIRE) of the MyVector argument.
- Should check that radii has non-zero size, and that its entries are
- non-negative.
+ Should check that radii has non-zero Size, and that its entries are
+ non-negative.  Actually now that I think about it, a requirement that 
+ it has non-zero Size is probably extraneous, since it will just return
+ zero volume, which is correct.
 
 *) Pi is declared int, not double.
 
@@ -52,4 +54,4 @@ III) in .cpp file.
  was intended to be placed inside the body of the for loop.  It's
  outside.
 
-
+*) (4/3) is integer division, and will result in the value of 1

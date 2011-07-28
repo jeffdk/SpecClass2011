@@ -1,10 +1,10 @@
-#include "OneDimDataWriter.hpp"
-#include "CachedOfStream.hpp"
-#include "MyVector.hpp"
-#include "Require.hpp"
-#include "StringUtils.hpp"
-#include "OptionParser.hpp"
-#include "ConvertNumberToString.hpp"
+#include "Utils/IO/OneDimDataWriter.hpp"
+#include "Utils/IO/CachedOfStream.hpp"
+#include "Utils/MyContainers/MyVector.hpp"
+#include "Utils/ErrorHandling/Require.hpp"
+#include "Utils/StringParsing/StringUtils.hpp"
+#include "Utils/StringParsing/OptionParser.hpp"
+#include "Utils/LowLevelUtils/ConvertNumberToString.hpp"
 
 #include <iostream>
 #include <fstream>

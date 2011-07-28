@@ -1,4 +1,4 @@
-#include "RaiseToPower_hohejd8.hpp"
+#include "StudentProjects/SpecClass2011/hohejd8/Assignment04hohejd8/RaiseToPower_hohejd8.hpp"
 #include <iostream>
  
 int main() {

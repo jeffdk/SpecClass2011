@@ -5,11 +5,8 @@
 CODE_HOME = ../../../../..
 
 # What libraries does this executable depend on
-INCLUDED_AND_LINKED_LIBS = Assignment05danh \
-    StringParsing IO \
-    MiscUtils MpiWrappers MyContainers \
-    LowLevelUtils \
-    ErrorHandling
+INCLUDED_AND_LINKED_LIBS = IO MiscUtils MpiWrappers StringParsing \
+                           MyContainers ErrorHandling LowLevelUtils
 
 # What .cpp files containing a main function should be compiled (remove .cpp)
 EXECUTABLES = Problem2Exec

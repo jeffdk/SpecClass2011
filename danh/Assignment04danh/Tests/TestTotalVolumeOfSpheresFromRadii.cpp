@@ -1,6 +1,7 @@
-#include "TotalVolumeOfSpheresFromRadii_danh.hpp"
-#include "UtilsForTesting.hpp"
-#include "Assert.hpp"
+#include "StudentProjects/SpecClass2011/danh/Assignment04danh/TotalVolumeOfSpheresFromRadii_danh.hpp"
+#include "Utils/MyContainers/MyVector.hpp"
+#include "Utils/ErrorHandling/UtilsForTesting.hpp"
+#include "Utils/ErrorHandling/Assert.hpp"
 
 #include <iostream>
 #include <cstdlib>

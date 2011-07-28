@@ -5,14 +5,12 @@
 CODE_HOME = ../../../../..
 
 # What libraries does this executable depend on
-INCLUDED_AND_LINKED_LIBS = Assignment05danh \
-    StringParsing IO \
-    MiscUtils MpiWrappers MyContainers \
-    LowLevelUtils \
-    ErrorHandling
+INCLUDED_AND_LINKED_LIBS = MpiWrappers StringParsing IO MiscUtils \
+ErrorHandling MpiWrappers LowLevelUtils
+
 
 # What .cpp files containing a main function should be compiled (remove .cpp)
-EXECUTABLES = Problem2Exec
+EXECUTABLES = Problem2ExecIryna
 
 ##############################################################################
 # Nothing below here needs to be changed

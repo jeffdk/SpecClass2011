@@ -6,10 +6,13 @@
 CODE_HOME = ../../../..
 
 # What subdirectories should also be compiled
-SUBDIRECTORIES = Executables Tests
+SUBDIRECTORIES = Executables
+
+INCLUDED_AND_LINKED_LIBS = StringParsing IO MiscUtils ErrorHandling \
+  MyContainers LowLevelUtils
 
 # What .cpp files should be compiled (replace .cpp with .o)
-OBJECT_FILES_INTO_LIB = Volume_Keith.o RaiseToPower_Keith.o Subdomain_Keith.o
+OBJECT_FILES_INTO_LIB = OutputReducedDat_fhebert.o
 
 ##############################################################################
 # Nothing below here needs to be changed

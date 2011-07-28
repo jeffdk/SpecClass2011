@@ -1,8 +1,8 @@
-#include "SumVectors_danh.hpp"
-#include "OptionParser.hpp"
-#include "ReadFileIntoString.hpp"
-#include "Require.hpp"
-#include "UtilsForTesting.hpp"
+#include "StudentProjects/SpecClass2011/danh/Assignment02danh/SumVectors_danh.hpp"
+#include "Utils/StringParsing/OptionParser.hpp"
+#include "Utils/StringParsing/ReadFileIntoString.hpp"
+#include "Utils/ErrorHandling/Require.hpp"
+#include "Utils/ErrorHandling/UtilsForTesting.hpp"
 #include <iostream>
 #include <cstdlib>
 

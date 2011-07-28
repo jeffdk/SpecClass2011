@@ -1,5 +1,5 @@
 #include "SumVectors_danh.hpp"
-#include "Assert.hpp"
+#include "Utils/ErrorHandling/Assert.hpp"
 
 /// Implements function SumVectors 
 MyVector<double> SumVectors(const MyVector<double>& A,

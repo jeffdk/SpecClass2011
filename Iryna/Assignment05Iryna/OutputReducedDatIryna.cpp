@@ -1,39 +1,35 @@
-#include "OutputReducedDataIryna.hpp"
+#include "OutputReducedDatIryna.hpp"
 #include "OptionParser.hpp"
+#include "NdData.hpp"
+#include "StringUtils.hpp"
+#include "ConvertNumberToString.hpp"
 
 #include <cstdlib>
+#include <fstream>
 #include <cmath>
 
 namespace OneDimDataWriters {
 
-  class OutputReducedDatIryna: public OneDimDataWriter,
-     Factory::Register<OutputReducedDatIryna>
-  {
-     public: 
-	static string ClassID() {return "red_dat_i";}
-	static string Help() {
-           return ClassID() + "\n"
-              "Output: Two columns containing x_i and y_i with each i-th    \n"
-	      "data point omitted.                                          \n"
-	      "OPTIONS: MinAngle -  if abs(180 - angle) < MinAngle, discard \n"
-	      "the i-th data point."
-        };
-        OutputReducedDatIryna(const string& opts, const string& BaseName):
-        mFileName(BaseName+".dat"), mOut(mFileName) {
-	   REQUIRE(opts.empty(), Help()One);
-	};
-	void TruncateFile() const {
-	   ofstream out(mFileName.c_str(), std::ios::trunc);
-	};
+  namespace {
+     void OutputReducedDatIryna::
+     AppendToFileImpl(const double t, 
+       	              const MyVector<double>& x,
+		      const MyVector<double>& y) const {
 
-     private:
-        const string mFileName;
-        mutable CachedOfStream mOut;
+        const int size_x = x.Size();
+	const int size_y = y.Size();
+	
+	REQUIRE(size_x == size_y, "Error: Data of x and y must have equal \
+					length");
+	if(size_x < 2)
 
-	void AppendToFileImpl(const double time, 
-			      const MyVector<double>&,
-			      const MyVector<double>& y) const;
-     };
+	if(size_x > 2){
+	   old_dx = x[1] - x[0];
+	   old_dy = y[1] - y[0];
+	   old_angle = tan(old_dy / old_dx); 
+        
+	}
 
-  }
+     }
+  }  
 }

@@ -1,0 +1,11 @@
+In RotationMatrix.cpp and .hpp, you could switch to the Factory
+approach rather than using the Registry.
+
+You could use better error messages in the ASSERTs.
+
+In class RotationMatrix::operator= you could do a check on "ptr"
+before deleting it.  This should be set to zero since it is first
+created by the default constructor which sets mpImpl to zero.  So,
+deleting this pointer should do nothing (and shouldn't be necessary).
+But, if it isn't zero, then something is wrong and the pointer
+probably shouldn't be deleted.

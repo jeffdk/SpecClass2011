@@ -1,6 +1,21 @@
-Ranking of initializations in order of speed (fastest first):
-1.
-2.
-3.
+Question for Curran:
+Should "A" be replaced with "F"?  Otherwise we don't know if "A" is a Mesh or
+a DataMesh, right?  It might not change the answer, but the constructors
+are different depending on what "A" is...
+
+Ranking of procedures in order of speed (fastest first):
+#1. (1)
+#2. (3)
+#3. (2)
 
 Reasons why alternatives to 1. are inferior:
+- Whenever you can compute something on the same line it is declared, do it!
+- Both #2 and #3 are inferior because they must access the mesh of "A" to set
+  the Mesh of DetF in addition to doing the operator= accesses.
+- #2 is faster than #3 because in addition to setting the mesh, it has to
+  initialize the values of DetF on the Mesh, which requires more accesses.
+
+NOTE: althought #2 is faster than #3, it is probably less safe (another reason
+why #1 is thoroughly ideal) because it leaves DetF uninitialized prior to its
+computation. Here it's not so big a deal, but in more complicated code, it
+could be dangerous.

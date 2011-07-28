@@ -1,9 +1,9 @@
 #include <cstdlib>
 #include <iostream>
 
-#include "DataMesh.hpp"
-#include "TensorStructure.hpp"
-#include "Tensor.hpp"
+#include "Utils/DataMesh/DataMesh.hpp"
+#include "Utils/Tensor/TensorStructure.hpp"
+#include "Utils/Tensor/Tensor.hpp"
      
 int main(int /*argc*/, char** /*argv*/) {
     TensorStructure s(3, "ab");

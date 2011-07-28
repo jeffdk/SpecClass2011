@@ -1,8 +1,8 @@
 #include <cstdlib>
 #include <iostream>
 
-#include "Mesh.hpp"
-#include "Require.hpp"
+#include "Utils/DataMesh/Mesh.hpp"
+#include "Utils/ErrorHandling/Require.hpp"
  
 int main(int /*argc*/, char** /*argv*/) {
     // Create the mesh

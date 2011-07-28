@@ -1,9 +1,9 @@
-#include "OneDimDataWriter.hpp"
-#include "NdData.hpp"
-#include "StringUtils.hpp"
-#include "OptionParser.hpp"
-#include "FancyTypeName.hpp"
-#include "ConvertNumberToString.hpp"
+#include "Utils/IO/OneDimDataWriter.hpp"
+#include "Utils/IO/NdData.hpp"
+#include "Utils/StringParsing/StringUtils.hpp"
+#include "Utils/StringParsing/OptionParser.hpp"
+#include "Utils/LowLevelUtils/FancyTypeName.hpp"
+#include "Utils/LowLevelUtils/ConvertNumberToString.hpp"
  
 #include <fstream>
 #include <sstream>

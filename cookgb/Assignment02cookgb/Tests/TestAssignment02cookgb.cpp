@@ -1,10 +1,10 @@
 #include <iostream>
 #include <cstdlib>
 
-#include "OptionParser.hpp"
-#include "MyVector.hpp"
-#include "Assignment02cookgb.hpp"
-#include "ReadFileIntoString.hpp"
+#include "Utils/StringParsing/OptionParser.hpp"
+#include "Utils/MyContainers/MyVector.hpp"
+#include "../Assignment02cookgb.hpp"
+#include "Utils/StringParsing/ReadFileIntoString.hpp"
  
 int main(int /*argc*/, char** /*argv*/) {
  

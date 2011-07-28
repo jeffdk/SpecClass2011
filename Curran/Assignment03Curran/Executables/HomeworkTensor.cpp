@@ -2,12 +2,12 @@
 #include <cmath>
 #include <iostream>
 
-#include "MatrixUtils3x3Curran.hpp"
-#include "DataMesh.hpp"
-#include "Tensor.hpp"
-#include "ComputeInverse.hpp"
-#include "ComputeDeterminant.hpp"
-#include "Require.hpp"
+#include "StudentProjects/SpecClass2011/Curran/Assignment03Curran/MatrixUtils3x3Curran.hpp"
+#include "Utils/DataMesh/DataMesh.hpp"
+#include "Utils/Tensor/Tensor.hpp"
+#include "Utils/Math/ComputeInverse.hpp"
+#include "Utils/Math/ComputeDeterminant.hpp"
+#include "Utils/ErrorHandling/Require.hpp"
 
 bool AreEqualAbsRel(const double a, const double b,
                     const double atol, const double rtol) {

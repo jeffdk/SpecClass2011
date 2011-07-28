@@ -1,8 +1,8 @@
 #ifndef Subdomain_hpp
 #define Subdomain_hpp
  
-#include "TopologyMesh.hpp"
-#include "CoordMapCache.hpp"
+#include "Dust/Domain/Topology/TopologyMesh.hpp"
+#include "Dust/Domain/Subdomain/CoordMapCache.hpp"
 #include <string>
  
 class CoordMap;

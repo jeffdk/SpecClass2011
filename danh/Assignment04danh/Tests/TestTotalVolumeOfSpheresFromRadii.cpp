@@ -1,6 +1,6 @@
 #include "TotalVolumeOfSpheresFromRadii_danh.hpp"
-#include "UtilsForTesting.hpp"
-#include "Assert.hpp"
+#include "Utils/ErrorHandling/UtilsForTesting.hpp"
+#include "Utils/ErrorHandling/Assert.hpp"
 
 #include <iostream>
 #include <cstdlib>

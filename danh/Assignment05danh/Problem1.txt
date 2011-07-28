@@ -1,0 +1,6 @@
+Ranking of initializations in order of speed (fastest first):
+1.
+2.
+3.
+
+Reasons why alternatives to 1. are inferior:

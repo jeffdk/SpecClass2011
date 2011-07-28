@@ -1,0 +1,113 @@
+Experimenting with various Format options for Problem2Exec. Summary here;
+details below.
+
+1) Invalid ClassID for OneDimDataWriters specified, so the valid options were
+   returned with an error.
+    <This comes from the FactoryBackboneImpl::Retrieve function>
+2) Help string specified, which is a special option with Factory that returns
+   all registered classes and their help text with an error.
+    <This comes from the FactoryBackboneImpl::Retrieve function>
+3) Valid ClassID specified, but with invalid options. The help text for the
+   specified class with a list of the invalid options returns with an error.
+    <This comes from the OptionParser::TerminateIfThereAreUnusedOptions function>
+
+
+1) Format = bla;
+
+MPI starting on 1 processors at Thu Jul 28 02:00:46 2011
+Processor Names = Arda
+[0] ##########################   ERROR   ###########################
+Factory<16OneDimDataWriter>
+ClassID 'bla' not found. Known ClassIDs:
+dat      dump     grace    oned     pmetric  ygraph   
+################################################################
+[0] 
+Terminated
+
+2) Format = help;
+
+MPI starting on 1 processors at Thu Jul 28 02:01:19 2011
+Processor Names = Arda
+[0] ##########################   ERROR   ###########################
+Factory<16OneDimDataWriter>
+Known ClassIDs & Documentation:
+--------------------------------
+dat
+dat
+Output for xmgrace, suitable for a y-t plot.  Each spatial point   
+y_i will produce one curve on the y-t plot.  Use                   
+  xmgrace -nxy filename                                            
+to display.                                                        
+x-values x_i and 'description' ignored.                            
+-- NO OPTIONS --                                                  
+
+--------------------------------
+dump
+dump
+Output a 1-dimensional .dump file containing y_i.           
+The abscicssas x_i will be ignored.                         
+-- NO OPTIONS -- 
+
+--------------------------------
+grace
+grace
+Output for xmgrace, so that each timestep will produce one curve on
+the plot.  The command                                             
+   xmgrace filename                                                
+will cause xmgrace to display all time-steps simultanously.        
+If the output-file did NOT exist initially, then a legend will be  
+created with the time of each timestep.                            
+OPTIONS                                                            
+  Legend=yes/no;   # Output legend information (default yes)      
+
+--------------------------------
+oned
+oned
+Outputs in .oned-format, which preserves all information, and can
+easily be converted to any other OneDimDataWriter format.        
+Output a 1-dimensional .dump file containing y_i.                
+-- NO OPTIONS -- 
+
+--------------------------------
+pmetric
+pmetric
+Parametric plot (x_i, y_i) for each time t.                        
+   xmgrace filename                                                
+will display all these curves simultanously.                       
+OPTIONS:                                                           
+  none                                                  
+
+--------------------------------
+ygraph
+ygraph
+Output in a format suitable for ygraph.  The command               
+   ygraph filename                                                 
+will cause ygraph to load the datafile.  One can then step through 
+the time-steps interactively.                                      
+-- NO OPTIONS -- 
+
+
+################################################################
+[0] 
+Terminated
+
+3) Format = grace(Legennd=yes);
+
+MPI starting on 1 processors at Thu Jul 28 02:02:46 2011
+Processor Names = Arda
+[0] 
+======== OptionParser: UNUSED OPTIONS ========================================
+======= These options were not used:
+[0] === Legennd
+[0] === Given Options:
+Legennd = Yes
+==== Help: ===================================================================
+grace
+Output for xmgrace, so that each timestep will produce one curve on
+the plot.  The command                                             
+   xmgrace filename                                                
+will cause xmgrace to display all time-steps simultanously.        
+If the output-file did NOT exist initially, then a legend will be  
+created with the time of each timestep.                            
+OPTIONS                                                            
+  Legend=yes/no;   # Output legend information (default yes)     

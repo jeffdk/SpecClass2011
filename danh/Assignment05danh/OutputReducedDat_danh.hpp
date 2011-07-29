@@ -2,6 +2,9 @@
 /// \file
 /// Defines class OneDimDataWriters::OutputReducedDat
 
+#ifndef OUTPUTREDUCEDDAT_DANH_HPP
+#define OUTPUTREDUCEDDAT_DANH_HPP
+
 #include "Utils/IO/OneDimDataWriter.hpp"
 #include "Utils/IO/CachedOfStream.hpp"
 #include <string>
@@ -42,3 +45,5 @@ private:
 
 
 }   // end namespace
+
+#endif  // OUTPUTREDUCEDDAT_DANH_HPP

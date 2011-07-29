@@ -29,8 +29,8 @@ namespace ComputeItems {
     };
   public:
     RaiseFirstIndex(const std::string& opts);
-    std::string Output()              const {return mOutput;}
-    const result_type& GetData()      const {return mResult;}
+    std::string Output()         const {return mOutput;}
+    const result_type& GetData() const {return mResult;}
     void RecomputeData(const DataBoxAccess& box) const;
   private:
     std::string mInput,mInvMetric,mOutput;

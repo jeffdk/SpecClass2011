@@ -1,0 +1,21 @@
+Feedback is provided for homework problems only if key items are omitted or if
+errors are found. Below this list is another list of things that should be
+fixed before full credit can be awarded.
+
+When you have completed the fixes (which in most cases should take only a
+minute or two), PLEASE E-MAIL daniel.hemberger@gmail.com to notify me
+that you have pushed your changes.
+
+Overall, everyone did a great job this week.  Thanks for your hard work!
+
+Ilana/
+
+1)  Lacks header guards in the library file.
+    Test was not made into an automated test.
+    Test does not use UtilsForTesting.
+3)  Did not delete[] pLeaky in Reset function before using "new" again.
+4)  Incorrect #include's in Subdomain_bla.hpp (see solution)
+
+TODO:
+1. Make the test in problem 1 into an automated test using UtilsForTesting.
+2. Add missing delete's in problem 3.

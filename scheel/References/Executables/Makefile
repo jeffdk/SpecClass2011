@@ -8,7 +8,7 @@ CODE_HOME = ../../../../..
 INCLUDED_AND_LINKED_LIBS =
 
 # What .cpp files containing a main function should be compiled (remove .cpp)
-EXECUTABLES = PassByValue
+EXECUTABLES = PassByValue ReturnTempObject
 
 ##############################################################################
 # Nothing below here needs to be changed

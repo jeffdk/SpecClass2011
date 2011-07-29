@@ -23,7 +23,7 @@ namespace ComputeItems {
     // Sanity checks
     REQUIRE(Input.Dim()==InvMetric.Dim(),"Dimension mismatch");
     REQUIRE(Input.Rank()==2,"Implemented only for Rank 2");
-    REQUIRE_TensorStructure(InvMetric,2,"11");
+    REQUIRE_TensorStructure(InvMetric,Dim,"11");
 
     mResult.assign(Dim,"12",InvMetric(0,0),0.0);
 

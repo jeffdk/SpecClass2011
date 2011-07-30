@@ -1,0 +1,31 @@
+
+I) Format=bla;
+bla is not a OneDimDataWriter.
+Factory provides a list of known ClassIDs.
+
+Each class that implements OneDimDataWriter has a member function
+called ClassID which returns a string.  Factory is returning a list of
+the ClassID()s from known OneDimDataWriters.  Of course, these are the
+same strings that Factory uses to select the desired class.  ClassID
+doesn't have to be the same as the class's name.
+
+II) Format=help;
+Factory provides a detailed description of each of the options.
+
+Each class that implements OneDimDataWriter has a member function
+called Help which returns a longer string, which is intended to
+provide a description of what the class does, and what Options it may
+take (although developers aren't perfect about maintaining the Help
+text.)  This is what Factory is returning here.
+
+III) Format=grace(Legennd=Yes);
+
+OutputGrace's OptionParser gets passed "Legennd=Yes" and it complains
+since Legennd isn't one of the Option strings being read.  First
+OptionParser tells you that the Legennd Option was unread, then it
+spits out the Help() text for OutputGrace.
+
+
+
+
+

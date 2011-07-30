@@ -1,17 +1,22 @@
-#include "Volume_Bohn.hpp"
+#include "StudentProjects/SpecClass2011/Bohn/Assignment04Bohn/Volume_Bohn.hpp"
 #include <iostream>
 #include <cstdlib>
 
-#include "OptionParser.hpp"
-#include "ReadFileIntoString.hpp"
-#include "MyVector.hpp"
-#include "Require.hpp"
+#include "Utils/StringParsing/OptionParser.hpp"
+#include "Utils/StringParsing/ReadFileIntoString.hpp"
+#include "Utils/MyContainers/MyVector.hpp"
+#include "Utils/ErrorHandling/Require.hpp"
+#include "Utils/ErrorHandling/UtilsForTesting.hpp"
+
+#include <cmath>
 
 int main(int /*argc*/, char** /*argv*/) {
   std::string opts = ReadFileIntoString("Radii.input");
   OptionParser parser(opts);
 
   double totalVolume = 0.0;
+  //
+  const double correctVolume = parser.Get<double>("correctVolumeOverPi") * M_PI;
 
   {
     const double radius_A = parser.Get<double>("radius_A");
@@ -36,6 +41,9 @@ int main(int /*argc*/, char** /*argv*/) {
   }
 
     std::cout << "Total volume of spheres: " << totalVolume << std::endl;
+
+    IS_EQUAL_EPS(totalVolume, correctVolume, "Wrong volume. Correct answer: "
+        << correctVolume);
 
     return EXIT_SUCCESS;
 }

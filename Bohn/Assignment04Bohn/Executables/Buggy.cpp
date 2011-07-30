@@ -1,4 +1,4 @@
-#include "RaiseToPower_Bohn.hpp"
+#include "StudentProjects/SpecClass2011/Bohn/Assignment04Bohn/RaiseToPower_Bohn.hpp"
 #include <iostream>
 
 int main() {

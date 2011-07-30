@@ -1,6 +1,6 @@
-#include "Volume_KEITH.hpp" 
-#include "MyVector.hpp"
-#include "REQUIRE.hpp"
+#include "Volume_Keith.hpp" 
+#include "Utils/MyContainers/MyVector.hpp"
+#include "Utils/ErrorHandling/Require.hpp"
 
 double TotalVolumeOfSpheresFromRadii(const MyVector<double>& radii) {
   // I'm using REQUIRE's because I don't have debug turned on.  But these

@@ -7,8 +7,8 @@
 //
 
 
-#include "MyVector.hpp"
 #include "Assignment02fhebert.hpp"
+#include "Utils/MyContainers/MyVector.hpp"
 
 
 MyVector<double> sumVectors(const MyVector<double>& A, const MyVector<double>& B)

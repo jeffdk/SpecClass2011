@@ -1,7 +1,7 @@
-#include "Volume_fhebert.hpp"
-#include "MyVolume_fhebert.hpp"
-#include "MyVector.hpp"
-#include "UtilsForTesting.hpp"
+#include "StudentProjects/SpecClass2011/fhebert/Assignment04fhebert/Volume_fhebert.hpp"
+#include "StudentProjects/SpecClass2011/fhebert/Assignment04fhebert/MyVolume_fhebert.hpp"
+#include "Utils/MyContainers/MyVector.hpp"
+#include "Utils/ErrorHandling/UtilsForTesting.hpp"
 #include <cstdlib>
 #include <math.h>
 

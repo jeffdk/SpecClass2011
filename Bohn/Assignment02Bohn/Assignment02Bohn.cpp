@@ -1,6 +1,6 @@
-#include "MyVector.hpp"
-#include "Assignment02Bohn.hpp"
-#include "Require.hpp"
+#include "Utils/MyContainers/MyVector.hpp"
+#include "StudentProjects/SpecClass2011/Bohn/Assignment02Bohn/Assignment02Bohn.hpp"
+#include "Utils/ErrorHandling/Require.hpp"
 
 MyVector<double> SumVectors(const MyVector<double>& A,
                             const MyVector<double>& B) {

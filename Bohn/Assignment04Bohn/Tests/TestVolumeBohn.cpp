@@ -45,6 +45,6 @@ int main(int /*argc*/, char** /*argv*/) {
     IS_EQUAL_EPS(totalVolume, correctVolume, "Wrong volume. Correct answer: "
         << correctVolume);
 
-    return EXIT_SUCCESS;
+    return UtilsForTesting::NumberOfTestsFailed();
 }
 

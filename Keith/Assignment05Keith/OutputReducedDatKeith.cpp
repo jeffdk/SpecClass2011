@@ -15,7 +15,7 @@ namespace OneDimDataWriters {
     public OneDimDataWriter,
     Factory::Register<OutputReducedDatKeith> {
   public:
-    static std::string ClassID() { return "reducedDat"; }
+    static std::string ClassID() { return "OutputReducedDatKeith"; }
     static std::string Help() {
       return ClassID()+"\n"
         "Outputs x and y columns in a seperate file for each call to     \n"

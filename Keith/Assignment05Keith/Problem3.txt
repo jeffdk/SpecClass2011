@@ -1,0 +1,47 @@
+
+
+At time = 0.5 with an angle cutoff of 0.01 degrees the plots look
+indistinguishable.
+
+> wc -l Heat.grace
+2050 Heat.grace
+
+> wc -l Heat_Count1.dat
+301 Heat_Count1.dat
+
+So the number of entries is reduced by about a factor of 6.
+
+================
+
+Not robust.
+
+Consider a circle represented by equally spaced x,y values.  In this
+case the angle is the same at every point and with our current
+differential angles algorithm, either all points will be dropped, or
+none.  
+
+Possible improvement:
+
+Let's consider our current differential angles measure as just one of
+a class of similar metrics estimating the local curvature of the data.
+
+***The algorithm could be improved by making it iterative.***
+Decompose the full data set into non-overlapping minimal subsets on
+which the metric of choice can be evaluated.  Drop all points for
+which the metric threshold is satisfied.  Repeat the process on this
+new data set.
+
+The non-overlapping restriction is actually overly strong, e.g. for
+our differential angles metric we merely want to make sure that
+adjacent points are not dropped in the same iteration.
+
+Noisy data:
+
+Noisy data is more of a problem.  For purely random data the removal
+of any given point does not alter the content of the data, it might be
+visually distinguishable, but there is no loss of content.  
+
+Now, what about the case where the data is simply noisy, i.e. random
+data superimposed on a smooth curve.  In this case a spectral
+filtering method would be more effective.  
+

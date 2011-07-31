@@ -1,7 +1,7 @@
 #include <cstdlib>
-#include "Tensor.hpp"
-#include "DataMesh.hpp"
-#include "InvertTensorBohn.hpp"
+#include "Utils/Tensor/Tensor.hpp"
+#include "Utils/DataMesh/DataMesh.hpp"
+#include "StudentProjects/SpecClass2011/Bohn/Assignment03Bohn/InvertTensorBohn.hpp"
 
 int CompareTensors(const Tensor<DataMesh> a, const Tensor<DataMesh> b)
 {

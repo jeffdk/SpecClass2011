@@ -6,12 +6,12 @@
 // the result to stdout.
 //
 
-#include <iostream>
-#include <cstdlib>
+#include "StudentProjects/SpecClass2011/fhebert/Assignment01fhebert/MyAssignment01fhebert.hpp"
+#include "Utils/StringParsing/OptionParser.hpp"
+#include "Utils/StringParsing/ReadFileIntoString.hpp"
 
-#include "OptionParser.hpp"
-#include "ReadFileIntoString.hpp"
-#include "MyAssignment01fhebert.hpp"
+#include <cstdlib>
+#include <iostream>
 
 
 int main(int, char**)

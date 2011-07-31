@@ -1,8 +1,8 @@
-#include "DataMesh.hpp"
-#include "Tensor.hpp"
+#include "Utils/DataMesh/DataMesh.hpp"
+#include "Utils/Tensor/Tensor.hpp"
 #include <cstdlib>
 #include <time.h>
-#include "InvertTensorBohn.hpp"
+#include "StudentProjects/SpecClass2011/Bohn/Assignment03Bohn/InvertTensorBohn.hpp"
 
 int main(void) {
   // Random number seed

@@ -1,0 +1,15 @@
+1. Include directives
+
+Includes should be used in a manner that maximizes efficiency, not convenience.
+Therefore, several includes are unnecessary:
+
+MyVector.hpp
+NonCopyable.hpp
+Assert.hpp
+
+It may not be obvious that Assert.hpp is unnecessary, but it is if we move the
+implementation of several functions into RotationMatrix.cpp.
+
+2. Default constructor
+
+3. The member-function RotationMatrix::Impl()

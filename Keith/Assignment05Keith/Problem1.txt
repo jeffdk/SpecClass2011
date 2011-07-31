@@ -1,24 +1,30 @@
 
 
 fewest to most memory-accesses;
-1, 3, 2
+(1, 3), 2
 
-Both 2 and 3 call a DataMesh(const Mesh&, ...)  constructor to create
-DetF requiring a memory-access.  In both cases the mesh is obtained
-from A requiring a memory-access.  Then they call the assignment
-operator which requires another memory-access.
+Here I'm assuming that the Mesh indexes a large number of grid points,
+so that assigning values to a child DataMesh is much more expensive
+than constructing the Mesh itself.  (This is almost always the case.)
 
-2 requires an additional memory-access to zero out the memory
-allocated to DetF.  This is unnecessary since the next step is to
-assign DetF.
+Let me define the term expensive memory-access (EMA) for any action
+which requires a read/write of every double in the DataMesh.
+Allocating the underlying array which stores the data for a DataMesh
+is not an EMA (assuming the memory manager is not stupid).
 
-1 simply calls the copy constructor.  So only one memory-access for
-assignment.
+Evaluation of the rhs DataMesh is a fixed cost shared by all 1, 2 and
+3 (requiring several EMAs), so I'm going to leave it out in this
+analysis.
 
-All use the "Construct from expression" constructor for DetF to
-evaluate the rhs, which is several memory accesses, but they're all
-the same in that respect.
+The fact that 2 and 3 call A to get the mesh does not count as an EMA.
 
+Compared to 3, 2 requires an additional EMA to write zeros on the
+DataMesh.  This is wasteful, since in the next command DetF is
+re-assigned.
 
+1 calls the copy constructor which uses one EMA.  This is equivalent
+to the assignment operator used in 2 and 3 which also require one EMA.
 
+Thus, 1 and 3 are basically equivalent, and 2 is more expensive by one
+EMA.
 

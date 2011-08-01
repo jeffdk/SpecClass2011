@@ -5,10 +5,11 @@
 CODE_HOME = ../../../../..
 
 # What libraries does this executable depend on
-INCLUDED_AND_LINKED_LIBS =
+INCLUDED_AND_LINKED_LIBS = DataMesh Tensor MyContainers LowLevelUtils \
+			   ErrorHandling
 
 # What .cpp files containing a main function should be compiled (remove .cpp)
-EXECUTABLES = PassByValue ReturnTempObject
+EXECUTABLES = PassByValue ReturnTempObject DataMeshMemory
 
 ##############################################################################
 # Nothing below here needs to be changed

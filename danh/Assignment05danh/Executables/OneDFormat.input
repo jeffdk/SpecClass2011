@@ -1,0 +1,3 @@
+Format   = ReducedDat(MinAngle=0.000199);  # Which 1-D output format
+Basename = OutFile;            # Filename (without extension)
+Times    = 10;             # Which times to output

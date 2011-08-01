@@ -5,6 +5,8 @@
 // a tensor (3x3 ONLY) of datameshes.
 //
 
+template<typename> class Tensor;
+class DataMesh;
 
 //=========================================================
 // this function calculates the determinant of a given 

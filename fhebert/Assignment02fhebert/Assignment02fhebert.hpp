@@ -14,7 +14,8 @@
 ///
 
 
-MyVector<double> sumVectors( const MyVector<double>& A, const MyVector<double>& B );
+template<typename> class MyVector;
 
+MyVector<double> sumVectors( const MyVector<double>& A, const MyVector<double>& B );
 MyVector<double> scaleVector( const MyVector<double>& A, const double d );
 

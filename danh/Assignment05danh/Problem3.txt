@@ -1,0 +1,14 @@
+There are definitely problems with this routine.  Because it checks adjacent
+points, and not adjacent INCLUDED points, you can build up a total omitted
+angle that is much greater than your point-by-point omitted angle.
+
+As you can see in my 3 plots:
+
+1) ReducedDat.0rad.pdf
+2) ReducedDat.1e-4rad.pdf
+3) ReducedDat.1.99e-4rad.pdf
+
+#1 has no omitted points, #2 has omitted points but still appears identical
+to #1, but #3, where MinAngle = 1.99e-4 radians, the plot no longer looks
+identical to #1 (only the points near the inflection point, where the change
+in angle is large, remain included).

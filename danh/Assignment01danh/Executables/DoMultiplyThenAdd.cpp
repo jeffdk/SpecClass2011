@@ -4,9 +4,9 @@
 #include <iostream>
 #include <cstdlib>
 
-#include "OptionParser.hpp"
-#include "ReadFileIntoString.hpp"
-#include "Arithmetic_danh.hpp"
+#include "Utils/StringParsing/OptionParser.hpp"
+#include "Utils/StringParsing/ReadFileIntoString.hpp"
+#include "StudentProjects/SpecClass2011/danh/Assignment01danh/Arithmetic_danh.hpp"
 
 int main(int /*argc*/, char** /*argv*/) {
     // Read in the input file

@@ -1,0 +1,98 @@
+Feedback is provided for homework problems only if key items are omitted or if
+errors are found. Below this list is another list of things that should be
+fixed before full credit can be awarded.
+
+When you have completed the fixes (which in most cases should take only a
+minute or two), PLEASE E-MAIL daniel.hemberger@gmail.com to notify me
+that you have pushed your changes.
+
+Overall, everyone did a great job this week.  Thanks for your hard work!
+
+
+**Curran/
+
+1)  Did not distinguish between coding standard violations and errors in .txt.
+
+Bohn/
+
+1)  Lacks documentation. 
+    Test does not actually test that the correct volume is returned.
+    Insufficient includes in the test .cpp file to compile.
+3)  Did not delete pMemLeaker in UseMemoryLeaker.cpp
+   
+BrettDeaton/
+
+1)  Incomplete list of standards violations in .txt.
+    No header guards, forward declarations, or documentation in library file.
+    Test was not made into an automated test.
+    Committed test executable.
+2)  Did not enforce that n is declared const
+3)  Did not delete pMemLeaker in UseMemoryLeaker.cpp
+
+cookgb/
+
+1)  Incomplete list of standards violations in .txt.
+    Lacks header guards and forward declaration in library file.
+    No need to instantiate UtilsForTesting in test exec.
+2)  Did not enforce that n is declared const
+
+fatemeh/
+
+1)  Incomplete list of errors in .txt.
+    No header guards, forward declarations, or documentation in library file.
+    Test was not made into an automated test.
+2)  Did not enforce that n is declared const
+3)  Did not delete[] pLeaky in Reset function before using "new" again.
+4)  Incorrect #include's in Subdomain_bla.hpp (see solution)
+
+*fhebert/
+
+1)  Incomplete list of standards violations in .txt.
+    Lacks header guards and forward declarations in library file.
+2)  Did not enforce that n is declared const
+
+hohejd8/
+
+1)  Incomplete list of standards violations in .txt.
+    Lacks header guards and forward declarations in library file.
+    No need to instantiate UtilsForTesting in test exec.
+3)  Did not delete pMemLeaker in UseMemoryLeaker.cpp
+
+Ilana/
+
+1)  Lacks header guards in the library file.
+    Test was not made into an automated test.
+    Test does not use UtilsForTesting.
+3)  Did not delete[] pLeaky in Reset function before using "new" again.
+4)  Incorrect #include's in Subdomain_bla.hpp (see solution)
+
+Iryna/
+
+1)  Incomplete list of standards violations in .txt.
+    No header guards, forward declarations, or documentation in library file.
+    Did not commit run_tests script; DID commit executable.
+    No need to instantiate UtilsForTesting in test exec.
+2)  Did not enforce that n is declared const
+4)  Incorrect #include's in Subdomain_bla.hpp (see solution)
+
+**Keith/
+
+1)  No need to instantiate UtilsForTesting in test exec.
+
+maxim/
+
+1)  Associated .hpp file should be the first include in a .cpp file.
+    No doxygen documentation.
+    No need to instantiate UtilsForTesting in test exec.
+
+Sergei/
+
+1)  Incomplete list of standards violations in .txt.
+    No header guards, forward declarations, or documentation in library file.
+    Committed executable.
+    Did not make use of UtilsForTesting.
+4)  Incorrect #include's in Subdomain_bla.hpp (see solution)
+
+*wthrowe/
+
+1)  Lacks documentation in library file.

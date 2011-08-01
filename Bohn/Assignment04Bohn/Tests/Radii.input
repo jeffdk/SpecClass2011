@@ -1,4 +1,7 @@
-radius_A = 1.1;
-radius_B = 2.2;
+radius_A = 0.0;
+radius_B = 6.6;
 radius_C = 3.3;
-radius_D = 4.4;
+radius_D = 9.9;
+
+#needs to be changed if any of the radii change
+correctVolumeOverPi = 1724.976;

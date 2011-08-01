@@ -1,8 +1,8 @@
 #ifndef TopologyMesh_hpp
 #define TopologyMesh_hpp
  
-#include "Mesh.hpp"
-#include "Topology.hpp"
+#include "Utils/DataMesh/Mesh.hpp"
+#include "Dust/Domain/Topology/Topology.hpp"
 template <typename> class MyVector;
 class IndexMap;
  

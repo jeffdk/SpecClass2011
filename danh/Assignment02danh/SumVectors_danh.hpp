@@ -9,7 +9,7 @@
 /// @param divisor  factor that divides each component
 /// @return         (A+B)/divisor
  
-#include "MyVector.hpp"
+#include "Utils/MyContainers/MyVector.hpp"
 
 MyVector<double> SumVectors(const MyVector<double>& A,
                             const MyVector<double>& B,

@@ -1,0 +1,113 @@
+1. Breaking the input files
+
+a) First, I tried removing one of the DataBoxItems.  I commented out the 
+"GlobalDifferentiator" item.
+
+[0] ====== DataBox 'ApplyObservers' Contents =====
+[0] ====== DataBox 'ApplyObservers' contains =====
+[0] Domain      ReferenceItem<const Domain&>
+[0]             Added by ResizeDataBoxAndAddDustItems.cpp (line 21; ResizeDataBoxAndAddDustItems)
+[0] 
+[0] Time        VolatileItem<double>
+[0]             Added by ApplyObserversWork.cpp (line 453; ApplyObserversWork)
+[0] 
+[0] ====== DataBox 'ApplyObservers/Sphere0' contains =====
+[0] GlobalCoords
+[0]             ComputeItem<MyVector<DataMesh>>
+[0]             Added by ResizeDataBoxAndAddDustItems.cpp (line 21; ResizeDataBoxAndAddDustItems)
+[0] 
+[0] Mesh        ComputeItem<const Mesh>
+[0]             Added by ResizeDataBoxAndAddDustItems.cpp (line 21; ResizeDataBoxAndAddDustItems)
+[0] 
+[0] Q           ComputeItem<Tensor<DataMesh>>
+[0]             [EvaluateVectorFormula] added by ApplyObserversWork.cpp (line 453; ApplyObserversWork)
+[0] 
+[0] Radius      ComputeItem<Tensor<DataMesh>>
+[0]             [EvaluateScalarFormula] added by ApplyObserversWork.cpp (line 453; ApplyObserversWork)
+[0] 
+[0] Subdomain   VolatileItem<const Subdomain>
+[0]             Added by ResizeDataBoxAndAddDustItems.cpp (line 21; ResizeDataBoxAndAddDustItems)
+[0] 
+[0] dQ          ComputeItem<Tensor<Tensor<DataMesh> >>
+[0]             [FirstDeriv] added by ApplyObserversWork.cpp (line 453; ApplyObserversWork)
+[0] 
+[0] dQflattened
+[0]             ComputeItem<Tensor<DataMesh>>
+[0]             [FlattenDeriv] added by ApplyObserversWork.cpp (line 453; ApplyObserversWork)
+[0] 
+[0] divQ        ComputeItem<Tensor<DataMesh>>
+[0]             [Trace] added by ApplyObserversWork.cpp (line 453; ApplyObserversWork)
+[0] 
+[0] ====== DataBox 'ApplyObservers/Sphere0' Error =======
+[0] Key 'GlobalDifferentiator' not in DataBox 'ApplyObservers/Sphere0'.
+[0] Contents of this DataBox listed above.
+[0] Accessing DataBox "ApplyObservers" through DataBoxAccess("NormOfTensor").
+Get<>-sequence: *this -> Child -> divQ -> dQflattened -> dQ
+Error occured during call to Accessing DataBox "ApplyObservers" through DataBoxAccess("NormOfTensor").
+Get<>-sequence: *this -> Child -> divQ -> dQflattened -> dQ
+Error occured during call to Get<GlobalDifferentiator>("GlobalDifferentiator")
+[0] === DataBox Error ==============================================
+[0] 
+Terminated
+
+What this error means is that the Observer has a "Get" call for the output
+of GlobalDifferentiator. But since I didn't put it in the DataBox, the Observer
+dies because it can't find it.
+
+b) Second, I tried to put everything into the Domain databox instead of the
+Subdomain databox.  I got the following error:
+
+[0] ====== DataBox 'ApplyObservers' Contents =====
+[0] ====== DataBox 'ApplyObservers' contains =====
+[0] Domain      ReferenceItem<const Domain&>
+[0]             Added by ResizeDataBoxAndAddDustItems.cpp (line 21; ResizeDataBoxAndAddDustItems)
+[0] 
+[0] GlobalDifferentiator
+[0]             ComputeItem<GlobalDifferentiator>
+[0]             [GlobalDifferentiator] added by ApplyObserversWork.cpp (line 453; ApplyObserversWork)
+[0] 
+[0] Q           ComputeItem<Tensor<DataMesh>>
+[0]             [EvaluateVectorFormula] added by ApplyObserversWork.cpp (line 453; ApplyObserversWork)
+[0] 
+[0] Radius      ComputeItem<Tensor<DataMesh>>
+[0]             [EvaluateScalarFormula] added by ApplyObserversWork.cpp (line 453; ApplyObserversWork)
+[0] 
+[0] Time        VolatileItem<double>
+[0]             Added by ApplyObserversWork.cpp (line 453; ApplyObserversWork)
+[0] 
+[0] dQ          ComputeItem<Tensor<Tensor<DataMesh> >>
+[0]             [FirstDeriv] added by ApplyObserversWork.cpp (line 453; ApplyObserversWork)
+[0] 
+[0] dQflattened
+[0]             ComputeItem<Tensor<DataMesh>>
+[0]             [FlattenDeriv] added by ApplyObserversWork.cpp (line 453; ApplyObserversWork)
+[0] 
+[0] divQ        ComputeItem<Tensor<DataMesh>>
+[0]             [Trace] added by ApplyObserversWork.cpp (line 453; ApplyObserversWork)
+[0] 
+[0] ====== DataBox 'ApplyObservers/Sphere0' contains =====
+[0] GlobalCoords
+[0]             ComputeItem<MyVector<DataMesh>>
+[0]             Added by ResizeDataBoxAndAddDustItems.cpp (line 21; ResizeDataBoxAndAddDustItems)
+[0] 
+[0] Mesh        ComputeItem<const Mesh>
+[0]             Added by ResizeDataBoxAndAddDustItems.cpp (line 21; ResizeDataBoxAndAddDustItems)
+[0] 
+[0] Subdomain   VolatileItem<const Subdomain>
+[0]             Added by ResizeDataBoxAndAddDustItems.cpp (line 21; ResizeDataBoxAndAddDustItems)
+[0] 
+[0] ====== DataBox 'ApplyObservers/Sphere0' Error =======
+[0] Key 'divQ' not in DataBox 'ApplyObservers/Sphere0'.
+[0] Contents of this DataBox listed above.
+[0] Accessing DataBox "ApplyObservers" through DataBoxAccess("NormOfTensor").
+Get<>-sequence: *this -> Child
+Error occured during call to Accessing DataBox "ApplyObservers" through DataBoxAccess("NormOfTensor").
+Get<>-sequence: *this -> Child
+Error occured during call to Get<Tensor<DataMesh>>("divQ")
+[0] === DataBox Error ==============================================
+[0] 
+Terminated
+
+This is basically the same error as a) because the Observer could not find
+the items in the Subdomain databox. Even though divQ is in the Domain databox,
+the Observer doesn't have access to it.

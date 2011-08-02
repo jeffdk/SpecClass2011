@@ -1,7 +1,13 @@
 1. Include directives
 
+This is a tricky issue with pImpl files. On the one hand, you could include
+everything that most if not all derived classes need in the base class .hpp.
+On the other hand, if even ONE derived class doesn't use one of the standard
+included files, then you're sacrificing efficiency for convenience.  I follow
+the maxim:
+
 Includes should be used in a manner that maximizes efficiency, not convenience.
-Therefore, several includes are unnecessary:
+Therefore, several includes are unnecessary to specify in RotationMatrix.hpp:
 
 MyVector.hpp
 NonCopyable.hpp
@@ -10,6 +16,22 @@ Assert.hpp
 It may not be obvious that Assert.hpp is unnecessary, but it is if we move the
 implementation of several functions into RotationMatrix.cpp.
 
+I recently applied this maxim to VolumeTerms when I upgraded it to Factory,
+so I don't know if this question is referencing the old or the new.  If it's
+the new, then it uses forward declarations whenever possible.
+
+Further, I believe that the Impl class should be put in its own file (as is
+done in VolumeTerms) because this minimizes the amount of stuff that is
+included in every derived class (e.g. derived VolumeTerms only need to include
+VolumeTermsImpl.hpp, and not VolumeTerms.hpp).
+
 2. Default constructor
 
+There are 3 constructors for RotationMatrix, so I don't know what makes one
+the default...
+
 3. The member-function RotationMatrix::Impl()
+
+A consequence of what I said in Include directives section.  If you move the
+implementation of Impl() to the .cpp file, then you can remove the Assert.hpp
+dependency from RotationMatrix.hpp.

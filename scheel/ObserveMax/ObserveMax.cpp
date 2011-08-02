@@ -16,7 +16,7 @@ namespace Observers {
 
   Max::Max(const std::string &Opts,const DataBox&,const std::string& Dir) { 
     OptionParser p(Opts,Help());
-    mFileName = PrependDirectory(p.Get<std::string>("Filename"),Dir)+".dat";
+    mFileName = PrependDirectory(p.Get<std::string>("Filename"),Dir);
     mInput    = p.Get<std::string>("Input");
   }
 
@@ -45,3 +45,5 @@ namespace Observers {
     }
   }
 }
+
+REGISTER_OBSERVER(Max)

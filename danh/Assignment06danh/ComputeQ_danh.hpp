@@ -1,5 +1,5 @@
 /// \file
-/// Defines the ComputeItem ComputeItems::ComputeQ.
+/// Defines the ComputeItem ComputeItems::ComputeQ_danh.
 #ifndef ComputeQ_danh_hpp
 #define ComputeQ_danh_hpp
 
@@ -9,7 +9,7 @@
 
 namespace ComputeItems {
 
-/// Adds a corotation \f$\vec\Omega\times\vec r\f$ to a vector.
+/// Computes a Tensor<DataMesh> of rank 1 holding \hat{r}^i/r^3
 class ComputeQ_danh : public ComputeItem<Tensor<DataMesh> >,
                       private InstantiateDataBoxAdder<ComputeQ_danh>
 {
@@ -17,14 +17,16 @@ public:
   static std::string ClassID() { return "ComputeQ"; }
   static std::string Help() { 
     return 
-      "ComputeQ                                                        \n"
-      "Help text.                                                      \n"
-      "OPTIONS:                                                        \n"
-      "   Output = string;                                             \n"
-      "REQUIRES in the DataBox:                                        \n"
-      "  MyVector<DataMesh>            'GlobalCoords'                  \n"
-      "PRESENTS to the DataBox                                         \n"
-      "  <Tensor<DataMesh> >           [Output]                        \n"
+      "ComputeQ                                                         \n"
+      "Computes a Tensor<DataMesh> of rank 1 holding hat{r}^i/r^3,      \n"
+      "where r is the magnitude of the GlobalCoords vector.             \n"
+      "                                                                 \n"
+      "OPTIONS:                                                         \n"
+      "  Output = string;                                               \n"
+      "REQUIRES in the DataBox:                                         \n"
+      "  MyVector<DataMesh>            'GlobalCoords'                   \n"
+      "PRESENTS to the DataBox                                          \n"
+      "  <Tensor<DataMesh> >           [Output]                         \n"
     ;
   };
 public:

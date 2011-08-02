@@ -1,7 +1,7 @@
-#include "TensorInversewthrowe.hpp"
-#include "DataMeshNorms.hpp"
-#include "ComputeInverse.hpp"
-#include "ComputeDeterminant.hpp"
+#include "StudentProjects/SpecClass2011/wthrowe/Assignment03wthrowe/TensorInversewthrowe.hpp"
+#include "Utils/DataMesh/DataMeshNorms.hpp"
+#include "Utils/Math/ComputeInverse.hpp"
+#include "Utils/Math/ComputeDeterminant.hpp"
 
 #include <iostream>
 #include <cstdlib>

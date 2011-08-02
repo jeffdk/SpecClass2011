@@ -1,6 +1,6 @@
 #include "OutputReduceDatwthrowe.hpp"
-#include "OptionParser.hpp"
-#include "MyVector.hpp"
+#include "Utils/StringParsing/OptionParser.hpp"
+#include "Utils/MyContainers/MyVector.hpp"
 
 #include <cmath>
 #include <sstream>

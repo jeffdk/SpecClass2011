@@ -1,0 +1,9 @@
+*~
+Dependencies/
+*.o
+*.dat
+RunIt.sh
+Domain.input
+ApplyObservers.input
+RotationMatrix_WithMyNotes.hpp
+bak.*

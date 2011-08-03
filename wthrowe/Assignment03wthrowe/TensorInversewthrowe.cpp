@@ -1,5 +1,5 @@
 #include "TensorInversewthrowe.hpp"
-#include "Assert.hpp"
+#include "Utils/ErrorHandling/Assert.hpp"
 
 void TensorInverse(const Tensor<DataMesh>& t, Tensor<DataMesh>& inv) {
   ASSERT(t.Rank() == 2, "Not a matrix");

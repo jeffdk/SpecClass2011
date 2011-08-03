@@ -1,15 +1,14 @@
 #/// \dir
-#/// Contains a minimal set of files for adding a new subdirectory to SpEC,
-#/// including executables and tests.
+#/// Contains wthrowe's solution to Assignment 06
 
 # Where is SPEC_HOME relative to this directory
 CODE_HOME = ../../../..
 
 # What subdirectories should also be compiled
-SUBDIRECTORIES = Executables Tests
+SUBDIRECTORIES = Executables
 
 # What .cpp files should be compiled (replace .cpp with .o)
-OBJECT_FILES_INTO_LIB = ComputeQhohejd8.o
+OBJECT_FILES_INTO_LIB = InverseSquareField_wthrowe.o
 
 ##############################################################################
 # Nothing below here needs to be changed

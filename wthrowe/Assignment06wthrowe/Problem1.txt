@@ -1,0 +1,9 @@
+- NonCopyable and MyVector don't appear to be used at all.
+- "OOPS" is not a very useful error message.  (On the other hand,
+  "mpImpl!=0 violated" is not too bad.)
+- The default constructor creates objects in an invalid state.  This
+  may be useful, but the constructor should probably be made explicit
+  so that it can't be done accidentally.
+- It would be better if Impl() could be made private somehow.  This
+  would require changing the copy constructor and operator=.  At the
+  very least the non const Impl() should not be there.

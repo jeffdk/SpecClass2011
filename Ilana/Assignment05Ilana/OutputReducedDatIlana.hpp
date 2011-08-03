@@ -1,5 +1,6 @@
 #include "MyVector.hpp"
 #include "OneDimDataWriter.hpp"
+#include <string>
 
 
 namespace OneDimDataWriters {
@@ -27,7 +28,8 @@ namespace OneDimDataWriters {
     void TruncateFile() const;
   private:
     const string mFileName;
-    virtual void AppendToFileImp1(const double time, const MyVector<double>& x, 
+    double mMinAngle;
+    void AppendToFileImp1(const double time, const MyVector<double>& x, 
 				  const MyVector<double>& y) const;
   };
 

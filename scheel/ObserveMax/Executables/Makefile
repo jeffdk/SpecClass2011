@@ -12,7 +12,7 @@ INCLUDED_AND_LINKED_LIBS = \
      MiscUtils MpiWrappers MyContainers LowLevelUtils ErrorHandling 
 
 # What .cpp files containing a main function should be compiled (remove .cpp)
-EXECUTABLES = LoopOverSubdomains
+EXECUTABLES = LoopOverSubdomains MpiHelloWorld
 
 ##############################################################################
 # Nothing below here needs to be changed

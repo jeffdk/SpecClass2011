@@ -1,7 +1,7 @@
 #ifndef OutputReduceDatwthrowe_hpp
 #define OutputReduceDatwthrowe_hpp
 
-#include "OneDimDataWriter.hpp"
+#include "Utils/IO/OneDimDataWriter.hpp"
 
 namespace OneDimDataWriters {
 

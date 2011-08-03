@@ -1,0 +1,8 @@
+Broke by:
+1. Changed the Input of Trace from dQflattened to dQ.  It informs me
+that Get<Tensor<DataMesh>>("dQ") failed because dQ is a
+Tensor<Tensor<DataMesh> >.
+
+2. Changed the Input of FirstDeriv from Q to dQflattened.  It informs
+me that !mCurrentlyRecomputingMyself is violated because of a cyclic
+dependency while trying to find dQflattened.

@@ -1,12 +1,12 @@
 #include <iostream>
 #include <cstdlib>
 
-#include "MyVector.hpp"
-#include "OptionParser.hpp"
-#include "ReadFileIntoString.hpp"
-#include "Require.hpp"
-#include "UtilsForTesting.hpp"
-#include "Assignment02wthrowe.hpp"
+#include "Utils/MyContainers/MyVector.hpp"
+#include "Utils/StringParsing/OptionParser.hpp"
+#include "Utils/StringParsing/ReadFileIntoString.hpp"
+#include "Utils/ErrorHandling/Require.hpp"
+#include "Utils/ErrorHandling/UtilsForTesting.hpp"
+#include "StudentProjects/SpecClass2011/wthrowe/Assignment02wthrowe/Assignment02wthrowe.hpp"
 
 int main(int /*argc*/, char** /*argv*/) {
 

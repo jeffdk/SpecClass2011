@@ -9,7 +9,7 @@ CODE_HOME = ../../../..
 SUBDIRECTORIES = Executables Tests
 
 # What .cpp files should be compiled (replace .cpp with .o)
-OBJECT_FILES_INTO_LIB = Assignment05Ilana.o
+OBJECT_FILES_INTO_LIB = OutputReducedDatIlana.o
 
 ##############################################################################
 # Nothing below here needs to be changed

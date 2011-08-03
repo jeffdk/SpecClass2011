@@ -1,0 +1,34 @@
+1) As a first attempt, I simply changed the following line:
+EvaluateVectorFormula(R=Rdius;
+by introducing a typo into "Radius". Now, there is no reason to expect that
+such an item will exist in the DataBox. Such typos have happened to me
+frequently in the past so it's useful to know what happens.
+I get the following error.
+====== DataBox 'ApplyObservers/Sphere0' Error =======
+[0] Key 'Rdius' not in DataBox 'ApplyObservers/Sphere0'.
+[0] Contents of this DataBox listed above.
+[0] Accessing DataBox "ApplyObservers" through DataBoxAccess("NormOfTensor").
+Get<>-sequence: *this -> Child -> divQ -> dQflattened -> dQ -> Q
+Error occured during call to Accessing DataBox "ApplyObservers" through DataBoxAccess("NormOfTensor").
+Get<>-sequence: *this -> Child -> divQ -> dQflattened -> dQ -> Q
+Error occured during call to Get<Tensor<DataMesh>>("Rdius")
+[0] === DataBox Error ==============================================
+
+This tells me exactly what I need to know: I tried accessing something called
+"Rdius" in the DataBox ApplyObservers through NormOfTensor. Thus, I know what
+to do when I get this error: go find the DataBox and correct what I am asking
+for.
+
+2)  Change the indices over which the trace take place: Indices=0,2;
+This results in:
+
+#####################  REQUIRE  FAILED  ##########################
+#### mIndex1<rank  violated
+#### Trace.cpp (line 130)
+[0] index larger than rank of tensor!
+##################################################################
+
+This error tells me that something goes wrong when I am trying to compute the
+trace of a certain tensor. In particular that I am asking the trace to be 
+taken over an index which is larger than the rank of the input tensor.
+This is of course nonsense and Trace rightfully tells me so.

@@ -1,0 +1,31 @@
+The most obvious thing to critique that jumps out are the ASSERT statements
+in the .hpp file:
+RotationMatrixImpl& Impl() { ASSERT(mpImpl!=0,"OOPS"); return *mpImpl; }
+  const RotationMatrixImpl& Impl() const 
+  { ASSERT(mpImpl!=0,"OOPS"); return *mpImpl; }
+
+These assert statements provide absolutely no information to the user if they
+are triggered. This of course means that one has to dig through the code/
+documentaiton to figure out what is wrong. Perhaps a better error message
+would be something like "Used a default constructor for a RotationMatrix, which results in a null pointer".
+
+Next, contrasting VolumeItem.hpp, RotationMatrix.hpp has very little in way
+of documentation. VolumeItem has a lot of very helpful information which not
+only describes what's going on in the code but also explains how this
+particular class is supposed to be used in the larger context of SpEC. As 
+a possible improvement one could write more detailed explanation for 
+RotationMatrixImpl, describing how it is to be used.
+
+Consider now the default constructor of RotationMatrix. It creates a
+pointer mpImpl and initializes it to null. It would be useful to have a 
+comment that explains why this is done in the default constructor,
+something to the effect of 
+// Set mpImpl to NULL as a way of preventing one from using the default
+constructor directly.
+
+
+In terms of #includes and dependencies, RotationMartix.hpp does not seem to 
+contain that many includes, however the includes which are present can
+be optimized. For example, it is not immediately obvious why MyVector.hpp is necessary to include at all (The code compiles without it). In any case a simple declaration similar to 
+template<typename> class Tensor;
+should suffice. 

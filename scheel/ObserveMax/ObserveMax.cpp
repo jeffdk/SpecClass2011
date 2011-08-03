@@ -16,7 +16,7 @@ namespace Observers {
 
   Max::Max(const std::string &Opts,const DataBox&,const std::string& Dir) { 
     OptionParser p(Opts,Help());
-    mFileName = PrependDirectory(p.Get<std::string>("Filename"),Dir)+".dat";
+    mFileName = PrependDirectory(p.Get<std::string>("Filename"),Dir);
     mInput    = p.Get<std::string>("Input");
   }
 
@@ -40,8 +40,10 @@ namespace Observers {
 
     // Output the norm
     if(D.Communicator().Rank()==0) {
-      std::ofstream out(mFileName.c_str(),std::ios::ate);
+      std::ofstream out(mFileName.c_str(),std::ios::app);
       out << FirstColumnInDatFiles << " " << norm << std::endl;
     }
   }
 }
+
+REGISTER_OBSERVER(Max)

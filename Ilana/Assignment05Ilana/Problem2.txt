@@ -1,0 +1,10 @@
+What happens with Problem2Exec when:
+
+1. Format=bla;
+
+2. Format=help;
+
+3. Format=grace(Legennd=Yes);
+
+Where do output strings come from?
+

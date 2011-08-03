@@ -1,18 +1,60 @@
-#/// \dir
-#/// Contains a minimal set of files for adding a new executable to SpEC
+# /// \dir ApplyObservers/Executables
+# /// Contains the executable ApplyObservers which allows to run
+# /// ComputeItems and Observers postprocessing.
 
-# Where is SPEC_HOME relative to this directory
 CODE_HOME = ../../../../..
 
-# What libraries does this executable depend on
-INCLUDED_AND_LINKED_LIBS =
+SUBDIRECTORIES = 
 
-# What .cpp files containing a main function should be compiled (remove .cpp)
-EXECUTABLES =
+# This must include ALL libs (both required and optional) in the correct order
+# Will change to ONLY optional after Larry's dependency analyzer work is done
+ALL_INCLUDED_AND_LINKED_LIBS = \
+    EventHorizon SurfaceFitting HydroComputeItems  HydroStates \
+    ApplyObservers DualFrameSystem DualFrameItems HyperbolicGaugeItems \
+    Evolution EventTriggers \
+    EvolutionStateChangers \
+    ScalarWaveFlat ScalarWaveCurved AugmentedVec \
+    GeneralizedHarmonic \
+    SpatialCoordMaps FoshSystem FoshBoundaryConditions \
+    InitialValueProblem VolumeTerms BoundaryConditions \
+    ComputeItems GrItems \
+    StrahlkorperItems StrahlkorperResidual StrahlkorperDataSupplier \
+    StrahlkorperFinderAlgorithm Strahlkorper OnStrahlkorper \
+    SurfaceFinderItems SurfaceResidual SurfaceDataSupplier Surface \
+    MinimizationAlgorithm \
+    Observers \
+    BackgroundMetrics EinsteinSolutions CoordinateTransformations TensorFunctions \
+    SpectralFilters SpectralFunctionals BasisFunctions FiniteDifference \
+    TensorSphericalHarmonics DfftPack SpherePack\
+    Mover Interpolators Functionals \
+    Domain Slice Subdomain CoordMap Topology DataMesh IndexMap \
+    Vars StringParsing DataBox IO Math Tensor MiscUtils \
+    MpiWrappers MyContainers LowLevelUtils ErrorHandling \
+    Assignment06danh
+# Required libs
+INCLUDED_AND_LINKED_LIBS = \
+    ApplyObservers \
+    Evolution EventTriggers \
+    DualFrameSystem DualFrameItems \
+    EvolutionStateChangers SpatialCoordMaps FoshSystem FoshBoundaryConditions \
+    StrahlkorperItems StrahlkorperResidual StrahlkorperDataSupplier\
+    StrahlkorperFinderAlgorithm Strahlkorper \
+    SurfaceFinderItems SurfaceResidual SurfaceDataSupplier Surface \
+    MinimizationAlgorithm \
+    Observers ComputeItems GrItems \
+    BackgroundMetrics EinsteinSolutions CoordinateTransformations TensorFunctions \
+    SpectralFilters SpectralFunctionals BasisFunctions \
+    DfftPack SpherePack TensorSphericalHarmonics \
+    Mover Interpolators Functionals \
+    Domain Slice Subdomain CoordMap Topology DataMesh IndexMap \
+    Vars StringParsing DataBox IO Math Tensor MiscUtils \
+    MpiWrappers MyContainers LowLevelUtils ErrorHandling \
+
+
+EXECUTABLES = MyApplyObservers
 
 ##############################################################################
 # Nothing below here needs to be changed
 ##############################################################################
 include $(CODE_HOME)/MakefileRules/this_machine.def
 include $(CODE_HOME)/MakefileRules/Rules
-

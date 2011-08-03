@@ -18,4 +18,4 @@ Ilana/
 
 TODO:
 1. Make the test in problem 1 into an automated test using UtilsForTesting.
-2. Add missing delete's in problem 3.
+2. Add missing delete's in problem 3.(done)

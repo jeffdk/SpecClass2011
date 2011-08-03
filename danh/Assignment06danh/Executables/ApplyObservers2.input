@@ -1,0 +1,29 @@
+# ApplyObservers.input
+
+DataBoxItems = Subdomain(
+    Items =
+        ComputeQ(
+            Output=Q;
+        ),
+        GlobalDifferentiator(
+            GlobalDifferentiator=Standard(TopologicalDifferentiator=Spectral)
+        ),
+        FirstDeriv(Input=Q; Output=dQ;),
+        FlattenDeriv(Input=dQ; Output=dQflattened; DerivPosition=First;),
+        Trace(
+            Input=dQflattened;
+            Output=divQ;
+            Indices=0,1;
+            PositionOfIndices=l,u;
+            # we're in flat space.  Telling SpEC (incorrectly) that we have
+            # one lower and one upper index  will take the sum over the diagonal.
+        )
+    ; #END Items
+);
+
+
+Observers = NormOfTensor(
+    Input=divQ;
+    Op=L2;
+    Filename=divQ2.dat
+);

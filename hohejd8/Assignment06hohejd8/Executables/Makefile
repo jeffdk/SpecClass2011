@@ -5,14 +5,10 @@
 CODE_HOME = ../../../../..
 
 # What libraries does this executable depend on
-INCLUDED_AND_LINKED_LIBS = \
-     BasisFunctions DfftPack SpherePack TensorSphericalHarmonics \
-     Domain Slice Subdomain Topology IndexMap CoordMap DataMesh \
-     Math DataBox StringParsing IO Tensor \
-     MiscUtils MpiWrappers MyContainers LowLevelUtils ErrorHandling 
+INCLUDED_AND_LINKED_LIBS =
 
 # What .cpp files containing a main function should be compiled (remove .cpp)
-EXECUTABLES = LoopOverSubdomains MpiHelloWorld
+EXECUTABLES =
 
 ##############################################################################
 # Nothing below here needs to be changed

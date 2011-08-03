@@ -2,3 +2,5 @@ References/Executables/PassByValue
 References/Executables/ReturnTempObject
 References/Executables/DataMeshMemory
 ObserveMax/Executables/LoopOverSubdomains
+ObserveMax/Executables/MpiHelloWorld
+

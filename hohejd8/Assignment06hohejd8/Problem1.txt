@@ -1,0 +1,7 @@
+The number of #include files is small, which is good.  There are no extra (and unnecessary) includes.
+
+This code still uses the Registry, which can be updated to instead use the Factory.
+
+RotationMatrix and RotationMatrixImpl can be separated into two .hpp files for clarity.
+
+The ASSERT statements do not provide useful information as to the source of their errors.

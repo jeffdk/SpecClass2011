@@ -2,10 +2,10 @@
 SubdomainStructure=
     SphericalShells3D(BaseName = Sphere;
 	              L        = 7;
-	              r-Axis   = (Extents =12,10; 
+	              r-Axis   = (Extents =12,10,9; 
 		                  Topology=I1; 
 		                  Maps    =Lin; 
 		                  IndexMap=ChebyshevGaussLobatto;
-		                  Bounds  =2.0, 5.0, 8.0;
+		                  Bounds  =2.0, 5.0, 8.0, 11.0;
                                  );
     );

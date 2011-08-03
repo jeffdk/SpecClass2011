@@ -1,0 +1,34 @@
+francois hebert
+hw 6 - prob 3
+
+
+1)
+changed output of FirstDeriv to "dQflattened"
+
+=> "!KeyExists violated" error
+
+code is saying i'm trying to add an already-existing item
+to the data box. this is because FlattenDeriv's output is
+*also* dQflattened.
+
+
+
+2)
+changed input of FirstDeriv to "dQflattened"
+
+=> "!RecomputeMyself violated" error
+
+this is because i've added a cyclical dependency:
+- FirstDeriv needs dQflattened to output dQ
+- FlattenDeriv needs dQ to output dQflattened
+
+
+
+3) -just for kicks, this is kinda fun-
+added a deliberate typo in an input "FirstDeriv(Input=QQ;"
+
+=> a long list of known variables
+=> "Key 'QQ' not in DataBox..." error
+
+unsurprisingly, the code doesn't know how to handle an
+undefined variable as its input.

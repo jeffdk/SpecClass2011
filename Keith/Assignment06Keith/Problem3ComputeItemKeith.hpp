@@ -1,4 +1,5 @@
-
+/// \file
+/// Defines ComputeItems::Problem3ComputeItemKeith.
 #ifndef Problem3ComputeItemKeith_hpp_
 #define Problem3ComputeItemKeith_hpp_
 
@@ -6,11 +7,10 @@
 #include "Utils/DataMesh/DataMesh.hpp"
 #include "Utils/Tensor/Tensor.hpp"
 
-// template <typename> class Tensor;
-// class DataMesh;
-
 namespace ComputeItems {
 
+  /// ComputeItem for my solution to problem 3 Assignment06 for the 2011
+  /// spec summer course.
   class Problem3ComputeItemKeith: 
     public ComputeItem<Tensor<DataMesh> >,
     private InstantiateDataBoxAdder<Problem3ComputeItemKeith> {

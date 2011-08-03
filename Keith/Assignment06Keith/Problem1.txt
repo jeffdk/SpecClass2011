@@ -1,0 +1,107 @@
+
+Reducing Cascading Dependencies:
+
+One of the points stressed in Lecture 6 was the need to prevent
+cascading dependencies in the Spec code in order to keep down compile
+times.  This is particularly an issue when some frequently used class,
+e.g. MyVector, is changed.  This often triggers massive recompilation
+of tons of libraries, which triggers recompilation of tons more that
+don't even use MyVector directly.
+
+A lot of this can be prevented if classes are designed carefully, and
+forward declarations are used whenever possible.
+
+The pimpl paradigm:
+
+A separate, but related, topic is the split of a class into a wrapper
+class, providing the interface, and an implementation class that does
+all the work.  The wrapper class contains only a pointer to the
+implementation class, thus the name "pimpl".  
+
+The pimpl paradigm provides (at least) two advantages: 1) The client
+doesn't need to deal with pointers, it can use value-syntax
+exclusively.  The client code only deals with the wrapper.  2) The
+client only needs to #include the wrapper header which, ideally, is
+(almost) free of further #includes.  This requires that the wrapper
+and implementation classes have separate headers.
+
+It's this second point which is useful for reducing cascading
+dependencies.
+
+================
+
+VolumeTerm.hpp and VolumeTermImpl.hpp
+
+VolumeTerm.hpp is the wrapper header in this case, and it uses forward
+declarations for almost everything.  The only #includes are <string>,
+which is std lib, and therefore ok, and NonCopyable, which is tiny and
+doesn't introduce any cascading dependencies.  (NonCopyable has to be
+included in the header since VolumeTerm derives from it.)
+
+VolumeTermImpl.hpp is the header for the implementation virtual
+baseclass.  In contrast to VolumeTerm.hpp, VolumeTermImpl.hpp
+#includes lots of stuff, but this is not an issue for cascading
+dependencies, since the only clients that need VolumeTermImpl.hpp are
+those that define classes that derive from VolumeTermImpl.  No code
+outside of VolumeTerms should need to #include VolumeTermImpl.hpp.
+
+
+================
+
+RotationMatrix.hpp #includes:
+
+With all the above as a preamble, RotationMatrix.hpp declares both
+RotationMatrix and RotationMatrixImpl, which kills advantage 2 of the
+pimpl paradigm above.  There is no RotationMatrixImpl.hpp.  
+
+As a result, RotationMatrix.hpp #includes MyVector.hpp and Assert.hpp.
+Anytime a client includes RotationMatrix.hpp, and MyVector or
+Assert are changed, that client will have to recompiled as well.  This
+is a cascading dependency.
+
+RotationMatrix.hpp also #includes NonCopyable.hpp, but as I mention above,
+this is innocuous.
+
+Finally it #includes Registry.hpp.  This is because RotationMatrix has
+not been switched over from Registry to Factory yet.  The old Registry
+mechanism requires the macro you see at the bottom of
+RotationMatrix.hpp.
+
+Even without switching to Factory, if the current RotationMatrix.hpp
+were split into RotationMatrix.hpp and RotationMatrixImpl.hpp the
+macro would wind up in the Impl header, and Registry.hpp would not
+appear in the former.
+
+================
+
+Other RotationMatrix oddities:
+
+Default constructor: 
+
+I can't see any reason why RotationMatrix has a default constructor.
+This seems like an invitation to user frustration.  This constructor
+initializes the impl-pointer to NULL.  Should the user use the default
+constructor, and then actually call any of the member functions, the
+code will seg-fault or worse.  If the user has debug turned on ASSERTs
+in the member functions will be triggered and they'll get the helpful
+error message "OOPS".
+
+If the default constructor were disabled, all this would be prevented.
+
+RotationMatrix::Impl(): 
+
+Impl() provides public access to the privately held
+pointer-to-implementation.  I would think that this violates the
+spirit of hiding the implementation behind the interface.
+
+It appears that Impl() is only used for the copy constructor and
+assignment operator for RotationMatrix, however access in C++ is on a
+per class basis, and not on a per object basis.  Thus instances of the
+same class have private member access to each other.  The copy
+constructor could be written as
+
+RotationMatrix(const RotationMatrix& rhs) :
+    mpImpl(rhs.mpImpl->Clone()) {};
+
+without needing any Impl() function.
+

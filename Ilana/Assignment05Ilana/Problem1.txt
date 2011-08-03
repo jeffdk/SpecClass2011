@@ -8,3 +8,5 @@ Order of alternatives allocations of DetF with increasing number of memory-acces
 
 (2) This has the most memory accesses because it creates, declares and initializes with zeros the variable
  in the first step and then initializes it again the second step.
+
+Correction: (2) is more efficient than (3).  See TA_Feedback.txt for explanation.

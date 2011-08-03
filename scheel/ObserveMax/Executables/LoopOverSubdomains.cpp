@@ -20,11 +20,17 @@ int main(int argc, char **argv) {
 	    << D.Size() << std::endl;
 
   // Loop over subdomains
-  for(int sd=0;sd<D.Size();++sd) {
-    std::cout << "Proc " << MyProcNumber << ": Subdomain " << sd 
-	      << " name=" << D[sd].Name() 
+  int sd;
+  int totalnumberofpoints=0;
+  for(sd=0;sd<D.Size();++sd) {
+    std::cout << "Proc "     << MyProcNumber << ": Subdomain=" << sd 
+	      << " name="    << D[sd].Name() 
 	      << " extents=" << D[sd].Extents() << std::endl;
+    totalnumberofpoints += D[sd].Size();// D[sd].Size() is num pts in subdomain
   }
+  std::cout << "After Loop: Proc " << MyProcNumber << ": loop index sd=" << sd
+	    << ", total number of points = " << totalnumberofpoints
+	    << std::endl;
 
   // Clean up
   MpiFinalize();

@@ -1,0 +1,5 @@
+#Assignment 5, Problem 2 input
+
+Format   = reduced(MinAngle=0.01); #data format
+Basename = problem2_output; #output filename
+Times    = 1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0,10.0; #output times

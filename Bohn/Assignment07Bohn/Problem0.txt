@@ -1,0 +1,12 @@
+---Problem0Example0.cpp
+-x is declared and initialized to 6
+-f(x) passes 6 to the function, assigns the variable x to 3 only in the scope
+  of the function, returns nothing since it's void
+-6 is printed, since the variable x in the scope of main was unchanged
+
+---Problem0Example1.cpp
+-x is declared and initialized to 6
+-f accepts a reference to a double, so x is casted to a reference to a double
+  and passed by reference.  x is changed by reference to 3 in the function, 
+  which still returns nothing
+-3 is printed, since it was changed in the function by a reference

@@ -3,13 +3,13 @@
 #/// including executables and tests.
 
 # Where is SPEC_HOME relative to this directory
-CODE_HOME = ../../../../
+CODE_HOME = ../../../..
 
 # What subdirectories should also be compiled
-SUBDIRECTORIES =
+SUBDIRECTORIES = Executables Tests
 
 # What .cpp files should be compiled (replace .cpp with .o)
-OBJECT_FILES_INTO_LIB = DescriptiveName_Bohn.o
+OBJECT_FILES_INTO_LIB = ObservePointwiseAvg.o
 
 ##############################################################################
 # Nothing below here needs to be changed

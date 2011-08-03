@@ -7,12 +7,10 @@
 
 namespace ComputeItems {
 
-  using std::string;
-
-  Hw6CompItemfhebert::Hw6CompItemfhebert(const string& opts): 
+  Hw6CompItemfhebert::Hw6CompItemfhebert(const std::string& opts): 
     mResult(TensorStructure::Empty) {
     OptionParser p(opts, Help());
-    mOutput=p.Get<string>("Output");
+    mOutput=p.Get<std::string>("Output");
   }
   
   void Hw6CompItemfhebert::RecomputeData(const DataBoxAccess& box) const {
@@ -26,13 +24,13 @@ namespace ComputeItems {
     {
       RSqrd += Coords[dim]*Coords[dim];
     }
+    const DataMesh R=sqrt(RSqrd);
 
     // give output on the same Mesh as the GlobalCoords:
     mResult.assign(Coords[0].Dim(), "a", Coords[0]);
-
     for (int dim=0; dim<Coords.Size(); ++dim)
     {
-      mResult(dim) = Coords[dim] / pow(RSqrd[dim], 3./2.);
+      mResult(dim) = Coords[dim] / (R*R*R);
     }
     
   }

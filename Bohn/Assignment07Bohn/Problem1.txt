@@ -1,0 +1,3 @@
+2. The code outputs {4 "12"} which is the dimension and symmetry of the 
+    sum of a and b.
+4. 

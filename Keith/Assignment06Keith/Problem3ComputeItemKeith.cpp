@@ -11,7 +11,7 @@ namespace ComputeItems {
   Problem3ComputeItemKeith::Problem3ComputeItemKeith(const std::string& opts)
     : mResult(3, "1", DataMesh::Empty)
   {
-    OptionParser p(opts);
+    OptionParser p(opts,Help());
     mOutput = p.Get<std::string>("Output");
   }
 

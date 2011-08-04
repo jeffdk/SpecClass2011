@@ -1,0 +1,16 @@
+Problem 3
+
+(Please forgive my graph being in EPS format!)
+
+The total number of points when MinAngle=0 is 2049.  When MinAngle=0.00001,
+already the number of points is reduced to 753, and when MinAngle=0.00008,
+the number of points is only 61.  See Problem3graph.eps to see the difference
+(I've put all the lines on the same graph). They aren't actually 
+indistinguishable because a lot of points are missing in important places for t
+he reduced data.  It could just be that I'm doing something wrong as well. I'm
+doing this at time=2.0.
+
+This doesn't seem to be a very robust data reduction method to me. Having a
+small minimum angle wouldn't help in the case where you have data that slowly
+varies and then suddenly varies a lot. It would be better to somehow check the
+angle between the beginning point and all subsequent points as well.

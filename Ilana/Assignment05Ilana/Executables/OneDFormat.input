@@ -1,5 +1,5 @@
-#Assignment 5, Problem 2 input
+#Assignment 5, Problem 2 and 3 input
 
-Format   = grace(Legennd=Yes); #data format
-Basename = problem2_output; #output filename
-Times    = 1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0,10.0; #output times
+Format   = reduceddat(MinAngle=0.00001); #data format
+Basename = output; #output filename
+Times    = 2.0; #output times

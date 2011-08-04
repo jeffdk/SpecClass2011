@@ -1,8 +1,8 @@
 #ifndef Subdomain_hpp
 #define Subdomain_hpp
 
-#include "CoordMapCache_Fake.hpp"
-#include "TopologyMesh.hpp"
+#include "StudentProjects/SpecClass2011/Ilana/Assignment04Ilana/CoordMapCache_Fake.hpp"
+#include "StudentProjects/SpecClass2011/Ilana/Assignment04Ilana/TopologyMesh.hpp"
  
 class Subdomain : public TopologyMesh {
 public:	

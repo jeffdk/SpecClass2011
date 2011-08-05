@@ -1,0 +1,34 @@
+# ApplyObservers.input
+
+DataBoxItems=
+    Subdomain(Items=
+	      EvaluateScalarFormula(Output=Radius;
+				    Formula=sqrt(x0*x0+x1*x1+x2*x2);
+	      ),
+	      EvaluateVectorFormula(R=Radius;
+				    V[0]=x0/(R*R*R);
+				    V[1]=x1/(R*R*R);
+				    V[2]=x2/(R*R*R);
+				    Output=Q;
+	      ),
+	      GlobalDifferentiator(
+		  GlobalDifferentiator
+		  =Standard(TopologicalDifferentiator=Spectral)
+	      ),
+	      FirstDeriv(Input=Q;
+			 Output=dQ;
+	      ),
+	      FlattenDeriv(Input=dQ; Output=dQflattened; DerivPosition=First;),
+	      Trace(Input=dQflattened;
+		    Output=divQ;
+		    Indices=0,1;
+		    PositionOfIndices=l,u; # we're in flat space.  Telling
+		    # SpEC (incorrectly) that we have one lower and one upper
+		    # index will take the sum over the diagonal.
+	      )
+    );
+
+
+Observers=NormOfTensor(Input=divQ;
+		       Op=L2;
+		       Filename=divQ.dat);

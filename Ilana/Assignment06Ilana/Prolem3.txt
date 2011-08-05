@@ -1,0 +1,12 @@
+Problem 3 - Break sequence of ComputeItems
+
+a) I first tried to break it by removing the first "u" in "EvaluateVectorFormula". This
+gives me a big long error message saying first that "EvalateVectorFormula" is not a known
+ClassID and then gives me a big long list of known ClassIDs.
+
+b) I next tired to break it by changing the Output of FirstDeriv to ddQ. The error
+message shows what the DataBoxes ApplyObservers and ApplyObservers/Sphere0 contain,
+including ddQ, and then says that "Key 'dQ' not in DataBox 'ApplyObservers/Sphere0'".
+This is because it breaks the sequence of inputs used by NormOfTensor, that is,
+divQ -> dQflattened -> dQ.  If I changed the second reference to dQ in FlattenDeriv to
+ddQ, it wouldn't break.

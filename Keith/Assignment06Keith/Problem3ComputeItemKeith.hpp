@@ -18,8 +18,9 @@ namespace ComputeItems {
   public:
     static std::string ClassID() { return "Problem3ComputeItemKeith"; }
     static std::string Help() {
-      return ClassID()+"\n"
-        "Computes x^i/r^3                                                \n"
+      return 
+        "Problem3ComputeItemKeith:                                       \n"
+        "  Computes x^i/r^3                                              \n"
         "OPTIONS:                                                        \n"
         "  Output  = string;                                             \n"
         ;

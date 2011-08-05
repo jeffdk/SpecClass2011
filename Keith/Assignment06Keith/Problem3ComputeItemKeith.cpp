@@ -9,7 +9,7 @@
 namespace ComputeItems {
 
   Problem3ComputeItemKeith::Problem3ComputeItemKeith(const std::string& opts)
-    : mResult(3, "1", DataMesh::Empty)
+    : mResult(TensorStructure::Empty)
   {
     OptionParser p(opts,Help());
     mOutput = p.Get<std::string>("Output");
@@ -19,18 +19,15 @@ namespace ComputeItems {
   RecomputeData(const DataBoxAccess& box) const {
     
     const MyVector<DataMesh>& x = box.Get<MyVector<DataMesh> >("GlobalCoords");
-
-//     REQUIRE(x.Size() == 3,
-//             "Problem3ComputeItemKeith only works in 3 dimensions, not "
-//             << x.Size() << ".\n");
-
     const int dim = x.Size();
-
     const Mesh& mesh = x[0];
 
     DataMesh r2(mesh, 0.);
     for(int i=0; i<dim; ++i)
       r2 += x[i]*x[i];
+
+    if(mResult.Empty())
+      mResult = Tensor<DataMesh>(dim, "1", DataMesh::Empty);
 
     for(int i=0; i<dim; ++i)
       mResult(i) = x[i]/(sqrt(r2)*r2);

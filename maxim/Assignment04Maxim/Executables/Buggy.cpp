@@ -1,4 +1,4 @@
-#include "StudentProjects/SpecClass2011/maxim/Assignment04Maxim/RaiseToPower_Maxim.hpp"
+#include "RaiseToPower_Maxim.hpp"
 #include <iostream>
  
 int main() {

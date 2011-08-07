@@ -1,4 +1,4 @@
-#include "StudentProjects/SpecClass2011/maxim/Assignment04Maxim/MemoryLeaker.hpp"
+#include "MemoryLeaker.hpp"
 
 int main() {
    // bla bla bla

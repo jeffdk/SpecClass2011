@@ -5,8 +5,7 @@
 CODE_HOME = ../../../../..
 
 # What libraries does this executable depend on
-INCLUDED_AND_LINKED_LIBS = Assignment01Maxim StringParsing MyContainers \
-						   ErrorHandling LowLevelUtils
+INCLUDED_AND_LINKED_LIBS = Assignment01Maxim StringParsing MyContainers ErrorHandling LowLevelUtils
 
 # What .cpp files containing a main function should be compiled (remove .cpp)
 EXECUTABLES = MyAssignment01Exec

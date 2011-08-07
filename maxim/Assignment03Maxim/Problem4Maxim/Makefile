@@ -5,8 +5,7 @@
 CODE_HOME = ../../../../..
 
 # What libraries does this executable depend on
-INCLUDED_AND_LINKED_LIBS = Tensor DataMesh MyContainers ErrorHandling LowLevelUtils
-# ComputeItems
+INCLUDED_AND_LINKED_LIBS = Tensor DataMesh MyContainers ErrorHandling LowLevelUtils ComputeItems
 
 # What .cpp files containing a main function should be compiled (remove .cpp)
 EXECUTABLES = MyTensorStructureExec MyTDM_Exec2 Inverse3x3Maxim

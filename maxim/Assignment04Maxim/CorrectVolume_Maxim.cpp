@@ -1,5 +1,5 @@
 #include <cmath> // for M_PI
-#include "Utils/MyContainers/MyVector.hpp"
+#include "MyVector.hpp"
 #include "CorrectVolume_Maxim.hpp"
 
 double CorrectTotalVolumeOfSpheresFromRadii(const MyVector<double>& radii) {

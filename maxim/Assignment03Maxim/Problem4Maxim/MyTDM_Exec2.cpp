@@ -1,6 +1,6 @@
+#include "DataMesh.hpp"
+#include "Tensor.hpp"
 #include <cstdlib>
-#include "Utils/DataMesh/DataMesh.hpp"
-#include "Utils/Tensor/Tensor.hpp"
  
 int main(void) {
   const Mesh m(IPoint(MV::fill,2,2));
@@ -12,7 +12,7 @@ int main(void) {
   t(1,1).Dim(); // refers to the Mesh::Dim() function -> value=2
   t.Dim(); // refers to the TensorStructure::Dim() function -> value=3
  
-  Tensor<DataMesh> scalar(3, "", m, 0.0); // this is a rank-0 tensor, initialized to zero
+  Tensor<DataMesh> scalar(3,"",m,0.0); // this is a rank-0 tensor, initialized to zero
  
   std::cout << "scalar() before adding t(1,1): " << scalar() << std::endl;
   scalar() += t(1,1); // add to the DataMesh inside 'scalar' the value of t(1,1)

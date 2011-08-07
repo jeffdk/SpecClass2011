@@ -1,4 +1,4 @@
-#include "DataMesh.hpp"
+#include "Utils/DataMesh/DataMesh.hpp"
 #include <cstdlib>
  
 using namespace std;
@@ -15,7 +15,7 @@ int main(void) {
 		for(int i = 0; i < I; i++, ai++)
 			a[ai] = 1000*i + 100*j + 100000*k;
 
-  cout << "Data mesh "<< I << "x" << J << ":" << a << endl;
+  cout << "Data mesh "<< I << "x" << J << "x" << K << ":" << a << endl;
 
   return EXIT_SUCCESS;
 }

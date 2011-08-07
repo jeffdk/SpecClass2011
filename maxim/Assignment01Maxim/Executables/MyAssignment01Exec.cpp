@@ -1,11 +1,11 @@
 #include <iostream>
 #include <cstdlib>
  
-#include "MyLibAssignment01Maxim.hpp"
+#include "StudentProjects/SpecClass2011/maxim/Assignment01Maxim/MyLibAssignment01Maxim.hpp"
 
 // for parsing 
-#include "OptionParser.hpp"
-#include "ReadFileIntoString.hpp"
+#include "Utils/StringParsing/OptionParser.hpp"
+#include "Utils/StringParsing/ReadFileIntoString.hpp"
 
 using namespace std;
 

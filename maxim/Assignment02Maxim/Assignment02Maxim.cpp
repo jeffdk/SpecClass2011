@@ -1,5 +1,5 @@
-#include "MyVector.hpp"
-#include "Assignment02Maxim.hpp"
+#include "Utils/MyContainers/MyVector.hpp"
+#include "StudentProjects/SpecClass2011/maxim/Assignment02Maxim/Assignment02Maxim.hpp"
  
 MyVector<double> sumVectorsDivided(const MyVector<double>& A,
                             	   const MyVector<double>& B,

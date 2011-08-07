@@ -1,13 +1,14 @@
 #include <iostream>
 #include <cstdlib>
  
-#include "MyVector.hpp"
-#include "Assignment02Maxim.hpp"
+#include "Utils/MyContainers/MyVector.hpp"
+#include "StudentProjects/SpecClass2011/maxim/Assignment02Maxim/Assignment02Maxim.hpp"
 
-#include "OptionParser.hpp" 
-#include "ReadFileIntoString.hpp"
-#include "UtilsForTesting.hpp"
-#include "Require.hpp"
+#include "Utils/StringParsing/OptionParser.hpp" 
+#include "Utils/StringParsing/ReadFileIntoString.hpp"
+#include "Utils/ErrorHandling/Require.hpp"
+#include "Utils/ErrorHandling/UtilsForTesting.hpp"
+
 
 using namespace std;
 

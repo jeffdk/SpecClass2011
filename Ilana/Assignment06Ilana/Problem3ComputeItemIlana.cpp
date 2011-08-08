@@ -15,16 +15,20 @@ namespace ComputeItems {
     mOutput = p.Get<string>("Output");
   }
 
-    void Problem3ComputeItemIlana::RecomputeData(const DataBoxAccess& box) const {
+  void Problem3ComputeItemIlana::RecomputeData(const DataBoxAccess& box) const {
 
       // Get coordinates from DataBox
       const MyVector<DataMesh>& coords = box.Get<MyVector<DataMesh> >("GlobalCoords");
+      const Mesh& mesh = coords[0];
 
-      // Calculate R, which is the magnitude of the coordinates GlobalCoords
-      const DataMesh R = sqrt(coords[0]*coords[0]+coords[1]*coords[1]+coords[2]*coords[2]);
+      // Calculate R^2, which is the square of the magnitude of the coordinates GlobalCoords
+      DataMesh R2(mesh,0.0);
+      for(int i=0;i<coords.Size();++i)
+	R2 += coords[i]*coords[i];
+      DataMesh R = sqrt(R2);
      
       // Make sure that R is not zero
-      for(int i=0;i<R.Size();++i)
+      for(int i=0;i<R2.Size();++i)
 	REQUIRE(R[i]!=0,"R is zero! Can't divide by zero!");
 
       // Calculate rhat^i/r^3

@@ -1,10 +1,10 @@
 #include <cstdlib> // for EXIT_SUCCESS and string(?)
 
-#include "OneDimDataWriter.hpp" // includes MyVector.hpp
-#include "OptionParser.hpp"
-#include "ReadFileIntoString.hpp"
-#include "BasicMpi.hpp"
-#include "ComputeProfileAndOutput.hpp"
+#include "Utils/IO/OneDimDataWriter.hpp" // includes MyVector.hpp
+#include "Utils/StringParsing/OptionParser.hpp"
+#include "Utils/StringParsing/ReadFileIntoString.hpp"
+#include "Utils/ErrorHandling/BasicMpi.hpp"
+#include "StudentProjects/SpecClass2011/maxim/Assignment05Maxim/ComputeProfileAndOutput.hpp"
 
 int main(int argc, char** argv) {
     MpiInit(&argc, &argv);

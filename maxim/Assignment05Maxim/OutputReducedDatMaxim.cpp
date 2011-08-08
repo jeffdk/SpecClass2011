@@ -1,11 +1,11 @@
 #include <cmath>
-#include "OneDimDataWriter.hpp"
+#include "Utils/IO/OneDimDataWriter.hpp"
 
-#include "OptionParser.hpp"
-#include "MyVector.hpp"
-#include "ConvertNumberToString.hpp"
-#include "Require.hpp"
-#include "CachedOfStream.hpp"
+#include "Utils/StringParsing/OptionParser.hpp"
+#include "Utils/MyContainers/MyVector.hpp"
+#include "Utils/LowLevelUtils/ConvertNumberToString.hpp"
+#include "Utils/ErrorHandling/Require.hpp"
+#include "Utils/IO/CachedOfStream.hpp"
  
 using std::string;
 using std::ofstream;

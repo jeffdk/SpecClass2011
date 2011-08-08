@@ -1,7 +1,8 @@
 #include <cmath>
-#include "OneDimDataWriter.hpp"
+
 #include "ComputeProfileAndOutput.hpp"
-#include "MyVector.hpp"
+#include "Utils/IO/OneDimDataWriter.hpp"
+#include "Utils/MyContainers/MyVector.hpp"
 
 // Computes the x's and y's and outputs the result
 void ComputeProfileAndOutput(const double t,

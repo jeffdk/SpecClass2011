@@ -1,0 +1,9 @@
+Problem 0
+
+The only difference between Examples 0 and 1 is that in the function f(), for
+Example 0, it's f(double x) and in Example 1, it's f(double& x).  This extra &
+means that for Example 1, x is passed as a reference (instead of as a value or
+pointer), which means that now the x in f() and the x in main() are the same
+variable.  So in Example 0, the output is 6 because the variable x is still the
+same as it was assigned in main(), while in Example 1, the output is 3 because
+the variable in main() becomes the variable in f(), and therfore changes value.

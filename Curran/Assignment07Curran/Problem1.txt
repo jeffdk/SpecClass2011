@@ -1,0 +1,10 @@
+1) See "Executables/DataMeshMemory.cpp"
+2) The code outputs: {4 "12"}
+3) N/A
+4) 17,292,610 bytes were allocated on the heap.
+5) See "Executables/DataMeshMemory.cpp:10"
+6) 10,378,690 bytes were allocated on the heap.
+7) In the first version of the code, the arguments to the 'add()' function are passed by value, meaning that TDm's copy constructor is used to initialize the function's local copies of 'a' and 'b'.  Therefore, while the function is executing, there are 5 TDms in memory.
+   In the second version of the code, the arguments to the 'add()' function are passed by reference, meaning that the function's local copies of 'a' and 'b' are merely aliases to 'main()'s copies.  Thus, when the function is executing, there are only 3 TDms in memory.
+   The ratio of memory usage is about 5/3, which is what we would have predicted from this analysis (5 TDms vs. 3 TDms).
+

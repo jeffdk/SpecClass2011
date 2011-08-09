@@ -1,8 +1,7 @@
-//#ifndef CorrectVolume_Maxim_hpp
-//#define CorrectVolume_Maxim_hpp
-#include "MyVector.hpp"
+#ifndef CorrectVolume_Maxim_hpp
+#define CorrectVolume_Maxim_hpp
 
-//class MyVector<double>;
+template <typename> class MyVector;
 double CorrectTotalVolumeOfSpheresFromRadii(const MyVector<double>& radii);
 
-//#endif
+#endif

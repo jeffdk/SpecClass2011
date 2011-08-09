@@ -1,0 +1,4 @@
+Problem 1
+
+- The code outputs {4 "12"}.
+- The total memory usage is 

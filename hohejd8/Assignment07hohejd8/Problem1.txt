@@ -1,0 +1,7 @@
+2. This code outputs the structure of Tensor<DataMesh> c, which is {4 "12"}.
+
+4. valgrind reports that 17,288,798 bytes were allocated.
+
+6. After the edit, valgrind reports that only 10,375,518 bytes were allocated.
+
+7. The difference in memory usage comes from the 'add' function call.  Originally, the 'add' function made a copy of Tensors 'a' and 'b', performed the arithmetic, and returned 'result'.  In the new version, 'add' takes a reference (does not make unique copies), and returns 'result'.  The ratio of allocated memory before to memory after is about 5/3.  This value corresponds to the 5 Tensors in the first version of the program ('a', 'b', 'add:a', 'add:b', 'c=result') and the three tensors in the second version of the program ('a', 'b', 'c=result').

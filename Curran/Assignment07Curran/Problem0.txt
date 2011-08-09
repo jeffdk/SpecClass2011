@@ -1,0 +1,6 @@
+Problem0Example0 will output: 6
+Problem0Example1 will output: 3
+
+In the first case, 'x' is passed by value, meaning that a copy of it is given to the function 'f()', and that copy becomes a local variable, leaving scope when 'f()' returns.  The 'x' that is printed to the screen is the 'x' on 'main()'s stack -- different memory altogether.
+In the second case, 'x' is passed by reference, meaning that the local variable 'x' used in the function 'f()' is actually an alias to the variable 'x' on 'main()'s stack.  Thus, the latter is modified by the function, and its new value is printed to the screen.
+

@@ -1,4 +1,4 @@
-#include "ObservePointwiseAvg.hpp"
+#include "ObservePointwiseAvgBohn.hpp"
 #include "Utils/DataBox/DataBox.hpp"
 #include "Utils/DataBox/DataBoxAccess.hpp"
 #include "Utils/Tensor/Tensor.hpp"
@@ -24,28 +24,26 @@ namespace Observers {
         const double /* TimeForDumpFiles */,
         const std::string& FirstColumnInDatFiles) const
   {
-    // Compute norm
-    DataBoxAccess boxA(box,"Observers::PointwiseAvg::Observe");
+    const DataBoxAccess boxA(box,"Observers::PointwiseAvg::Observe");
     const Domain& D = boxA.Get<Domain>("Domain");
 
+    // avg stores the total until dividing by numPoints
     double avg = 0.0;
     int numPoints = 0;
     for(int sd=0;sd<D.Size();++sd) {
       const Tensor<DataMesh>& Input = boxA[sd].Get<Tensor<DataMesh> >(mInput);
-      for(TensorIter it(Input); it; ++it) {
-        const int ind = it.Index();
-        numPoints += Input(ind).Size();
-        for (int i = 0; i < Input(ind).Size(); i++)
-          avg += Input(ind)[i];
+      for(Tensor<DataMesh>::const_iterator it = Input.begin();
+            it != Input.end(); it++) {
+        numPoints += (*it).Size();
+        for (int j = 0; j < (*it).Size(); j++)
+          avg += (*it)[j];
       }
     }
-    std::cout << avg << "\n";
-    std::cout << numPoints << "\n";
 
     avg = MPreduceAdd(avg,D.Communicator());
     numPoints = MPreduceAdd(numPoints,D.Communicator());
 
-    avg /= 1.*numPoints;
+    avg /= numPoints;
 
     // Output the norm
     if(D.Communicator().Rank()==0) {

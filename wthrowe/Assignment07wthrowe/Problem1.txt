@@ -1,0 +1,13 @@
+The code outputs: {4 "12"}
+It allocated a total of 17,341,210 bytes.
+After changing the function parameters to references, it allocates
+  10,427,290 bytes.
+The ratio of the original memory usage to the later usage is 1.66.
+This is because we eliminate 2 of the 5 TDms that are created when we change
+  to references.  The TDms are (abusing notation a bit):
+  1. add()::a - changed to a reference to main()::a.
+  2. add()::b - changed to a reference to main()::b.
+  3. main()::a
+  4. main()::b
+  5. main()::c, add()::result, and an unnamed temporary object, which are all
+     actually the same object because of return value optimization.

@@ -1,4 +1,5 @@
 VolumeExecMaxim
 run_test
+../Volume_Maxim.hpp
 ../Volume_Maxim.cpp
 ../CorrectVolume_Maxim.cpp

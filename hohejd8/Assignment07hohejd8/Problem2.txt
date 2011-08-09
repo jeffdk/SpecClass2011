@@ -1,0 +1,1 @@
+This function returns a reference to the double 'c'.  However, 'c' is a local variable, so as soon as the function returns, 'c' is de-allocated and the reference is invalid.

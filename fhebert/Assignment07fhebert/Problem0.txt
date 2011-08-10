@@ -1,0 +1,21 @@
+francois hebert
+hw 7 - prob 0
+
+
+code "Problem0Example0" outputs: 6
+code "Problem0Example1" outputs: 3
+
+The only difference between these two examples is whether the function f(x)
+takes its argument as a reference or a value. This is the extra '&' in 
+"Problem0Example1".
+
+
+The result is that:
+
+- in Example0, f operates on its own copy of the variable x, which goes
+  out of scope when the evaluation of f is over. The assignment of the
+  new value to x is never communicated out of the function f.
+
+- in Example1, f operates on a reference to the variable x from 'main'.
+  Thus, when a new value is assigned to x, the value in memory is changed 
+  for both f and main. The assignment thus persists beyond the function scope.

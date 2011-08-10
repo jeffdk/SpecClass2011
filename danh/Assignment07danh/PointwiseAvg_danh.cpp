@@ -31,19 +31,23 @@ namespace Observers {
     const Domain& D = boxA.Get<Domain>("Domain");
 
     double sum = 0.0;
-    int Count = 0;
+    int count = 0;
     for(int sd=0;sd<D.Size();++sd) {
       const Tensor<DataMesh>& Input = boxA[sd].Get<Tensor<DataMesh> >(mInput);
       for(Tensor<DataMesh>::const_iterator i=Input.begin();i!=Input.end();++i) {
         sum += PointwiseAverage(*i);
-        ++Count;
+        ++count;
       }
     }
-    double avg = MPreduceAdd(sum,D.Communicator())/Count;
+    // Each processor has a different number of subdomains, so they will have
+    // both a different PointwiseAverage sum and a different normalization factor.
+    double avg = MPreduceAdd(sum,D.Communicator())/MPreduceAdd(count,D.Communicator());
 
-    // Output the norm   // #8.
+    // Output the avg
     if(D.Communicator().Rank()==0) {
       std::ofstream out(mFileName.c_str(),std::ios::app);
+      out << "# [1] = FirstColumnInDatFiles" << std::endl;
+      out << "# [2] = PointwiseAverage" << std::endl;
       out << FirstColumnInDatFiles << " " << avg << std::endl;
     }
   }

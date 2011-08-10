@@ -1,0 +1,6 @@
+The output of Problem0Example0 is 6, while the output of Problem0Example1 is 3.
+This is because in the former we use pass-by-value so the variable x is copied
+and it is the local copy of x that is assigned the value 3. When control
+returns to main() the local copy of x goes out of scope and the original x is
+unaffected. In the latter case, we pass a reference to x, so that it is not
+copied locally in f but instead f has access to the memory location of x.

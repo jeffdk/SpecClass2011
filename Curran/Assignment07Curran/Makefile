@@ -9,7 +9,7 @@ CODE_HOME = ../../../..
 SUBDIRECTORIES = Executables
 
 # What .cpp files should be compiled (replace .cpp with .o)
-OBJECT_FILES_INTO_LIB = ObservePointwiseAvgBohn.o
+OBJECT_FILES_INTO_LIB = ObservePointwiseAvgCurran.o
 
 ##############################################################################
 # Nothing below here needs to be changed

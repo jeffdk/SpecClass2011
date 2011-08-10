@@ -1,0 +1,14 @@
+# ApplyObservers.input
+
+DataBoxItems = 
+  Subdomain (
+    Items =
+      EvaluateScalarFormula(Output=Radius; Formula=sqrt(x0*x0+x1*x1+x2*x2)),
+    ; # END Items
+  )
+; # END DataBoxItems
+
+Observers =
+  PointwiseAvgCurran(Input=Radius; Filename=AvgRadius.dat),
+; # END Observers
+

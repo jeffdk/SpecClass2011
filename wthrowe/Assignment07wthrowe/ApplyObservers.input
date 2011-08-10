@@ -1,0 +1,18 @@
+DataBoxItems=
+  Subdomain(Items=
+	    EvaluateScalarFormula(Output=Three; Formula=3),
+	    EvaluateScalarFormula(Output=x0; Formula=x0),
+	    EvaluateScalarFormula(Output=Radius;
+				  Formula=sqrt(x0*x0+x1*x1+x2*x2)),
+	    EvaluateVectorFormula(Output=Vec;
+				  R=Radius;
+				  V[0]=3;
+				  V[1]=R;
+				  V[2]=x0;
+				 )
+	   );
+Observers=
+  PointwiseAvg(Input=Three; Filename=AvgThree.dat),
+  PointwiseAvg(Input=x0; Filename=Avgx0.dat),
+  PointwiseAvg(Input=Radius; Filename=AvgRadius.dat),
+  PointwiseAvg(Input=Vec; Filename=AvgVec.dat)

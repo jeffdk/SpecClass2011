@@ -1,0 +1,3 @@
+The problem with this function is that it returns a reference to a locally
+created variable. When that variable goes out of scope, the pointer that
+we return is now dangling - it's not pointing to anything useful.

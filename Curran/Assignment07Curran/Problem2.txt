@@ -1,0 +1,3 @@
+This function returns a reference to a local variable.  However, this variable goes out-of-scope when the function returns, and thus the behavior of the reference it returns is undefined.  (In practice it probably returns a pointer to stack memory that will be overwritten by the next function call.)
+One must never return a reference to local variables that will go out-of-scope.  Returning references is probably most often used with member variables and arguments passed by reference.
+

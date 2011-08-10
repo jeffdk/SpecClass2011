@@ -30,8 +30,8 @@ namespace Observers {
     DataBoxAccess boxA(box,"Observers::PointwiseAvg_danh::Observe");
     const Domain& D = boxA.Get<Domain>("Domain");
 
-    double sum = 0.0;
-    int count = 0;
+    double sum = 0.0; //sum of PointwiseAverages on this processor
+    int count = 0;    //number of terms in the sum on this processor
     for(int sd=0;sd<D.Size();++sd) {
       const Tensor<DataMesh>& Input = boxA[sd].Get<Tensor<DataMesh> >(mInput);
       for(Tensor<DataMesh>::const_iterator i=Input.begin();i!=Input.end();++i) {

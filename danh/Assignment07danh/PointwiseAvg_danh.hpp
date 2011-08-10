@@ -1,5 +1,8 @@
+/// \file
+/// Declares class Observers::PointwiseAvg_danh
 #ifndef Observer_PointwiseAvg_danh_hpp
 #define Observer_PointwiseAvg_danh_hpp
+
 #include "Dust/Domain/Observer.hpp"
 
 namespace Observers {
@@ -11,9 +14,9 @@ namespace Observers {
         "   Returns the pointwise average of all components of a TDm over   \n"
         "   all points on the Domain.                                       \n"
         "OPTIONS:                                                           \n"
-        "   Input    =string;        # which Tensor to act on               \n"
+        "   Input    = string;       # which Tensor to act on               \n"
         "   Filename = string;       # Output filename                      \n"
-    ;
+      ;
     }
   public:
     PointwiseAvg_danh(const std::string &Opts,

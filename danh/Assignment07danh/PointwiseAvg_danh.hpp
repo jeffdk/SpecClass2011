@@ -17,7 +17,7 @@ namespace Observers {
     }
   public:
     PointwiseAvg_danh(const std::string &Opts,
-    const DataBox&,const std::string& Dir);
+                      const DataBox&,const std::string& Dir);
     void Observe(const DataBox& box,
                  const double TimeForDumpFiles,
                  const std::string& FirstColumnInDatFiles) const;

@@ -1,0 +1,8 @@
+dan@Arda ~/SpEC_svn/StudentProjects/SpecClass2011/danh/Assignment07danh/Executables$ ./Problem0Example0 
+6
+dan@Arda ~/SpEC_svn/StudentProjects/SpecClass2011/danh/Assignment07danh/Executables$ ./Problem0Example1 
+3
+
+Example0 returns 6 because a local copy of the variable 'x' is instantiated in 'void f(double x)'. So the local copy of x=6 in main() is retained.
+
+Example1 returns 3 because x is passed by reference into 'f'. Any local modifications to 'x' there will carry over to 'x' in main().

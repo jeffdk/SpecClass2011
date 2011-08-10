@@ -1,0 +1,3 @@
+The main problem with the function is that it returns the reference to 'c', but
+'c' goes out of scope at the end of the function. If the output of this function
+is used anywhere, then it will be garbage.

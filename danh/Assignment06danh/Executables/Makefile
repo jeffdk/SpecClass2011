@@ -30,7 +30,7 @@ ALL_INCLUDED_AND_LINKED_LIBS = \
     Domain Slice Subdomain CoordMap Topology DataMesh IndexMap \
     Vars StringParsing DataBox IO Math Tensor MiscUtils \
     MpiWrappers MyContainers LowLevelUtils ErrorHandling \
-    Assignment06danh
+    Assignment06danh Assignment07danh
 # Required libs
 INCLUDED_AND_LINKED_LIBS = \
     ApplyObservers \

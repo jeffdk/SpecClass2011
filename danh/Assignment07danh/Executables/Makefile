@@ -5,7 +5,8 @@
 CODE_HOME = ../../../../..
 
 # What libraries does this executable depend on
-INCLUDED_AND_LINKED_LIBS = DataMesh \
+INCLUDED_AND_LINKED_LIBS =  \
+    Domain Slice Subdomain CoordMap Topology DataMesh IndexMap \
     Vars StringParsing DataBox IO Math Tensor MiscUtils \
     MpiWrappers MyContainers LowLevelUtils ErrorHandling \
 

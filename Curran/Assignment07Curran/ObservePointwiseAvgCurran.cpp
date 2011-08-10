@@ -24,7 +24,7 @@ PointwiseAvgCurran::PointwiseAvgCurran(const std::string &opts,
     file_path_  = PrependDirectory(parser.Get<std::string>("Filename"), dir);
 }
  
-void PointwiseAvgCurran::Observe(const DataBox& box, const double /* time */,
+void PointwiseAvgCurran::Observe(const DataBox& box, const double /*time*/,
                                  const std::string& first_col) const {
     SimpleProfiler prof("PointwiseAvgCurran");
     typedef Tensor<DataMesh> TDm;

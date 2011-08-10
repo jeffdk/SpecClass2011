@@ -1,4 +1,12 @@
 Problem 1
 
-- The code outputs {4 "12"}.
-- The total memory usage is 
+- The code outputs {4 "12"}, which is the dimension and symmetry of tensor c.
+- I can't seem to get valgrind working properly on SciNet or Kraken (in fact,
+with SciNet, I get the error "Fatal Error: This program was not built to run 
+on the processor in your system. The allowed processors are: Intel(R) 
+processors with SSE4.2 and POPCNT instructions support."), so I can't really
+say how much memory the program uses each time, but I'd imagine that having the
+ampersands in the code would use less memory.  This is because when there is no
+ampersand, then a and b are copied into memory, while when there are ampersands
+a and b become the same variables as those in the function, so no copying need
+take place.

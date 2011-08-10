@@ -7,6 +7,7 @@ public:
   //delete it with delete[]
   ~MemoryLeaker() {delete[] pLeaky;}
   void Reset(const int n) {
+    delete[] pLeaky;
     pLeaky = new double[n];
   }
 private:

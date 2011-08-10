@@ -12,7 +12,9 @@
 /// @return      the vectors' sum                                               
 ///                                                                             
 //////////////////////////////////////////////////////////////////////////      
- 
+
+template <typename> class MyVector;
+
 MyVector<double> sumVectorsDivided(const MyVector<double>& A,
                             	   const MyVector<double>& B,
 								   const double d);

@@ -1,0 +1,21 @@
+What happens with Problem2Exec when:
+
+1. Format=bla;
+	You get an error that says that ClassID 'bla' was not found
+	and lists the known ClassIDs.
+
+2. Format=help;
+	You get an error message that gives you all the known ClassIDs
+	and their descriptions.
+
+3. Format=grace(Legennd=Yes);
+	You get an error message that says that the "legennd" option is wrong
+	and then gives you the description for the grace ClassID.
+
+Where do output strings come from?
+
+1. This comes from the string ClassID() within each OneDimDataWriter class.
+
+2. This is each Help() string from each OneDimDataWriter class.
+
+3. This is the Help() string from the grace ClassID.

@@ -1,0 +1,17 @@
+francois hebert
+hw 7 - prob 2
+
+
+short version:
+
+The function's return type is a reference.
+
+
+long version:
+
+This function returns a reference to the double c. However, since c's
+scope is limited to the funtion itself, c will be deallocated at the 
+end of the function call. The reference to c will at that point become
+meaningless, as the memory location will likely be reused by the code
+for who knows what.
+This leads to undefined behavior!

@@ -1,0 +1,17 @@
+1. I did get a divQ.dat file, which looked similar, but had a slightly
+different result.  This is most likely due to compiler differences.
+
+2. I broke the sequence by renaming the output to dQQ, instead of dQ.
+This made dQQ a Tensor<Tensor<DataMesh> > in the DataBox, but I asked for
+dQ through NormOfTensor.  Since dQ wasn't in the DataBox, it listed all of
+the items in the box and told me what I was asking for.  It also listed exactly where the call came from.  
+
+I asked for divQ to be outputted, but that needs dQflattened, which needs dQ, 
+which isn't in the box.
+
+The next way I broke the chain was asking for Trase instead of Trace.  Again,
+this told me that I was asking for something which doesn't exist.  It then 
+listed all known ComputeItems.
+
+3. 
+

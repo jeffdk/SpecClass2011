@@ -1,0 +1,9 @@
+*~
+Dependencies/
+*.o
+*.a
+*.dat
+RunIt.sh
+RotationMatrix_WithMyNotes.hpp
+bak.*
+PlayWithPimplCopyConstructor/

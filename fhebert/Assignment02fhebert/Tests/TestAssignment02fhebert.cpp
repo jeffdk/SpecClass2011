@@ -6,19 +6,20 @@
 //
 
 
+
+#include "/StudentProjects/SpecClass2011/fhebert/Assignment02fhebert/Assignment02fhebert.hpp"
+#include "Utils/MyContainers/MyVector.hpp"
+#include "Utils/StringParsing/OptionParser.hpp"
+#include "Utils/StringParsing/ReadFileIntoString.hpp"
+#include "Utils/ErrorHandling/Require.hpp"
+#include "Utils/ErrorHandling/UtilsForTesting.hpp"
+
 #include<iostream>
 #include<cstdlib>
 
-#include "MyVector.hpp"
-#include "OptionParser.hpp"
-#include "ReadFileIntoString.hpp"
-#include "Require.hpp"
-#include "UtilsForTesting.hpp"
-#include "Assignment02fhebert.hpp"
 
 // change this flag to switch between available tests
 #define USE_REQUIRE 0
-
 // this flag to check that vectors sum to zero
 #define CHECK_ZERO_SUM 1
 

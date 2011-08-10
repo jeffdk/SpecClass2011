@@ -1,0 +1,27 @@
+The initial configuration uses pass-by-value and gives the following
+output from valgrind:
+
+HEAP SUMMARY:
+==14790==     in use at exit: 0 bytes in 0 blocks
+==14790==   total heap usage: 218 allocs, 218 frees, 17,299,734 bytes allocated
+
+
+Adding the ampersands to use pass-by-reference gives the following
+output from valgrind:
+
+EAP SUMMARY:
+==20403==     in use at exit: 0 bytes in 0 blocks
+==20403==   total heap usage: 152 allocs, 152 frees, 10,385,814 bytes allocated
+
+
+We see that using references is much more efficient than passing by value.
+The ratio between memory usage is 10385814/17299734 = 60%.
+This is not surprising considering the fact that pass by value creates
+local copies of the objects being passed in. We can get a rough estimate
+of what we should expect since the majority of the memory is spent on
+storing the actual components of the tensor at every point in the DataMesh.
+Now, both tensor are rank 2 and 4d, so we expect 16 independent components
+(since no symmetry is specified). The DataMesh is 30*30*30 = 27000. Since each double is 8 bytes on my machine we get 27000*16*8=345600 bytes. Since 2 
+tensors are created locally in the original implementation we have that
+the memory difference should be of order 6912000 which is indeed very 
+close to 17299734 - 10385814 = 6913920 bytes. 

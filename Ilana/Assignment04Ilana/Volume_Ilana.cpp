@@ -1,5 +1,5 @@
-#include "Volume_Ilana.hpp"
-#include "MyVector.hpp"
+#include "StudentProjects/SpecClass2011/Ilana/Assignment04Ilana/Volume_Ilana.hpp"
+#include "Utils/MyContainers/MyVector.hpp"
 #include <cmath>
 
 double TotalVolumeOfSpheresFromRadii(const MyVector<double>& radii){

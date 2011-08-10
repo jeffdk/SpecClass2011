@@ -5,7 +5,8 @@
 CODE_HOME = ../../..
 
 SUBDIRECTORIES = Assignment01danh Assignment02danh Assignment03danh \
-                 Assignment04danh Assignment05danh
+                 Assignment04danh Assignment05danh Assignment06danh \
+                 Assignment07danh
 
 ##############################################################################
 # Nothing below here needs to be changed

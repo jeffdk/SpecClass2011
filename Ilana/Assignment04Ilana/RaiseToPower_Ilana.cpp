@@ -1,4 +1,4 @@
-#include "RaiseToPower_Ilana.hpp"
+#include "StudentProjects/SpecClass2011/Ilana/Assignment04Ilana/RaiseToPower_Ilana.hpp"
 // Compute a^n
 unsigned int RaiseToPower(unsigned int a, const int n) {
   if(n==0) return 1;

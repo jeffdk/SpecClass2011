@@ -1,9 +1,9 @@
 #include <iostream>
 #include <cstdlib>
 
-#include "OptionParser.hpp"
-#include "ReadFileIntoString.hpp"
-#include "MultiplyAddwthrowe.hpp"
+#include "Utils/StringParsing/OptionParser.hpp"
+#include "Utils/StringParsing/ReadFileIntoString.hpp"
+#include "StudentProjects/SpecClass2011/wthrowe/Assignment01wthrowe/MultiplyAddwthrowe.hpp"
 
 int main(int /*argc*/, char** /*argv*/) {
     std::string opts = ReadFileIntoString("MultiplyAdd.input");

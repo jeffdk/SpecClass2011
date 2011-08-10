@@ -1,10 +1,11 @@
-#include "OptionParser.hpp"
-#include "OneDimDataWriter.hpp"
-#include "MyVector.hpp"
-#include "CachedOfStream.hpp"
+#include "Utils/StringParsing/OptionParser.hpp"
+#include "Utils/IO/OneDimDataWriter.hpp"
+#include "Utils/MyContainers/MyVector.hpp"
+#include "Utils/IO/CachedOfStream.hpp"
 
+#include <string>
 #include <cstdlib>
-#include<fstream>
+#include <fstream>
 #include <cmath>
 
 namespace OneDimDataWriters {
@@ -18,13 +19,13 @@ namespace OneDimDataWriters {
            return ClassID() + "\n"
               "Output: Two columns containing x_i and y_i with each i-th    \n"
 	      "data point omitted.                                          \n"
-	      "OPTIONS: MinAngle = double;  if abs(180 - angle) < MinAngle, 
+	      "OPTIONS: MinAngle = double;  if abs(180 - angle) < MinAngle, \n"
 	      "discard the i-th data point. \n" ;
         };
         OutputReducedDatIryna(const string& opts, const string& BaseName):
          mFileName(BaseName+".dat"), mOut(mFileName) { // check .dat
 	   OptionParser p(opts, Help());
-	   MinAngleRad = p.Get<double>("MinAngle") * (M_PI / 180.0);
+	   MinAngle = p.Get<double>("MinAngle");
 	};
 	void TruncateFile() const {
 	   std::ofstream out(mFileName.c_str(), std::ios::trunc);
@@ -32,7 +33,7 @@ namespace OneDimDataWriters {
 
      private:
         const std::string mFileName;
-        double MinAngleRad;
+        double mMinAngle;
 
 	void AppendToFileImpl(const double time, 
 			      const MyVector<double>&,

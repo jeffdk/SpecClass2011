@@ -1,8 +1,8 @@
-#include "DataMesh.hpp"
-#include "Tensor.hpp"
+#include "Utils/DataMesh/DataMesh.hpp"
+#include "Utils/Tensor/Tensor.hpp"
 #include <cstdlib>
-#include "Assignment03Ilana.hpp"
-#include "Require.hpp"
+#include "StudentProjects/SpecClass2011/Ilana/Assignment03Ilana/Assignment03Ilana.hpp"
+#include "Utils/ErrorHandling/Require.hpp"
 #include <cmath>
 
 

@@ -1,0 +1,25 @@
+  In the hpp file, there are two headers which aren't used.  The code compiles
+and runs without the headers MyVector and NonCopyable.  
+These should be removed.
+  If I received the assert message "Oops", I would have no idea what was
+happening and would go bug Larry, or even worse from the grader's perspective,
+Curran.  I don't think Larry or Curran would want me bugging them over a 
+non-descriptive assert message.
+  In contrast to VolumeTerm and VolumeTermImpl, RotationMatrix is not utilizing
+forward declarations.  There is no RotationMatrixImpl.hpp, so a lot of the
+benefits for the pimpl setup are lost.  Additionally, if there were a
+RotationMatrixImpl.hpp, less header files would need to be included in 
+RotationMatrix.hpp, again reducing dependencies.
+  The default constructor seems to be around line 63.  I would argue that
+this constructor should be removed.  I don't see a use for this where other 
+constructors couldn't do a better job.  This will return a null pointer, which 
+is dangerous if anyone tries to use the RotationMatrix in any way.  Although
+an assert would be raised if you were in debug mode.
+  
+  Summary:
+  remove unnecessary header files
+  more descriptive assert message
+  implement a RotationMatrixImpl
+  utilize forward declarations
+  remove default constructor
+

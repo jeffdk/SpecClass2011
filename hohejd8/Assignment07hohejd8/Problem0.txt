@@ -1,0 +1,3 @@
+The output of Example0 is x=6.  The function 'f' changes its local variable 'x', but it does not change the value of 'x' belonging to 'main'.
+
+The output of Example1 is x=3.  The function 'f' takes 'x' as a reference to the variable 'x' in main, then changes the referenced value from 6 to 3.

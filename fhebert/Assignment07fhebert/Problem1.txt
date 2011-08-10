@@ -1,0 +1,41 @@
+francois hebert
+hw 7 - prob 1
+
+
+2)
+This code outputs the structure of tensor c = a+b.
+
+Unsurprisingly, I see {4,"12"} being output.. this just means
+the provided code preserves structure under addition as it must.
+
+
+4)
+Total memory usage is 17,337,377 bytes.
+
+
+6)
+After changing the function argument to references,
+the total memory usage is 10,423,457 bytes.
+
+
+7)
+The code now uses significantly less memory, because it no longer
+needed to create duplicate copies of the TDMs a and b for passing
+to the add function.
+
+The ratio of before/after memory usage is ~1.66 or 5/3.
+This makes sense:
++ the "pass-by-value" has 5 TDMs:
+  - a,b in main
+  - a,b copied in add
+  - c the output
++ the "pass-by-ref" code has 3 TDMs:
+  - a,b in main
+  - c the output
+
+Note 1: the compiler performs optimizations such that the result
+object in add() and c in main() are in fact the same memory allocation.
+
+Note 2: the ratio is just slightly lower than 5/3 because of overhead
+due to the other aspects of the code. But as the mesh is large, the 
+memory usage from the TDMs dominates.

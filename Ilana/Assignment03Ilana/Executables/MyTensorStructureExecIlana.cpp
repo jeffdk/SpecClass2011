@@ -1,4 +1,4 @@
-#include "TensorStructure.hpp"
+#include "Utils/Tensor/TensorStructure.hpp"
 #include <cstdlib>
  
 int main(void) {

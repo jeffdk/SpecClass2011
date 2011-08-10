@@ -1,0 +1,5 @@
+The problem with a function of the form
+T& f(...) { T c; ...; return c; }
+is that the object c goes out of scope at the end of the function execution and
+its memory can be reused.  The reference that is returned therefore points to
+invalid memory.

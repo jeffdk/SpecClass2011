@@ -1,7 +1,7 @@
-#include "OptionParser.hpp"
-#include "OneDimDataWriter.hpp"
-#include "CachedOfStream.hpp"
-#include "MyVector.hpp"
+#include "Utils/StringParsing/OptionParser.hpp"
+#include "Utils/IO/OneDimDataWriter.hpp"
+#include "Utils/IO/CachedOfStream.hpp"
+#include "Utils/MyContainers/MyVector.hpp"
 #include <fstream>
 #include <cmath>
 namespace OneDimDataWriters {

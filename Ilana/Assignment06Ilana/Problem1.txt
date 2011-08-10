@@ -1,0 +1,42 @@
+Problem 1 - A critique of RotationMatrix
+
+1. The number of #includes in the header file:
+
+First of all, it uses Registry.hpp instead of Factory.hpp, and the Registry
+is out of date.  Secondly, MyVector.hpp and NonCopyable.hpp are included when
+they don't need to be because they aren't actually used.
+
+2. The default constructor:
+
+The default constructor is the constructor with no parameters: RotationMatrix(),
+and it is used to create this RotationMatrixImpl* thing.  There are three
+constructors however, the default constructor, the constructor and a copy
+constructor, so I imagine you could probably get by without it. It creates a 
+null pointer, which could be bad if someone accidentally called RotationMatrix
+without any parameters.
+
+3. The member-function RotationMatrix::Impl():
+
+Impl() should be private to follow the PImpl idea because you don't need to see
+it, I guess.
+
+4. Contrast with VolumeTerm.hpp and VolumeTermImpl.hpp:
+
+VolumeTerm.hpp only includes <string> and NonCopyable.hpp and VolumeTermImpl.hpp
+only includes NonCopyable.hpp and Factory.hpp, so already they will have a
+faster compile time than RotationMatrix.hpp. 
+
+These also use Factory.hpp instead of Registry.hpp, so can implement 
+Factory::EnableCreation and Foctory::Register,and don't have to have that macro 
+to "REGISTER_VOLUMETERM".
+
+Next, VolumeTerm and VolumeTermImpl are separated into two separate files for
+clarity, which would be a good idea to implement in RotationMatrix so that 
+RotationMatrix.hpp is a separate file.
+
+VolumeTerm and VolumeTermImpl also seem to have much more extensive commenting
+than RotationMatrix.
+
+5. Some other things:
+
+- In ASSERT(mpImpl!=0,"OOPS"), "OOPS" is not a very useful error message.

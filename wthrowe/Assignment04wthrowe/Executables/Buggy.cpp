@@ -1,4 +1,4 @@
-#include "RaiseToPower_wthrowe.hpp"
+#include "StudentProjects/SpecClass2011/wthrowe/Assignment04wthrowe/RaiseToPower_wthrowe.hpp"
 #include <iostream>
  
 int main() {

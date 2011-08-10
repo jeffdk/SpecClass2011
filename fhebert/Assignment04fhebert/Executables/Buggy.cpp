@@ -1,4 +1,4 @@
-#include "RaiseToPower_fhebert.hpp"
+#include "StudentProjects/SpecClass2011/fhebert/Assignment04fhebert/RaiseToPower_fhebert.hpp"
 #include <iostream>
 
 int main()

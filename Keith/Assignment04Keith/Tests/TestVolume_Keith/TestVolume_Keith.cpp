@@ -1,12 +1,14 @@
-#include "Volume_KEITH.hpp"
-#include "UtilsForTesting.hpp"
+#include "StudentProjects/SpecClass2011/Keith/Assignment04Keith/Volume_Keith.hpp"
+#include "Utils/ErrorHandling/UtilsForTesting.hpp"
 
-#include "MyVector.hpp"
+#include "Utils/MyContainers/MyVector.hpp"
 
 int main() {
 
-  UtilsForTesting u;
-  u.SetEps(1.e-8);
+  // UtilsForTesting u;
+  // Ah, I see.  UtilsForTesting member functions are static, so we don't
+  // need to instantiate the class.
+  UtilsForTesting::SetEps(1.e-8);
 
   { // 1st test - sample values
     std::cout << "Test 1: epsilon test of output" << std::endl;
@@ -53,6 +55,6 @@ int main() {
     IS_TRUE(testPassed, "Test 3: failed to generate an error.");
   }
 
-  return u.NumberOfTestsFailed();
+  return UtilsForTesting::NumberOfTestsFailed();
 }
   

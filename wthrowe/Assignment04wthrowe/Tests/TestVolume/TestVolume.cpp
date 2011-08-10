@@ -1,6 +1,6 @@
-#include "Volume_wthrowe.hpp"
-#include "MyVector.hpp"
-#include "UtilsForTesting.hpp"
+#include "StudentProjects/SpecClass2011/wthrowe/Assignment04wthrowe/Volume_wthrowe.hpp"
+#include "Utils/MyContainers/MyVector.hpp"
+#include "Utils/ErrorHandling/UtilsForTesting.hpp"
 
 #include <cmath>
 

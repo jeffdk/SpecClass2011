@@ -1,0 +1,10 @@
+SubdomainStructure=
+SphericalShells3D(BaseName = SphereA;
+                  L = 6;
+                  r-Axis = (Extents  = 6;
+                            Bounds   = 0.8,11.9;
+                            Maps     = Exp;
+                            IndexMap = ChebyshevGaussLobatto;
+                            Topology = I1;
+                            );
+                  );

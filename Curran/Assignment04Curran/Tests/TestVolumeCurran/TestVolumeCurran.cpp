@@ -1,6 +1,6 @@
-#include "Volume_Curran.hpp"
-#include "MyVector.hpp"
-#include "UtilsForTesting.hpp"
+#include "StudentProjects/SpecClass2011/Curran/Assignment04Curran/Volume_Curran.hpp"
+#include "Utils/MyContainers/MyVector.hpp"
+#include "Utils/ErrorHandling/UtilsForTesting.hpp"
 
 /** \file
  * Tests the TotalVolumeOfSpheresFromRadii function.

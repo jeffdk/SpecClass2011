@@ -1,9 +1,9 @@
-#include "OutputReducedDat_Bohn.hpp"
-#include "OneDimDataWriter.hpp"
-#include "NdData.hpp"
-#include "StringUtils.hpp"
-#include "OptionParser.hpp"
-#include "ConvertNumberToString.hpp"
+#include "StudentProjects/SpecClass2011/Bohn/Assignment05Bohn/OutputReducedDat_Bohn.hpp"
+#include "Utils/IO/OneDimDataWriter.hpp"
+#include "Utils/IO/NdData.hpp"
+#include "Utils/StringParsing/StringUtils.hpp"
+#include "Utils/StringParsing/OptionParser.hpp"
+#include "Utils/LowLevelUtils/ConvertNumberToString.hpp"
 
 #include <fstream>
 #include <cmath>

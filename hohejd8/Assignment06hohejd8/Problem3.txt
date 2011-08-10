@@ -1,0 +1,3 @@
+1. I commented out the lines calling the FirstDriv ComputeItem.  The resulting error message tells me that the key 'dQ', which is the output from this ComputeItem, does not appear in the DataBox for use in later ComputeItems.
+
+2. I misspelled the name of EvaluateVectorFormula.  The error message says that the ClassID could not be found, and proceded to give a complete list of all ClassIDs.

@@ -1,0 +1,21 @@
+Feedback is provided for homework problems only if key items are omitted or if
+errors are found. Below the the first list are things that should be fixed
+before full credit is awarded.
+
+When you have completed the fixes (which in most cases should take only a
+minute or two), PLEASE E-MAIL daniel.hemberger@gmail.com to notify me
+that you have pushed your changes.
+
+Overall, everyone did a great job this week.  Thanks for your hard work!
+
+Bohn/
+
+1)  Lacks documentation. 
+    Test does not actually test that the correct volume is returned.
+    Insufficient includes in the test .cpp file to compile.
+3)  Did not delete pMemLeaker in UseMemoryLeaker.cpp
+
+TODO:
+1. Make sure the test in problem 1 actually tests that the volume returned
+   by the library is correct.
+2. Make sure all new's have a delete in problem 3.

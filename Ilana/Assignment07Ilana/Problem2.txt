@@ -1,0 +1,7 @@
+Problem 2 - Returning References
+
+The problem with this function is the ampersand in double& add(...). The
+ampersand means that it will return a reference to the local variable c, and
+this is problematic because c only exists within the function itself.  That is,
+c will no longer be allocated at the end of the function, and so returning a
+reference to it won't give you anything.

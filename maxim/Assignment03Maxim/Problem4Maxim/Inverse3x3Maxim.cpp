@@ -1,6 +1,8 @@
-#include "DataMesh.hpp"
-#include "Tensor.hpp"
 #include <cstdlib>
+#include "Utils/DataMesh/DataMesh.hpp"
+#include "Utils/Tensor/Tensor.hpp"
+#include "Utils/ErrorHandling/Require.hpp"
+
 //#include "InvertMatrix.hpp"
 
 using namespace std;
@@ -54,8 +56,10 @@ int main(void) {
 Tensor<DataMesh> InverseTensor3x3(Tensor<DataMesh> t) {
 	//Mesh m(IPoint(MV::fill, 3, 3));
 	Mesh m = t(0,0); // extracting the mesh out of the tensor
-	DataMesh det(m), zero(m, 0), A(m), B(m), C(m), D(m), E(m), F(m), G(m), H(m), K(m);
-	int dim = t.Dim();
+	DataMesh det(m), A(m), B(m), C(m), D(m), E(m), F(m), G(m), H(m), K(m);
+	int dim = t.Dim(), rank = t.Rank();
+	REQUIRE(dim == 3, "Not in three dimensions");
+	REQUIRE(rank == 2, "Not of rank two");
 
 	Tensor<DataMesh> t_inv(dim, "aa", m);
 	
@@ -77,8 +81,9 @@ Tensor<DataMesh> InverseTensor3x3(Tensor<DataMesh> t) {
 	
 	det = t(0,0)*A + t(0,1)*B + t(0,2)*C; // determinant
 
-	// matrix singularity check	
-	if(det == zero) { cerr << "Matrix is singular" << endl; exit(1);}
+	// matrix singularity check
+	for(int i = 0; i < det.Size(); ++i)	
+		REQUIRE(det[i] != 0, "Matrix is singular");
 
 	t_inv(0,0)=A/det;	t_inv(0,1) = D/det;		t_inv(0,2) = G/det;
 	t_inv(1,0)=B/det;	t_inv(1,1) = E/det;		t_inv(1,2) = H/det;

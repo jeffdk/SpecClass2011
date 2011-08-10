@@ -1,0 +1,36 @@
+DataBoxItems = 
+    Subdomain(Items =
+	      # Set up matrices (diagonal for simplicity)
+	      EvaluateMatrixFormula(Output  = ConstMatrixDown;
+				    Dim     = 4;
+				    Symm    = 11;
+				    M[0,0] = 3.0;
+				    M[1,1] = 4.0;
+				    M[2,2] = 5.0;
+				    M[3,3] = 6.0;
+	      ),
+	      EvaluateMatrixFormula(Output  = ConstMatrixUpDown;
+				    Dim     = 4;
+				    Symm    = 12;
+				    M[0,0] = -3.0;
+				    M[1,1] =  4.0;
+				    M[2,2] =  5.0;
+				    M[3,3] =  6.0;
+	      ),
+	      # Set up metric
+	      AnalyticEinsteinSolution(Solution=FlatSpace(SpatialDim=3);
+				       Output  =FlatSpace;),
+	      AnalyticEinstein::SpacetimeMetric(Input =FlatSpace;
+						Output=g;),
+	      InvertMatrix(Input=g;Output=Invg),
+	      # Now raise first index
+	      RaiseFirstIndex(Input=ConstMatrixDown;Output=Test;InvMetric=Invg),
+	      # and test
+	      BinaryOp(A=Test;B=ConstMatrixUpDown;Op=A-B;
+		       Output=ShouldBeZero;),
+    );
+Observers = NormOfTensor(Input           = ShouldBeZero;
+			 Filename        = ShouldBeZero.dat;
+			 Op              = Linf;
+			 MetricForTensors= None;
+                        );

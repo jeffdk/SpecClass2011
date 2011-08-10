@@ -1,25 +1,16 @@
 From slowest to fastest:
 
-(2) : This method is the slowest.  At the time the memory is allocated, the
-      DataMesh has all values initialized to 0.0.  Immediately after, the memory
-      is accessed again to replace the memory with the correct values.
+(3) : This is the slowest method by a small bit. 
+      At the time the memory is allocated, the DataMesh copies the data from A
+      and stores it.  Then the variable is set to the correct value.
 
-(3) : This is the next best method. Think of this as number (2), but do not
-      initialize all values to 0.0.  DetF temporarily has junk values, but this
-      isn't a big problem because it's immediately filled in with the correct
-      values.
-      So the speedup here is that there is no time wasted initializing 
-      pointlessly.
+(2) : This method is the second slowest.  
+      At the time the memory is allocated, the DataMesh initializes all values
+      to 0.0, which takes less time than reading A and copying the data.
+      Then the variable is set to the correct value.
 
-(1) : This method is the fastest.  At the time that the memory is allocated, the
-      memory is initialized to the desired value.
+(1) : This method is the fastest.  At the time that the memory is allocated, 
+      the memory is initialized to the desired value.
       Compared to (3), we do not have to access the memory DetF again.  The 
       value of DetF is immediately initialized the first time it is accessed, 
       that is, when it is allocated.
-
-SUMMARY:
-(2) : created, initialized, accessed, stored correct values
-(3) : created, accessed, stored correct values
-(1) : created, initialized to correct values
-
-

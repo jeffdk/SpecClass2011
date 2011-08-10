@@ -1,0 +1,12 @@
+The output of the code is {4, "12"}, as it should be the same structure as a
+and b.
+
+It allocates 17,341,210 bytes.
+After using references, it uses 10,427,290 bytes.
+The ratio of the memory usage is 1.66 because we removed 2 of the 5 initial
+TDms.  Initially we had made copies of a and b when they were passed to the
+add function, but with references we only allocate 3, so the ratio should be
+5/3 ~ 1.66.
+
+Note that the result TDm and c are equivalent objects because of compiler
+optimizations

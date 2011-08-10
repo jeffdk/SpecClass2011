@@ -1,0 +1,4 @@
+The problem with this code is that we are returning a reference to a double.  
+The return is 'c', which is returned by reference.  The actually variable 'c'
+goes out of scope as soon as the function is complete, so the memory that the
+return is referencing can be changed.

@@ -1,0 +1,43 @@
+francois hebert
+hw 6 - prob 1
+
+critique of RotationMatrix:
+(as of revision 17695)
+
+
+a) some unneeded header files:
+   - myvector
+   - noncopyable
+  (i tried: the code compiles just fine with these headers removed)
+
+b) the default constructor leaves behind a null pointer, which opens doors
+   to unintended (=nasty) undefined behavior..
+
+c) the member function Impl() doesn't do a perfect job of following the
+   PImpl idea:
+   - since the point is to obscure the abstract base class, it seems that
+     it would be best to define this to be a private function. this way,
+     external users wouldn't have access to the pointer to RotationMatrixImp
+
+d) also, "oops" isn't exactly a helpful error message to run into.
+
+   relatedly, this comment makes me twitch:
+   "hey, let's try the right way of doing this"
+   - the right way of doing what?
+   - why is this right?
+   - since this is so noteworthy, is the rest of the code "the wrong way" ??
+
+
+improvements:
+
+e) modernize by using the Factory system to register class rather than the
+   cumbersome macros
+
+f) modify the constructor to allow for a private Impl() function
+
+g) fix the above issues by:
+   - removing headers
+   - possibly removing the default constructor completely, or making a better
+     one
+   - making a decision about Impl()
+   - writing helpful error messages

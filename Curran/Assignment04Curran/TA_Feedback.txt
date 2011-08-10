@@ -1,0 +1,17 @@
+Feedback is provided for homework problems only if key items are omitted or if
+errors are found. Below this list is another list of things that should be
+fixed before full credit can be awarded.
+
+When you have completed the fixes (which in most cases should take only a
+minute or two), PLEASE E-MAIL daniel.hemberger@gmail.com to notify me
+that you have pushed your changes.
+
+Overall, everyone did a great job this week.  Thanks for your hard work!
+
+
+**Curran/
+
+1)  Did not distinguish between coding standard violations and errors in .txt.
+
+TODO:
+nothing!

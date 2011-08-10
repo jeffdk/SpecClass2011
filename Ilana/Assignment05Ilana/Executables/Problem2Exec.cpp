@@ -1,9 +1,9 @@
-#include "MyVector.hpp"
-#include "OneDimDataWriter.hpp"
-#include "BasicMpi.hpp"
-#include "MpiCommunicator.hpp"
-#include "ReadFileIntoString.hpp"
-#include "OptionParser.hpp"
+#include "Utils/MyContainers/MyVector.hpp"
+#include "Utils/IO/OneDimDataWriter.hpp"
+#include "Utils/ErrorHandling/BasicMpi.hpp"
+#include "Utils/MpiWrappers/MpiCommunicator.hpp"
+#include "Utils/StringParsing/ReadFileIntoString.hpp"
+#include "Utils/StringParsing/OptionParser.hpp"
 #include <cstdlib>
 #include <cmath>
 

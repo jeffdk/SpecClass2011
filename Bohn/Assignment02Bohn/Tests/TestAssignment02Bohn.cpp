@@ -1,13 +1,13 @@
 #include <iostream>
 #include <cstdlib>
 
-#include "MyVector.hpp"
-#include "Assignment02Bohn.hpp"
+#include "Utils/MyContainers/MyVector.hpp"
+#include "StudentProjects/SpecClass2011/Bohn/Assignment02Bohn/Assignment02Bohn.hpp"
 
-#include "OptionParser.hpp"
-#include "ReadFileIntoString.hpp"
-#include "Require.hpp"
-#include "UtilsForTesting.hpp"
+#include "Utils/StringParsing/OptionParser.hpp"
+#include "Utils/StringParsing/ReadFileIntoString.hpp"
+#include "Utils/ErrorHandling/Require.hpp"
+#include "Utils/ErrorHandling/UtilsForTesting.hpp"
 
 int main(int /*arg*/, char** /*argv*/) {
 	OptionParser p(ReadFileIntoString("Vectors.input"));

@@ -1,0 +1,16 @@
+The output of the original code is:
+
+dan@Arda ~/SpEC_svn/StudentProjects/SpecClass2011/danh/Assignment07danh/Executables$ DataMeshMemory 
+{4 "12"}
+
+Memory usage (orig):
+17,288,798 bytes allocated in 216 allocs
+
+Memory usage (modified):
+10,375,518 bytes allocated in 150 allocs
+
+Ratio = 10375518/17288798 = 0.600129517 ~ 60%
+
+The reason that the memory usage is reduced is because the tensors are passed to the function 'add' by reference. This prevents the tensors from being instantiated both in main() and in 'add'.
+
+The value of this difference in memory usage is ****TBD**** (I think it's the size of a double * the number of elements in tensors a & b)

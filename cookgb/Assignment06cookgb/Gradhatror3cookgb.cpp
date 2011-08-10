@@ -12,17 +12,18 @@ namespace ComputeItems {
   void Gradhatror3cookgb::RecomputeData(const DataBoxAccess& box) const {
     typedef Tensor<DataMesh> TDm;
 
-    const TDm& x = box.Get<TDm>("X0");
-    const TDm& y = box.Get<TDm>("X1");
-    const TDm& z = box.Get<TDm>("X2");
+    const MyVector<DataMesh>& coords=
+      box.Get<MyVector<DataMesh> >("GlobalCoords");
 
-    DataMesh tmp = x()*x() + y()*y() + z()*z(); // r^2
+    DataMesh tmp = coords[0]*coords[0] + 
+                   coords[1]*coords[1] + 
+                   coords[2]*coords[2]; // r^2
     tmp = 1./(tmp*tmp); // 1/r^4
 
-    TDm res(tmp.Dim(),"a");
-    res(0) = x()*tmp;
-    res(1) = y()*tmp;
-    res(2) = z()*tmp;
+    TDm res(3,"a",tmp);
+    res(0) = coords[0]*tmp;
+    res(1) = coords[1]*tmp;
+    res(2) = coords[2]*tmp;
 
     mResult.assign(res);
   }

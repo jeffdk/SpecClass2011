@@ -1,0 +1,15 @@
+With
+
+double& add(const double& a, const double& b) { 
+   double c = a + b;
+   return c;
+}
+
+the double "c" is allocated within the scope of the function "add".
+(This is usually done on the stack, but could be allocated in the
+heap.)  The call to "return c" will return a reference to the memory
+location where "c" has been stored, but after the subroutine exits,
+the local variables will not exist anymore (at least not reliably).
+The memory that "c" occupied (on the stack or in the heap) can be
+overwritten with any other data, so the returned reference is not
+guaranteed to point to anything useful.

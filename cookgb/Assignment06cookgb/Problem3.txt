@@ -1,0 +1,65 @@
+Break the sequence of ComputeItems:
+1) change R=Radius -> r=Radius in line 8
+   
+Error message:
+======== OptionParser: UNUSED OPTIONS ========================================
+======= These options were not used:
+[0] === r
+[0] === Given Options:
+r = Radius
+V[0] = x0/(R*R*R)
+V[1] = x1/(R*R*R)
+V[2] = x2/(R*R*R)
+Output = Q
+==== Help: ===================================================================
+EvaluateVectorFormula                                             
+   Computes a vector function of the GlobalCoordinates and        
+   0 to 26 Tensor<DataMesh>'es of rank zero.                      
+OPTIONS:                                                          
+   Output = string;  # Name of output                             
+                                                                  
+   A = string;   # DataSets to be used within the formula. One can
+   B = string;   # use any subset of capital letters, including   
+   ...           # none at all.  Each one must be a rank=0 Tensor 
+                                                                  
+   V[0] = string; # a mathematical formula which may involve the  
+   V[1] = string; # letters A, B, ... for the DataSets specified  
+   :              # above, as well as 'x0', 'x1', 'x2' for the    
+   :              # components of the global coordinates          
+   V[d-1]=string; # Each entry sets one component of the vector.  
+                                                                  
+  Dim     = int;  # Length of the vector.                         
+                  # *IF NOT SPECIFIED, then the length is limited 
+                  #    to <=4, and is determined by which V[i] you
+                  #    specify. Furthermore, you MUST specify all 
+                  #    V[i] from i=0 to i=length-1.               
+                  # *IF Dim is SPECIFIED, then you can specify as 
+                  #    many V[i] as you wish (up to i=Dim-1),     
+                  #    including none at all.                     
+                  #    All components not specified are set       
+                  #    to zero.                                   
+                                                                  
+  AddTime = bool;    # If true, then the formula can also have 't'
+                     # which is replaced by the current value of  
+                     # 'Time' in the DataBox. Default false.      
+                                                                  
+REQUIRES in DataBox:                                              
+   Tensor<DataMesh>     [A], [B], ...                             
+   MyVector<DataMesh>   'GlobalCoords'                            
+PRESENTS to the DataBox                                           
+   Tensor<DataMesh>     [Output]       
+
+--------------------------
+Resulted in an unused option "r".                           
+
+2) changed Indices=0,1 to Indices=0,2 on line 24
+
+Error message:
+#####################  REQUIRE  FAILED  ##########################
+#### mIndex1<rank  violated
+#### Trace.cpp (line 130)
+[0] index larger than rank of tensor!
+##################################################################
+ 
+Resulted in a failed REQUIRE since I indicated that the input tensor had
+3 indices when it only had 2.

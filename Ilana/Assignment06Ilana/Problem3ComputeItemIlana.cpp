@@ -32,7 +32,10 @@ namespace ComputeItems {
 	REQUIRE(R[i]!=0,"R is zero! Can't divide by zero!");
 
       // Calculate rhat^i/r^3
-      for(int i=0;i<coords.Size();++i)
-	mResult(i) = coords[i]/(R*R*R);
+      Tensor<DataMesh> tmp(3, "a", mesh, 0.0);
+      for(int i=0;i<coords.Size();++i) 
+	tmp(i) = coords[i]/(R*R*R);
+      
+      mResult.assign(tmp);
     }
 }

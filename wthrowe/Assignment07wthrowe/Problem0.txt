@@ -1,0 +1,6 @@
+Problem0Example0 says 6.
+Problem0Example1 says 3.
+
+In 0, the x in f() is a copy of the x in main(), so changing it has no
+effect once f() has finished.  In 1, the x in f() is an alias for the
+x in main(), so changing it changes the output.

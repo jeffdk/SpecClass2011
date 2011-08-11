@@ -1,0 +1,10 @@
+1) Done
+2) {4 "12"} 
+   This is the dimension and symmetry of the tensor c (its Structure)
+3) Done
+4) total heap usage: 214 allocs, 214 frees, 17,291,570 bytes allocated
+5) Done
+6) total heap usage: 148 allocs, 148 frees, 10,377,650 bytes allocated
+
+7) When add was called with the change to references, it did not need
+   to make copies of "a" and "b".  This reduced the use of memory.

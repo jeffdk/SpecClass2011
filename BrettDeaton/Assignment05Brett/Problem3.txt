@@ -1,0 +1,23 @@
+Problem 3
+
+1) Simple case
+After running my executable at t=2.0, at 4 settings of MinAngle (0, 0.00005, 0.0005, 0.0003), I ran:
+
+$ wc -l problem3-*
+   146 problem3-3e-3.dat
+   780 problem3-5e-4.dat
+  1072 problem3-5e-5.dat
+  2050 problem3-zero.dat
+
+for a feel for how greatly I've reduced the data. So for MinAngle=5e-4, the data is reduced by almost
+	1/3. There are also two plots heat_diffusion*pdf which show the reduction.
+
+2) Robustness
+This reduction method is certainly not robust the way I programmed it. It would fail
+     for any function whose slope continuously changes by less than MinAngle per dx.
+     Thus our method would faile for any arbitrary well-behaved function if we choose dx small
+     enough. That is we can always choose dx small enough such that we reduceddat only outputs
+     the first and last points.
+An improvement would be to compare global slopes rather than local. This could be done
+     by setting an 'anchor segment' at the line segment just before the last one dropped.
+     All subsequent angles of line segments would be evaluated with respect to the anchor segment.

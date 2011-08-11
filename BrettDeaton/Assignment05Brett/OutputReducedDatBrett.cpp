@@ -1,7 +1,8 @@
-#include "OutputReducedDatBrett.hpp"
-#include "StringUtils.hpp"
-#include "MyVector.hpp"
-#include "ConvertNumberToString.hpp"
+#include "StudentProjects/SpecClass2011/BrettDeaton/Assignment05Brett/OutputReducedDatBrett.hpp"
+#include "Utils/StringParsing/StringUtils.hpp"
+#include "Utils/MyContainers/MyVector.hpp"
+#include "Utils/LowLevelUtils/ConvertNumberToString.hpp"
+
 #include <cmath>
 #include <fstream>
 
@@ -10,9 +11,9 @@ namespace OneDimDataWriters {
   double OutputReducedDatBrett::ComputeAngleFromHorizon(const double xi, const double xii,
 							const double yi, const double yii) const {
     double slope = (yii-yi)/(xii-xi);
-    return arctan(slope);
+    std::cout << "angle at x=" << xi << "is " << atan(slope) << std::endl;
+    return atan(slope);
   }
-    
   
   void OutputReducedDatBrett::AppendToFileImpl(const double time,
 					       const MyVector<double>& x,
@@ -21,7 +22,6 @@ namespace OneDimDataWriters {
 	    "Error: ordinate and abscissa vectors are not the same size.");
     int precision = 16;
 
-    const double pi = 3.141592653589793;
     double lastAngle;
     double nextAngle = ComputeAngleFromHorizon(x[0],x[1],
 					       y[0],y[1]);
@@ -32,11 +32,11 @@ namespace OneDimDataWriters {
       nextAngle = ComputeAngleFromHorizon(x[i],x[i+1],
 					  y[i],y[i+1]);
       double dAngle = nextAngle - lastAngle;
-      if (fabs(dAngle)<mMinAngle)
+      if (fabs(dAngle)>mMinAngle)
 	mOut << DoubleToString(x[i],precision) << "   " <<
 	  DoubleToString(y[i],precision) << std::endl;
     }
-    mOut << DoubleToString(x[x.Size()],precision) << "   " <<
-      DoubleToString(y[y.Size()],precision) << std::endl;
+    mOut << DoubleToString(x[x.Size()-1],precision) << "   " <<
+      DoubleToString(y[y.Size()-1],precision) << std::endl;
   }
 }

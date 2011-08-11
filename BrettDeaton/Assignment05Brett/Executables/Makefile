@@ -1,4 +1,4 @@
-                                               #/// \dir
+#/// \dir
 #/// Contains a minimal set of files for adding a new executable to SpEC
 
 # Where is SPEC_HOME relative to this directory

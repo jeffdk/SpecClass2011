@@ -1,7 +1,9 @@
-#include "OneDimDataWriter.hpp"
-#include "CachedOfStream.hpp"
-#include "MyVector.hpp"
-#include "Require.hpp"
+#include "Utils/IO/OneDimDataWriter.hpp"
+#include "Utils/IO/CachedOfStream.hpp"
+#include "Utils/MyContainers/MyVector.hpp"
+#include "Utils/StringParsing/OptionParser.hpp"
+#include "Utils/ErrorHandling/Require.hpp"
+
 #include <fstream>
 
 using std::string;
@@ -12,7 +14,7 @@ namespace OneDimDataWriters {
   /// Output standard x,y data for y-vs-x plots,
   ///   with capability to reduce the data.
   class OutputReducedDatBrett: public OneDimDataWriter,
-		   Factory::Register<OutputReducedDatBrett> {
+			       Factory::Register<OutputReducedDatBrett> {
   public:
     static string ClassID() { return "reduceddatbrett"; }
     static string Help() {
@@ -30,15 +32,15 @@ namespace OneDimDataWriters {
     OutputReducedDatBrett(const string& opts, const string& BaseName):
       mFileName(BaseName+".dat"), mOut(mFileName)
     {
-      REQUIRE(opts.empty(), Help());
+      OptionParser p(opts, Help());
+      mMinAngle = p.Get<double>("MinAngle");
     };
-    ~OutputReducedDatBrett();
     void TruncateFile() const {
       ofstream out(mFileName.c_str(), std::ios::trunc);
     };
   private:
     const string mFileName;
-    const double mMinAngle;
+    double mMinAngle;
     mutable CachedOfStream mOut;
  
     void AppendToFileImpl(const double time,

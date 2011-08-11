@@ -1,6 +1,21 @@
 # Input for Problem2Exec
 # Brett Deaton
 # 7.25.11
-Format = reduceddatbrett(MinAngle=0.01;);
-Basename = problem3;
+
 Times = 2.0;
+
+#Format = grace;
+#Basename = problem2;
+
+#Format = ygraph;
+#Basename = problem2;
+
+#Format = reduceddatbrett(MinAngle=0;);
+#Basename = problem3-zero;
+#Format = reduceddatbrett(MinAngle=5e-5;);
+#Basename = problem3-5e-5;
+#Format = reduceddatbrett(MinAngle=5e-4;);
+#Basename = problem3-5e-4;
+Format = reduceddatbrett(MinAngle=3e-3;);
+Basename = problem3-3e-3;
+

@@ -11,3 +11,10 @@ L9	casting of 4/3 may result in an int?
 
 The overall effect of the starred errors is that result is calculated with an uninitialized r, on my
     compiler that means it's 0.
+
+8.11.11
+Additional errors/standard violations:
+
+No documentation of the Function.
+No header guards (#ifndef...)
+

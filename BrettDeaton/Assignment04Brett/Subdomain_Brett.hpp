@@ -1,8 +1,8 @@
 #ifndef Subdomain_hpp
 #define Subdomain_hpp
 
-#include "CoordMapCache.hpp"
-#include "TopologyMesh.hpp"
+#include "Dust/Domain/Subdomain/CoordMapCache.hpp"
+#include "Dust/Domain/Topology/TopologyMesh.hpp"
  
 // The code actually compiles w/o these declarations, presumably because they are
 //   snuck in via CoordMaoCache.hpp & TopologyMesh.hpp's include statements or

@@ -1,9 +1,9 @@
 #include <iostream>
 #include <cstdlib>
 
-#include "OptionParser.hpp"
-#include "ReadFileIntoString.hpp"
-#include "TemplateLibrary.hpp"
+#include "Utils/StringParsing/OptionParser.hpp"
+#include "Utils/StringParsing/ReadFileIntoString.hpp"
+//#include "TemplateLibrary.hpp"
 
 int main(int /*argc*/, char** /*argv*/) {
     std::cout << "Hello world!" << std::endl;

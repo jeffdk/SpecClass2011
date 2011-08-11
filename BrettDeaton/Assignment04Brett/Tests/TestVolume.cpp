@@ -1,12 +1,13 @@
+#include "Utils/MyContainers/MyVector.hpp"
+#include "StudentProjects/SpecClass2011/BrettDeaton/Assignment04Brett/Volume_Brett.hpp"
+#include "Utils/StringParsing/OptionParser.hpp"
+#include "Utils/StringParsing/ReadFileIntoString.hpp"
+#include "Utils/ErrorHandling/Require.hpp"
+#include "Utils/ErrorHandling/UtilsForTesting.hpp"
+
 #include <iostream>
 #include <cstdlib>
 #include <cmath>
-#include "MyVector.hpp"
-#include "Volume_Brett.hpp"
-#include "OptionParser.hpp"
-#include "ReadFileIntoString.hpp"
-#include "Require.hpp"
-#include "UtilsForTesting.hpp"
  
 int main(int /*argc*/, char** /*argv*/) {
  

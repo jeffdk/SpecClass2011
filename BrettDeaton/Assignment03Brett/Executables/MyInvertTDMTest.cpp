@@ -2,10 +2,10 @@
 //   Brett Deaton
 //   7.12.11
 
-#include "InvertTDMBrett.hpp"
-#include "DataMesh.hpp"
-#include "Tensor.hpp"
-#include "Ran2Class.hpp"
+#include "StudentProjects/SpecClass2011/BrettDeaton/Assignment03Brett/InvertTDMBrett.hpp"
+#include "Utils/DataMesh/DataMesh.hpp"
+#include "Utils/Tensor/Tensor.hpp"
+#include "Utils/LowLevelUtils/Ran2Class.hpp"
 #include <cstdlib>
     
 int main(void) {

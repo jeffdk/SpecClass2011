@@ -28,8 +28,8 @@
 /// @require     A is expected to be symmetric, A^{-1} will also be
 //////////////////////////////////////////////////////////////////////////      
  
-#include "DataMesh.hpp"
-#include "Tensor.hpp"
+#include "Utils/DataMesh/DataMesh.hpp"
+#include "Utils/Tensor/Tensor.hpp"
 
 DataMesh Cofactor(const Tensor<DataMesh>& A, const int a, const int b);
 Tensor<DataMesh> MatrixMultiply(const Tensor<DataMesh>& A, const Tensor<DataMesh>& B);

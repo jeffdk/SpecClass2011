@@ -1,12 +1,12 @@
 #include <iostream>
 #include <cstdlib>
  
-#include "MyVector.hpp"
-#include "Assignment02Brett.hpp"
-#include "OptionParser.hpp"
-#include "ReadFileIntoString.hpp"
-#include "Require.hpp"
-#include "UtilsForTesting.hpp"
+#include "Utils/MyContainers/MyVector.hpp"
+#include "StudentProjects/SpecClass2011/BrettDeaton/Assignment02Brett/Assignment02Brett.hpp"
+#include "Utils/StringParsing/OptionParser.hpp"
+#include "Utils/StringParsing/ReadFileIntoString.hpp"
+#include "Utils/ErrorHandling/Require.hpp"
+#include "Utils/ErrorHandling/UtilsForTesting.hpp"
  
 int main(int /*argc*/, char** /*argv*/) {
  

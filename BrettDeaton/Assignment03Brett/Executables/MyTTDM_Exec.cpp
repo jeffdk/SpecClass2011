@@ -1,5 +1,5 @@
-#include "DataMesh.hpp"
-#include "Tensor.hpp"
+#include "Utils/DataMesh/DataMesh.hpp"
+#include "Utils/Tensor/Tensor.hpp"
 #include <cstdlib>
      
 int main(void) {

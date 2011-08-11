@@ -3,12 +3,12 @@
 //   Brett Deaton
 //   7.12.11
 
-#include "DataMesh.hpp"
-#include "TensorStructure.hpp"
-#include "Tensor.hpp"
-#include "Require.hpp"
-#include "Assert.hpp"
-#include "InvertTDMBrett.hpp"
+#include "Utils/DataMesh/DataMesh.hpp"
+#include "Utils/Tensor/TensorStructure.hpp"
+#include "Utils/Tensor/Tensor.hpp"
+#include "Utils/ErrorHandling/Require.hpp"
+#include "Utils/ErrorHandling/Assert.hpp"
+#include "StudentProjects/SpecClass2011/BrettDeaton/Assignment03Brett/InvertTDMBrett.hpp"
 
 // ***************************************************************************
 // Return the cofactor of A_{a,b} for A 3D

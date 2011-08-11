@@ -7,10 +7,10 @@
 
 namespace ComputeItems {
 
-  class Gradhatror3cookgb: public ComputeItem<Tensor<DataMesh> >,
-			   private InstantiateDataBoxAdder<Gradhatror3cookgb> {
+  class Gradhatror2cookgb: public ComputeItem<Tensor<DataMesh> >,
+			   private InstantiateDataBoxAdder<Gradhatror2cookgb> {
   public:
-    static std::string ClassID() { return "Gradhatror3cookgb";}
+    static std::string ClassID() { return "Gradhatror2cookgb";}
     static std::string Help() {
       return
 	"Gradhatror3cookgb                                                 \n"
@@ -21,7 +21,7 @@ namespace ComputeItems {
 	"  Tensor<DataMesh>              [Output]                            ";
     };
   public:
-    Gradhatror3cookgb(const std::string& opts);
+    Gradhatror2cookgb(const std::string& opts);
   public:
     std::string Output()         const {return mOutput;}
     const result_type& GetData() const {return mResult;}

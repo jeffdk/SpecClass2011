@@ -11,7 +11,8 @@ DataBoxItems=
 		#		    V[2]=x2/(R*R*R);
 		#		    Output=Q;
 	      #),
-	      Gradhatror3cookgb(Output=Q;),
+	      Gradhatror2cookgb(Output=Q;),
+	      #
 	      GlobalDifferentiator(
 		  GlobalDifferentiator
 		  =Standard(TopologicalDifferentiator=Spectral)
@@ -22,7 +23,7 @@ DataBoxItems=
 	      FlattenDeriv(Input=dQ; Output=dQflattened; DerivPosition=First;),
 	      Trace(Input=dQflattened;
 		    Output=divQ;
-		    Indices=0,2;
+		    Indices=0,1;
 		    PositionOfIndices=l,u; # we're in flat space.  Telling
 		    # SpEC (incorrectly) that we have one lower and one upper
 		    # index will take the sum over the diagonal.

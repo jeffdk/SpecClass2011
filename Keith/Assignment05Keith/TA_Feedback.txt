@@ -1,3 +1,11 @@
 Problem 1
 =========
 Method (3) is actually less efficient than method (2).  Since DetF is initialized not with a bare Mesh but with a DataMesh, it actually calls DataMesh's copy constructor.  Reading and copying every element of A(0,0) is slower than just writing 0.0 as in (2).  (Here I am assuming that A is a TDm, presumably a typo that should have been F.  If A were a Tensor<Mesh>, your answer would be correct.)
+
+Problem 2
+=========
+Excellent analysis in "Problem2.txt".
+
+Include C library header files before project header files (see "http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml#Names_and_Order_of_Includes").
+
+Code does not compile since "EXIT_SUCCESS" was not defined (need to "#include <cstdlib>")

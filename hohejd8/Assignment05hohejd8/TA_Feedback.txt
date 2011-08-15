@@ -1,3 +1,15 @@
 Problem 1
 =========
 Method (3) is actually less efficient than method (2).  Since DetF is initialized not with a bare Mesh but with a DataMesh, it calls DataMesh's copy constructor, which not only checks the extents for compatibility, but also copies all of the data.  Reading and copying every element of A(0,0) is slower than just writing 0.0 as in (2).
+
+Problem 2
+=========
+In case 2, what do you mean by "the style of output they give"?  (It prints out the Help() text for all available OneDimDataWriters.)
+
+In case 3, your answer is incorrect.  The 'Legennd' option is a typo for 'Legend', so you will get an error from the OptionParser about an unused option, and you will see the Help() text from the 'grace' OneDimDataWriter.
+
+Include C library header files before project header files (see "http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml#Names_and_Order_of_Includes").
+
+Problem 3
+=========
+Should comment out parameter name "time" to avoid compiler warnings.

@@ -1,0 +1,8 @@
+Problem 2
+=========
+Technically, OneDimDataWriters use the "Factory" instead of the "Registry" (though thanks to Dan, the latter will soon be abolished, eliminating the confusion).
+
+Use a .gitignore file so that Executables/Problem2Exec is not committed to the git repository.
+
+Include C library header files before project header files (see "http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml#Names_and_Order_of_Includes").
+

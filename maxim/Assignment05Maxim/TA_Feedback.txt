@@ -1,3 +1,17 @@
 Problem 1
 =========
+Explanations?
+
 Method (3) is actually less efficient than method (2).  Since DetF is initialized not with a bare Mesh but with a DataMesh, it actually calls DataMesh's copy constructor.  Reading and copying every element of A(0,0) is slower than just writing 0.0 as in (2).
+
+Problem 2
+=========
+<cstdlib> does provide EXIT_SUCCESS, but it does NOT provide std::string; for that, include <string>.
+
+Don't try to minimize includes by looking at what other headers include.  If you need MyVector.hpp, then include MyVector.hpp.
+
+Comment out paramter name "time" to avoid compiler warning.
+
+Since "Tests" does not exist, remove it from the Makefile.
+
+Use a .gitignore file to ignore "Executables/Problem2Exec".

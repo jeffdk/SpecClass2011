@@ -1,3 +1,19 @@
 Problem 1
 =========
 Method (3) is actually less efficient than method (2).  Since DetF is initialized not with a bare Mesh but with a DataMesh, it actually calls DataMesh's copy constructor.  Reading and copying every element of A(0,0) is slower than just writing 0.0 as in (2).
+
+Problem 2
+=========
+What "help text" is shown in case 1? (it doesn't show any; instead, it lists all known ClassIDs for OneDimDataWriters).
+
+In case 3, do you get anything other than the message that option Legennd was not used? (you should get the Help() text for the 'grace' OneDimDataWriter, which lists the valid options).
+
+Include C library header files before project header files (see "http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml#Names_and_Order_of_Includes").
+
+Try to keep lines from exceeding 80 characters.
+
+Could not compile executable; see Problem 3.
+
+Problem 3
+=========
+OutputReducedDatIryna does not compile; problems with OutputReducedDatIryna.hpp.

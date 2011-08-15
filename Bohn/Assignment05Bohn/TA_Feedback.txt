@@ -1,3 +1,11 @@
 Problem 1
 =========
 Method (3) is actually less efficient than method (2).  Since DetF is initialized not with a bare Mesh but with a DataMesh, it actually calls DataMesh's copy constructor.  Reading and copying every element of A(0,0) is slower than just writing 0.0 as in (2).
+
+Problem 2
+=========
+Regarding your comment on redundancy, I would argue that the ClassIDs for the OneDimDataWriters should NOT correlate with the file extensions.  I would rather they correlated with the name of the class (otherwise they're hard to search for and can confuse people).  If ClassIDs matched file extensions, would you really want your Writer from Problem3 to produce files called "Basename.reduceddat"?  (This is all just my opinion; your answers are otherwise completely correct.)
+
+Include C library header files before project header files (see "http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml#Names_and_Order_of_Includes").
+
+Could not compile, since BasicMpi.hpp does not have a full path.

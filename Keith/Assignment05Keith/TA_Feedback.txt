@@ -6,6 +6,4 @@ Problem 2
 =========
 Excellent analysis in "Problem2.txt".
 
-Include C library header files before project header files (see "http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml#Names_and_Order_of_Includes").
-
 Code does not compile since "EXIT_SUCCESS" was not defined (need to "#include <cstdlib>")

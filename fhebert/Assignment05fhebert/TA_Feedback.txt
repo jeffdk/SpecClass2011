@@ -1,5 +1,7 @@
 Problem 2
 =========
-Include C library header files before project header files (see "http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml#Names_and_Order_of_Includes").
-
 Use a .gitignore file to ignore "Executables/Problem2Exec".
+
+Problem 3
+=========
+Write classes in .hpp/.cpp pairs, even if they are implementations of base classes that will never be directly instantiated.

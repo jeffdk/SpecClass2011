@@ -1,3 +1,6 @@
+#ifndef OutputReducedDat_Bohn_hpp
+#define OutputReducedDat_Bohn_hpp
+
 #include "Utils/StringParsing/OptionParser.hpp"
 #include "Utils/IO/OneDimDataWriter.hpp"
 #include "Utils/IO/CachedOfStream.hpp"
@@ -37,3 +40,5 @@ namespace OneDimDataWriters {
                           const MyVector<double>& y) const;
   };
 }
+
+#endif // OutputReducedDat_Bohn

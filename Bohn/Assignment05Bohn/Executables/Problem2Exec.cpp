@@ -1,4 +1,4 @@
-#include "BasicMpi.hpp"
+#include "Utils/ErrorHandling/BasicMpi.hpp"
 #include "Utils/MyContainers/MyVector.hpp"
 #include "Utils/StringParsing/ReadFileIntoString.hpp"
 #include "Utils/StringParsing/OptionParser.hpp"

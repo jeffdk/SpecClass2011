@@ -4,3 +4,12 @@ Technically, OneDimDataWriters use the "Factory" instead of the "Registry" (thou
 
 Use a .gitignore file so that Executables/Problem2Exec is not committed to the git repository.
 
+Problem 3
+=========
+Header lacks #define guards!
+
+Never use "using" statements in header files!
+
+Undefined behavior if x.Size()=0!
+
+Output from different times is not written to separate files.

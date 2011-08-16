@@ -4,10 +4,18 @@ Method (3) is actually less efficient than method (2).  Since DetF is initialize
 
 Problem 2
 =========
-Try to keep lines from exceeding 80 characters, even for the Help() text (prefer reducing indentation).
+Try to keep lines from exceeding 80 characters, even for the Help() text.
 
 Use a .gitignore file to ignore "Executables/Problem2Exec".
 
 Problem 3
 =========
+"true" is not a double, so what is it doing as the default value in OptionParser::Get() on line 37?  Should this option even have a default value?
+
 OutputReducedDatIlana.cpp compiles with warnings.  Be sure to enable warnings on your compiler (at least "-Wall -Wextra" for gcc), and make sure that your code compiles warning-free.
+
+Write classes in .hpp/.cpp pairs, even if they are implementations of base classes that will never be directly instantiated.
+
+Try to keep lines shorter than 80 characters.
+
+I do not get the same results with your implementation as I get with the reference implementation (I need a much smaller MinAngle to get smooth output).

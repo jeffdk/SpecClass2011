@@ -7,3 +7,15 @@ Problem 2
 Comment out parameter name "time" to avoid compiler warnings.
 
 Use a .gitignore file to ignore "Executables/Problem2Exec".
+
+Problem 3
+=========
+Undefined behavior if x.Size()=0!  Incorrect behavior if x.Size()=1.
+
+Should check that 'x' and 'y' have the same length.
+
+Write classes in .hpp/.cpp pairs, even if they are implementations of base classes that will never be directly instantiated.
+
+Output files should have a common extension (like ".dat").
+
+Your results differ from those of the reference implementation (they actually look "better", but I'm not sure they're correct for the assigned algorithm).

@@ -1,3 +1,9 @@
 Problem 2
 =========
 Use a .gitignore file to ignore "Executables/Problem2Exec".
+
+Problem 3
+=========
+Undefined behavior if x.Size()=0!
+
+Should check that 'x' and 'y' have the same length.

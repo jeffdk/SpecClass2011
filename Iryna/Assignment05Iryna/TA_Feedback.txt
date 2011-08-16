@@ -14,4 +14,6 @@ Could not compile executable; see Problem 3.
 
 Problem 3
 =========
-OutputReducedDatIryna does not compile; problems with OutputReducedDatIryna.hpp.
+OutputReducedDatIryna does not compile; problems with OutputReducedDatIryna.hpp (you need to use "std::string", not just "string").
+
+No Problem3.txt

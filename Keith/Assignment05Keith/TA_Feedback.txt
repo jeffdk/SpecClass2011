@@ -7,3 +7,9 @@ Problem 2
 Excellent analysis in "Problem2.txt".
 
 Code does not compile since "EXIT_SUCCESS" was not defined (need to "#include <cstdlib>")
+
+Problem 3
+=========
+Undefined behavior if x.Size()=0!
+
+Write classes in .hpp/.cpp pairs, even if they are implementations of base classes that will never be directly instantiated.

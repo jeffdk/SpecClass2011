@@ -7,3 +7,9 @@ Problem 2
 Regarding your comment on redundancy, I would argue that the ClassIDs for the OneDimDataWriters should NOT correlate with the file extensions.  I would rather they correlated with the name of the class (otherwise they're hard to search for and can confuse people).  If ClassIDs matched file extensions, would you really want your Writer from Problem3 to produce files called "Basename.reduceddat"?  (This is all just my opinion; your answers are otherwise completely correct.)
 
 Could not compile, since BasicMpi.hpp does not have a full path.
+
+Problem 3
+=========
+Header file lacks #define guards!
+
+No plots committed.

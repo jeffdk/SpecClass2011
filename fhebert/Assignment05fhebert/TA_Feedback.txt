@@ -4,4 +4,10 @@ Use a .gitignore file to ignore "Executables/Problem2Exec".
 
 Problem 3
 =========
+Undefined behavior if xlen=0!
+
+Should check that 'x' and 'y' have the same length.
+
 Write classes in .hpp/.cpp pairs, even if they are implementations of base classes that will never be directly instantiated.
+
+Avoid lines longer than 80 characters, even in Help() texts.

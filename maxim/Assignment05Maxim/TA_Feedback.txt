@@ -12,6 +12,20 @@ Don't try to minimize includes by looking at what other headers include.  If you
 
 Comment out paramter name "time" to avoid compiler warning.
 
-Since "Tests" does not exist, remove it from the Makefile.
+Since "Tests" does not exist, remove it from the Makefile (otherwise, compilation fails).
 
 Use a .gitignore file to ignore "Executables/Problem2Exec".
+
+Problem 3
+=========
+Undefined behavior if x.Size()=0!  Incorrect behavior if x.Size()=1.
+
+Should check that 'x' and 'y' have the same length.
+
+Avoid "using" statements at file scope.
+
+Write classes in .hpp/.cpp pairs, even if they are implementations of base classes that will never be directly instantiated.
+
+Avoid lines longer than 80 characters.
+
+Output from different times is not written to separate files.

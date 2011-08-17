@@ -6,7 +6,6 @@
 #include "OptionParser.hpp"
 
 int main(int /*argc*/, char** /*argv*/) {
-  UtilsForTesting u;
 
   OptionParser p(ReadFileIntoString("Radii.input"));
   MyVector<double> A = p.Get<MyVector<double> >("FourRadii");
@@ -28,5 +27,5 @@ int main(int /*argc*/, char** /*argv*/) {
 
   //std::cout<< "Sum = " << SumOfRadiiCubed << " radiiCubed  = " << radiiCubed << std::endl;
 
-  return u.NumberOfTestsFailed();
+  return UtilsForTesting::NumberOfTestsFailed();
 }

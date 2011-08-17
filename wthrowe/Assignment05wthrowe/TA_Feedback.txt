@@ -4,6 +4,6 @@ Use a .gitignore file to ignore "Executables/Problem2Exec".
 
 Problem 3
 =========
-Undefined behavior if x.Size()=0!
+Undefined behavior if x.Size()==0!
 
-Should check that 'x' and 'y' have the same length.
+Should document the assumption that x.Size()==y.Size() (this is ensured by the base class, but you should probably mention that fact in a comment).

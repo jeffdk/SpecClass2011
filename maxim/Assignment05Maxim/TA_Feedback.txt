@@ -18,13 +18,13 @@ Use a .gitignore file to ignore "Executables/Problem2Exec".
 
 Problem 3
 =========
-Undefined behavior if x.Size()=0!  Incorrect behavior if x.Size()=1.
-
-Should check that 'x' and 'y' have the same length.
+Undefined behavior if x.Size()==0!  Incorrect behavior if x.Size()==1.
 
 Avoid "using" statements at file scope.
 
 Write classes in .hpp/.cpp pairs, even if they are implementations of base classes that will never be directly instantiated.
+
+Should document the assumption that x.Size()==y.Size() (this is ensured by the base class, but you should probably mention that fact in a comment).
 
 Avoid lines longer than 80 characters.
 

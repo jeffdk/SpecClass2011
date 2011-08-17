@@ -4,6 +4,8 @@ Assuming that A is a TDm, Method (3) is actually less efficient than method (2).
 
 Problem 3
 =========
-Undefined behavior if x.Size()=0!  Incorrect behavior if x.Size()=1.
+Undefined behavior if x.Size()==0!  Incorrect behavior if x.Size()==1.
+
+Base class guarantees that x.Size()==y.Size(), so you need only mention this assumption in a comment (though in my opinion, REQUIREing it again is fine).
 
 Output from different times is not written to separate files.

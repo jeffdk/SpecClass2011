@@ -19,3 +19,7 @@ Write classes in .hpp/.cpp pairs, even if they are implementations of base class
 Try to keep lines shorter than 80 characters.
 
 I do not get the same results with your implementation as I get with the reference implementation (I need a much smaller MinAngle to get smooth output).
+
+Base class guarantees that x.Size()==y.Size(), so you need only mention this assumption in a comment (though in my opinion, REQUIREing it again is fine).
+
+Is it really the end of the world if x.Size()==0?  Also, since the previous line required that x and y have the same size, you don't need to check that both are positive.

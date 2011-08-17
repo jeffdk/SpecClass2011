@@ -17,3 +17,11 @@ Problem 3
 OutputReducedDatIryna does not compile; problems with OutputReducedDatIryna.hpp (you need to use "std::string", not just "string").
 
 No Problem3.txt
+
+Why are you copying the filename to a stringstream just to pass it to an fstream?
+
+Outputs from different times are not written to separate files.
+
+Base class guarantees that x.Size()==y.Size(), so you need only mention this assumption in a comment (though in my opinion, REQUIREing it again is fine).
+
+Is it really the end of the world if size_x==0?

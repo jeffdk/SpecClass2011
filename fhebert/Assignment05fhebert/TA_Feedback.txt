@@ -6,7 +6,7 @@ Problem 3
 =========
 Undefined behavior if xlen=0!
 
-Should check that 'x' and 'y' have the same length.
+Should document the assumption that x.Size()==y.Size() (this is ensured by the base class, but you should probably mention that fact in a comment).
 
 Write classes in .hpp/.cpp pairs, even if they are implementations of base classes that will never be directly instantiated.
 

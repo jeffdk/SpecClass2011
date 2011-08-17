@@ -10,10 +10,12 @@ In case 3, your answer is incorrect.  The 'Legennd' option is a typo for 'Legend
 
 Problem 3
 =========
-Undefined behavior if x.Size()=0!  Incorrect behavior if x.Size()=1.
+Undefined behavior if x.Size()==0!  Incorrect behavior if x.Size()==1.
 
 Avoid "using" statements with file scope; avoid "using namespace" statements altogether.
 
 Write classes in .hpp/.cpp pairs, even if they are implementations of base classes that will never be directly instantiated.
+
+Base class guarantees that x.Size()==y.Size(), so you need only mention this assumption in a comment (though in my opinion, REQUIREing it again is fine).
 
 Should comment out parameter name "time" to avoid compiler warnings.

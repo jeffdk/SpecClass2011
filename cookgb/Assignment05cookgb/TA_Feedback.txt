@@ -10,12 +10,12 @@ Use a .gitignore file to ignore "Executables/Problem2Exec".
 
 Problem 3
 =========
-Undefined behavior if x.Size()=0!  Incorrect behavior if x.Size()=1.
-
-Should check that 'x' and 'y' have the same length.
+Undefined behavior if x.Size()==0!  Incorrect behavior if x.Size()==1.
 
 Write classes in .hpp/.cpp pairs, even if they are implementations of base classes that will never be directly instantiated.
 
 Output files should have a common extension (like ".dat").
+
+Should document the assumption that x.Size()==y.Size() (this is ensured by the base class, but you should probably mention that fact in a comment).
 
 Your results differ from those of the reference implementation (they actually look "better", but I'm not sure they're correct for the assigned algorithm).

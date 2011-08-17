@@ -8,8 +8,18 @@ Regarding your comment on redundancy, I would argue that the ClassIDs for the On
 
 Could not compile, since BasicMpi.hpp does not have a full path.
 
+Use a .gitignore file to ignore "Executables/Problem2Exec".
+
 Problem 3
 =========
 Header file lacks #define guards!
 
 No plots committed.
+
+Base class guarantees that x.Size()==y.Size(), so you need only mention this assumption in a comment (though in my opinion, REQUIREing it again is fine).
+
+Is it really the end of the world if inputSize==0?
+
+Comment out name of unused parameter 't' to avoid compiler warnings.
+
+Output from different times is not written to separate files.

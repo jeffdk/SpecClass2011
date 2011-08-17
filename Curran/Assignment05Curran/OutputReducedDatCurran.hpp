@@ -23,6 +23,9 @@ class ReducedDatCurran: public OneDimDataWriter,
 "Outputs dat files with columns for x and y, but skips points whose      \n"
 "  angular separation is small, thus compressing the output while        \n"
 "  producing a similar-looking plot.                                     \n"
+"Output from different times is stored in different files named          \n"
+"  'BaseName_<time>.dat'.  Subsequent calls with the same value of 'time'\n"
+"  will overwrite previous output.                                       \n"
 "OPTIONS:                                                                \n"
 "  MinAngle = double;  # Minimum angular separation that will result in  \n"
 "                          a point being written (in radians)            \n";

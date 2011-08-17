@@ -41,7 +41,8 @@ void ReducedDatCurran::AppendToFileImpl(const double time,
                                         const MyVector<double>& x,
                                         const MyVector<double>& y) const {
     const int n = x.Size();
-    ASSERT(y.Size() == n, "x and y must have the same size");
+    // ASSUMPTION: Base class guarantees that x.Size()==y.Size()
+    //ASSERT(y.Size() == n, "x and y must have the same size");
 
     // Open file
     std::ostringstream file_name;

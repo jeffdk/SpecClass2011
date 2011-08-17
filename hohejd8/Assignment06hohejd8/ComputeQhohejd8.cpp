@@ -1,14 +1,12 @@
-#include "StudentProjects/SpecClass2011/hohejd8/Assignment06hohejd8/ComputeQhohejd8.hpp"
+#include "ComputeQhohejd8.hpp"
 #include "Utils/StringParsing/OptionParser.hpp"
 
 namespace ComputeItems {
  
-  using std::string;
- 
-  ComputeQhohejd8::ComputeQhohejd8(const string& opts): 
+  ComputeQhohejd8::ComputeQhohejd8(const std::string& opts): 
     mResult(TensorStructure::Empty) {
     OptionParser p(opts, Help());
-    mOutput=p.Get<string>("Output");
+    mOutput=p.Get<std::string>("Output");
   }
  
   void ComputeQhohejd8::RecomputeData(const DataBoxAccess& box) const {
@@ -26,9 +24,12 @@ namespace ComputeItems {
     radius = sqrt(radius);    
 
     //compute Q
+    Tensor<DataMesh> tmp(radius.Dim(), "a", radius);
     for(int i=0; i<coords.Size(); ++i){
-      mResult(i) = coords[i]/(radius*radius*radius);
+      tmp(i) = coords[i]/(radius*radius*radius);
     }
+
+    mResult.assign(tmp);
 
   }
  

@@ -3,9 +3,10 @@
 DataBoxItems =
   Subdomain (
     Items =
-      EvaluateScalarFormula(Output=Radius; Formula=sqrt(x0*x0+x1*x1+x2*x2)),
-      EvaluateVectorFormula(Output=Q; V[0]=x0/(R*R*R); V[1]=x1/(R*R*R);
-                            V[2]=x2/(R*R*R); R=Radius),
+      #EvaluateScalarFormula(Output=Radius; Formula=sqrt(x0*x0+x1*x1+x2*x2)),
+      #EvaluateVectorFormula(Output=Q; V[0]=x0/(R*R*R); V[1]=x1/(R*R*R);
+      #                      V[2]=x2/(R*R*R); R=Radius),
+      RSquaredFieldCurran(Output=Q),
 
       GlobalDifferentiator (
         GlobalDifferentiator=Standard(TopologicalDifferentiator=Spectral);

@@ -1,1 +1,31 @@
-Break it
+I first broke the sequence of ComputeItems by removing the GlobalDifferentiator (it doesn't taken an "Output" option, so what could it be providing?).  ApplyObservers responded by printing the contents of the DataBox, then printing this message:
+
+[0] ====== DataBox 'ApplyObservers/Sphere0' Error =======
+[0] Key 'GlobalDifferentiator' not in DataBox 'ApplyObservers/Sphere0'.
+[0] Contents of this DataBox listed above.
+[0] Accessing DataBox "ApplyObservers" through DataBoxAccess("NormOfTensor").
+Get<>-sequence: *this -> Child -> divQ -> dQflattened -> dQ
+Error occured during call to Accessing DataBox "ApplyObservers" through DataBoxAccess("NormOfTensor").
+Get<>-sequence: *this -> Child -> divQ -> dQflattened -> dQ
+Error occured during call to Get<GlobalDifferentiator>("GlobalDifferentiator")
+[0] === DataBox Error ==============================================
+
+This indicates that the process with rank 0 encountered an error while evaluating a ComputeItem in the DataBox corresponding to the Sphere0 subdomain.  The error was triggered when running the observer "NormOfTensor", which tried to access "divQ" from a child DataBox (named "ApplyObservers/Sphere0").  This ComputeItem triggered the evaluation of "dQflattened", which in turn triggered the evaluation of "dQ".  This ComputeItem tried to get a GlobalDifferentiator named "GlobalDifferentiator" from the DataBox and failed.
+
+
+I then broke the sequence by removing the "Radius" formula.  This resulted in the following error:
+
+[0] ====== DataBox 'ApplyObservers/Sphere0' Error =======
+[0] Key 'Radius' not in DataBox 'ApplyObservers/Sphere0'.
+[0] Contents of this DataBox listed above.
+[0] Accessing DataBox "ApplyObservers" through DataBoxAccess("NormOfTensor").
+Get<>-sequence: *this -> Child -> divQ -> dQflattened -> dQ -> Q
+Error occured during call to Accessing DataBox "ApplyObservers" through DataBoxAccess("NormOfTensor").
+Get<>-sequence: *this -> Child -> divQ -> dQflattened -> dQ -> Q
+Error occured during call to Get<Tensor<DataMesh>>("Radius")
+[0] === DataBox Error ==============================================
+
+The meaning of this message is similar to the previous one, except that the sequence went one step further.  The evaluation of "dQflattened" has now triggered an evaluation of "Q", which asked for a TDm named "Radius".  This was not found, so the observation failed.
+
+
+

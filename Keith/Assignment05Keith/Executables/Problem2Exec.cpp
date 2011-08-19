@@ -10,6 +10,9 @@
 #include<cmath>
 #include<string>
 
+// needed to define EXIT_SUCCESS
+#include<cstdlib>
+
 void ComputeProfileAndOutput(const double t,
                              const OneDimDataWriter* writer) {
   const int N = 1024;

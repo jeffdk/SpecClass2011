@@ -1,0 +1,30 @@
+
+2) Output is the TensorStructure of c.
+> {4 "12"}
+
+4) 17.4 MBytes
+
+6) 10.4 MBytes
+
+7) Constructing one of these Tensor<DataMesh>s takes up about 3.5
+MBytes.  One effect of pass-by-reference is that variables which are
+passed as arguments aren't copied.  This saves two calls to the copy
+constructor for a savings of 7 MBytes.
+
+Ratio is 1.67.
+
+Allocations with pass-by-value:
+main: a, b, c
+add: a, b, (result)
+
+I've put result in parentheses since it is never actually constructed,
+despite the fact that it is explicitly declared (this is called return
+value optimization).  So we have a total of 5 allocations for 17.5
+MBytes.
+
+Allocations with pass-by-reference:
+main: a, b, c
+add: 
+
+For a total of 3 allocations, or 10.5 MBytes.
+

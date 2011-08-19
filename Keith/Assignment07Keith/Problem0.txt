@@ -1,0 +1,14 @@
+
+
+Example0) Pass by value means that a local copy is made of the
+variable passed in the argument.  That copy is the one that is
+subsequently modified in the body of the function.  Thus, on return,
+the original variable is unchanged, and in this case the output is 6,
+as set in main().
+
+
+Example1) Pass by reference means that the original variable passed in
+the argument is the one modified in the body of the function.  Thus,
+on return, the original variable *is* modified, and in this case the
+output is 3, as set in f().
+

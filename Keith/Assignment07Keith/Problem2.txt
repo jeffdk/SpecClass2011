@@ -1,0 +1,14 @@
+
+
+c is destructed when add() returns, and you're left with a reference to
+nothing.  Sounds like a recipe for a segfault to me.
+
+Note that returning a reference isn't always wrong, it's only a
+problem if the reference is to a variable that is local to the
+function.
+
+
+
+
+
+

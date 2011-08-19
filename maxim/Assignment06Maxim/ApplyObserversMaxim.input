@@ -1,0 +1,21 @@
+# ApplyObservers.input
+
+DataBoxItems=
+    Subdomain(Items=
+          ComputeItemMaxim(Output=Q;),  
+	      GlobalDifferentiator(GlobalDifferentiator=Standard(TopologicalDifferentiator=Spectral)),
+	      FirstDeriv(Input=Q;Output=dQ;),
+	      FlattenDeriv(Input=dQ; Output=dQflattened; DerivPosition=First;),
+	      Trace(Input=dQflattened;
+		   		Output=divQ;
+		    	Indices=0,1;
+		    	PositionOfIndices=l,u; # we're in flat space.  Telling
+		    	# SpEC (incorrectly) that we have one lower and one upper
+		    	# index will take the sum over the diagonal.
+	      )
+    );
+
+
+Observers=NormOfTensor(Input=divQ;
+		       Op=L2;
+		       Filename=divQMaxim.dat);

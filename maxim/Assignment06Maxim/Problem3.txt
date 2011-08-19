@@ -1,0 +1,7 @@
+1. Removing EvaluateVectorFormula
+
+DataBox error. Key 'Q' not in DataBox. EvaluateVectorFormula outputs Q so removing the the whole Item messes up the call Get<Tensor<DataMesh>>("Q")
+
+2. Putting FirstDeriv at the very end 
+
+The code executes successfully with the result that differs slightly

@@ -1,0 +1,8 @@
+RatationMatrix is an example a the wrapper class, which contains as its data member (wraps around) abstract class RotationMatrixImpl. This provides another level of encapsulation and allows the user to work with RotationMatrix as if it were a simple data type.
+
+There are three includes in the header file, default copy constructor, which is used in Clone() function. Member function RotationMatrix::Impl() returns the value of mpImpl which is a pointer to RotationMatrixImpl.
+
+Unfortunately, the lack of experience prevents me from giving constructive suggestions on improving the code.
+
+The design of RotationMatrixImpl/RotationMatrix is similar with VolumeTermImpl/VolumeTerm with the latter more heavily commented.
+

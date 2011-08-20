@@ -16,7 +16,7 @@ New item attempted to be added from:
 This telling me that a second ComputeItem, in this case the UnaryOp
 that I added, is trying to add Q to the DataBox.  It also tells me
 that the first ComputeItem to add Q was EvaluateVectorFormula.  Having
-both gives a good chance of tracking down what I did wrong.
+both gives me a good chance of tracking down what I did wrong.
 
 
 ====

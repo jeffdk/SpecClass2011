@@ -5,7 +5,7 @@ One of the points stressed in Lecture 6 was the need to prevent
 cascading dependencies in the Spec code in order to keep down compile
 times.  This is particularly an issue when some frequently used class,
 e.g. MyVector, is changed.  This often triggers massive recompilation
-of tons of libraries, which triggers recompilation of tons more that
+of tons of source, which triggers recompilation of tons more that
 don't even use MyVector directly.
 
 A lot of this can be prevented if classes are designed carefully, and

@@ -1,3 +1,8 @@
 bak*
 *~
 Problem?Code/
+*.input
+*.sh
+Problem3Fish/
+*.a
+*.dat

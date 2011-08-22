@@ -1,0 +1,28 @@
+// Problem0Example0.cpp
+void f(double x) {
+   x = 3;
+}
+int main() {
+  double x = 6;
+  f(x);
+  std::cout << x << std::endl; // prints 6
+}
+
+
+//------------------------------------------------
+
+
+// Problem0Example1.cpp
+void f(double& x) {
+   x = 3;
+}
+int main() {
+  double x = 6;
+  f(x);
+  std::cout << x << std::endl; // prints 3
+}
+
+Explanation:
+In C++ by default parameters of the function are passed by value. In the first example x is passed by its value and a new variable x is created inside of the function f. After the function finishes local x is distroyed not affecting x declared in main().
+
+In the second example the variable is passed by reference. No copy of x is created insdie f instead the variable from main is used and thus it gets changed after the function finishes.

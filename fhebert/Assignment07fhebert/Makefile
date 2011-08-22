@@ -11,7 +11,7 @@ SUBDIRECTORIES = Executables
 # What .cpp files should be compiled (replace .cpp with .o)
 OBJECT_FILES_INTO_LIB = ObservePointwiseAvg_fhebert.o
 
-INCLUDED_AND_LINKED_LIBS = Tensor DataMesh MyContainers ErrorHandling LowLevelUtils
+LINKED_LIBS = Tensor DataMesh MyContainers ErrorHandling LowLevelUtils
 
 ##############################################################################
 # Nothing below here needs to be changed

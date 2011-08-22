@@ -8,7 +8,7 @@ CODE_HOME = ../../../..
 # What subdirectories should also be compiled
 SUBDIRECTORIES = Executables
 
-INCLUDED_AND_LINKED_LIBS = StringParsing IO MiscUtils ErrorHandling \
+LINKED_LIBS = StringParsing IO MiscUtils ErrorHandling \
   MyContainers LowLevelUtils
 
 # What .cpp files should be compiled (replace .cpp with .o)

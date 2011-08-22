@@ -5,7 +5,7 @@
 CODE_HOME = ../../../../..
 
 # What libraries does this executable depend on
-INCLUDED_AND_LINKED_LIBS = Tensor DataMesh MyContainers ErrorHandling \
+LINKED_LIBS = Tensor DataMesh MyContainers ErrorHandling \
            LowLevelUtils Assignment03hohejd8
 
 # What .cpp files containing a main function should be compiled (remove .cpp)

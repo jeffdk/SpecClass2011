@@ -5,7 +5,7 @@
 CODE_HOME = ../../../../..
 
 # What libraries does this executable depend on
-INCLUDED_AND_LINKED_LIBS = \
+LINKED_LIBS = \
      BasisFunctions DfftPack SpherePack TensorSphericalHarmonics \
      Domain Slice Subdomain Topology IndexMap CoordMap DataMesh \
      Math DataBox StringParsing IO Tensor \

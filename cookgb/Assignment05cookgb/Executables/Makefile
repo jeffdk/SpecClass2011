@@ -5,7 +5,7 @@
 CODE_HOME = ../../../../..
 
 # What libraries does this executable depend on
-INCLUDED_AND_LINKED_LIBS = Assignment05cookgb \
+LINKED_LIBS = Assignment05cookgb \
 			   IO StringParsing MiscUtils MpiWrappers \
 			   MyContainers LowLevelUtils ErrorHandling
 

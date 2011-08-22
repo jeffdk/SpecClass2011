@@ -8,7 +8,7 @@ CODE_HOME = ../../../../..
 SUBDIRECTORIES = 
 
 # What subdirectories should also be compiled (one for each test)
-INCLUDED_AND_LINKED_LIBS = Assignment02Iryna StringParsing MyContainers \
+LINKED_LIBS = Assignment02Iryna StringParsing MyContainers \
 ErrorHandling LowLevelUtils
 
 # What .cpp files containing a main function should be compiled (remove .cpp)

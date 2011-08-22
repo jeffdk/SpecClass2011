@@ -5,7 +5,7 @@
 CODE_HOME = ../../../../..
 
 # What libraries does this executable depend on
-INCLUDED_AND_LINKED_LIBS = DataMesh MyContainers ErrorHandling LowLevelUtils Tensor
+LINKED_LIBS = DataMesh MyContainers ErrorHandling LowLevelUtils Tensor
 
 # What .cpp files containing a main function should be compiled (remove .cpp)
 EXECUTABLES = MyMeshExecIlana MyDM_ExecIlana MyTensorExecIlana

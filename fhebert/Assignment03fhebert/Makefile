@@ -12,7 +12,7 @@ SUBDIRECTORIES = Executables
 OBJECT_FILES_INTO_LIB = InvertTensorfhebert.o
 
 #EXECUTABLES = MyMeshExecfhebert MyDMfhebert MyTDMfhebert
-INCLUDED_AND_LINKED_LIBS = Tensor DataMesh MyContainers ErrorHandling LowLevelUtils
+LINKED_LIBS = Tensor DataMesh MyContainers ErrorHandling LowLevelUtils
 
 ##############################################################################
 # Nothing below here needs to be changed

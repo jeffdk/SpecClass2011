@@ -5,7 +5,7 @@
 CODE_HOME = ../../../../..
 
 # What libraries does this executable depend on
-INCLUDED_AND_LINKED_LIBS = Assignment03Aaron Tensor DataMesh MyContainers ErrorHandling LowLevelUtils
+LINKED_LIBS = Assignment03Aaron Tensor DataMesh MyContainers ErrorHandling LowLevelUtils
 
 # What .cpp files containing a main function should be compiled (remove .cpp)
 EXECUTABLES = MyMeshExec MyMeshExec2 MyDM_Exec MyDM_Exec2 MyTensorStructureExec MyTensorExec MyTDM_Exec MyTDM_Exec2 MyMatrixExec

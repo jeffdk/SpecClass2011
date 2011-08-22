@@ -5,7 +5,7 @@
 CODE_HOME = ../../../../..
 
 # What libraries does this executable depend on
-INCLUDED_AND_LINKED_LIBS = Assignment04Sergei 
+LINKED_LIBS = Assignment04Sergei 
 
 # What .cpp files containing a main function should be compiled (remove .cpp)
 EXECUTABLES = BuggySergei UseMemoryLeakerSergei

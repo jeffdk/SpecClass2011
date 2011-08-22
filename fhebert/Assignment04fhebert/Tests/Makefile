@@ -4,7 +4,7 @@
 # Where is SPEC_HOME relative to this directory
 CODE_HOME = ../../../../..
 
-INCLUDED_AND_LINKED_LIBS = Assignment04fhebert MyContainers ErrorHandling LowLevelUtils
+LINKED_LIBS = Assignment04fhebert MyContainers ErrorHandling LowLevelUtils
 
 EXECUTABLES = TestVolume_fhebert
 

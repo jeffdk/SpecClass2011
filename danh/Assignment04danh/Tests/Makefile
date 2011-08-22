@@ -8,7 +8,7 @@ CODE_HOME = ../../../../..
 SUBDIRECTORIES =
 
 # What libraries does this executable depend on
-INCLUDED_AND_LINKED_LIBS = Assignment04danh StringParsing MyContainers \
+LINKED_LIBS = Assignment04danh StringParsing MyContainers \
 ErrorHandling LowLevelUtils
 
 EXECUTABLES = TestTotalVolumeOfSpheresFromRadii

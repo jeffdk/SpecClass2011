@@ -5,7 +5,7 @@
 CODE_HOME = ../../../../..
 
 # What libraries does this executable depend on
-INCLUDED_AND_LINKED_LIBS = MpiWrappers StringParsing IO MiscUtils \
+LINKED_LIBS = MpiWrappers StringParsing IO MiscUtils \
 ErrorHandling MpiWrappers LowLevelUtils
 
 

@@ -1,0 +1,12 @@
+Problem 3
+=========
+You can get "Mesh" from the DataBox instead of constructing your own.
+
+Initializing 'answer' to 0.0 is wasteful (see Assignment 5, Problem 1).
+
+Assumes three dimensions but does not check for it.
+
+The DataMesh 'answer' is not needed - can assign to mResult directly (see reference solution for an AMR-compatible example).
+
+Help() text and implementation are inconsistent: Help() text says you return r^i/r, but implementation returns r^i/r^3.
+

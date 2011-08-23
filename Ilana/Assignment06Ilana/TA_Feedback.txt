@@ -1,0 +1,10 @@
+Problem 3
+=========
+Thanks for pointing out the mistake regarding ApplyObservers's Makefile!
+
+Good check for division by zero!
+
+Regarding optimization, you have too many temporary variables and some unnecessary initializations.  You could use a single variable to construct R2, take its square root, and even store R3.  You could also use mResult directly instead of making 'tmp' (see reference solution for AMR-compatible initialization).  Furthermore, 'tmp' as-is doesn't need to be initialized to 0.0 - the mesh argument is sufficient and faster.
+
+Help() text + comments and implementation are inconsistent.  Your ComputeItem returns r^i/r^3, not \hat{r}^i/r^3 (this was a typo in the assignment, but regardless, documentation and code should always be consistent).
+

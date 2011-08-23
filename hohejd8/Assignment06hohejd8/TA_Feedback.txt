@@ -1,0 +1,10 @@
+Problem 3
+=========
+I would get the Mesh by asking for "Mesh" from the DataBox rather than by slicing a DataMesh.
+
+Initializing 'tmp' to 'radius' is wasteful; initialize to 'mesh' instead (see Assignment 5, Problem 1).
+
+The variable 'tmp' is not needed - just use mResult directly (see reference solution for an example of AMR-compatible initialization).
+
+Help() text and implementation are inconsistent: Help() text says you are computing \hat{r}^i/r^3, but the implementation returns r^i/r^3.
+

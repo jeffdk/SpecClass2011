@@ -1,10 +1,10 @@
 # DoMultipleRuns.input
 # vim: syntax=perl
 
-for (my $N=04; $N<=32; $N++) {
+for (my $N = 4; $N <= 32; ++$N) {
     &RunInDirectory("N" . $N, {
         "GrDomain.input" => {
-            "__N__"  => $N,
+            "__N__" => $N,
         },
     });
 }

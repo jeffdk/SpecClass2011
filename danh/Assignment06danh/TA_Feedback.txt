@@ -1,0 +1,12 @@
+Problem 3
+=========
+Assumes three dimensions but does not check for it.
+
+Initializing the components of 'Q' with 'R' is a wasteful operation (see Assignment 5, Problem 1).  Use the DataBox's "Mesh" instead to avoid unneeded assignments.
+
+Using a TensorIter and incrementing 'i' manually is confusing - why not just loop over 'i'?  Are TensorIters even guaranteed to loop over vectors in the proper order?  Using Q(i) instead of Q[it] is better if you know the rank of the tensor.
+
+The temporary tensor 'Q' is not needed - just use mResult directly (see reference solution for an AMR-compatible initialization).
+
+Help() text and implementation don't agree.  Help() text says you return \hat{r}^i/r^3, while implementation returns r^i/r^3.
+

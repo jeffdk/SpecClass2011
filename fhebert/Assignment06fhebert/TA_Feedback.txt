@@ -1,0 +1,3 @@
+Problem 3
+=========
+Some unnecessesary assignments.  Rather than initializing RSqrd to 0.0, you could initialize it to Coords[0]*Coords[0].  And rather than reassigning mResult every time, you could resize it only as needed, and initilize it to a Mesh instead of a DataMesh (see Assignment 5, Problem 1).  See the reference solution for a concise AMR-compatible initialization.

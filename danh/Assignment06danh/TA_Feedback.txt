@@ -1,3 +1,7 @@
+Problem 1
+=========
+The "default constructor" is the one that takes zero arguments.
+
 Problem 3
 =========
 Assumes three dimensions but does not check for it.

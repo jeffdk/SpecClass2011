@@ -1,0 +1,3 @@
+The integrator appears to ignore any relations between the subdomians
+and just adds up the integrals over all of them.  I can't think of a
+good solution for this.

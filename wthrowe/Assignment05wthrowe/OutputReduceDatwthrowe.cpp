@@ -38,8 +38,12 @@ namespace OneDimDataWriters {
   AppendToFileImpl(const double /*time*/,
 		   const MyVector<double>& x,
 		   const MyVector<double>& y) const {
+    ASSERT(x.Size()==y.Size(),
+	   "This can't fail because the base class checks");
     std::ofstream out(GetFilename(mBaseName, mFileNumber++).c_str(),
 		      std::ios::trunc);
+    if(x.Size() < 1)
+      return;
     double last_angle = 1e300; // large number
     for(int i=0;i<x.Size()-1;i++) {
       double angle = std::atan2(y[i+1]-y[i], mAspect*(x[i+1]-x[i]));

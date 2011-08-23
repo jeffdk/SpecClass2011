@@ -5,7 +5,7 @@
 CODE_HOME = ../../../../..
 
 # What libraries does this executable depend on
-INCLUDED_AND_LINKED_LIBS = IO StringParsing MiscUtils MpiWrappers \
+LINKED_LIBS = IO StringParsing MiscUtils MpiWrappers \
 			   Tensor DataMesh \
 			   MyContainers LowLevelUtils ErrorHandling
 

@@ -7,7 +7,7 @@ CODE_HOME = ../../../../..
 # What subdirectories should also be compiled (one for each test)
 SUBDIRECTORIES = 
 
-INCLUDED_AND_LINKED_LIBS = Assignment04Maxim MyContainers ErrorHandling LowLevelUtils
+LINKED_LIBS = Assignment04Maxim MyContainers ErrorHandling LowLevelUtils
 
 EXECUTABLES = VolumeExecMaxim
 

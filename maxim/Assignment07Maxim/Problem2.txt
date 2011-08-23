@@ -1,0 +1,3 @@
+The function 
+double& add(const double& a, const double& b) 
+returns a reference which is fine in general, however in this particular case the reference is to the variable whose scope is inside the function. When used the function returns a reference to nothingness (the variable c has already been destroyed)

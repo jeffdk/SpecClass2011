@@ -1,0 +1,9 @@
+2. The code outputs the tensor structure of the sum of two tensors: {4 "12"}
+
+4. 17,288,798 bytes
+
+6. 10,375,518 bytes
+
+7. The first code with function Tensor<DataMesh> add(const Tensor<DataMesh> a,const Tensor<DataMesh> b)
+creates two copies of const Tensor<DataMesh>'s inside the function, hence the higher memory usage. The ratio = 1.6663...
+All the memory of the first code is approximately in 6 Tensor<DataMesh> objects, while for the second code -- in 4, hence the theoretical ratio = 1.5 which is close to the experimental value.

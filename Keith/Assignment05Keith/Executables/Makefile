@@ -5,7 +5,7 @@
 CODE_HOME = ../../../../..
 
 # What libraries does this executable depend on
-INCLUDED_AND_LINKED_LIBS = \
+LINKED_LIBS = \
 	Assignment05Keith \
 	DataMesh IndexMap \
 	StringParsing IO Math MiscUtils \

@@ -7,7 +7,7 @@ CODE_HOME = ../../../../..
 # What subdirectories should also be compiled (one for each test)
 #SUBDIRECTORIES =
 
-INCLUDED_AND_LINKED_LIBS = Assignment02fhebert StringParsing MyContainers ErrorHandling LowLevelUtils
+LINKED_LIBS = Assignment02fhebert StringParsing MyContainers ErrorHandling LowLevelUtils
 
 EXECUTABLES = TestAssignment02fhebert
 

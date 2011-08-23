@@ -5,7 +5,7 @@
 CODE_HOME = ../../../../..
 
 # What libraries does this executable depend on
-INCLUDED_AND_LINKED_LIBS = Assignment03Curran Math MiscUtils StringParsing \
+LINKED_LIBS = Assignment03Curran Math MiscUtils StringParsing \
 			   Tensor DataMesh MyContainers ErrorHandling \
 			   LowLevelUtils
 

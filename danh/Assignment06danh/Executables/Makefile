@@ -8,7 +8,7 @@ SUBDIRECTORIES =
 
 # This must include ALL libs (both required and optional) in the correct order
 # Will change to ONLY optional after Larry's dependency analyzer work is done
-ALL_INCLUDED_AND_LINKED_LIBS = \
+ALL_LINKED_LIBS = \
     EventHorizon SurfaceFitting HydroComputeItems  HydroStates \
     ApplyObservers DualFrameSystem DualFrameItems HyperbolicGaugeItems \
     Evolution EventTriggers \
@@ -32,7 +32,7 @@ ALL_INCLUDED_AND_LINKED_LIBS = \
     MpiWrappers MyContainers LowLevelUtils ErrorHandling \
     Assignment06danh Assignment07danh
 # Required libs
-INCLUDED_AND_LINKED_LIBS = \
+LINKED_LIBS = \
     ApplyObservers \
     Evolution EventTriggers \
     DualFrameSystem DualFrameItems \

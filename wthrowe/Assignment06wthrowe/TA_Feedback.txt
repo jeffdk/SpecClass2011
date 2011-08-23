@@ -1,0 +1,6 @@
+Problem 3
+=========
+Good, but several optimizations possible:
+1) No need to re-assign mResult unless the mesh changes (saves some memory allocation and deallocation).  See reference solution for an AMR-compatible way to do this.  (Most of SpEC actually does what you did, so this is a very minor point.)
+2) Should compute r^3 outside the loop.  Otherwise, the quantity r2*sqrt(r2) may be recomputed for each iteration.
+

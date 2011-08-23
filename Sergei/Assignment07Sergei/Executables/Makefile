@@ -5,7 +5,7 @@
 CODE_HOME = ../../../../..
 
 # What libraries does this executable depend on
-INCLUDED_AND_LINKED_LIBS = DataMesh LowLevelUtils Tensor ErrorHandling MyContainers
+LINKED_LIBS = DataMesh LowLevelUtils Tensor ErrorHandling MyContainers
 
 # What .cpp files containing a main function should be compiled (remove .cpp)
 EXECUTABLES = DataMeshMemory

@@ -5,7 +5,7 @@
 CODE_HOME = ../../../../..
 
 # What libraries does this executable depend on
-INCLUDED_AND_LINKED_LIBS = Assignment04Curran
+LINKED_LIBS = Assignment04Curran
 
 # What .cpp files containing a main function should be compiled (remove .cpp)
 EXECUTABLES = Buggy UseMemoryLeaker

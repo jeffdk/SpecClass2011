@@ -1,0 +1,9 @@
+Problem 3
+=========
+Header file lacks #define guards!
+
+RecomputeData() assumes 3 dimensions but doesn't check for it.
+
+TDm res is not needed - should assign the components of mResult directly (see reference solution for an AMR-compatible initialization).
+
+Help() text and implementation are inconsistent: Help() says it returns the gradient of \hat{r}^i/r^3 (which would be a rank-2 tensor), while the implementation returns r^i/r^3.

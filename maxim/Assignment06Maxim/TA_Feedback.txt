@@ -1,0 +1,17 @@
+Problem 3
+=========
+The output should not depend on the ordering of items in ApplyObservers.input.  If the output does change, the represents a bug that should be investigated.
+
+Prefer not to use "using" statements at file scope, and prefer to never use "using namespace".
+
+Why are you static_casting coords[0] as a DataMesh?  It already is a DataMesh.  If you want to avoid initialization cost, get "Mesh" from the DataBox and use that.  See reference solution for an AMR-compatible example.
+
+No need for separate 'R' and 'sum' variables - this wastes memory.
+
+Note that division is often much more expensive than multiplication, so prefer "/(R*R*R)" to "/R/R/R".  Even better, compute R^3 outside the loop.
+
+Why did you create a block around half of your implementation?  The only effect this has is limiting the scope of 'i', but you should declare 'i' in loop scope anyway instead of outside the loops (that is, "for (int i = 0; ...").
+
+General
+=======
+The Executables directory does not exist, so remove it from the Makefile.

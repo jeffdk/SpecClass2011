@@ -1,0 +1,4 @@
+Basename=out;
+Times=1,2;
+Format=reduce_wthrowe(MinAngle=.002;
+		      AspectRatio=100/2048);

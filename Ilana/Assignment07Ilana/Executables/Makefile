@@ -5,7 +5,7 @@
 CODE_HOME = ../../../../..
 
 # What libraries does this executable depend on
-INCLUDED_AND_LINKED_LIBS = DataMesh Tensor IO StringParsing MyContainers MiscUtils ErrorHandling LowLevelUtils MpiWrappers
+LINKED_LIBS = DataMesh Tensor IO StringParsing MyContainers MiscUtils ErrorHandling LowLevelUtils MpiWrappers
 
 # What .cpp files containing a main function should be compiled (remove .cpp)
 EXECUTABLES = DataMeshMemory

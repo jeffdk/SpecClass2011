@@ -5,7 +5,7 @@
 CODE_HOME = ../../../../..
 
 # What libraries does this executable depend on
-INCLUDED_AND_LINKED_LIBS =
+LINKED_LIBS =
 
 # What .cpp files containing a main function should be compiled (remove .cpp)
 EXECUTABLES = MyClass1Maxim MyClass2Maxim

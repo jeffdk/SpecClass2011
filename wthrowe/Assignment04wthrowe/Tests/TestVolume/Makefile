@@ -5,7 +5,7 @@
 CODE_HOME = ../../../../../..
 
 # What libraries does this executable depend on
-INCLUDED_AND_LINKED_LIBS = Assignment04wthrowe ErrorHandling MyContainers \
+LINKED_LIBS = Assignment04wthrowe ErrorHandling MyContainers \
   LowLevelUtils
 
 # What .cpp files containing a main function should be compiled (remove .cpp)

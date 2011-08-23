@@ -1,9 +1,11 @@
 
+
+#include "OutputReducedDat_fhebert.hpp"
 #include "Utils/IO/CachedOfStream.hpp"
-#include "Utils/IO/OneDimDataWriter.hpp"
 #include "Utils/LowLevelUtils/ConvertNumberToString.hpp"
 #include "Utils/StringParsing/StringUtils.hpp"
 #include "Utils/StringParsing/OptionParser.hpp"
+#include "Utils/ErrorHandling/Require.hpp"
 
 #include <fstream>
 #include <cmath>
@@ -12,45 +14,27 @@ using std::string;
 namespace OneDimDataWriters {
 
 
-  class OutputReducedDat_fhebert: public OneDimDataWriter,
-    Factory::Register<OutputReducedDat_fhebert>
+  OutputReducedDat_fhebert::
+  OutputReducedDat_fhebert(const string& Opts, const string& BaseName):
+    mBaseName(BaseName),
+    mCount(0)
   {
-    public:
-      static string ClassID() {return "rdatfh";}
-      static string Help() {
-        return ClassID() + "\n"
-        "file output: saves each x_i, y_i in a separate column.               \n"
-        "reduces data so that nearly-colinear points are eliminated, saving   \n"
-        "space in both data files and plots.                                  \n"
-        " OPTIONS:                                                            \n"
-        " MinAngle = double; # min allowed angle before elimination (radians) \n";
-      };
-    
-      OutputReducedDat_fhebert(const string& Opts, const string& BaseName):
-        mBaseName(BaseName),
-        mCount(0)
-      {
-        OptionParser p(Opts, Help());
-        mMinAngle = p.Get<double>("MinAngle");
-      };
-
-      void TruncateFile() const {};
-
-    private:
-      const string mBaseName;
-      mutable int mCount;
-      double mMinAngle;
-
-      void AppendToFileImpl(const double time,
-                            const MyVector<double>& x,
-                            const MyVector<double>& y) const;
+    OptionParser p(Opts, Help());
+    mMinAngle = p.Get<double>("MinAngle");
   };
 
-  void OutputReducedDat_fhebert::AppendToFileImpl(const double time,
+
+  void OutputReducedDat_fhebert::
+  AppendToFileImpl(const double time,
       const MyVector<double>& x,
       const MyVector<double>& y) const
   {
+    // base class checks that x,y are arrays of equal length
+    // there is therefore no need to keep two variables around for this
     const int xlen = x.Size();
+    // if list is zero-length, exit:
+    REQUIRE(xlen>0, "can't write data of 0 length to file");
+
     const string file(mBaseName + IntToString(mCount++) + "." + ClassID());
     std::ofstream out(file.c_str());
 

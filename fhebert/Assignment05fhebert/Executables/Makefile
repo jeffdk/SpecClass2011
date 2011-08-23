@@ -3,7 +3,7 @@
 
 CODE_HOME = ../../../../..
 
-INCLUDED_AND_LINKED_LIBS = Assignment05fhebert StringParsing IO MiscUtils \
+LINKED_LIBS = Assignment05fhebert StringParsing IO MiscUtils \
   ErrorHandling MyContainers MpiWrappers LowLevelUtils Assignment05fhebert
 
 EXECUTABLES = Problem2Exec

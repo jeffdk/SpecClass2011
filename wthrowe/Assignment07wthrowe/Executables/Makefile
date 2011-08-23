@@ -5,7 +5,7 @@
 CODE_HOME = ../../../../..
 
 # What libraries does this executable depend on
-INCLUDED_AND_LINKED_LIBS = Assignment07wthrowe \
+LINKED_LIBS = Assignment07wthrowe \
     EventHorizon SurfaceFitting HydroComputeItems  HydroStates \
     ApplyObservers DualFrameSystem DualFrameItems HyperbolicGaugeItems \
     Evolution EventTriggers \

@@ -1,4 +1,4 @@
-Comments on convergence order.
+As the order of the differentiator increases, so does the minimum resolution on which it can be applied.  However, the convergence rate also increases, meaning that as resolution is added, the norm of the error decreases as a higher power of the separation between gridpoints.  The slope of these convergence curves on a log-log scale gives this power.
 
-See Problem1/plot-Problem1.pdf
+See "Problem1/plot-Problem1.pdf".
 

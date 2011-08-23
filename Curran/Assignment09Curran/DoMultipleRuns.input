@@ -1,0 +1,17 @@
+# DoMultipleRuns.input
+# vim: syntax=perl
+
+foreach my $order ((2, 4, 6, 8)) {
+    my $minN = $order + $order/2 + 2;
+    for (my $N = $minN; $N <= 32; ++$N) {
+        &RunInDirectory("N" . $N . "_O" . $order, {
+            "HyDomain.input" => {
+                "__N__" => $N,
+            },
+            "ExploreDerivatives.input" => {
+                "__ORDER__" => $order,
+            },
+        });
+    }
+}
+

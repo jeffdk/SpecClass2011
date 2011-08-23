@@ -1,1 +1,4 @@
 Comments on convergence order.
+
+See Problem1/plot-Problem1.pdf
+

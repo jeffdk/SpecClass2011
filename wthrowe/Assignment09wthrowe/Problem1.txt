@@ -1,0 +1,2 @@
+The convergence of the FD differentiators is, unsurprisingly, much
+slower than that of the spectral differentiator.

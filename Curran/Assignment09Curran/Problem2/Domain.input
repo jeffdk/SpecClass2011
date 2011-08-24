@@ -1,0 +1,51 @@
+# Domain.input
+
+SubdomainStructure =
+# Filled sphere in middle
+#  FilledSphere3D (
+#    BaseName = Jacobi;
+#    L = 5;
+#    rmax = 1.0;
+#    RadialMap = Lin;
+#  ),
+
+# Cube in middle
+  PerimBlocks (
+    BaseName = Cube;
+    x-Axis = (
+      Extents  = 10;
+      Bounds   = -1.0, 1.0;
+      Maps     = Lin;
+      IndexMap = ChebyshevGaussLobatto;
+      Topology = I1;
+    );
+    y-Axis = (
+      Extents  = 10;
+      Bounds   = -1.0, 1.0;
+      Maps     = Lin;
+      IndexMap = ChebyshevGaussLobatto;
+      Topology = I1;
+    );
+    z-Axis = (
+      Extents  = 10;
+      Bounds   = -1.0, 1.0;
+      Maps     = Lin;
+      IndexMap = ChebyshevGaussLobatto;
+      Topology = I1;
+    );
+  ),
+
+# Spherical shell outside
+  SphericalShells3D (
+    BaseName = Sphere;
+    L = 5;
+    r-Axis = (
+      Extents  = 10;
+      Bounds   = 1.0, 2.0;
+      Maps     = Lin;
+      IndexMap = ChebyshevGaussLobatto;
+      Topology = I1;
+    );
+  ),
+; # END Subdomain Structure
+

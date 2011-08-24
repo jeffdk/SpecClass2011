@@ -1,0 +1,8 @@
+When a filled sphere of unit radius is placed in the center of the Domain, the integral computation returns "8.0", which is the correct integral of this function over the whole domain.
+
+When a cube of side length 2 is placed in the center of the Domain instead, the integral computation returns "8.90986", which is NOT the integral of this function over the domain.  Rather, it is the sum of the integrals over both subdomains, the cube contributing "1.909859" and the shell contributing "7.0".  The contribution of the integrand from the overlapping regions has been double-counted.
+
+I cannot think of an obvious way to solve this problem in the context of spectral integrators, as simply masking out the overlapping points in one of the subdomains would introduce a discontinuity in the integrand, whose spectral representation would likely no longer be a good fit at the same resolution.  The resulting oscillations would probably lead to an inaccurate integral.
+
+A finite difference integrator (which simply sums the integrand) is much better behaved in the presence of discontinuities.  One approach then would be to interpolate the integrand onto a finite difference grid, mask out the non-overlapping region, and then compute a finite difference integral.  The interpolation would be costly, however.
+

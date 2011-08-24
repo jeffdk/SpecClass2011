@@ -1,0 +1,21 @@
+francois hebert
+hw 9 - prob 1
+
+the simple changes to ExploreDerivatives.input were made in
+ExploreFDDerivatives.input.
+
+the output from the Spectral code is in SpectralConvErr.dat
+the outputs of the FD codes of different orders are in FD?ConvErr.dat
+
+two plots from Xmgrblock are saved here:
+
+1)
+plotFD.pdf compares (on a log-log scale) the FD derivative errors
+only. it is clear that increasing the number of point results in the
+expected polynomial convergence, with the power increasing as with the
+size of the stencil.
+
+2)
+plotAll.pdf compares (on a lin-log scale) the FD derivatives against
+the Spectral derivatives. the massively better exponential convergence
+of the Spectral derivative is obvious.

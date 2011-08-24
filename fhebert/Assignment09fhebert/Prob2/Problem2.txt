@@ -1,0 +1,17 @@
+francois hebert
+hw 9 - prob 2
+
+i wrote two new domain input files: use with the -domaininput
+option on ApplyObservers.
+
+i find:
+
+1)
+filling the hole with a sphere gives the correct volume of 8 (2^3)
+
+2)
+filling the hole with a cube gives the incorrect volume of 8.91..
+this is due to the integrator proceding on each subdomain independently
+without checking whether the regions overlap.
+
+i'm not sure how to solve this..

@@ -1,0 +1,9 @@
+#HyDomain.input
+SubdomainStructure = 
+    PerimBlocks(BaseName = Interval;
+                x-Axis = (Extents = __N__;
+                          Bounds = 1.0, 3.0;
+                          Maps = Lin;
+                          IndexMap = Uniform;
+                          Topology = I1);
+                );

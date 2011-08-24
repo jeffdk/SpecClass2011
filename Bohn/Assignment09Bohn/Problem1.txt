@@ -1,0 +1,4 @@
+As can readily be seen in the Convergence.grace file, the FD differentiators
+have much slower convergence rates.  The 6th order differentiator has a 
+marginally faster convergence rate, as expected.
+

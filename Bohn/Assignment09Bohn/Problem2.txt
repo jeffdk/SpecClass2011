@@ -1,0 +1,10 @@
+With the filled sphere filling in the center, we have a volume of roughly 8,
+which is R^3 with a radius of 2.  We removed the prefactor of (4Pi/3) for
+clarity using EvaluateScalarFormula.
+
+I honestly didn't have much time to look into the overlapping issue.
+It's currently adding the volume of individual subdomains, instead of the 
+non-overlapping pieces.
+The spherical shell has a volume of 7
+The cube has a volume of 2^3 * (3/(4Pi)) = 6/Pi = 1.91
+This gives a total volume of 8.9 ish.

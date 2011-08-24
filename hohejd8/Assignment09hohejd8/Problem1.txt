@@ -1,0 +1,1 @@
+Not all orders of the differentiator work on all grid resolutions.  I found that the minimum grid-differentiator pairs were 5-2, 8-4, 11-6, and 14-8.  It also appears that higher order differentiators converge faster, and are more accurate.  See the graph in Problem1Convergence.pdf.

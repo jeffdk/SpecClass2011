@@ -1,0 +1,14 @@
+#ExploreDerivatives.input
+DataBoxItems = 
+    Subdomain(Items = 
+	      GlobalDifferentiator(GlobalDifferentiator=
+				   Standard(TopologicalDifferentiator=FiniteDifference(Orders=__ORDER__))),
+	      FirstDeriv(Input=F;Output=dF),
+	      FlattenDeriv(Input=dF;Output=dFflattened;DerivPosition=First),
+	      BinaryOp(A=dFflattened;B=dFAnalytic;Output=dFError;Op=A-B),
+	      EvaluateScalarFormula(Formula=exp(-x0*x0);Output=F),
+	      EvaluateVectorFormula(V[0]=-2*x0*exp(-x0*x0);
+				    Output=dFAnalytic);
+	      );
+Observers = NormOfTensor(Input=dFError;Filename=ErrL2.dat;
+			 MetricForTensors=None;Op=L2);

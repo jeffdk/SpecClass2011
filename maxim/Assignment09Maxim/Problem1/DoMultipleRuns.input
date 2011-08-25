@@ -1,0 +1,8 @@
+#DoMultipleRuns.input
+for($N=04; $N<=32; $N++) {
+    &RunInDirectory("N" . $N,
+			    {"HyDomain.input" => {"__N__"  => $N},
+				 "ExploreDerivatives.input" => {"__ORDER__" => 4}
+			 	}
+				);		    	
+}

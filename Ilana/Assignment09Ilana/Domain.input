@@ -1,0 +1,39 @@
+#Domain.input
+SubdomainStructure=
+
+SphericalShells3D(BaseName = Sphere;
+                  L = 5;
+                  r-Axis = (Extents  = 10;
+                            Bounds   = 1.0,2.0;
+                            Maps     = Lin;
+			    IndexMap = ChebyshevGaussLobatto;
+			    Topology = I1;
+		  );
+    ),
+
+#FilledSphere3D(BaseName = FilledBall;
+#	       rmax = 1.0;
+#	       L = 4;
+#	       RadialMap = Lin;
+#    );
+
+PerimBlocks(BaseName = FilledBlocks;
+	    x-Axis = (Extents  = 10;
+                      Bounds   = -1.0,1.0;
+                      Maps     = Lin;
+		      IndexMap = ChebyshevGaussLobatto;
+		      Topology = I1;
+	    );
+	    y-Axis = (Extents  = 10;
+                      Bounds   = -1.0,1.0;
+                      Maps     = Lin;
+		      IndexMap = ChebyshevGaussLobatto;
+		      Topology = I1;
+	    );
+	    z-Axis = (Extents  = 10;
+                      Bounds   = -1.0,1.0;
+                      Maps     = Lin;
+		      IndexMap = ChebyshevGaussLobatto;
+		      Topology = I1;
+	    );
+   );

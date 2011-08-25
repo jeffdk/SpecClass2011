@@ -1,0 +1,4 @@
+Problem 1
+
+The finite difference differentiation converges much more slowly than the spectral
+methods.

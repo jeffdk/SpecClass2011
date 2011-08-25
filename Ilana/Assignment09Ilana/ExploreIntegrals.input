@@ -1,0 +1,11 @@
+#ExploreIntegrals.input
+DataBoxItems =
+    Subdomain(Items = GlobalIntegrator(Integrator=Spectral),
+	      AnalyticEinsteinSolution(Output=AnalyticSolution;
+				       Solution=FlatSpace(SpatialDim=3)),
+	      AnalyticEinstein::g(Input=AnalyticSolution;Output=g),
+	      Determinant(Input=g;Output=Detg),
+	      EvaluateFormula(A=Detg;Output=SqrtDetg;Formula=sqrt(A)),
+	      EvaluateScalarFormula(Output=F;Formula=3/4/Pi);
+    );
+Observers = VolumeIntegral(Input=F;FileName=Volume.dat;SqrtDetg=SqrtDetg);

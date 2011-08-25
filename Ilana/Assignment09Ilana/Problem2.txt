@@ -1,0 +1,7 @@
+Problem 2
+
+The total volume calculated when using PerimBlocks is larger than when calculating it
+using FilledSphere3D.  This must be because we are calculating the volume of both
+grids, even where they overlap.
+
+I can't think of a better way to code this.

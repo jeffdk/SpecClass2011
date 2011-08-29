@@ -1,4 +1,6 @@
 #include "Volume_Iryna.hpp"
+#include "Utils/MyContainers/MyVector.hpp"
+
 // Compute total volume of spheres from given radii
 double TotalVolumeOfSpheresFromRadii(const MyVector<double>& radii) {
   const double Pi = 3.1415926535897932;

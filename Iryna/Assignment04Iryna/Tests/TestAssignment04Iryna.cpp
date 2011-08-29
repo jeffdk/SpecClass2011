@@ -1,12 +1,12 @@
 #include <iostream>
 #include <cstdlib>
 
-#include "MyVector.hpp"
-#include "OptionParser.hpp"
-#include "ReadFileIntoString.hpp"
-#include "UtilsForTesting.hpp"
-#include "Require.hpp"
-#include "Volume_Iryna.hpp"
+#include "Utils/MyContainers/MyVector.hpp"
+#include "Utils/StringParsing/OptionParser.hpp"
+#include "Utils/StringParsing/ReadFileIntoString.hpp"
+#include "Utils/ErrorHandling/UtilsForTesting.hpp"
+#include "Utils/ErrorHandling/Require.hpp"
+#include "StudentProjects/SpecClass2011/Iryna/Assignment04Iryna/Volume_Iryna.hpp"
 
 int main(int /*argc*/, char** /*argv*/) {
 
@@ -22,7 +22,6 @@ int main(int /*argc*/, char** /*argv*/) {
   TotalVolume = TotalVolumeOfSpheresFromRadii(Radii);
   const double expectedTotalVolume =  200.71007145254467; 
 
-  UtilsForTesting u;
   IS_TRUE(TotalVolume == expectedTotalVolume, "ERROR: The \
 	calculated total volume does not match the expected"); 
 
@@ -31,8 +30,7 @@ int main(int /*argc*/, char** /*argv*/) {
   std::cout << "Radii = " << Radii << std::endl;
   std::cout << "Total Volume = " << TotalVolume << std::endl;
 
- 
   //Return success                                                              
-  return u.NumberOfTestsFailed();
+  return UtilsForTesting::NumberOfTestsFailed();
 }
-  
+

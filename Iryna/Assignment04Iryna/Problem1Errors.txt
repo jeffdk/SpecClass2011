@@ -11,5 +11,11 @@ Compiler warnings:
 
 Other mistakes: 
   * we can initialize int i inside the for loop
-  * change 4/3 to 4.0/3.0 to keep correct value
+  * change 4/3 to 4.0/3.0 to keep correct value (4/3 = 1)
   * variable 'result' could be more clearly named -> 'totalVolume'
+
+
+More mistakes (adding corrections to assignment 4): 
+
+  * don't need to include MyVector.hpp in the header 
+  * need to have include guards in the header

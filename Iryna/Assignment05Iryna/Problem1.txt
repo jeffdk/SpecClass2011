@@ -1,11 +1,11 @@
 ### Problem 1 ###
 
 
-(2) The second alternative is the slowest. It uses up extra memory by
-    initializing the DataMesh to 0.0 before assigning a new value. 
+(3) The third alternative is slowest because it uses DataMesh's copy 
+    constructor. 
 
-(3) The third alternative is more efficient than the second alternative because
-    it doesn't initialize DetF to some value when first creating it. 
+(2) The second alternative is more efficient because sets each element to 0.0
+    by writing it instead of copying it. 
 
 (1) The first alternative is the fastest option. It sets the DataMesh to the 
     desired value at the time it's created. 

@@ -1,11 +1,10 @@
 
-1) When Format=bla, the terminal complains that the key "blah" wasn't found and
-   shows the help text. 
+1) When Format=bla, the terminal complains that the key "blah" wasn't found 
+   and lists the classIDs for OneDimDataWriters. 
 
 2) When Format=help, the Help() funciton is called for each registered 
    OneDimDataWriter.
 
-note: So if you want to get the help text, either type in "help" or gibberish 
-
 3) When Format=grace(Legennd=Yes), OptionParser complains that the option 
-   Legennd was not used. 
+   Legennd was not used and shows the help documentation for the grace 
+   OneDimDataWriter. 

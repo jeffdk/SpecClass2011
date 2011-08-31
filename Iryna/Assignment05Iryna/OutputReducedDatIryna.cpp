@@ -21,7 +21,7 @@ namespace OneDimDataWriters {
   }
 
   void OutputReducedDatIryna::
-         AppendToFileImpl(const double time, 
+         AppendToFileImpl(const double /*time*/, 
          const MyVector<double>& x,
          const MyVector<double>& y) const {
         
@@ -35,7 +35,9 @@ namespace OneDimDataWriters {
 				length");
      CachedOfStream outfile(outputFile.str());
 
-     if(size_x == 0){}
+     if(size_x == 0){
+        return; 
+     }
 
      if(size_x > 0){	
         // write first data point

@@ -29,7 +29,7 @@ namespace OneDimDataWriters {
         const std::string mBaseName;
         double mMinAngle;
 
-        void AppendToFileImpl(const double time, 
+        void AppendToFileImpl(const double /*time*/, 
                               const MyVector<double>& x,
                               const MyVector<double>& y) const;
      };

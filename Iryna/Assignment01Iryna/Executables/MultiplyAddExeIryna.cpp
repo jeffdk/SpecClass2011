@@ -1,9 +1,9 @@
 #include <iostream>
 #include <cstdlib>
 
-#include "MyVector.hpp"
-#include "OptionParser.hpp"
-#include "ReadFileIntoString.hpp"
+#include "Utils/MyContainers/MyVector.hpp"
+#include "Utils/StringParsing/OptionParser.hpp"
+#include "Utils/StringParsing/ReadFileIntoString.hpp"
 #include "libAssignment01Iryna.hpp"
 
 int main(int /*argc*/, char** /*argv*/) {

@@ -1,7 +1,7 @@
-#include "MyVector.hpp"
+#include "Utils/MyContainers/MyVector.hpp"
 #include "Assignment02Iryna.hpp"
 
-#include "Require.hpp"
+#include "Utils/ErrorHandling/Require.hpp"
 
 MyVector<double> addDivideVectors(const MyVector<double>& A,
                             const MyVector<double>& B, const double C) {
@@ -26,4 +26,4 @@ MyVector<double> addDivideVectors(const MyVector<double>& A,
 
   return result;
 }
-    
+

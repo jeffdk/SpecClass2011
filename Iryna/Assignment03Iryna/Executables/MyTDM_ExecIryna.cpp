@@ -1,6 +1,6 @@
-#include "DataMesh.hpp"
-#include "Tensor.hpp"
-#include "Ran2Class.hpp"
+#include "Utils/DataMesh/DataMesh.hpp"
+#include "Utils/Tensor/Tensor.hpp"
+#include "Utils/LowLevelUtils/Ran2Class.hpp"
 #include <cstdlib>
 
 #include "InverseTensorIryna.hpp"

@@ -1,9 +1,9 @@
-#include "DataMesh.hpp"
-#include "Tensor.hpp"
-#include "Require.hpp"
+#include "Utils/DataMesh/DataMesh.hpp"
+#include "Utils/Tensor/Tensor.hpp"
+#include "Utils/ErrorHandling/Require.hpp"
 #include <cstdlib>
 #include "InverseTensorIryna.hpp"
-
+/home/ibutsky/gccdebug/Utils/DataMesh
 void InverseTensor(Tensor<DataMesh>& t, Tensor<DataMesh>& t_inv) {
   
   // make sure both tensors have right dimensions 

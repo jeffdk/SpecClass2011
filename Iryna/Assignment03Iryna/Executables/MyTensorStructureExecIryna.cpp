@@ -1,5 +1,5 @@
-#include "TensorStructure.hpp"
-#include "Require.hpp"
+#include "Utils/Tensor/TensorStructure.hpp"
+#include "Utils/ErrorHandling/Require.hpp"
 #include <cstdlib>
 
 int main(void) {

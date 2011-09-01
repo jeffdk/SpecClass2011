@@ -1,0 +1,9 @@
+
+
+- The code doesn't seem to be using NonCopyable, which  makes it an extra 
+  dependency (which is inefficient). 
+- The error message could be more clear ("OOPS" is pretty vague)
+- VolumeTerm and VolumeTermImpl use forward declarations while RotationMatrix 
+  doesn't. Also, RotationMatrix has much fewer comments. 
+- The RotationMatrix default constructor is completely empty.
+- The member function RotationMatrix::Impl() should probably be made private.

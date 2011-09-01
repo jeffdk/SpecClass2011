@@ -1,0 +1,9 @@
+
+
+1. The first thing I tried to do was change Output=Radius to Output=Raduis. 
+   The compiler complained that the Key 'Radius' wasn't in the DataBox 
+   'ApplyObservers/Sphere0', and listed the contents of that DataBox. 
+
+2. Next, I chenged the Output from EvaluateVectorFormula to dQ. This caused the
+   REQUIRE test to fail, prompting the message that I was trying to insert an
+   already existing item 'dQ' into the DataBox 'ApplyObservers/Sphere0'

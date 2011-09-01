@@ -1,0 +1,6 @@
+                                                 
+# Input file for Assignment 5, Problem 2.                                 
+
+Format   = OutputReducedDatIryna(MinAngle = 0);            
+Basename = out;                                         
+Times    = 1.0;                 

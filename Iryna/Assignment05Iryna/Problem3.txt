@@ -1,0 +1,3 @@
+This method won't work for curves that change slowly over time. A better 
+algorithim would check the angle between the initial and i-th points (or in 
+some interval larger than 1). 

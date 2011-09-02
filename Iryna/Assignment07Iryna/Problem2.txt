@@ -1,0 +1,1 @@
+The problem with this funciton is that we can't return a reference to the local variable. The local variable is destroyed once we leave the function. 

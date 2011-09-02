@@ -1,0 +1,11 @@
+The code outputs {4, "12}
+
+When running valgrind:
+ - The code allocatead 17,288,798 bytes. 
+
+When adding the ampersands: 
+ - The code allocated 10,375,518 bytes. 
+
+The ratio is: 1.666
+Adding the two ampersands created two references, and therefore removed 2 TDMs.
+It makes sense that the ration should be roughly 5/3. 

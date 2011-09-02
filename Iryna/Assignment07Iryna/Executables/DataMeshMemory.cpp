@@ -1,9 +1,14 @@
 // DataMeshMemory.cpp
 #include <iostream>
+#include <cstdlib>
+#include <string>
 #include "Utils/DataMesh/DataMesh.hpp"
+#include "Utils/DataMesh/Mesh.hpp"
+#include "Utils/MyContainers/MyVector.hpp"
 #include "Utils/Tensor/Tensor.hpp"
+#include "Utils/ErrorHandling/Require.hpp"
  
-Tensor<DataMesh> add(const Tensor<DataMesh> a,const Tensor<DataMesh> b) {
+Tensor<DataMesh> add(const Tensor<DataMesh>& a,const Tensor<DataMesh>& b) {
   REQUIRE(a.Structure()==b.Structure(),"Structure mismatch");
  
   Tensor<DataMesh> result = a;

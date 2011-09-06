@@ -22,7 +22,7 @@ namespace ComputeItems {
         "multiplied by some SphericalHarmonicY                       \n"
         "OPTIONS:                                                    \n"
         "   Input    = string; #name of original rho                 \n"
-        "               int, l, m                                    \n"
+        "              int l, m; spherical harmonic operator         \n"
         "   Output   = string;  #name of output                        ";
     
     };

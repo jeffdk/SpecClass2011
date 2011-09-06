@@ -2,8 +2,15 @@
 
 DataBoxItems=
     Subdomain(Items=
-
-              ComputeItemIryna(Output=Q),
+	      EvaluateScalarFormula(Output=Radius;
+				    Formula= 1); # will give scalar TDM whose value is 1 everywhere
+	      ),
+	      EvaluateVectorFormula(R=Radius;
+				    V[0]=x0/(R*R*R);
+				    V[1]=x1/(R*R*R);
+				    V[2]=x2/(R*R*R);
+				    Output=Q;
+	      ),
 	      GlobalDifferentiator(
 		  GlobalDifferentiator
 		  =Standard(TopologicalDifferentiator=Spectral)
@@ -24,4 +31,4 @@ DataBoxItems=
 
 Observers=NormOfTensor(Input=divQ;
 		       Op=L2;
-		       Filename=divQ.dat);
+		       Filename=divQ.dat), DumpTensors;

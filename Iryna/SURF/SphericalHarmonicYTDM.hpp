@@ -4,9 +4,13 @@
 // Computes real-valued spherical harmonics Y_lm(theta,phi)
 //
 //---------------------------------------------------------------------------
-#ifndef SphericalHarmonicY_H
-#define SphericalHarmonicY_H
+#ifndef SphericalHarmonicYTDM_H
+#define SphericalHarmonicYTDM_H
+#include "Utils/Tensor/Tensor.hpp"
+#include "Utils/DataMesh/DataMesh.hpp"
+#include "Utils/DataBox/DataBox.hpp"
 
-double SphericalHarmonicY(int l, int m,const double theta,const double phi);
+Tensor<DataMesh> SphericalHarmonicYTDM(int l, int m, const DataBoxAccess& box,
+                    const Tensor<DataMesh> theta, const Tensor<DataMesh> phi);
 
-#endif /* SphericalHarmonicY_H */
+#endif /* SphericalHarmonicYTDM_H */

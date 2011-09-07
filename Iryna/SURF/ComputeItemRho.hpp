@@ -11,8 +11,8 @@
 
 namespace ComputeItems {                                            
   ///               
-  class ComputeItemRho: public ComputeItem<Tensor<DataMesh> >,          
-                     private InstantiateDataBoxAdder<ComputeItemRho> {   
+  class ComputeItemRho: public ComputeItem<Tensor<DataMesh> > {//,          
+                    // private InstantiateDataBoxAdder<ComputeItemRho> {   
   public: 
     static std::string ClassID() { return "ComputeItemRho"; }           
     static std::string Help() {                                      

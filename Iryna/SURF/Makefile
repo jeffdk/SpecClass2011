@@ -9,7 +9,7 @@ CODE_HOME = ../../../..
 SUBDIRECTORIES = Executables Tests
 
 # What .cpp files should be compiled (replace .cpp with .o)
-OBJECT_FILES_INTO_LIB = ComputeItemRho.o
+OBJECT_FILES_INTO_LIB = ComputeItemRho.o  SphericalHarmonicYTDM.o
 
 ##############################################################################
 # Nothing below here needs to be changed

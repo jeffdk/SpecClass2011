@@ -10,7 +10,7 @@
 #include "Utils/DataMesh/DataMesh.hpp"
 #include "Utils/DataBox/DataBox.hpp"
 
-Tensor<DataMesh> SphericalHarmonicYTDM(int l, int m, const DataBoxAccess& box,
-                    const Tensor<DataMesh> theta, const Tensor<DataMesh> phi);
+Tensor<DataMesh> SphericalHarmonicYTDM(int l, int m, const Tensor<DataMesh> theta, 
+                               const Tensor<DataMesh> phi);
 
 #endif /* SphericalHarmonicYTDM_H */

@@ -25,10 +25,13 @@ DataBoxItems=
 		    PositionOfIndices=l,u; # we're in flat space.  Telling
 		    # SpEC (incorrectly) that we have one lower and one upper
 		    # index will take the sum over the diagonal.
-	      )
+	      
     );
 
 
 Observers=NormOfTensor(Input=divQ;
 		       Op=L2;
-		       Filename=divQ.dat), DumpTensors;
+		       Filename=divQ.dat), 
+               DumpTensors(Input=Radius); 
+          
+          

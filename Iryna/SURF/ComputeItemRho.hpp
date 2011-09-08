@@ -32,7 +32,7 @@ namespace ComputeItems {
   public:
     std::string Output()           const { return mOutput; }        
     const result_type& GetData()   const { return mResult; }         
-    void MultiplyRhoByYlm(const DataBoxAccess& box, int l, 
+    Tensor<DataMesh> MultiplyRhoByYlm(const DataBoxAccess& box, int l, 
                           int m) const;             
   private:
     std::string mOutput;                                             

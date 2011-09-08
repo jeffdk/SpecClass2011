@@ -3,7 +3,7 @@ SubdomainStructure=
     SphericalShells3D(
 	BaseName=Sphere;
 	L=7;
-	r-Axis=(Extents=12, 10; 
+	r-Axis=(Extents=12; 
 		Topology=I1; 
 		Maps=Lin; 
 		IndexMap=ChebyshevGaussLobatto;

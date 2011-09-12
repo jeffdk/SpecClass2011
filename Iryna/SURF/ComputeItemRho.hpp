@@ -10,16 +10,17 @@
 #include "Utils/Tensor/Tensor.hpp"
 
 namespace ComputeItems {                                            
-  ///               
-  class ComputeItemRho: public ComputeItem<Tensor<DataMesh> > {//,          
-                    // private InstantiateDataBoxAdder<ComputeItemRho> {   
+              
+  class ComputeItemRho: public ComputeItem<Tensor<DataMesh> >,           
+                     private InstantiateDataBoxAdder<ComputeItemRho> {   
   public: 
     static std::string ClassID() { return "ComputeItemRho"; }           
     static std::string Help() {                                      
       return 
         "ComputeItemRho                                              \n"
-        "Takes density as an argument and returns that density       \n"
-        "multiplied by some SphericalHarmonicY                       \n"
+        "Takes density, l, and m as arguments and returns a          \n"
+        "Tensor<DataMesh> of the density multiplied by the           \n"
+        "SphericalHarmonicY given by l and m.                        \n"
         "OPTIONS:                                                    \n"
         "   Input    = string; #name of original rho                 \n"
         "              int l, m; spherical harmonic operator         \n"
@@ -30,12 +31,13 @@ namespace ComputeItems {
     ComputeItemRho(const std::string& opts);                            
                                                                       
   public:
-    std::string Output()           const { return mOutput; }        
+    std::string Output()           const { return mOutput; } 
     const result_type& GetData()   const { return mResult; }         
-    Tensor<DataMesh> MultiplyRhoByYlm(const DataBoxAccess& box, int l, 
-                          int m) const;             
+    void RecomputeData(const DataBoxAccess& box) const;             
   private:
-    std::string mOutput;                                             
+    std::string mInput, mOutput; 
+    int l;
+    int m;                                          
     mutable result_type mResult;                                    
   }; 
 

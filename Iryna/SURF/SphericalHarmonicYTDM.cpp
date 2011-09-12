@@ -21,14 +21,13 @@ Tensor<DataMesh> SphericalHarmonicYTDM(int l, int m, const Tensor<DataMesh> thet
                       "ERROR! theta and phi must be of same rank \n");
   REQUIRE(theta(0).Size() == phi(0).Size(), 
                     "ERROR! theta and phi DataMeshes must be of same size \n");
-  const int absm = abs(m);
   const int size = theta(0).Size();
   const IPoint extents(MV::fill, size);
   const Mesh mesh(extents);
   Tensor<DataMesh> result(0, "", mesh); 
 
   for(int i=0; i<size; i++){
-    result(i)[i] = SphericalHarmonicY(l, m, theta(0)[i], phi(0)[i]);
+    result(0)[i] = SphericalHarmonicY(l, m, theta(0)[i], phi(0)[i]);
   }
   return(result);
   

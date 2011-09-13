@@ -6,10 +6,10 @@ DataBoxItems=
 				    Formula=  1
 	      ),
 
-              ComputeItemRho(Input=Radius; 
+              MultTDMBySpherHarmonic(Input=Radius; 
                                  l=4; 
-                                 m=4; 
-                             Output=Rho_Yl4m4),
+                                 m=1; 
+                             Output=Rho_Yl4m1),
 	      GlobalDifferentiator(
 		  GlobalDifferentiator
 		  =Standard(TopologicalDifferentiator=Spectral)
@@ -18,6 +18,6 @@ DataBoxItems=
     );
 
 
-Observers=  DumpTensors(Input=Rho_Yl4m4); 
+Observers=  DumpTensors(Input=Rho_Yl4m1); 
           
           

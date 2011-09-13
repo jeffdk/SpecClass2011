@@ -7,9 +7,9 @@ DataBoxItems=
 	      ),
 
               ComputeItemRho(Input=Radius; 
-                                 l=0; 
+                                 l=4; 
                                  m=2; 
-                             Output=theta),
+                             Output=Rho_Yl4m2),
 	      GlobalDifferentiator(
 		  GlobalDifferentiator
 		  =Standard(TopologicalDifferentiator=Spectral)
@@ -18,6 +18,6 @@ DataBoxItems=
     );
 
 
-Observers=  DumpTensors(Input=theta); 
+Observers=  DumpTensors(Input=Rho_Yl4m2); 
           
           

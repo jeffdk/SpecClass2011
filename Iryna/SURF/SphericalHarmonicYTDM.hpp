@@ -8,9 +8,8 @@
 #define SphericalHarmonicYTDM_H
 #include "Utils/Tensor/Tensor.hpp"
 #include "Utils/DataMesh/DataMesh.hpp"
-#include "Utils/DataBox/DataBox.hpp"
 
-Tensor<DataMesh> SphericalHarmonicYTDM(int l, int m, const Tensor<DataMesh> theta, 
-                               const Tensor<DataMesh> phi);
+Tensor<DataMesh> SphericalHarmonicYTDM(int l, int m, const DataMesh theta, 
+                               const DataMesh phi, const Mesh mesh);
 
 #endif /* SphericalHarmonicYTDM_H */

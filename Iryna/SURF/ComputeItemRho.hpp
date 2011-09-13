@@ -1,4 +1,3 @@
-/// \file
 /// Defines ComputeItems::ComputeItemRho
                        
 #ifndef ComputeItemRho_hpp                                   
@@ -17,14 +16,14 @@ namespace ComputeItems {
     static std::string ClassID() { return "ComputeItemRho"; }           
     static std::string Help() {                                      
       return 
-        "ComputeItemRho                                              \n"
-        "Takes density, l, and m as arguments and returns a          \n"
-        "Tensor<DataMesh> of the density multiplied by the           \n"
-        "SphericalHarmonicY given by l and m.                        \n"
-        "OPTIONS:                                                    \n"
-        "   Input    = string; #name of original rho                 \n"
-        "              int l, m; spherical harmonic operator         \n"
-        "   Output   = string;  #name of output                        ";
+        "ComputeItemRho                                                    \n"
+        "Takes a Tensor<DataMesh> density, l, and m as arguments           \n"
+        "and returns a Tensor<DataMesh> of the density multiplied by the   \n"
+        "SphericalHarmonicY given by the respective l and m.               \n"
+        "OPTIONS:                                                          \n"
+        "   Input    = string; #name of original rho                       \n"
+        "              int l, m; spherical harmonic operator               \n"
+        "   Output   = string;  #name of output                              ";
     
     };
   public:

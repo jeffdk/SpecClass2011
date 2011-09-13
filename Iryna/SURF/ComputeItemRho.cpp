@@ -25,10 +25,10 @@ namespace ComputeItems {
      REQUIRE(abs(m) <= l, "ERROR: m must be between the values of -l and l");
     
      const Tensor<DataMesh> rho_i=box.Get<Tensor<DataMesh> >(mInput);
-  /* REQUIRE(rho_i().Dim == 3, 
+     REQUIRE(rho_i.Dim() == 3, 
               "ERROR: The Dimension of the Tensor<DataMesh> input must be 3");
-     REQUIRE(rho_i.Rank == 0,
-               "ERROR: The Rank of the Tensor<DataMesh> input must be 0");*/
+     REQUIRE(rho_i.Rank() == 0,
+               "ERROR: The Rank of the Tensor<DataMesh> input must be 0");
      const MyVector<DataMesh>& coords=
                            box.Get<MyVector<DataMesh> >("GlobalCoords");
      const Mesh mesh = box.Get<Mesh>("Mesh");

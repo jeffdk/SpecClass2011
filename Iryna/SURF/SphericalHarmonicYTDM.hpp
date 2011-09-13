@@ -1,9 +1,10 @@
 //---------------------------------------------------------------------------
-// $Id: SphericalHarmonicY.hpp 283 2003-11-20 22:51:17Z scheel $
 //
-// Computes real-valued spherical harmonics Y_lm(theta,phi)
+// Computes real-valued spherical harmonics Y_lm(theta,phi) at each point 
+// of a Tensor<DataMesh>, given by the <DataMesh>es theta and phi.
 //
 //---------------------------------------------------------------------------
+
 #ifndef SphericalHarmonicYTDM_H
 #define SphericalHarmonicYTDM_H
 #include "Utils/Tensor/Tensor.hpp"

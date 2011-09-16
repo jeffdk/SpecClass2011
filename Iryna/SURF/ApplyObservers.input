@@ -1,15 +1,20 @@
 # ApplyObservers.input
 
 DataBoxItems=
+    ReadFromFile(File = HySetupandEvolution.input),
     Subdomain(Items=
 	      EvaluateScalarFormula(Output=Radius;
 				    Formula=  1
 	      ),
+              EvaluateScalarFormula(Formula=0.1*A;A=Rho;Output=RhoYe), 
+	      ComputeHydroState::Tau(Input=Equilibrium; Output=Tau;),
+              ComputeHydroState::Rho(Input=Equilibrium; Output=Rho;),
 
-              MultTDMBySpherHarmonic(Input=Radius; 
-                                 l=4; 
+              MultTDMBySpherHarmonic(Input=Rho; 
+                                 l=3; 
                                  m=1; 
-                             Output=Rho_Yl4m1),
+                        magnitude=1.0;
+                             Output=RhoTest),
 	      GlobalDifferentiator(
 		  GlobalDifferentiator
 		  =Standard(TopologicalDifferentiator=Spectral)
@@ -18,6 +23,6 @@ DataBoxItems=
     );
 
 
-Observers=  DumpTensors(Input=Rho_Yl4m1); 
+Observers=  DumpTensors(Input=RhoTest); 
           
           

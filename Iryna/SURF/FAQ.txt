@@ -1,0 +1,22 @@
+Random Issues and Possible Solutions
+
+* If having a hard time compiling/making execs (weird error messages?) 
+    - try make -s allclean
+
+* In gccdebug, if terminal complains that it can't find the command 
+  'ApplyObservers', try exporting the PATH to include Support/bin
+    - export PATH=/SPEC_HOME/Support/bin:$PATH
+
+* Remember!: To copy  EvolveGrHydro link to SpEC if you're starting a new run
+  and have recently updated the SpEC code. 
+
+* In debug run, couldn't find class because the ComputeItem (.cpp) file 
+  containing it wasn't included in the MakeFile in Hydro/HydroComputeItems
+
+* In debug run, error message: "status == 0 violated in Rtsafe.cpp" -
+  something wrong with ComputeItem
+
+* When running ApplyObservers - if compiler gives warining that Class wasn't
+  in the known list of Class IDs, maybe you need to add a library to the 
+  Makefile in Support/ApplyObservers/Executables (in ALL_LINKED_LIBS, not 
+  necessarily in LINKED_LIBS too)

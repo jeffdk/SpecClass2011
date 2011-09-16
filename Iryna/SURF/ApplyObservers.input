@@ -6,15 +6,14 @@ DataBoxItems=
 	      EvaluateScalarFormula(Output=Radius;
 				    Formula=  1
 	      ),
-              EvaluateScalarFormula(Formula=0.1*A;A=Rho;Output=RhoYe), 
-	      ComputeHydroState::Tau(Input=Equilibrium; Output=Tau;),
               ComputeHydroState::Rho(Input=Equilibrium; Output=Rho;),
 
               MultTDMBySpherHarmonic(Input=Rho; 
-                                 l=3; 
-                                 m=1; 
-                        magnitude=1.0;
-                             Output=RhoTest),
+                                 l=2; 
+                                 m=0; 
+                        magnitude=.50;
+                             Output=RhoYlm),
+              BinaryOp(A=RhoYlm; B=Rho; Output=DiffRho; Op=A-B),
 	      GlobalDifferentiator(
 		  GlobalDifferentiator
 		  =Standard(TopologicalDifferentiator=Spectral)
@@ -23,6 +22,6 @@ DataBoxItems=
     );
 
 
-Observers=  DumpTensors(Input=RhoTest); 
+Observers=  DumpTensors(Input=RhoYlm); 
           
           

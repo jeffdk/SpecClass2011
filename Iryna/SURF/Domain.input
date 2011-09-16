@@ -1,0 +1,12 @@
+# Domain.input 
+SubdomainStructure=
+    SphericalShells3D(
+	BaseName=Sphere;
+	L=12;
+	r-Axis=(Extents=50; 
+		Topology=I1; 
+		Maps=Lin; 
+		IndexMap=ChebyshevGaussLobatto;
+		Bounds=0.1, 12.0);
+    );
+ HistoryFile=<<NONE>>;

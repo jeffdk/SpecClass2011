@@ -1,0 +1,96 @@
+DataBoxItems=
+    Domain (
+Items =
+            AddHydroSystemItems (
+                FramePrefix = InertialFD;
+                DualFrameMethod = None;
+                InversionMethod = 2D;
+                UseMHD = false;
+EvolveComposition = false;
+
+FixPoints =
+                        (
+                        RhoCutoff = 5.0e-5;
+                        SSmax = 0.999;
+                        SqrtDetgPower = 1.0;
+                        Slope = 0.0005;
+MultiplyingFactor=None;
+                        );
+                Atmosphere =
+                        (
+                        RhoFloor = 1.0e-12;
+                        ApplyKappaLimit = true;
+                        MinKappaFactor = 0.98;
+                        MaxKappaFactor = 1000;
+                        ApplyEnthalpyLimit = false;
+                        ApplyMaxTemp = false;
+                        MaxUmag = 100;
+                        Center = 0, 0, 0;
+                        CubicalBoundary =1.5*9.13045, 1.5 *9.13045, 1.5*9.13045;
+                        RhoCritLowTau = 2.0e-10;
+                        RhoCritHighTau = 2.0e-9;
+                        RhoCritLowS = 2.0e-10;
+                        RhoCritHighS = 2.0e-9;
+                        MapPrefix = ; #GridToInertial;
+MultiplyingFactor=None;
+                        );
+
+            ),
+            HydroParams (
+                RhoCutoff = 1.0e-13;
+RhoFloor = 1.0e-13;
+                RhoCutoff2 = 1.0e-13;
+                EquationOfState = Gamma(Gamma=2; Kappa=123.6);
+                KreissOligerCoeff = 0;
+                ReconstructionMethod = WENO(Cell=Average);
+                Apply3rdOrderFinDif = false;
+),
+;
+),
+    #All Subdomain Compute items except for Initial Data
+    Subdomain(Items =
+EvaluateFormula(Output=AtmosphereMultiplier; A=BHdist;
+Formula=1.0;),
+GhostZoneMask(Output=GhostZoneMask; NumberOfGhostZones =3),
+ComputeHydroState::varpi(Input=Equilibrium; Output=varpi),
+),
+
+    #Initial data!
+ Subdomain(Items =
+ ComputeHydroState(
+ Output = Equilibrium;
+ Solution = SphericalStar (
+ CentralDensity = 0.001805;
+ EquationOfState = Gamma(Gamma=2; Kappa=123.6);
+ Scale = 9.13045*9.13045;
+ PressureDepletion = 1.0;
+ )
+ )
+ )
+
+
+# Subdomain(
+# Items =
+# ComputeHydroState
+# (
+# Output = Equilibrium;
+# Solution = RotatingStar(
+# Center = 0,0,0;
+# Rescale = __RotScale__;
+# Delta1 = 0.0;
+# Delta2 = 0.0;
+# PressureDepletion = __PDEPLETE__;
+# InputFile=__RotFile__;
+# EquationOfState = __EOS__;
+# );
+# );
+# )
+; #END ITEMS
+
+
+
+
+
+
+
+

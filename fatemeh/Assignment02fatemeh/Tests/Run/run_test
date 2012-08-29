@@ -1,2 +1,0 @@
-#!/bin/bash
-./TestAssignment02fatemeh &> Test.log

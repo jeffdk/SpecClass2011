@@ -1,4 +1,0 @@
-# Vectors.input
-# Enter a series of radii.  The sum of the volumes of spheres with those radii will be calculated.
-
-FourRadii = 2.0, 3.0, 4.0;

@@ -5,7 +5,7 @@
 CODE_HOME = ../../../../..
 
 # What libraries does this executable depend on
-LINKED_LIBS =
+FACTORY_LIBS =
 
 # What .cpp files containing a main function should be compiled (remove .cpp)
 EXECUTABLES =
